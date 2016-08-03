@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<base href="https://meshlogic.github.io/posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-2/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linear Algebra with Python and NumPy (II) | Meshlogic</title>
+<link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="canonical" href="https://meshlogic.github.io/posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-2/">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+        },
+        displayAlign: 'center'
+    });
+</script><!--[if lt IE 9]><script src="../../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Miki">
+<link rel="prev" href="../linear-algebra-with-python-and-numpy-1/" title="Linear Algebra with Python and NumPy (I)" type="text/html">
+<link rel="next" href="../../../blender/bake-helper-in-final-version-1-0/" title="Bake Helper in final version 1.0" type="text/html">
+<meta property="og:site_name" content="Meshlogic">
+<meta property="og:title" content="Linear Algebra with Python and NumPy (II)">
+<meta property="og:url" content="https://meshlogic.github.io/posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-2/">
+<meta property="og:description" content="Linear Algebra with Python and NumPy (II)¶
+This post is a continuation of the previous post on using Python and NumPy package for linear algebra.
+We will briefly cover topics such as:
+
+Solving systems">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-07-12T16:42:00+02:00">
+<meta property="article:tag" content="jupyter">
+<meta property="article:tag" content="linear-algebra">
+<meta property="article:tag" content="mathematics">
+<meta property="article:tag" content="python">
+</head>
+<body>
+
+<!-- BODY CONTAINER -->
+<div class="container" id="body_container">
+	
+	<!-- HEADER -->
+	<header id="body_header"></header><!-- NAVBAR --><nav class="navbar navbar-default navbar-static"><div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		
+		<div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+			<ul class="nav navbar-nav">
+<li>
+<a href="../../../../">Home</a>
+                </li>
+<li>
+<a href="../../../../archive.html">Archive</a>
+                </li>
+<li>
+<a href="../../../../categories/">Tags</a>
+                </li>
+<li>
+<a href="../../../../pages/articles/">Articles</a>
+            </li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blender Addons <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="../../../../pages/blender-addons/bake-helper">Bake Helper</a>
+                    </li>
+<li>
+<a href="../../../../bar">Fitting Tools</a>
+            </li>
+</ul>
+</li>
+<li>
+<a href="../../../../pages/shops/">My Shops</a>
+
+				
+			</li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="index.ipynb" id="sourcelink">Source</a>
+    </li>
+				
+			</ul>
+</div>
+	</nav><!-- BODY CONTENT --><div class="container" id="body_content" role="main">
+		<div class="page_content">
+			
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><!--<h1 class="p-name entry-title" itemprop="headline name"><a href="/posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-2/" class="u-url">Linear Algebra with Python and NumPy (II)</a></h1> --><h1 class="p-name entry-title" itemprop="headline name">Linear Algebra with Python and NumPy (II)</h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    Miki
+            </span></p>
+            <p class="dateline"><time class="published dt-published" datetime="2016-07-12T16:42:00+02:00" itemprop="datePublished" title="2016-07-12 16:42">2016-07-12 16:42</time></p>
+                    <p class="sourceline"><a href="index.ipynb" id="sourcelink">Source</a></p>
+
+        </div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Linear-Algebra-with-Python-and-NumPy-(II)">Linear Algebra with Python and NumPy (II)<a class="anchor-link" href="#Linear-Algebra-with-Python-and-NumPy-(II)">¶</a>
+</h2>
+<p><img src="svd_algorithm_1x1.png" style="float:right"></p>
+<p>This post is a continuation of the previous post on using Python and NumPy package for linear algebra.</p>
+<p>We will briefly cover topics such as:</p>
+<ul>
+<li>Solving systems of linear equations</li>
+<li>Eigenvalues, eigenvectors and matrix spectral decomposition</li>
+<li>Singular value decomposition (SVD)</li>
+<li>Solving overdetermined linear systems using method of least-squares</li>
+<li>Moore-Penrose pseudoinverse matrix</li>
+</ul>
+<p><br></p>
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="o">*</span>   <span class="c1"># Import NumPy package which enables all the fun with algebra</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1-Solving-Linear-Systems-with-Regular-Matrix">1 Solving Linear Systems with Regular Matrix<a class="anchor-link" href="#1-Solving-Linear-Systems-with-Regular-Matrix">¶</a>
+</h3>
+<p>Assume we have a system of linear algebralic equations given by</p>
+$$ \mathbf{A} \mathbf{x} = \mathbf{b}, $$<p>where $\mathbf{A} \in \mathbb{C}^{n\times n}$ and $\mathbf{b} \in \mathbb{C}^{n}$.
+To find a solution for $\mathbf{x}$, we can use method <code>numpy.linalg.solve</code>. As we surely know from algebra classes, an exact solution exists if and only if $\mathbf{A}$ is a full-rank square matrix (also called regular matrix), which is also required by the mentioned solving method.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Example:</em> Solve a system of linear equations given by</p>
+$$ \mathbf{A} = 
+\left(\begin{array}{r}
+  0 &amp; 2 &amp; 1 \\
+  3 &amp; -1 &amp; 2  \\
+  1 &amp; -1 &amp; 1 
+\end{array}\right),
+\quad
+\mathbf{b} = 
+\left(\begin{array}{r}
+  2 \\
+  -3  \\
+  -3 
+\end{array}\right),
+\quad
+\mathbf{x} = 
+\begin{pmatrix}
+  x_1 \\
+  x_2  \\
+  x_3
+\end{pmatrix}.$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="s1">'0 2 1; 3 -1 2; 1 -1 1'</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="s1">'2; -3; -3'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'rank(A) ='</span><span class="p">,</span> <span class="n">linalg</span><span class="o">.</span><span class="n">matrix_rank</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>   <span class="c1"># Verify that A is a full-rank matrix (rank(A) = n)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[ 0  2  1]
+ [ 3 -1  2]
+ [ 1 -1  1]]
+rank(A) = 3
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>   <span class="c1"># Get solution for the linear system A*x=b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[ 1.]
+ [ 2.]
+ [-2.]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">A</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>    <span class="c1"># Verify that x is the valid solution for A*x=b</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[ 0.]
+ [ 0.]
+ [ 0.]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2-Eigenvalues-and-Eigenvectors">2 Eigenvalues and Eigenvectors<a class="anchor-link" href="#2-Eigenvalues-and-Eigenvectors">¶</a>
+</h3>
+<p>Assume we have a linear transformation given by a square matrix $\mathbf{A} \in \mathbb{C}^{n\times n}$. Then matrix $\mathbf{A}$ has a scalar <strong><em>eigenvalue</em></strong> $\lambda$ associated with a non-zero <strong><em>eigenvector</em></strong> $\mathbf{v}$ if</p>
+$$ \mathbf{A} \mathbf{v} = \lambda \mathbf{v}.$$<p>The obvious geometrical interpretation is such that eigenvectors are vectors not affected by given transformation in the term of rotation, but only stretched (scaled) by associated factor of $\lambda$. Another fundamental meaning is connected with systems of linear differential equations, but that's another story.</p>
+<p>If a matrix $\mathbf{A} \in \mathbb{C}^{n\times n}$ has $n$ linearly independent eigenvectors, then matrix $\mathbf{A}$ can be factorized as</p>
+$$ \mathbf{A} = \mathbf{U} \mathbf{D} \mathbf{U}^H, $$<p>where $\mathbf{D}$ is a diagonal matrix containing eigenvalues on its diagonal. Columns of $\mathbf{U}$ are eigenvectors, which makes $\mathbf{U}$ an unitary matrix. Note that only diagonalizable matrices can be factorized in this way, which is also called <strong><em>spectral decomposition</em></strong> or <strong><em>eigendecomposition</em></strong>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Example:</em> Find eigenvalues and eigenvectors for matrix</p>
+$$ \mathbf{A} = 
+\begin{pmatrix}
+  2 &amp; 0 &amp; 0 \\
+  0 &amp; 3 &amp; 4  \\
+  0 &amp; 4 &amp; 9 
+\end{pmatrix}.$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="s1">'2 0 0; 0 3 4; 0 4 9'</span><span class="p">)</span>
+<span class="n">λ</span><span class="p">,</span> <span class="n">U</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Eigenvalues:</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">λ</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Eigenvectors:</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">U</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Eigenvalues:
+ [ 11.   1.   2.]
+
+Eigenvectors:
+ [[ 0.          0.          1.        ]
+ [ 0.4472136   0.89442719  0.        ]
+ [ 0.89442719 -0.4472136   0.        ]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Verify that $ \mathbf{A} \mathbf{v} - \lambda \mathbf{v} = 0$ for each pair of eigenvalue-eigenvector</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">eps</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="n">eps</span> <span class="o">+=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">U</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">λ</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">U</span><span class="p">[:,</span><span class="n">i</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eps</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1.66533453694e-16
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Verify that $\mathbf{A} = \mathbf{U} \mathbf{D} \mathbf{U}^{-1} $</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">U</span> <span class="o">*</span> <span class="n">diag</span><span class="p">(</span><span class="n">λ</span><span class="p">)</span> <span class="o">*</span> <span class="n">U</span><span class="o">.</span><span class="n">T</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[ 2.  0.  0.]
+ [ 0.  3.  4.]
+ [ 0.  4.  9.]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3-Singular-Value-Decomposition-(SVD)">3 Singular Value Decomposition (SVD)<a class="anchor-link" href="#3-Singular-Value-Decomposition-(SVD)">¶</a>
+</h3>
+<p>Since the spectral decomposition $ \mathbf{A} = \mathbf{U} \mathbf{D} \mathbf{U}^H $ exists only for a square, diagonalizable matrix, there is an obvious question if it can be generalized also for matrices of any shape. It can be proven, if we allow two diverse unitary matrices instead of single matrix $\mathbf{U}$, then such factorization always exists.</p>
+<p>Assume we have a matrix $\mathbf{A} \in \mathbb{C}^{m\times n}$, ($m, n \in \mathbb{N}$). Then there exists a matrix factorization of $\mathbf{A}$, called <strong><em>singular value decomposition (SVD)</em></strong>, of the form</p>
+$$ \mathbf{A} = \mathbf{U} \mathbf{\Sigma} \mathbf{V}^H, $$<p>where $\mathbf{\Sigma}$ is a diagonal matrix containing so-called <strong><em>singular values</em></strong> $\sigma_1 \geq \sigma_2 \geq \dots \geq \sigma_n \geq 0$ on its diagonal. Matrices $\mathbf{U}$, $\mathbf{V}$ are unitary matrices, that means their columns are orthonormal. The columns of $\mathbf{U}$ and $\mathbf{V}$ are called the <strong><em>left-singular vectors</em></strong> and <strong><em>right-singular vectors</em></strong> of $\mathbf{A}$, respectively.</p>
+<p>Using NumPy package, the SVD decomposition can be computed by method <code>numpy.linalg.svd</code>. It returns matrices $\mathbf{U}$, $\mathbf{V}^H$ and singular values $\sigma$ (note that $\mathbf{V}$ is returned as $\mathbf{V}^H$ by this method).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Example:</em> Find singular value decomposition for matrix</p>
+$$ \mathbf{A} = 
+\left(\begin{array}{r}
+  14 &amp; 2 \\
+  4 &amp; 22   \\
+  16 &amp; 13 
+\end{array}\right).$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="s1">'14 2; 4 22; 16 13'</span><span class="p">)</span>
+<span class="n">U</span><span class="p">,</span> <span class="n">σ</span><span class="p">,</span> <span class="n">VH</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">full_matrices</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Singular values σ:</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">σ</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Left-singular vectors:</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">U</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Right-singular vectors:</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">VH</span><span class="o">.</span><span class="n">H</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Singular values σ:
+ [ 30.  15.]
+
+Left-singular vectors:
+ [[-0.33333333  0.66666667]
+ [-0.66666667 -0.66666667]
+ [-0.66666667  0.33333333]]
+
+Right-singular vectors:
+ [[-0.6  0.8]
+ [-0.8 -0.6]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Verify that $\mathbf{A} = \mathbf{U} \mathbf{\Sigma} \mathbf{V}^H $</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">U</span> <span class="o">*</span> <span class="n">diag</span><span class="p">(</span><span class="n">σ</span><span class="p">)</span> <span class="o">*</span> <span class="n">VH</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[ 14.   2.]
+ [  4.  22.]
+ [ 16.  13.]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="4-Solving-Linear-Systems-by-Method-of-Least-Squares">4 Solving Linear Systems by Method of Least-Squares<a class="anchor-link" href="#4-Solving-Linear-Systems-by-Method-of-Least-Squares">¶</a>
+</h3>
+<p>Consider a system of linear equations $ \mathbf{A} \mathbf{x} = \mathbf{b}$, where $\mathbf{A} \in \mathbb{C}^{m\times n}$, $\mathbf{b} \in \mathbb{C}^{m}$ and $m &gt; n$. This kind of system is called <strong><em>overdetermined</em></strong>, because it has more equations than unknowns, thus generally it has no unique solution. However, we can look for the <strong><em>least-squares</em></strong> solution that minimizes the Euclidean norm of the residuals, that is,</p>
+$$ \min_{\mathbf{x}\in \mathbb{C}^n} \|\mathbf{b}-\mathbf{A}\mathbf{x}\|. $$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="4.1-Least-squares-solution-for-systems-with-full-rank-matrix">4.1 Least-squares solution for systems with full-rank matrix<a class="anchor-link" href="#4.1-Least-squares-solution-for-systems-with-full-rank-matrix">¶</a>
+</h4>
+<p>In case when $\mathbf{A}$ is a full-rank matrix, that is $\mathrm{rank} \, \mathbf{A} = \min(m,n)$, the least-squares solution can be found easily as a solution of linear system</p>
+$$ \mathbf{A}^H \mathbf{A} \mathbf{x} = \mathbf{A}^H \mathbf{b}.$$<p>In such case, $\mathbf{A}^H \mathbf{A}$ is a positive-definite Hermitian matrix and the least-squares solution exists and is unique. To get the solution we can use QR or Cholesky decomposition or find the inversion of $\mathbf{A}^H \mathbf{A}$ as follows</p>
+$$  \mathbf{x} = (\mathbf{A}^H \mathbf{A})^{-1} \mathbf{A}^H \mathbf{b}.$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="4.2-Least-squares-solution-for-systems-with-matrix-of-any-rank">4.2 Least-squares solution for systems with matrix of any rank<a class="anchor-link" href="#4.2-Least-squares-solution-for-systems-with-matrix-of-any-rank">¶</a>
+</h4>
+<p>Lets discuss the most general case when matrix $\mathbf{A}$ might rectangular and also its rank might be arbitrary, that is $\mathrm{rank}\,\mathbf{A}&gt;0$. In such case, inverse of $ \mathbf{A}^H \mathbf{A}$ does not exists, so we need to develop another solving method. Using singular value decomposition $ \mathbf{A} = \mathbf{U} \mathbf{\Sigma} \mathbf{V}^H$, we can find that</p>
+$$ \|\mathbf{b}-\mathbf{A}\mathbf{x}\| = \|\mathbf{U}^H\mathbf{b}-\mathbf{U}^H\mathbf{A}\mathbf{x}\| =
+\|\mathbf{U}^H\mathbf{b} - \mathbf{\Sigma} \mathbf{V}^H\mathbf{x}\|.$$<p>If we denote</p>
+$$\mathbf{c}=\mathbf{U}^H\mathbf{b}, \quad \mathbf{y}=\mathbf{V}^H\mathbf{x},$$<p>we can see that $\|\mathbf{b}-\mathbf{A}\mathbf{x}\| $ is minimized if and only if $\|\mathbf{c} - \mathbf{\Sigma}\mathbf{y}\| $ is minimal. This way we have transformed the least-squares problem with matrix $\mathbf{A}$ and $\mathbf{b}$  into a problem with diagonal matrix $\mathbf{\Sigma}$ and vector $\mathbf{c}$. Moreover, it is visible that $\|\mathbf{c} - \mathbf{\Sigma}\mathbf{y}\|$ is minimal if and only if $\mathbf{c} = \mathbf{\Sigma}\mathbf{y}$, thus</p>
+$$\mathbf{y} = \mathbf{\Sigma}^{-1}\mathbf{c}.$$<p>Thanks to that we can find least-squares solution for $\mathbf{x}$ as</p>
+$$\mathbf{x} = \mathbf{V}\mathbf{y} = \mathbf{V}\mathbf{\Sigma}^{-1}\mathbf{c} = \mathbf{V}\mathbf{\Sigma}^{-1}\mathbf{U}^H\mathbf{b}.$$<p>So, after computing the SVD decomposition we just need to determine the inverse of matrix $\mathbf{\Sigma}$. Lets denote $r = \mathrm{rank}\,\mathbf{A}$, then inversion $\mathbf{\Sigma}^{-1} \in \mathbb{R}^{n\times n}$ can be found as</p>
+$$\mathbf{\Sigma}^{-1} = 
+\begin{pmatrix}
+  \mathbf{\tilde{\Sigma}}^{-1} &amp; \mathbf{0} \\
+  \mathbf{0} &amp; \mathbf{0} 
+\end{pmatrix},
+\quad
+\mathbf{\tilde{\Sigma}}^{-1} =
+\begin{pmatrix}
+  1/\sigma_1 &amp; 0 &amp; \dots &amp; 0 \\
+  0 &amp; 1/\sigma_2 &amp; \dots &amp; 0 \\
+  \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+  0    &amp;     0  &amp; \dots &amp; 1/\sigma_r
+\end{pmatrix}.
+$$<p>To make things more elegant we can call the expression $\mathbf{V}\mathbf{\Sigma}^{-1}\mathbf{U}^H$ as <strong><em>Moore–Penrose pseudoinverse</em></strong> of matrix $\mathbf{A}$ and denote it as $\mathbf{A}^+$. Then, we can write the solution in a very short form</p>
+$$\mathbf{x} = \mathbf{A}^+\mathbf{b}. $$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Example:</em> Find a least-square solution for overdetermined system of linear equations given by</p>
+$$ \mathbf{A} = 
+\left(\begin{array}{r}
+  1 &amp; 0 &amp; -1 &amp; 2 \\
+  1 &amp; 1 &amp; 1 &amp; -1  \\
+  0 &amp; -1 &amp; -2 &amp; 3 \\
+  5 &amp; 2 &amp; -1 &amp; 4 \\
+  -1 &amp; 2 &amp; 5 &amp; 8 
+\end{array}\right),
+\quad
+\mathbf{b} = 
+\left(\begin{array}{r}
+  -1 \\
+  2  \\
+  -3 \\
+  1 \\
+  7
+\end{array}\right),
+\quad
+\mathbf{x} = 
+\left(\begin{array}{r}
+  x_1 \\
+  x_2  \\
+  x_3 \\
+  x_4
+\end{array}\right).$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="s1">'1 0 -1 2; 1 1 1 -1; 0 -1 -2 3; 5 2 -1 4; -1 2 5 -8'</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="s1">'-1; 2; -3; 1; 7'</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">matrix_rank</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'n ='</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'rank(A) ='</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[ 1  0 -1  2]
+ [ 1  1  1 -1]
+ [ 0 -1 -2  3]
+ [ 5  2 -1  4]
+ [-1  2  5 -8]]
+n = 4
+rank(A) = 2
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can see that rank of matrix $\mathbf{A}$ is 2 which is lower than number of unknowns and it makes the matrix rank-deficient.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># SVD decomposition of matrix A</span>
+<span class="n">U</span><span class="p">,</span> <span class="n">σ</span><span class="p">,</span> <span class="n">VH</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">full_matrices</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">VH</span><span class="o">.</span><span class="n">H</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Singular values:</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">σ</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Left-singular vectors:</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">U</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Right-singular vectors:</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
+
+<span class="c1"># Moore–Penrose pseudoinverse</span>
+<span class="n">sigma_inv</span> <span class="o">=</span> <span class="n">diag</span><span class="p">(</span><span class="n">hstack</span><span class="p">([</span><span class="mi">1</span><span class="o">/</span><span class="n">σ</span><span class="p">[:</span><span class="n">r</span><span class="p">],</span> <span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">r</span><span class="p">)]))</span>
+<span class="n">A_plus</span> <span class="o">=</span> <span class="n">V</span> <span class="o">*</span> <span class="n">sigma_inv</span> <span class="o">*</span> <span class="n">U</span><span class="o">.</span><span class="n">H</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Moore–Penrose pseudoinverse of A:</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">A_plus</span><span class="p">)</span>
+
+<span class="c1"># Least-squares solution</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">A_plus</span> <span class="o">*</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Least-squares solution x:</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Error of solution ||b-A*x||</span>
+<span class="n">eps</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">A</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Error of least-squares solution: ||b-A*x|| ='</span><span class="p">,</span> <span class="n">eps</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Singular values:
+ [  1.15923770e+01   5.44213162e+00   1.18203515e-15   1.59830883e-16]
+
+Left-singular vectors:
+ [[-0.20752001 -0.08477441  0.63436269  0.67966601]
+ [ 0.09883702 -0.30122044 -0.70236176  0.63677741]
+ [-0.30635703  0.21644603  0.06315979  0.25652062]
+ [-0.424886   -0.85676412  0.07512664 -0.2510953 ]
+ [ 0.82023408 -0.34811766  0.30763414  0.06096691]]
+
+Right-singular vectors:
+ [[-0.26339267 -0.79411857 -0.52472245  0.15705526]
+ [ 0.10316178 -0.53791974  0.81669201  0.18169801]
+ [ 0.46971622 -0.28172091 -0.05921667 -0.83456179]
+ [-0.83627066  0.02552208  0.23275289 -0.49580852]]
+
+Moore–Penrose pseudoinverse of A:
+ [[ 0.01708543  0.04170854 -0.02462312  0.13467337  0.0321608 ]
+ [ 0.00653266  0.03065327 -0.0241206   0.08090452  0.04170854]
+ [-0.0040201   0.01959799 -0.02361809  0.02713568  0.05125628]
+ [ 0.01457286 -0.00854271  0.02311558  0.02663317 -0.06080402]]
+
+Least-squares solution x:
+ [[ 0.5]
+ [ 0.5]
+ [ 0.5]
+ [-0.5]]
+
+Error of least-squares solution: ||b-A*x|| = 2.23152066184e-15
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So, using SVD decomposition and Moore-Penrose pseudoinverse matrix, we have found the least-squares solution</p>
+$$ \mathbf{x} =
+\left(\begin{array}{r}
+0.5\\  0.5\\  0.5\\ -0.5
+\end{array}\right).$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can also utilize some built-in methods from NumPy package. To compute Moore–Penrose pseudoinverse there is a method <code>numpy.linalg.pinv</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'Moore–Penrose pseudoinverse by NumPy:</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">linalg</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Moore–Penrose pseudoinverse by NumPy:
+ [[ 0.01708543  0.04170854 -0.02462312  0.13467337  0.0321608 ]
+ [ 0.00653266  0.03065327 -0.0241206   0.08090452  0.04170854]
+ [-0.0040201   0.01959799 -0.02361809  0.02713568  0.05125628]
+ [ 0.01457286 -0.00854271  0.02311558  0.02663317 -0.06080402]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>NumPy has even a method <code>numpy.linalg.lstsq</code> to compute a least-squares solution for any linear system that may be under-, well-, or over- determined.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'Least-squares solution by NumPy:</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Least-squares solution by NumPy:
+ [[ 0.5]
+ [ 0.5]
+ [ 0.5]
+ [-0.5]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="5-Conclusion">5 Conclusion<a class="anchor-link" href="#5-Conclusion">¶</a>
+</h3>
+<p>As we can see, Python and NumPy package can be successfully used even for some advanced tasks from linear algebra. Also, the Jupyter notebook offers a truly convenient way to write mathematical description and test live code for various numerical methods.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="References">References<a class="anchor-link" href="#References">¶</a>
+</h4>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/System_of_linear_equations">Linear systems</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Overdetermined_system">Overdetermined systems</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">Eigenvalues and eigenvectors</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">Spectral decomposition</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Singular_value_decomposition">Singular value decomposition</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_pseudoinverse">Moore–Penrose pseudoinverse</a></li>
+</ul>
+<ul>
+<li><a href="http://docs.scipy.org/doc/numpy/">NumPy documentation</a></li>
+<li><a href="https://docs.scipy.org/doc/numpy-dev/user/numpy-for-matlab-users.html">NumPy for Matlab users</a></li>
+<li><a href="http://matplotlib.org/">Matplotlib documentation</a></li>
+</ul>
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../../categories/jupyter/" rel="tag">jupyter</a></li>
+            <li><a class="tag p-category" href="../../../../categories/linear-algebra/" rel="tag">linear-algebra</a></li>
+            <li><a class="tag p-category" href="../../../../categories/mathematics/" rel="tag">mathematics</a></li>
+            <li><a class="tag p-category" href="../../../../categories/python/" rel="tag">python</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../linear-algebra-with-python-and-numpy-1/" rel="prev" title="Linear Algebra with Python and NumPy (I)">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../../blender/bake-helper-in-final-version-1-0/" rel="next" title="Bake Helper in final version 1.0">Next post</a>
+            </li>
+        </ul></nav></aside><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+        },
+        displayAlign: 'center'
+    });
+</script></article>
+</div>
+	</div>
+
+</div>
+
+
+<!-- FOOTER -->
+<div class="container">
+	<footer id="body_footer">
+		Contents © 2016 by <a href="mailto:meshlogic@gmail.com">Miki</a> - Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> 
+		
+	</footer>
+</div>
+
+
+<!-- SCRIPTS -->
+            <script src="../../../../assets/js/all-nocdn.js"></script><!-- Fancy dates --><script>
+	moment.locale("en");
+	fancydates(0, "YYYY-MM-DD HH:mm");
+</script>
+</body>
+</html>
