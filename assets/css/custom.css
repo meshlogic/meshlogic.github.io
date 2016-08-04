@@ -2,31 +2,31 @@
 ** Body Layout
 *******************************************************************************/
 body {
-	background-color: #808080;
-	/*background-image: url(../img/noisy-texture-256x256-o5-d10-c-808080-t0.png);*/
+    background-color: #808080;
+    /*background-image: url(../img/noisy-texture-256x256-o5-d10-c-808080-t0.png);*/
     background-image: url(../img/noisy-texture-256x256-o5-d10-c-707070-t0.png);
-	background-attachment: fixed;
-	padding-top: 20px;
-	line-height: 1.6;
+    background-attachment: fixed;
+    padding-top: 20px;
+    line-height: 1.6;
 }
 
 #body_container {
-	background-color: #eae1d3;
-	background-image: url(../img/paper_grid_01.png);
-	padding: 0;
-	border-radius: 15px;
-	box-shadow: 0 0px 7px 0 rgba(0, 0, 0, 0.5), 0 0px 20px 0 rgba(0, 0, 0, 0.4);
+    background-color: #eae1d3;
+    background-image: url(../img/paper_grid_01.png);
+    padding: 0;
+    border-radius: 15px;
+    box-shadow: 0 0px 7px 0 rgba(0, 0, 0, 0.5), 0 0px 20px 0 rgba(0, 0, 0, 0.4);
 }
 
 #body_header {
-	background-image: url(../img/header_01_blue.png);
-	background-position: center top;
-	height: 190px;
-	border-radius: 15px 15px 0 0;
+    background-image: url(../img/header_01_blue.png);
+    background-position: center top;
+    height: 190px;
+    border-radius: 15px 15px 0 0;
 }
 
 #body_content {
-	width: 100%;
+    width: 100%;
     min-height: 500px;
     padding: 65px 40px 50px 40px;
 }
@@ -40,48 +40,48 @@ body {
 
 #body_footer {
     text-align: center;
-	color: #202020;
-	padding: 0;
-	margin: 20px auto 40px auto;
+    color: #202020;
+    padding: 0;
+    margin: 20px auto 40px auto;
 }
 #body_footer > a {
-	color: darkblue;
+    color: darkblue;
 }
 #body_footer > a:hover {
-	color: darkblue;
+    color: darkblue;
 }
 
 /*******************************************************************************
 ** Navbar
 *******************************************************************************/
 .navbar {
-	border-left-width: 0;
-	border-right-width: 0;
-	border: 0;
-	border-radius: 0;
-	margin: 0 auto -50px auto;
-	background-image: url(../img/noisy-texture-128x128-o4-d10-c-373737-t0.png);
-	background-repeat: repeat;
-	box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.5), inset 0px 0px 1px 0 rgba(0, 0, 0, 0.3);
-	z-index: 1000;
+    border-left-width: 0;
+    border-right-width: 0;
+    border: 0;
+    border-radius: 0;
+    margin: 0 auto -50px auto;
+    background-image: url(../img/noisy-texture-128x128-o4-d10-c-373737-t0.png);
+    background-repeat: repeat;
+    box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.5), inset 0px 0px 1px 0 rgba(0, 0, 0, 0.3);
+    z-index: 1000;
 }
 .navbar.affix {
     position: fixed;
-	top: 0;
+    top: 0;
 }
 .navbar-collapse {
-	padding-left: 25px;
-	padding-right: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 .navbar-right {
-	margin-right: 0;
+    margin-right: 0;
 }
 .dropdown-menu {
-	background-image: url(../img/noisy-texture-128x128-o4-d10-c-373737-t0.png);
-	background-repeat: repeat;
-	border: 0;
-	border-radius: 4px;
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4), inset 0px 0px 1px 0 rgba(0, 0, 0, 0.3);
+    background-image: url(../img/noisy-texture-128x128-o4-d10-c-373737-t0.png);
+    background-repeat: repeat;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4), inset 0px 0px 1px 0 rgba(0, 0, 0, 0.3);
 }
 
 
@@ -89,8 +89,8 @@ body {
 ** Typography
 *******************************************************************************/
 p {
-	text-align: justify;
-	margin-bottom: 1em;
+    text-align: justify;
+    margin-bottom: 1em;
 }
 h1 {
     margin-top: 1em;
@@ -104,26 +104,26 @@ h2 {
     font-size: 26px;
 }
 h2, h3, h4, h5, h6 {
-	margin-top: 1.8em;
-	font-weight: 700;
+    margin-top: 1.8em;
+    font-weight: 700;
 }
 em {
-	font-style: italic;
+    font-style: italic;
 }
 strong {
-	font-weight: bold;
-	font-style: italic;
+    font-weight: bold;
+    font-style: italic;
 }
 .text-info {
-	font-style: italic;
+    font-style: italic;
 }
 
 
 /*** Lists ***/
 .list-title {
-	font-weight: bold;
-	margin-top: 1.4em;
-	margin-bottom: 1ex;
+    font-weight: bold;
+    margin-top: 1.4em;
+    margin-bottom: 1ex;
 }
 ul.simple {
     margin-bottom: 1em;
@@ -152,20 +152,20 @@ ul.article-list li {
 
 /*** Custom List ***/
 .custom-list {
-	list-style: none;
+    list-style: none;
 }
 .custom-list > li:before {
-	position: absolute;
-	margin-left: -1.2em;
-	font-weight: bold;
+    position: absolute;
+    margin-left: -1.2em;
+    font-weight: bold;
 }
 .pro-item:before {
-	content: "\2714";
-	color: #468847;
+    content: "\2714";
+    color: #468847;
 }
 .con-item:before {
-	content: "\2718";
-	color: #b94a48
+    content: "\2718";
+    color: #b94a48
 }
 
 /*** Tags ***/
@@ -207,7 +207,7 @@ ul.article-list li {
 code {
     background-color: rgba(255, 255, 255, 0.3) !important;
     border: 1px solid rgba(0, 0, 0, 0.2) !important;
-	border-radius: 3px !important;
+    border-radius: 3px !important;
     padding: 2px 4px 1px 4px !important;
     color: #202020 !important;
     font-size: 14px !important;
@@ -224,48 +224,48 @@ code {
 ** Figures, Images
 *******************************************************************************/
 .figures {
-	width: 100%;
-	padding: 0;
-	margin: 1.5em 0 0 0;
-	display: flex;
-	flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+    margin: 1.5em 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 .figures-center {
-	justify-content: space-around;
+    justify-content: space-around;
 }
 .figures div {
-	clear: none !important;
-	margin: 0 24px 24px 0 !important;
-	flex-grow: 1;
-	flex-basis: 0;
+    clear: none !important;
+    margin: 0 24px 24px 0 !important;
+    flex-grow: 1;
+    flex-basis: 0;
 }
 .thumbnail {
-	border: 0;
-	box-shadow: 0px 2px 3px 0 rgba(0,0,0,0.4);
+    border: 0;
+    box-shadow: 0px 2px 3px 0 rgba(0,0,0,0.4);
 }
 .figure {
-	display: table !important;
-	width: 50px;
+    display: table !important;
+    width: 50px;
 }
 .figure.align-left {
-	margin-left: 0;
-	margin-right: 1.2em;
+    margin-left: 0;
+    margin-right: 1.2em;
 }
 .figure.align-right {
-	margin-right: 0;
-	margin-left: 1.2em;
+    margin-right: 0;
+    margin-left: 1.2em;
 }
 .figure.align-center {
-	margin-top: 1.5em;
+    margin-top: 1.5em;
 }
 .figure img {
-	max-width: none !important;
+    max-width: none !important;
 }
 .caption {
-	font-size: 14px;
-	line-height: 1.285714286;
-	margin: 0;
-	padding: 8px 0px 4px 0px !important;
+    font-size: 14px;
+    line-height: 1.285714286;
+    margin: 0;
+    padding: 8px 0px 4px 0px !important;
 }
 
 
