@@ -1,4 +1,4 @@
-.. title: Bake Helper
+.. title: Bake Helper - Addon for Blender
 .. slug: bake-helper
 .. date: 2016-07-13 18:02:42 UTC+02:00
 .. tags: 
@@ -7,37 +7,57 @@
 .. description: 
 .. type: text
 
-Bake Helper 1.0
 
-This is an addon for Blender intended to automate the baking workflow and to save your time by creating, assigning and saving all desired image maps. It enables to bake a separate image for each material. This makes it especially useful for creating content for grids like Second Life.
-
-Bake all marked objects or a single selected object
-
-Works with both Blender Render and Cycles Render
-
-Automatically create and assign image maps for each object and its materials with
-name:                                           “ObjectName_MaterialName_BakeType.png”
-
-Enables to merge all object materials into a single image map named:
-“ObjectName_BakeType.png”
-
-When baking is finished, BlenderRender-Textured viewport is used to show baked images
-
-Save all baked textures into given folder by a single click
-
-Automatically assign multiple maps (UV Grid, AO, Combined, Full Render) to all objects
-
-Use shortcut to bake (F5) and shortcut to switch viewport engine and shading (F4)
+.. figure:: bake_helper_cycles.png
+    :align: right
+    :figclass: thumbnail
 
 
-This is an addon for Blender intended to automate the baking workflow and to save your time by creating, assigning and saving all desired image maps. It enables to bake a separate image for each material. This makes it especially useful for creating content for grids like Second Life.
+Motivation
+==========
 
-This is an addon for Blender intended to automate the baking workflow and to save your time by creating, assigning and saving all desired image maps. It enables to bake a separate image for each material. This makes it especially useful for creating content for grids like Second Life.
+todo...
 
-This is an addon for Blender intended to automate the baking workflow and to save your time by creating, assigning and saving all desired image maps. It enables to bake a separate image for each material. This makes it especially useful for creating content for grids like Second Life.
 
-This is an addon for Blender intended to automate the baking workflow and to save your time by creating, assigning and saving all desired image maps. It enables to bake a separate image for each material. This makes it especially useful for creating content for grids like Second Life.
 
-This is an addon for Blender intended to automate the baking workflow and to save your time by creating, assigning and saving all desired image maps. It enables to bake a separate image for each material. This makes it especially useful for creating content for grids like Second Life.
+Features
+========
 
-This is an addon for Blender intended to automate the baking workflow and to save your time by creating, assigning and saving all desired image maps. It enables to bake a separate image for each material. This makes it especially useful for creating content for grids like Second Life.
+todo...
+
+
+
+Notes for baking using Cycles-Render
+------------------------------------
+
+todo...
+
+
+Notes for baking using Blender-Render
+-------------------------------------
+
+todo...
+
+
+Purchase
+========
+
+- This addon is for sale at `Blender Market <https://cgcookiemarkets.com/all-products/bake-helper/>`_
+
+
+
+
+ChangeLog
+=========
+
+Version 1.0 (26.04.2016):
+    - Fixed compatibility with Blender 2.77
+    - Added button to select a render engine used for baking
+    - When baking is finished, it automatically enters BlenderRender-Textured viewport to display the result of baking
+
+
+Version 0.1 (12.12.2014):
+    - Initial release for Blender 2.72
+
+
+

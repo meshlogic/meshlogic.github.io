@@ -7190,6 +7190,88 @@ table.codetable { width: 100%;} td.linenos {text-align: right; width: 4em;}
         #cboxClose{position:absolute; top:5px; right:5px; display:block; background:url(images/controls.png) no-repeat top center; width:38px; height:19px; text-indent:-9999px;}
         #cboxClose:hover{background-position:bottom center;}
 
+/*******************************************************************************
+** Content containers
+*******************************************************************************/
+.entry-content {
+    margin-top: 1em;
+    margin-bottom: 1em; /*New!*/
+}
+
+.row {
+    margin: 0;
+}
+
+
+/*******************************************************************************
+** Post lists
+*******************************************************************************/
+.metadata p:before,
+.postlist .listdate:after {
+    content: " — ";
+}
+
+.postlist li {
+    margin-bottom: 0.5ex;
+}
+
+.listtitle {
+    font-weight: bold;
+}
+
+.metadata p:first-of-type:before {
+    content: "";
+}
+
+.metadata p {
+    display: inline;
+}
+
+.posttranslations h3 {
+    display: inline;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.posttranslations h3:last-child {
+    display: none;
+}
+
+
+
+/*******************************************************************************
+** Other
+*******************************************************************************/
+.navbar-brand {
+    padding: 0 15px;
+}
+
+.navbar-brand #blog-title {
+    padding: 15px 0;
+    display: inline-block;
+}
+
+.navbar-brand #logo {
+    max-width: 100%;
+}
+
+.navbar-brand>img {
+    display: inline;
+}
+
+
+/* for alignment with Bootstrap's .entry-content styling */
+.entry-summary {
+    margin-top: 1em;
+}
+
+/* Custom page footer */
+#footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
 #container {
     width: 960px;
     margin: 0 auto;
@@ -7202,10 +7284,6 @@ table.codetable { width: 100%;} td.linenos {text-align: right; width: 4em;}
     width: 150px;
 }
 
-/*img {
-    max-width: 90%;
-}
-*/
 .postbox {
     border-bottom: 2px solid darkgrey;
     margin-bottom: 12px;
@@ -7227,7 +7305,6 @@ td.label {
     vertical-align: super;
     font-size: xx-small;
 }
-
 
 .caption {
     /* Issue 292 */
@@ -7308,69 +7385,6 @@ article.post-micro {
     color: #fff;
 }
 
-.metadata p:before,
-.postlist .listdate:after {
-    content: " — ";
-}
-
-.metadata p:first-of-type:before {
-    content: "";
-}
-
-.metadata p {
-    display: inline;
-}
-
-.posttranslations h3 {
-    display: inline;
-    font-size: 1em;
-    font-weight: bold;
-}
-
-.posttranslations h3:last-child {
-    display: none;
-}
-
-/*******************************************************************************
-** Content containers
-*******************************************************************************/
-.entry-content {
-    margin-top: 1em;
-	margin-bottom: 1em; /*New!*/
-}
-
-.navbar-brand {
-    padding: 0 15px;
-}
-
-.navbar-brand #blog-title {
-    padding: 15px 0;
-    display: inline-block;
-}
-
-.navbar-brand #logo {
-    max-width: 100%;
-}
-
-.navbar-brand>img {
-    display: inline;
-}
-
-.row {
-    margin: 0;
-}
-
-/* for alignment with Bootstrap's .entry-content styling */
-.entry-summary {
-    margin-top: 1em;
-}
-
-/* Custom page footer */
-#footer {
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
-}
 
 /* hat tip bootstrap/html5 boilerplate */
 @media print {
@@ -7401,12 +7415,12 @@ article.post-micro {
     }
 }
 
+
 /*******************************************************************************
-** Body Layout
+** Body layout & containers
 *******************************************************************************/
 body {
-    background-color: #808080;
-    /*background-image: url(../img/noisy-texture-256x256-o5-d10-c-808080-t0.png);*/
+    background-color: #707070;
     background-image: url(../img/noisy-texture-256x256-o5-d10-c-707070-t0.png);
     background-attachment: fixed;
     padding-top: 20px;
@@ -7422,7 +7436,7 @@ body {
 }
 
 #body_header {
-    background-image: url(../img/header_01_blue.png);
+    background-image: url(../img/header_01_blue.jpg);
     background-position: center top;
     height: 190px;
     border-radius: 15px 15px 0 0;
@@ -7453,6 +7467,7 @@ body {
 #body_footer > a:hover {
     color: darkblue;
 }
+
 
 /*******************************************************************************
 ** Navbar
@@ -7506,8 +7521,17 @@ h1 > a {
 h2 {
     font-size: 26px;
 }
+h3 {
+    font-size: 22px;
+}
+h4 {
+    font-size: 18px;
+}
+h5 {
+    font-size: 16px;
+}
 h2, h3, h4, h5, h6 {
-    margin-top: 1.8em;
+    margin-top: 2em;
     font-weight: 700;
 }
 em {
@@ -7522,33 +7546,27 @@ strong {
 }
 
 
-/*** Lists ***/
-.list-title {
+/*******************************************************************************
+** Lists
+*******************************************************************************/
+/* Description list */
+dt {
     font-weight: bold;
-    margin-top: 1.4em;
+    margin-top: 1.5em;
+    margin-bottom: 1ex;
+    font-size: 16px;
+}
+dd {
+    margin-top: 1ex;
     margin-bottom: 1ex;
 }
+
+
+/* Simple list */
 ul.simple {
     margin-bottom: 1em;
 }
 ul.simple li{
-    margin-bottom: 1ex;
-}
-
-
-/*** Article List ***/
-.article-list-title {
-    margin-top: 1.4em;
-    font-size: 18px;
-    font-weight: bold;
-}
-ul.article-list {
-    margin-top: 1ex;
-    margin-bottom: 1em;
-}
-ul.article-list li {
-    font-weight: bold;
-    font-size: 15px;
     margin-bottom: 1ex;
 }
 
@@ -7571,7 +7589,10 @@ ul.article-list li {
     color: #b94a48
 }
 
-/*** Tags ***/
+
+/*******************************************************************************
+** Tags
+*******************************************************************************/
 .tags > li {
     background-color: #999;
     border-radius: 20px;
@@ -7590,10 +7611,11 @@ ul.article-list li {
 }
 
 
+
 /*******************************************************************************
-** Code
+** Code blocks
 *******************************************************************************/
-/* Code Block */
+/* Code in-block */
 .code {
     background-color: rgba(255, 255, 255, 0.25) !important;
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -7606,7 +7628,7 @@ ul.article-list li {
     line-height: 18px;
 }
 
-/* Code Inline */
+/* Code in-line */
 code {
     background-color: rgba(255, 255, 255, 0.3) !important;
     border: 1px solid rgba(0, 0, 0, 0.2) !important;
@@ -7616,6 +7638,11 @@ code {
     font-size: 14px !important;
 }
 
+
+
+/*******************************************************************************
+** Math
+*******************************************************************************/
 .math {
     margin-top: 1em;
     margin-bottom: 1em;
@@ -7670,8 +7697,5 @@ code {
     margin: 0;
     padding: 8px 0px 4px 0px !important;
 }
-
-
-
 
 

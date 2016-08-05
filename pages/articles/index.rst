@@ -15,40 +15,33 @@
     :align: right
 
 
-These articles were created using `Jupyter Notebook <http://jupyter.org/>`_, a very handy web application that allows you to create and share documents containing live code, equations, visualizations and explanatory text. It supports many languages including Python, which makes it the perfect tool for writing scientific articles.
+These articles were created using `Jupyter Notebook <http://jupyter.org/>`_, a very handy web application that allows you to create and share documents containing live code, equations, visualizations and explanatory text. It supports many languages including **Python**, which makes it a perfect tool for writing scientific articles.
 
-Jupyter notebooks can be shared in native format (.ipynb) using web application called `nbviewer <https://nbviewer.jupyter.org/>`_. To publish them on your own website, you would need to convert them first to html or pdf. However, if you are using **Nikola** site generator (like me), things get easier since Nikola can handle native Jupyter notebooks as source files for your posts and pages.
+**Jupyter** files can be shared in the native format (.ipynb) and rendered using web application called `nbviewer <https://nbviewer.jupyter.org/>`_. To publish them on your own website, you would need to convert them to html or pdf first. However, if you are using **Nikola** site generator (like me), things get easier since Nikola can handle native Jupyter files (.ipynb) as source files for your posts and pages.
 
-
-.. raw:: html
-
-    <div class="article-list-title">A brief introduction to linear algebra</div>
-    
-    <ul class="article-list">
-    <li>
-        <a href="link://slug/linear-algebra-with-python-and-numpy-1">Linear Algebra with Python and NumPy (I)</a>
-    </li>
-    <li>
-        <a href="link://slug/linear-algebra-with-python-and-numpy-2">Linear Algebra with Python and NumPy (II)</a>
-    </li>
-    </ul>
+If you wish to play with my articles and have Jupyter installed on your computer, you can find a source link inside each article to download the native (.ipynb) file.
 
 
-.. raw:: html
-
-    <div class="article-list-title">Approximation and curve fitting</div>
-    
-    <ul class="article-list">
-    <li>
-        <a href="link://slug/parametric-curve-fitting">Parametric Curve Fitting with Iterative Parametrization</a>
-    </li>
-    <li>
-        <a href="link://slug/fitting-a-circle-to-cluster-of-3d-points">Fitting a Circle to Cluster of 3D Points</a>
-    </li>
-    </ul>
-    
-    <br>
+A brief introduction to linear algebra
+    .. post-list::
+        :tags: linear-algebra
+        :reverse:
 
 
+Approximation and curve fitting
+    .. post-list::
+        :tags: curve-fitting
+        :reverse:
 
+
+Computer graphics
+    - todo...
+
+
+Linear dynamical systems
+    - todo...
+
+
+Nonlinear dynamical systems and deterministic chaos
+    - todo...
 

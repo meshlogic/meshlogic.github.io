@@ -139,7 +139,6 @@ $(document).ready(function() {
 /* Add target _blank to source links */
 $(document).ready(function(){
     $("a#sourcelink").attr('target', '_blank');
-    $("a#sourcelink").attr('type', 'text/plain');
 });
 
 
