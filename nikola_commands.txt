@@ -1,0 +1,32 @@
+### NEW POSTS & PAGES ###
+nikola new_post
+nikola new_post -f ipynb
+nikola new_page
+
+
+### CLEAN OUTPUT ###
+nikola orphans
+nikola clean
+nikola check -f --clean-files
+
+
+### BUILD ###
+nikola build
+
+
+### RUN LOCALLY ###
+nikola serve -a 127.0.0.1 -b
+
+
+### DEPPLOY INIT ###
+$ git config --global user.name "meshlogic"
+$ git config --global user.email "meshlogic@gmail.com"
+$ git init
+$ git remote add origin https://github.com/meshlogic/meshlogic.github.io.git
+$ git pull origin master --allow-unrelated-histories
+
+
+### DEPPLOY ###
+nikola github_deploy
+
+

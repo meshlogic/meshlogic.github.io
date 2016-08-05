@@ -17,7 +17,7 @@ SITE_URL = "https://meshlogic.github.io/"
 
 # If you want to hide the title of your website (for example, if your logo
 # already contains the text), set this to False.
-SHOW_BLOG_TITLE = True
+SHOW_BLOG_TITLE = False
 
 # Logo image. Final output is <img src="LOGO_URL" id="logo" alt="BLOG_TITLE">.
 # The URL may be relative to the site root.
@@ -40,13 +40,13 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ('/', 'Home'),
         ('/archive.html', 'Archive'),
-        ('/categories/', 'Tags'),
+        ('/categories/', 'Categories'),
         ('/pages/articles/', 'Articles'),
         ((
             ('/pages/blender-addons/bake-helper', 'Bake Helper'),
-            ('/bar', 'Fitting Tools'),
+            ('/pages/blender-addons/fitting-tools', 'Fitting Tools'),
             ), 'Blender Addons'),
-        ('/pages/shops/', 'My Shops'),
+        ('/pages/about/', 'About'),
     ),
 }
 
@@ -351,6 +351,7 @@ TIMEZONE = "Europe/Budapest"
 # Date format used to display post dates. (translatable)
 # (str used by datetime.datetime.strftime)
 # DATE_FORMAT = '%Y-%m-%d %H:%M'
+DATE_FORMAT = '%Y-%m-%d'
 
 # Date format used to display post dates, if local dates are used. (translatable)
 # (str used by moment.js)

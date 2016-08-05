@@ -1,0 +1,17 @@
+{#  -*- coding: utf-8 -*- #}
+{% block content %}
+
+<!-- Begin postlist {{ post_list_id }} -->
+{% if posts %}
+    <ul class="postlist">
+    {% for post in posts %}
+        <li>
+            <time class="listdate" datetime="{{ post.formatted_date('webiso') }}" title="{{ post.formatted_date(date_format)|e }}">{{ post.formatted_date(date_format)|e }}</time>
+            <a href="{{ post.permalink() }}" class="listtitle">{{ post.title()|e }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endif %}
+<!-- End postlist {{ post_list_id }} -->
+
+{% endblock %}

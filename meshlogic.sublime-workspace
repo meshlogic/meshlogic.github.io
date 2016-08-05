@@ -1,0 +1,396 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"fas",
+				"false"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "conf.py",
+			"settings":
+			{
+				"buffer_size": 44142,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "themes/meshlogic_0.2/assets/css/theme.css",
+			"settings":
+			{
+				"buffer_size": 3517,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "themes/meshlogic_0.2/assets/css/custom.css",
+			"settings":
+			{
+				"buffer_size": 5967,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "pages/articles.rst",
+			"settings":
+			{
+				"buffer_size": 1406,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 210.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 418.0
+	},
+	"console":
+	{
+		"height": 197.0,
+		"history":
+		[
+			"cd",
+			"dir",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/PROJECTS/WEBSITES/Meshlogic/web",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/web-design",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/assets",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates"
+	],
+	"file_history":
+	[
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates/post_list_directive.tmpl",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/User/nikola.sublime-build",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/meshlogic.sublime-project",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/conf.py",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/assets/css/bootstrap.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/web-design/starting-a-personal-blog-with-nikola.rst",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/RestructuredText Improved/demo.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates/tags.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates/archiveindex.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates/tag.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates/index.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates/base.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates/post_header.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/output/categories/cat_scientific-computing/index.html",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/assets/css/custom.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/assets/js/custom.js",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/web-design/starting-a-personal-blog-in-2016.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/articles.rst",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/D/PROJECTS/WEBSITES/test/test.txt",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/User/reStructuredText.sublime-settings",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/assets/img/blender_grid_01.png",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/assets/css/theme.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/parent",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/bundles"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"listtitle",
+			"list-table",
+			"dt",
+			"plugin",
+			"archive",
+			"<h1>",
+			"<h1>Archive</h1>",
+			"index",
+			"categories",
+			"tags",
+			"border"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "conf.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 44142,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12252,
+								12252
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4821.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "themes/meshlogic_0.2/assets/css/theme.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3517,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								435,
+								435
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "themes/meshlogic_0.2/assets/css/custom.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5967,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2977,
+								2977
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1530.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "pages/articles.rst",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1406,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								225,
+								225
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/RestructuredText Improved/reStructuredText Improved.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 141.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/nikola.sublime-build",
+	"project": "meshlogic.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 287.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -7,7 +7,11 @@
 .. description: 
 .. type: text
 
-Fixed compatibility with Blender 2.77
-Added button to select a render engine used for baking
-When baking is finished, it automatically enters BlenderRender-Textured viewport to display the result of baking
 
+I'm happy to announce the final version 1.0 of my Bake Helper addon for Blender.
+
+- Fixed compatibility with Blender 2.77
+- Added button to select a render engine used for baking
+- When baking is finished, it automatically enters BlenderRender-Textured viewport to display the result of baking
+
+`Read more... <link://slug/bake-helper>`_
