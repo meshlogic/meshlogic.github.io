@@ -7456,16 +7456,25 @@ body {
 }
 
 #body_footer {
+    color: #000;
     text-align: center;
-    color: #202020;
+    font-size: 15px;
     padding: 0;
-    margin: 20px auto 40px auto;
+    margin: 17px auto 40px auto;
 }
 #body_footer > a {
     color: darkblue;
 }
 #body_footer > a:hover {
-    color: darkblue;
+    color: #f0f0f0;
+}
+.counter {
+    display: inline;
+    vertical-align: 1px;
+    margin-left: 0px;
+}
+.counter:before {
+    content: " — ";
 }
 
 
