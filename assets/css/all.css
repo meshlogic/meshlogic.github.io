@@ -721,13 +721,18 @@ body {
 #body_footer > a:hover {
     color: #f0f0f0;
 }
+
+/* Counter */
 .counter {
     display: inline;
-    vertical-align: 1px;
+    vertical-align: 0px;
     margin-left: 0px;
 }
 .counter:before {
     content: " — ";
+}
+.counter:after {
+    content: " visitors";
 }
 
 
