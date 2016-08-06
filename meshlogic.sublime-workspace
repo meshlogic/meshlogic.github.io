@@ -39,7 +39,7 @@
 			"file": "themes/meshlogic_0.2/templates/base.tmpl",
 			"settings":
 			{
-				"buffer_size": 3047,
+				"buffer_size": 3838,
 				"line_ending": "Unix"
 			}
 		},
@@ -47,7 +47,7 @@
 			"file": "themes/meshlogic_0.2/assets/css/custom.css",
 			"settings":
 			{
-				"buffer_size": 6077,
+				"buffer_size": 6137,
 				"line_ending": "Windows"
 			}
 		},
@@ -116,6 +116,8 @@
 	"expanded_folders":
 	[
 		"/D/PROJECTS/WEBSITES/Meshlogic/web",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/gallery",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/images",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/about",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/blender-addons",
@@ -220,15 +222,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3047,
+						"buffer_size": 3838,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2229,
-								2229
+								3211,
+								3211
 							]
 						],
 						"settings":
@@ -238,10 +240,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 844.0,
+						"translation.y": 1069.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -250,15 +252,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6077,
+						"buffer_size": 6137,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1250,
-								1250
+								1194,
+								1194
 							]
 						],
 						"settings":
@@ -268,7 +270,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 360.0,
+						"translation.y": 450.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -301,7 +303,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
