@@ -715,24 +715,16 @@ body {
     padding: 0;
     margin: 17px auto 40px auto;
 }
-#body_footer > a {
+#body_footer a {
     color: darkblue;
 }
-#body_footer > a:hover {
+#body_footer a:hover {
     color: #f0f0f0;
 }
-
-/* Counter */
 .counter {
     display: inline;
-    vertical-align: 2px;
-    margin-left: 0px;
-}
-.counter:before {
-    content: " — ";
-}
-.counter:after {
-    /*content: " visitors";*/
+    vertical-align: 1px;
+    opacity: 0.7;
 }
 
 
