@@ -725,14 +725,14 @@ body {
 /* Counter */
 .counter {
     display: inline;
-    vertical-align: 0px;
+    vertical-align: 2px;
     margin-left: 0px;
 }
 .counter:before {
     content: " — ";
 }
 .counter:after {
-    content: " visitors";
+    /*content: " visitors";*/
 }
 
 
