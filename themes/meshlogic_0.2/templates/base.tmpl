@@ -7,6 +7,7 @@
 {#  Leave this block alone. #}
 {% endblock %}
 {{ template_hooks['extra_head']() }}
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -27,7 +28,7 @@
                 <span class="icon-bar"></span>
             </button>
         </div>
-        
+                
         <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
             <ul class="nav navbar-nav">
                 {{ base.html_navigation_links() }}
@@ -49,8 +50,9 @@
                 {{ template_hooks['menu_alt']() }}
             </ul>
         </div>
-        
+
     </nav>
+
 
     <!-- BODY CONTENT -->
     <div class="container" id="body_content" role="main">
@@ -79,9 +81,12 @@
             <script src="https://www.w3counter.com/tracker.js?id=103452"></script>
         </div>
 
+        <div class="social-icons">
+            <a href="https://github.com/meshlogic/" title="My Github"><i class="fa fa-3x fa-github"></i></a>
+        </div>
+
     </footer>
 </div>
-
 
 
 <!-- SCRIPTS -->

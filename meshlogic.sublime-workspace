@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"border",
+				"border-color"
+			],
+			[
+				"margi",
+				"margin-bottom"
+			],
+			[
 				"custom",
 				"custom-list"
 			],
@@ -43,8 +51,16 @@
 			"file": "themes/meshlogic_0.2/templates/base.tmpl",
 			"settings":
 			{
-				"buffer_size": 2876,
-				"line_ending": "Unix"
+				"buffer_size": 2880,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "themes/meshlogic_0.2/assets/css/custom.css",
+			"settings":
+			{
+				"buffer_size": 6569,
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -56,18 +72,18 @@
 			}
 		},
 		{
-			"file": "themes/meshlogic_0.2/assets/css/custom.css",
-			"settings":
-			{
-				"buffer_size": 6212,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "pages/blender-addons/bake-helper.rst",
 			"settings":
 			{
 				"buffer_size": 965,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "posts/blender/bake-helper-in-final-version-1-0.rst",
+			"settings":
+			{
+				"buffer_size": 548,
 				"line_ending": "Windows"
 			}
 		},
@@ -146,9 +162,13 @@
 	],
 	"file_history":
 	[
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates/base_helper.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/conf.py",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/assets/css/theme.css",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/web-design/starting-a-personal-blog-with-nikola.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/assets/css/bootstrap.css",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/conf.py",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/about.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/blender-addons/fitting-tools.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/blender-addons/bake-helper.rst",
@@ -158,7 +178,6 @@
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/assets/css/custom.css",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/articles.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/nikola_commands.txt",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/assets/css/theme.css",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates/post_list_directive.tmpl",
 		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/User/nikola.sublime-build",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/meshlogic.sublime-project",
@@ -169,10 +188,8 @@
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates/index.tmpl",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates/post_header.tmpl",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/output/categories/cat_scientific-computing/index.html",
-		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/assets/js/custom.js",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/web-design/starting-a-personal-blog-in-2016.rst",
-		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
 		"/D/PROJECTS/WEBSITES/test/test.txt",
 		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/User/reStructuredText.sublime-settings",
@@ -196,6 +213,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"commen",
+			"prefix",
+			"inde",
+			"indent",
+			"inde",
+			"cloud",
+			"spaces",
+			"postpromonav",
+			"spac",
+			"space",
+			"comment",
 			"list",
 			"git",
 			"hit",
@@ -228,7 +256,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -237,15 +265,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2876,
+						"buffer_size": 2880,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2097,
-								2097
+								2443,
+								2443
 							]
 						],
 						"settings":
@@ -255,7 +283,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 720.0,
+						"translation.y": 900.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
@@ -263,6 +291,36 @@
 				},
 				{
 					"buffer": 1,
+					"file": "themes/meshlogic_0.2/assets/css/custom.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6569,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6249,
+								6249
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "themes/meshlogic_0.2/assets/css/theme.css",
 					"semi_transient": false,
 					"settings":
@@ -274,8 +332,8 @@
 						"selection":
 						[
 							[
-								256,
-								256
+								653,
+								655
 							]
 						],
 						"settings":
@@ -285,40 +343,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 810.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "themes/meshlogic_0.2/assets/css/custom.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6212,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5717,
-								5717
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3202.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -346,11 +374,39 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
+					"file": "posts/blender/bake-helper-in-final-version-1-0.rst",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 548,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								209,
+								209
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/RestructuredText Improved/reStructuredText Improved.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "nikola_commands.txt",
 					"semi_transient": false,
 					"settings":
@@ -362,8 +418,8 @@
 						"selection":
 						[
 							[
-								266,
-								266
+								545,
+								525
 							]
 						],
 						"settings":
@@ -374,7 +430,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]

@@ -6,6 +6,7 @@
 .. link: 
 .. description: 
 .. type: text
+.. nocomments: True
 
 
 I'm happy to announce the final version 1.0 of my Bake Helper addon for Blender.
