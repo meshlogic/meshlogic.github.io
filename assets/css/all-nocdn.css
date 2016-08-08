@@ -7567,30 +7567,40 @@ dd {
     margin-bottom: 1ex;
 }
 
-
 /* Simple list */
 ul.simple {
     margin-bottom: 1em;
 }
 ul.simple li{
-    margin-bottom: 1ex;
+    margin-bottom: 0ex;
 }
 
+/* Basic list */
+ul.basic-list {
+    margin-bottom: 1em; 
+}
+ul.basic-list li {
+    margin-bottom: 1ex; 
+}
 
 /*** Custom List ***/
-.custom-list {
+ul.custom-list {
     list-style: none;
+    margin-bottom: 1em;
 }
-.custom-list > li:before {
+ul.custom-list li {
+    margin-bottom: 1ex;
+}
+ul.custom-list > li:before {
     position: absolute;
     margin-left: -1.2em;
     font-weight: bold;
 }
-.pro-item:before {
+li.pro-item:before {
     content: "\2714";
     color: #468847;
 }
-.con-item:before {
+li.con-item:before {
     content: "\2718";
     color: #b94a48
 }
