@@ -27,15 +27,18 @@ Hello and welcome to my new personal blog that I'm just creating using a site ge
 
 Before I start discussing my experience with Nikola, let me explain why I've decided for this tool. I'm a very picky person when it comes to customization and I looked for a tool that would satisfy all my needs, particularly...
 
-- Have full control over the style and layout of the website.
 
-- Enable to insert both blog posts and non-blog pages.
+.. class:: basic-list
 
-- Be able to type math (ideally using syntax of **TeX**), because mathematics is indeed the language of nature, thus the most universal language ever :)
+    - Have full control over the style and layout of the website.
 
-- Use native **Jupyter** files (.ipynb) as source files for the site. :text-info:`Jupyter is a very handy web application that allows you to create and share documents containing live code, equations, visualizations and explanatory text. It supports many languages including Python, which makes it a perfect tool for writing scientific articles.`
+    - Enable to insert both blog posts and non-blog pages.
 
-- Open source tool without any commercial ads is preferred (very important in todays over-commercialized world).
+    - Be able to type math (ideally using syntax of **TeX**), because mathematics is indeed the language of nature, thus the most universal language ever :)
+
+    - Use native **Jupyter** files (.ipynb) as source files for the site. :text-info:`Jupyter is a very handy web application that allows you to create and share documents containing live code, equations, visualizations and explanatory text. It supports many languages including Python, which makes it a perfect tool for writing scientific articles.`
+
+    - Open source tool without any commercial ads is preferred (very important in todays over-commercialized world).
 
 .. TEASER_END
 

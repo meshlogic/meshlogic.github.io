@@ -246,6 +246,22 @@ GENERATE_RSS = False
 
 
 ###############################################################################
+# Comments !!
+###############################################################################
+# To use comments, you can choose between different third party comment
+# systems.  The following comment systems are supported by Nikola:
+#   disqus, facebook, googleplus, intensedebate, isso, livefyre, muut
+# You can leave this option blank to disable comments.
+COMMENT_SYSTEM = "disqus"
+
+# And you also need to add your COMMENT_SYSTEM_ID which
+# depends on what comment system you use. The default is
+# "nikolademo" which is a test account for Disqus. More information
+# is in the manual.
+COMMENT_SYSTEM_ID = "meshlogic"
+
+
+###############################################################################
 # Footer !!
 ###############################################################################
 # A HTML fragment describing the license, for the sidebar.
@@ -809,17 +825,6 @@ FEED_READ_MORE_LINK = '<p><a href="{link}">{read_more}…</a> ({min_remaining_re
 # Example using replacement for use with Google Analytics:
 # "utm_source={feedRelUri}&utm_medium=nikola_feed&utm_campaign={feedFormat}_feed"
 FEED_LINKS_APPEND_QUERY = False
-
-# To use comments, you can choose between different third party comment
-# systems.  The following comment systems are supported by Nikola:
-#   disqus, facebook, googleplus, intensedebate, isso, livefyre, muut
-# You can leave this option blank to disable comments.
-COMMENT_SYSTEM = ""
-# And you also need to add your COMMENT_SYSTEM_ID which
-# depends on what comment system you use. The default is
-# "nikolademo" which is a test account for Disqus. More information
-# is in the manual.
-COMMENT_SYSTEM_ID = ""
 
 # Enable annotations using annotateit.org?
 # If set to False, you can still enable them for individual posts and pages
