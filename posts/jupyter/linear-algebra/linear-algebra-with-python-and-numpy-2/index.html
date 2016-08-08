@@ -29,17 +29,17 @@ article: http://ogp.me/ns/article#
 <meta property="og:title" content="Linear Algebra with Python and NumPy (II)">
 <meta property="og:url" content="https://meshlogic.github.io/posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-2/">
 <meta property="og:description" content="Linear Algebra with Python and NumPy (II)¶
-    
 This post is a continuation of the previous post on using Python and NumPy package for linear algebra.
 We will briefly cover topics such as:
 
-Solving sy">
+Solving systems">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2016-07-12T16:42:00+02:00">
 <meta property="article:tag" content="jupyter">
 <meta property="article:tag" content="linear-algebra">
 <meta property="article:tag" content="mathematics">
 <meta property="article:tag" content="python">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -55,7 +55,7 @@ Solving sy">
                 <span class="icon-bar"></span>
             </button>
         </div>
-        
+                
         <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
             <ul class="nav navbar-nav">
 <li>
@@ -94,7 +94,7 @@ Solving sy">
                 
             </ul>
 </div>
-        
+
     </nav><!-- BODY CONTENT --><div class="container" id="body_content" role="main">
 
         <div class="page_content">
@@ -126,9 +126,7 @@ Solving sy">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Linear-Algebra-with-Python-and-NumPy-(II)">Linear Algebra with Python and NumPy (II)<a class="anchor-link" href="#Linear-Algebra-with-Python-and-NumPy-(II)">¶</a>
 </h2>
-<div class="thumbnail figure align-right" style="float:right">
-    <img alt="svd algorithm" src="svd_algorithm_1x1.png">
-</div>
+<p><img alt="svd algorithm" src="svd_algorithm_1x1.png" style="float:right; border-radius:10px;"></p>
 <p>This post is a continuation of the previous post on using Python and NumPy package for linear algebra.</p>
 <p>We will briefly cover topics such as:</p>
 <ul>
@@ -586,7 +584,7 @@ $$  \mathbf{x} = (\mathbf{A}^H \mathbf{A})^{-1} \mathbf{A}^H \mathbf{b}.$$
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="4.2-Least-squares-solution-for-systems-with-matrix-of-any-rank">4.2 Least-squares solution for systems with matrix of any rank<a class="anchor-link" href="#4.2-Least-squares-solution-for-systems-with-matrix-of-any-rank">¶</a>
 </h4>
-<p>Lets discuss the most general case when matrix $\mathbf{A}$ might rectangular and also its rank might be arbitrary, that is $\mathrm{rank}\,\mathbf{A}&gt;0$. In such case, inverse of $ \mathbf{A}^H \mathbf{A}$ does not exists, so we need to develop another solving method. Using singular value decomposition $ \mathbf{A} = \mathbf{U} \mathbf{\Sigma} \mathbf{V}^H$, we can find that</p>
+<p>Lets discuss the most general case where matrix $\mathbf{A}$ might be rectangular and also its rank might be arbitrary, that is $\mathrm{rank}\,\mathbf{A}&gt;0$. In such case, inverse of $ \mathbf{A}^H \mathbf{A}$ does not exists, so we need to develop another solving method. Using singular value decomposition $ \mathbf{A} = \mathbf{U} \mathbf{\Sigma} \mathbf{V}^H$, we can find that</p>
 $$ \|\mathbf{b}-\mathbf{A}\mathbf{x}\| = \|\mathbf{U}^H\mathbf{b}-\mathbf{U}^H\mathbf{A}\mathbf{x}\| =
 \|\mathbf{U}^H\mathbf{b} - \mathbf{\Sigma} \mathbf{V}^H\mathbf{x}\|.$$<p>If we denote</p>
 $$\mathbf{c}=\mathbf{U}^H\mathbf{b}, \quad \mathbf{y}=\mathbf{V}^H\mathbf{x},$$<p>we can see that $\|\mathbf{b}-\mathbf{A}\mathbf{x}\| $ is minimized if and only if $\|\mathbf{c} - \mathbf{\Sigma}\mathbf{y}\| $ is minimal. This way we have transformed the least-squares problem with matrix $\mathbf{A}$ and $\mathbf{b}$  into a problem with diagonal matrix $\mathbf{\Sigma}$ and vector $\mathbf{c}$. Moreover, it is visible that $\|\mathbf{c} - \mathbf{\Sigma}\mathbf{y}\|$ is minimal if and only if $\mathbf{c} = \mathbf{\Sigma}\mathbf{y}$, thus</p>
@@ -966,9 +964,12 @@ $$ \mathbf{x} =
             <script src="https://www.w3counter.com/tracker.js?id=103452"></script>
 </div>
 
+        <div class="social-icons">
+            <a href="https://github.com/meshlogic/" title="My Github"><i class="fa fa-3x fa-github"></i></a>
+        </div>
+
     </footer>
 </div>
-
 
 
 <!-- SCRIPTS -->

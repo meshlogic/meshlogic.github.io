@@ -697,34 +697,11 @@ body {
 
 #body_content {
     width: 100%;
-    min-height: 500px;
-    padding: 65px 40px 50px 40px;
+    min-height: 550px;
+    padding: 60px 40px 50px 40px;
 }
 .page_content {
     margin-bottom: 0px;
-}
-.postpromonav {
-    margin-top: 30px;
-    margin-bottom: -50px;
-}
-
-#body_footer {
-    color: #000;
-    text-align: center;
-    font-size: 15px;
-    padding: 0;
-    margin: 17px auto 40px auto;
-}
-#body_footer a {
-    color: darkblue;
-}
-#body_footer a:hover {
-    color: #f0f0f0;
-}
-.counter {
-    display: inline;
-    vertical-align: 1px;
-    opacity: 0.7;
 }
 
 
@@ -753,6 +730,7 @@ body {
 .navbar-right {
     margin-right: 0;
 }
+
 .dropdown-menu {
     background-image: url(../img/noisy-texture-128x128-o4-d10-c-373737-t0.png);
     background-repeat: repeat;
@@ -880,7 +858,6 @@ li.con-item:before {
 }
 
 
-
 /*******************************************************************************
 ** Code blocks
 *******************************************************************************/
@@ -908,7 +885,6 @@ code {
 }
 
 
-
 /*******************************************************************************
 ** Math
 *******************************************************************************/
@@ -916,7 +892,6 @@ code {
     margin-top: 1em;
     margin-bottom: 1em;
 }
-
 
 
 /*******************************************************************************
@@ -968,3 +943,58 @@ code {
 }
 
 
+/*******************************************************************************
+** Post navigation
+*******************************************************************************/
+.postpromonav {
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+.pager {
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+
+/*******************************************************************************
+** Comments
+*******************************************************************************/
+.comments {
+    margin-top: 40px;
+}
+.comments > h2 {
+    /*display: none;*/
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+#disqus_thread {
+    padding: 0 12px;
+    margin-bottom: -20px;
+}
+
+
+/*******************************************************************************
+** Footer
+*******************************************************************************/
+#body_footer {
+    color: #000;
+    text-align: center;
+    font-size: 15px;
+    padding: 0;
+    margin: 15px auto 15px auto;
+}
+#body_footer a {
+    color: navy;
+}
+#body_footer a:hover {
+    color: #f0f0f0;
+}
+.counter {
+    display: inline;
+    vertical-align: 1px;
+    opacity: 0.7;
+}
+
+.social-icons i {
+    margin: 4px 4px;
+}
