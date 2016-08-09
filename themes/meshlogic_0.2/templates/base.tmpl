@@ -7,9 +7,8 @@
 {#  Leave this block alone. #}
 {% endblock %}
 {{ template_hooks['extra_head']() }}
-
+<!-- Link FontAwesome -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-
 </head>
 <body>
 
@@ -17,7 +16,9 @@
 <div class="container" id="body_container">
     
     <!-- HEADER -->
-    <header id="body_header"></header>
+    <header id="body_header">
+        <a href="/" title="Home"><h1>{{ blog_description }}</h1></a>
+    </header>
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-default navbar-static">
@@ -84,7 +85,7 @@
         </div>
 
         <div class="social-icons">
-            <a href="https://github.com/meshlogic/" title="My Github"><i class="fa fa-3x fa-github"></i></a>
+            <a href="https://github.com/meshlogic/" title="My GitHub"><i class="fa fa-3x fa-github"></i></a>
         </div>
 
     </footer>

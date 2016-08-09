@@ -1,9 +1,27 @@
 /*******************************************************************************
-** Content containers
+** Post container & header
 *******************************************************************************/
+/* Post container */
 .entry-content {
-    margin-top: 1em;
-    margin-bottom: 1em; /*New!*/
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* Post teasers in index page */
+.entry-summary {
+    margin-top: 15px;
+    margin-bottom: 50px;
+}
+
+/* Post header */
+.post-text > header {
+    padding-bottom: 5px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+}
+
+.post-text > header > h1 {
+    margin-bottom: 10px;
 }
 
 .row {
@@ -65,12 +83,6 @@
 
 .navbar-brand>img {
     display: inline;
-}
-
-
-/* for alignment with Bootstrap's .entry-content styling */
-.entry-summary {
-    margin-top: 1em;
 }
 
 /* Custom page footer */
@@ -196,14 +208,6 @@ article.post-micro {
 
 /* hat tip bootstrap/html5 boilerplate */
 @media print {
-    *, *:before, *:after {
-        font-family: Garamond, Junicode, serif;
-    }
-
-    body {
-        font-size: 12pt;
-    }
-
     article .entry-title a[href]:after,
     article .metadata a[href]:after,
     article .tags a[href]:after {

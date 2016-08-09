@@ -8,7 +8,7 @@ import time
 BLOG_AUTHOR = "Miki"
 BLOG_TITLE = "Meshlogic"
 BLOG_EMAIL = "meshlogic@gmail.com"
-BLOG_DESCRIPTION = "A personal blog on computer graphics, scientific computing and living in virtual worlds."
+BLOG_DESCRIPTION = "A personal blog on computer graphics, scientific computing, Blender, Jupyter and Second Life"
 DEFAULT_LANG = "en"
 SITE_URL = "https://meshlogic.github.io/"
 
@@ -36,7 +36,7 @@ SITE_URL = "https://meshlogic.github.io/"
 #
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/', 'Home'),
+        ('/', '<i class="fa fa-lg fa-home"></i>&nbsp; Home'),
         ('/archive.html', 'Archive'),
         ('/categories/', 'Categories'),
         ('/pages/articles/', 'Articles'),
