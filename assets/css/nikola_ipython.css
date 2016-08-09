@@ -8,7 +8,8 @@
 
 /*** Container for each cell ***/
 div.cell {
-    padding: 8px 0px;   /* Vertical gap between cells !! */
+    padding: 0px 0px;   
+    margin-bottom: 15px;  /* Vertical gap between cells !! */
 }
 
 
@@ -29,6 +30,7 @@ div.prompt {
     font-size: 13px;
     line-height: 18px;
 }
+
 div.output_prompt {
 }
 
@@ -55,8 +57,8 @@ div.inner_cell {
     font-size: 16px;
 }
 .rendered_html h1, .rendered_html h2, .rendered_html h3, .rendered_html h4, .rendered_html h5 {
-    margin-top: 2em !important;
-	margin-bottom: 1.1ex;
+    margin-top: 1.8em !important;
+	margin-bottom: 10px;
 }
 .rendered_html h1 a, .rendered_html h2 a, .rendered_html h3 a, .rendered_html h4 a, .rendered_html h5 a {
     display: none;
@@ -64,18 +66,21 @@ div.inner_cell {
 div.text_cell_render {
     color: #202020;
     padding: 0 6px;
-    margin-top: -10px;   /* Compensate paragraph top gap !! */
+    margin-top: 0px;
     margin-bottom: 0px;
 }
 .rendered_html p {
-    margin-top: 12px;    /* Paragraph top gap !! */
-    margin-bottom: 0px;  /* Paragraph bot gap !! */
+    margin-top: 0px;        /* Paragraph top gap !! */
+    margin-bottom: 12px;    /* Paragraph bottom gap !! */
     text-align: justify;
     font-size: 15px;
     line-height: 24px;
 }
+.rendered_html p:last-child {
+    margin-bottom: 0px;     /* Disable bottom gap for last <p> !! */
+}
 .rendered_html ul, .rendered_html ol {
-    margin: 12px 0 0 2.5em;
+    margin: 12px 0 12px 2.5em;
     padding: 0;
 }
 .rendered_html :visited, .rendered_html :link {
@@ -84,6 +89,7 @@ div.text_cell_render {
 .rendered_html a:hover {
     text-decoration: underline;
 }
+
 
 /*******************************************************************************
 ** Code Blocks !!
@@ -112,7 +118,6 @@ div.output_subarea {
     margin-top: 12px  !important;
     margin-bottom: 12px  !important;
 }
-
 
 
 /*******************************************************************************
@@ -180,5 +185,45 @@ div.output_subarea {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+
+
+/*******************************************************************************
+** Print Style
+*******************************************************************************/
+@media print {
+    div.prompt {
+        display: none !important;
+    }
+
+    .cell, .input, .inner_cell, .input_area {
+        overflow: visible !important;
+        display: block !important;
+        page-break-inside: auto;
+    }
+
+    pre {
+        font-size: 13px;
+        line-height: 16px;
+    }
+
+    div.input_area {
+        border: 1px solid #a0a0a0;
+    }
+
+    .highlight .c, .highlight .cm, .highlight .cp, .highlight .c1, .highlight .cs {
+        color: #408080 !important;
+        font-style: italic !important;
+    } /* Comments */
+
+    .highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kr {
+        color: #008000 !important;
+        font-weight: bold !important;
+    } /* Keyword */
+
+    .highlight .kt {
+        color: #B00040 !important;
+    } /* Keyword.Type */
+}
 
 

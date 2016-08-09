@@ -444,11 +444,29 @@ table.codetable { width: 100%;} td.linenos {text-align: right; width: 4em;}
         #cboxClose:hover{background-position:bottom center;}
 
 /*******************************************************************************
-** Content containers
+** Post container & header
 *******************************************************************************/
+/* Post container */
 .entry-content {
-    margin-top: 1em;
-    margin-bottom: 1em; /*New!*/
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* Post teasers in index page */
+.entry-summary {
+    margin-top: 15px;
+    margin-bottom: 50px;
+}
+
+/* Post header */
+.post-text > header {
+    padding-bottom: 5px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+}
+
+.post-text > header > h1 {
+    margin-bottom: 10px;
 }
 
 .row {
@@ -510,12 +528,6 @@ table.codetable { width: 100%;} td.linenos {text-align: right; width: 4em;}
 
 .navbar-brand>img {
     display: inline;
-}
-
-
-/* for alignment with Bootstrap's .entry-content styling */
-.entry-summary {
-    margin-top: 1em;
 }
 
 /* Custom page footer */
@@ -641,14 +653,6 @@ article.post-micro {
 
 /* hat tip bootstrap/html5 boilerplate */
 @media print {
-    *, *:before, *:after {
-        font-family: Garamond, Junicode, serif;
-    }
-
-    body {
-        font-size: 12pt;
-    }
-
     article .entry-title a[href]:after,
     article .metadata a[href]:after,
     article .tags a[href]:after {
@@ -688,20 +692,36 @@ body {
     box-shadow: 0 0px 7px 0 rgba(0, 0, 0, 0.5), 0 0px 20px 0 rgba(0, 0, 0, 0.4);
 }
 
-#body_header {
-    background-image: url(../img/header_01_blue.jpg);
-    background-position: center top;
-    height: 190px;
-    border-radius: 15px 15px 0 0;
-}
-
 #body_content {
     width: 100%;
     min-height: 550px;
-    padding: 60px 40px 50px 40px;
+    padding: 50px 50px 50px 50px;
 }
+
 .page_content {
     margin-bottom: 0px;
+}
+
+
+/*******************************************************************************
+** Header
+*******************************************************************************/
+#body_header {
+    background-image: url(../img/header_01_blue.jpg);
+    background-position: center top;
+    border-radius: 15px 15px 0 0;
+    height: 190px;
+    position: relative;
+}
+#body_header a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 190px;
+    width: 100%;
+}
+#body_header a h1 {
+    display: none; 
 }
 
 
@@ -748,9 +768,10 @@ p {
     margin-bottom: 1em;
 }
 h1 {
-    margin-top: 1em;
     font-size: 32px;
     font-weight: 700;
+    margin-top: 45px;
+    margin-bottom: 10px;
 }
 h1 > a {
     font-weight: 400;
@@ -768,8 +789,9 @@ h5 {
     font-size: 16px;
 }
 h2, h3, h4, h5, h6 {
-    margin-top: 2em;
     font-weight: 700;
+    margin-top: 2em;
+    margin-bottom: 10px;
 }
 em {
     font-style: italic;
@@ -789,12 +811,12 @@ strong {
 /* Description list */
 dt {
     font-weight: bold;
-    margin-top: 1.5em;
-    margin-bottom: 1ex;
+    margin-top: 1.6em;
+    margin-bottom: 8px;
     font-size: 16px;
 }
 dd {
-    margin-top: 1ex;
+    margin-top: 0px;
     margin-bottom: 1ex;
 }
 
@@ -808,7 +830,7 @@ ul.simple li{
 
 /* Basic list */
 ul.basic-list {
-    margin-bottom: 1em; 
+    margin-bottom: 1em;
 }
 ul.basic-list li {
     margin-bottom: 1ex; 
@@ -819,7 +841,7 @@ ul.custom-list {
     list-style: none;
     margin-bottom: 1em;
 }
-ul.custom-list li {
+ul.custom-list > li {
     margin-bottom: 1ex;
 }
 ul.custom-list > li:before {
@@ -840,6 +862,10 @@ li.con-item:before {
 /*******************************************************************************
 ** Tags
 *******************************************************************************/
+ul.list-inline {
+    margin-top: 12px;
+}
+
 .tags > li {
     background-color: #999;
     border-radius: 20px;
@@ -848,14 +874,18 @@ li.con-item:before {
     font-size: 13px;
     font-weight: bold;
 }
+
 .badge {
     background-color: #0e81e6;
     border-radius: 20px;
-    padding: 5px 10px 6px 10px;
+    padding: 6px 10px 6px 10px;
     margin-bottom: 10px;
     font-size: 13px;
     font-weight: bold;
 }
+
+
+
 
 
 /*******************************************************************************
@@ -968,7 +998,7 @@ code {
     margin-bottom: 10px;
 }
 #disqus_thread {
-    padding: 0 12px;
+    padding: 0 5px;
     margin-bottom: -20px;
 }
 
@@ -998,3 +1028,38 @@ code {
 .social-icons i {
     margin: 4px 4px;
 }
+
+
+/*******************************************************************************
+** Print Style
+*******************************************************************************/
+@media print {
+    #body_footer, #body_header, .tags, .badge {
+        display: none;
+    }
+
+    *:before, *:after {
+        display: none;
+    }
+
+    body, #body_content, #body_container {
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        width: 100% !important;
+        float: none !important;
+    }
+
+    h1, h2, h3, h4, h5, h6, dt {
+        page-break-after: avoid;     /* not working? */
+    }
+
+    p, li, figure, img {
+        page-break-inside: avoid;
+    }
+
+
+}
+
