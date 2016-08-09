@@ -461,7 +461,7 @@ table.codetable { width: 100%;} td.linenos {text-align: right; width: 4em;}
 /* Post header */
 .post-text > header {
     padding-bottom: 5px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.20);
     margin-bottom: 15px;
 }
 
@@ -685,6 +685,7 @@ body {
 }
 
 #body_container {
+    /*background-color: #fff;*/
     background-color: #eae1d3;
     background-image: url(../img/paper_grid_01.png);
     padding: 0;
@@ -894,7 +895,7 @@ ul.list-inline {
 /* Code in-block */
 .code {
     background-color: rgba(255, 255, 255, 0.25) !important;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.25);
     border-radius: 3px;
     margin-top: 1.2em;
     margin-bottom: 1.2em;
@@ -907,7 +908,7 @@ ul.list-inline {
 /* Code in-line */
 code {
     background-color: rgba(255, 255, 255, 0.3) !important;
-    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+    border: 1px solid rgba(0, 0, 0, 0.25) !important;
     border-radius: 3px !important;
     padding: 2px 4px 1px 4px !important;
     color: #202020 !important;
