@@ -24,7 +24,7 @@ div.prompt {
     border-radius: 0px;
     padding: 0.4em 0.3em;
 	margin: 0;
-	margin-right: 15px;
+	margin-right: 18px;
     text-align: right;
 	min-width: 80px;
     font-size: 13px;
@@ -65,9 +65,9 @@ div.inner_cell {
 }
 div.text_cell_render {
     color: #202020;
-    padding: 0 6px;
     margin-top: 0px;
     margin-bottom: 0px;
+    padding: 0 4px 0 1px;
 }
 .rendered_html p {
     margin-top: 0px;        /* Paragraph top gap !! */
@@ -100,17 +100,22 @@ pre {
     font-size: 14px;
     line-height: 18px;
 }
+
 div.input_area {
     background-color: rgba(255, 255, 255, 0.25);
     /*background-color: rgba(0, 0, 0, 0.08);*/
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.25);
 	border-radius: 3px;  
 }
+div.input_area > div.highlight {
+    margin: 6px 9px;
+}
+
 div.output_area {
     margin-top: 0px;
 }
 div.output_subarea {
-    padding: 7px;
+    padding: 8px 10px;
 }
 
 /*** Math !! ***/

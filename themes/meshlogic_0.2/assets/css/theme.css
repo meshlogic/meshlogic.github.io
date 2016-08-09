@@ -16,7 +16,7 @@
 /* Post header */
 .post-text > header {
     padding-bottom: 5px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.20);
     margin-bottom: 15px;
 }
 
