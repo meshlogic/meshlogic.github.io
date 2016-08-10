@@ -42,7 +42,7 @@ Hello and welcome to my new personal blog that I'm just creating using a site ge
 <div class="container" id="body_container">
     
     <!-- HEADER -->
-    <header id="body_header"><a href="../../../" title="Home"><h1>A personal blog on computer graphics, scientific computing, Blender, Jupyter and Second Life</h1></a>
+    <header id="body_header"><a href="../../../" title="Home"><i>A personal blog on computer graphics, scientific computing, Blender, Jupyter and Second Life</i></a>
     </header><!-- NAVBAR --><nav class="navbar navbar-default navbar-static"><div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -50,9 +50,10 @@ Hello and welcome to my new personal blog that I'm just creating using a site ge
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+
         </div>
                 
-        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false" role="navigation">
             <ul class="nav navbar-nav">
 <li>
 <a href="../../../"><i class="fa fa-lg fa-home"></i>  Home</a>
@@ -93,7 +94,7 @@ Hello and welcome to my new personal blog that I'm just creating using a site ge
 
     </nav><!-- BODY CONTENT --><div class="container" id="body_content" role="main">
 
-        <div class="page_content">
+        <div id="page_content">
 
             
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><!--<h1 class="p-name entry-title" itemprop="headline name"><a href="/posts/web-design/starting-a-personal-blog-with-nikola/" class="u-url">Starting a Personal Blog with Nikola</a></h1> --><h1 class="p-name entry-title" itemprop="headline name">Starting a Personal Blog with Nikola</h1>
@@ -364,7 +365,16 @@ Hello and welcome to my new personal blog that I'm just creating using a site ge
 
 
 <!-- SCRIPTS -->
-            <script src="../../../assets/js/all-nocdn.js"></script><!-- Fancy dates --><script>
+            <script src="../../../assets/js/all-nocdn.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-82334406-1', 'auto');
+  ga('send', 'pageview');
+
+</script><!-- Fancy dates --><script>
     moment.locale("en");
     fancydates(0, "YYYY-MM-DD HH:mm");
 </script>
