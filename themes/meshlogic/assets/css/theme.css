@@ -1,31 +1,32 @@
 /*******************************************************************************
-** Post container & header
+** Post header & container
 *******************************************************************************/
+/* Post header container */
+.post-text > header {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.20);
+}
+
+/* Post header > h1 */
+.post-text > header > h1 {
+    margin-bottom: 10px;
+}
+
+/* Post header > metadata */
+.post-text > header > .metadata {
+    padding-top: 0px;
+    padding-bottom: 5px;
+}
+
 /* Post container */
 .entry-content {
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
-/* Post teasers in index page */
+/* Post teaser container */
 .entry-summary {
     margin-top: 15px;
     margin-bottom: 50px;
-}
-
-/* Post header */
-.post-text > header {
-    padding-bottom: 5px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.20);
-    margin-bottom: 15px;
-}
-
-.post-text > header > h1 {
-    margin-bottom: 10px;
-}
-
-.row {
-    margin: 0;
 }
 
 
@@ -196,6 +197,10 @@ article.post-micro {
 
 .tags > li a {
     color: #fff;
+}
+
+.row {
+    margin: 0;
 }
 
 

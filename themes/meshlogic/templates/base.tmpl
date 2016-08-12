@@ -7,22 +7,21 @@
 {#  Leave this block alone. #}
 {% endblock %}
 {{ template_hooks['extra_head']() }}
-<!-- Link FontAwesome -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 </head>
 <body>
 
+
 <!-- BODY CONTAINER -->
 <div class="container" id="body_container">
-    
+
     <!-- HEADER -->
     <header id="body_header">
         <a href="/" title="Home"><i>{{ blog_description }}</i></a>
     </header>
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-default navbar-static">
-        
+    <nav class="navbar navbar-default navbar-static">    
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -59,40 +58,28 @@
                 {{ template_hooks['menu_alt']() }}
             </ul>
         </div>
-
     </nav>
 
-
-    <!-- BODY CONTENT -->
+    <!-- BODY CONTENT !! -->
     <div class="container" id="body_content" role="main">
 
-        <div id="page_content">
-
-            {{ template_hooks['page_header']() }}
-            {% block content %}{% endblock %}
-
-        </div>
+        {{ template_hooks['page_header']() }}
+        {% block content %}{% endblock %}
 
     </div>
-
 </div>
 
 
-<!-- FOOTER -->
+<!-- BODY FOOTER -->
 <div class="container">
     <footer id="body_footer">
 
         {{ content_footer }}
         {{ template_hooks['page_footer']() }}
-        —
-        <!-- COUNTER -->
-        <div class="counter">
-            <script src="https://www.w3counter.com/tracker.js?id=103452"></script>
-        </div>
 
-        <div class="social-icons">
-            <a href="https://github.com/meshlogic/" title="My GitHub"><i class="fa fa-3x fa-github"></i></a>
-        </div>
+        {% if social_buttons_code %}
+            {{ social_buttons_code }}
+        {% endif %}
 
     </footer>
 </div>
@@ -101,18 +88,6 @@
 <!-- SCRIPTS -->
 {{ base.late_load_js() }}
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-82334406-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-    
-<!-- Fancy dates -->
 <script>
     moment.locale("{{ momentjs_locales[lang] }}");
     fancydates({{ date_fanciness }}, {{ js_date_format }});

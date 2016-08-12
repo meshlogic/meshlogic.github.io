@@ -3,6 +3,7 @@
 # coding: utf-8
 ###############################################################################
 from __future__ import unicode_literals
+from nikola import filters
 import time
 
 BLOG_AUTHOR = "Miki"
@@ -125,12 +126,12 @@ GALLERY_SORT_BY_DATE = False
 
 # If set to True, EXIF data will be copied when an image is thumbnailed or resized.
 PRESERVE_EXIF_DATA = True
-
+EXIF_WHITELIST = {"*": "*"}
 
 ###############################################################################
 # Theme !!
 ###############################################################################
-THEME = "meshlogic_0.2"
+THEME = "meshlogic"
 
 # Primary color of your theme. This will be used to customize your theme and
 # auto-generate related colors in POSTS_SECTION_COLORS. Must be a HEX value.
@@ -192,7 +193,6 @@ CODE_COLOR_SCHEME = 'default'
 # });
 # </script>
 # """
-
 MATHJAX_CONFIG = """
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -274,10 +274,12 @@ LICENSE = ""
 # <img alt="Creative Commons License BY-NC-SA"
 # style="border-width:0; margin-bottom:12px;"
 # src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>"""
-
-# A small copyright notice for the page footer (in HTML).
-# (translatable)
-CONTENT_FOOTER = 'Contents &copy; {date} by <a href="mailto:{email}">{author}</a> — Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> {license}'
+#
+CONTENT_FOOTER = """
+    Contents &copy; {date} by <a href="mailto:{email}">{author}</a>
+    — Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
+    {license}
+"""
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will
@@ -289,7 +291,7 @@ CONTENT_FOOTER = 'Contents &copy; {date} by <a href="mailto:{email}">{author}</a
 # WARNING: If you do not use multiple languages with CONTENT_FOOTER, this
 #          still needs to be a dict of this format.  (it can be empty if you
 #          do not need formatting)
-# (translatable)
+#
 CONTENT_FOOTER_FORMATS = {
     DEFAULT_LANG: (
         (),
@@ -301,6 +303,73 @@ CONTENT_FOOTER_FORMATS = {
         }
     )
 }
+
+
+###############################################################################
+# Social Buttons & Counter Scripts !!
+###############################################################################
+# Social buttons
+SOCIAL_BUTTONS_CODE = """
+    <div class="counter">
+        <script src="https://www.w3counter.com/tracker.js?id=103452"></script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-82334406-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </div>
+
+    <div id="social_icons">
+        <a href="https://github.com/meshlogic/" title="My GitHub"><i class="fa fa-3x fa-github"></i></a>
+    </div>
+"""
+
+
+###############################################################################
+# Filters !!
+###############################################################################
+# Filters to apply to the output.
+# A directory where the keys are either: a file extensions, or
+# a tuple of file extensions.
+#
+# And the value is a list of commands to be applied in order.
+#
+# Each command must be either:
+#
+# A string containing a '%s' which will
+# be replaced with a filename. The command *must* produce output
+# in place.
+#
+# Or:
+#
+# A python callable, which will be called with the filename as
+# argument.
+#
+# By default, only .php files uses filters to inject PHP into
+# Nikola’s templates. All other filters must be enabled through FILTERS.
+#
+# Many filters are shipped with Nikola. A list is available in the manual:
+# <https://getnikola.com/handbook.html#post-processing-filters>
+#
+# from nikola import filters
+# FILTERS = {
+#    ".html": [filters.typogrify],
+#    ".js": [filters.closure_compiler],
+#    ".jpg": ["jpegoptim --strip-all -m75 -v %s"],
+# }
+FILTERS = {
+    ".html": [filters.html_tidy_nowrap]
+}
+
+# Templates will use those filters, along with the defaults.
+# Consult your engine's documentation on filters if you need help defining
+# those.
+#TEMPLATE_FILTERS = {".tmpl": [filters.html5lib_xmllike]}
 
 
 ###############################################################################
@@ -675,36 +744,6 @@ CREATE_SINGLE_ARCHIVE = True
 REDIRECTIONS = []
 
 
-
-# Filters to apply to the output.
-# A directory where the keys are either: a file extensions, or
-# a tuple of file extensions.
-#
-# And the value is a list of commands to be applied in order.
-#
-# Each command must be either:
-#
-# A string containing a '%s' which will
-# be replaced with a filename. The command *must* produce output
-# in place.
-#
-# Or:
-#
-# A python callable, which will be called with the filename as
-# argument.
-#
-# By default, only .php files uses filters to inject PHP into
-# Nikola’s templates. All other filters must be enabled through FILTERS.
-#
-# Many filters are shipped with Nikola. A list is available in the manual:
-# <https://getnikola.com/handbook.html#post-processing-filters>
-#
-# from nikola import filters
-# FILTERS = {
-#    ".html": [filters.typogrify],
-#    ".js": [filters.closure_compiler],
-#    ".jpg": ["jpegoptim --strip-all -m75 -v %s"],
-# }
 
 # Expert setting! Create a gzipped copy of each generated file. Cheap server-
 # side optimization for very high traffic sites or low memory servers.
@@ -1095,10 +1134,7 @@ UNSLUGIFY_TITLES = True
 # sometimes crash Nikola, your web server, or eat your cat.
 # USE_SLUGIFY = True
 
-# Templates will use those filters, along with the defaults.
-# Consult your engine's documentation on filters if you need help defining
-# those.
-# TEMPLATE_FILTERS = {}
+
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
