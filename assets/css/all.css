@@ -444,33 +444,34 @@ table.codetable { width: 100%;} td.linenos {text-align: right; width: 4em;}
         #cboxClose:hover{background-position:bottom center;}
 
 /*******************************************************************************
-** Post container & header
+** Post header & container
 *******************************************************************************/
+/* Post header container */
+.post-text > header {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.20);
+}
+
+/* Post header > h1 */
+.post-text > header > h1 {
+    margin-bottom: 10px;
+}
+
+/* Post header > metadata */
+.post-text > header > .metadata {
+    padding-top: 0px;
+    padding-bottom: 5px;
+}
+
 /* Post container */
 .entry-content {
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
-/* Post teasers in index page */
+/* Post teaser container */
 .entry-summary {
     margin-top: 15px;
     margin-bottom: 50px;
-}
-
-/* Post header */
-.post-text > header {
-    padding-bottom: 5px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.20);
-    margin-bottom: 15px;
-}
-
-.post-text > header > h1 {
-    margin-bottom: 10px;
-}
-
-.row {
-    margin: 0;
 }
 
 
@@ -643,6 +644,10 @@ article.post-micro {
     color: #fff;
 }
 
+.row {
+    margin: 0;
+}
+
 
 /* hat tip bootstrap/html5 boilerplate */
 @media print {
@@ -678,7 +683,6 @@ body {
 }
 
 #body_container {
-    /*background-color: #fff;*/
     background-color: #eae1d3;
     background-image: url(../img/paper_grid_01.png);
     padding: 0;
@@ -692,12 +696,9 @@ body {
     padding: 50px 50px 50px 50px;
 }
 
-#page_content {
-}
-
 
 /*******************************************************************************
-** Header
+** Body Header
 *******************************************************************************/
 #body_header {
     background-image: url(../img/header_01_blue.jpg);
@@ -801,54 +802,106 @@ strong {
 /*******************************************************************************
 ** Lists
 *******************************************************************************/
-/* Description list */
+/*** Description list ***/
 dt {
     font-weight: bold;
+    font-size: 16px;
     margin-top: 1.6em;
     margin-bottom: 8px;
-    font-size: 16px;
 }
 dd {
     margin-top: 0px;
     margin-bottom: 1ex;
 }
 
-/* Simple list */
+
+/*** Default simple list ***/
 ul.simple {
     margin-bottom: 1em;
 }
 ul.simple li{
-    margin-bottom: 0ex;
+    margin-bottom: 0;
 }
 
-/* Basic list */
-ul.basic-list {
-    margin-bottom: 1em;
-}
+
+/*** Basic list ***/
 ul.basic-list li {
-    margin-bottom: 1ex; 
+    margin-bottom: 1ex !important;
 }
+
+
+/*** Pros x Cons lists ***/
+ul.pros-list, ul.cons-list {
+    list-style: none;
+    margin-bottom: 0 !important;
+}
+ul.pros-list > li, ul.cons-list > li {
+    margin-bottom: 1ex !important;
+    position: relative;
+}
+ul.pros-list > li:before, ul.cons-list > li:before {
+    position: absolute;
+    display: inline-block;
+    width: 1.4em;
+    left: -1.4em;
+    top: 0;
+    text-align: center;
+    font-weight: bold;
+}
+ul.pros-list > li:before {
+    content: "\2714";
+    color: #468847;
+}
+ul.cons-list > li:before {
+    content: "\2718";
+    color: #b94a48
+}
+
 
 /*** Custom List ***/
 ul.custom-list {
     list-style: none;
-    margin-bottom: 1em;
+    margin-bottom: 0 !important;
 }
 ul.custom-list > li {
-    margin-bottom: 1ex;
+    position: relative;
+    margin-bottom: 1ex !important;
 }
-ul.custom-list > li:before {
+ul.custom-list > li > span {
+    display: inline-block;
     position: absolute;
-    margin-left: -1.2em;
-    font-weight: bold;
+    width: 2em;
+    left: -2em;
+    top: 0;
+    text-align: center;
+    color: #303030;
 }
-li.pro-item:before {
-    content: "\2714";
-    color: #468847;
+
+
+/*** Instruction List ***/
+.bigskip {
+    margin-top: 2em !important;
 }
-li.con-item:before {
-    content: "\2718";
-    color: #b94a48
+ul.instruction-list {
+    list-style: none;
+    padding: 0;    
+}
+ul.instruction-list, div.instruction-list {
+    margin-left: 40px;
+}
+ul.instruction-list > li {
+    position: relative;
+    margin-bottom: 1em !important;
+}
+ul.instruction-list > li > span {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    width: 40px;
+    left: -40px;
+    font-size: 18px;
+    text-align: letf;
+    color: #446E9B;
 }
 
 
@@ -888,7 +941,7 @@ ul.list-inline {
     border-radius: 3px;
     margin-top: 1.2em;
     margin-bottom: 1.2em;
-    padding: 0.4em;
+    padding: 7px 9px;
     color: black;
     font-size: 14px;
     line-height: 18px;
@@ -1007,17 +1060,25 @@ code {
     color: navy;
 }
 #body_footer a:hover {
-    color: #f0f0f0;
+    color: #eee;
 }
+
 .counter {
     display: inline;
     vertical-align: 1px;
     opacity: 0.7;
 }
+.counter:before {
+    content: " — ";
+}
 
-.social-icons i {
-    margin: 4px 4px;
-    opacity: 0.7;
+#social_icons {
+    margin-top: 3px;
+}
+#social_icons a {
+    margin-left: 4px;
+    margin-right: 4px;
+    color: #303030;
 }
 
 
@@ -1026,10 +1087,6 @@ code {
 *******************************************************************************/
 @media print {
     #body_footer, #body_header, .tags, .badge {
-        display: none;
-    }
-
-    *:before, *:after {
         display: none;
     }
 
@@ -1050,7 +1107,6 @@ code {
     p, li, figure, img {
         page-break-inside: avoid;
     }
-
 
 }
 

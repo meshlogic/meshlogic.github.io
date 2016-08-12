@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html prefix="
-og: http://ogp.me/ns#
-article: http://ogp.me/ns/article#
-" lang="en">
-<head>
-<meta charset="utf-8">
-<base href="https://meshlogic.github.io/posts/blender/bake-helper-in-final-version-1-0/">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bake Helper in final version 1.0 | Meshlogic</title>
-<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-<link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-<link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta content="#5670d4" name="theme-color">
-<link rel="canonical" href="https://meshlogic.github.io/posts/blender/bake-helper-in-final-version-1-0/">
-<script type="text/x-mathjax-config">
+<html lang="en" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+  <head>
+    <meta content="HTML Tidy for HTML5 for Windows version 5.2.0" name="generator">
+    <meta charset="utf-8">
+    <base href="https://meshlogic.github.io/posts/blender/bake-helper-in-final-version-1-0/">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>
+      Bake Helper in final version 1.0 | Meshlogic
+    </title>
+    <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+    <link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+    <meta content="#5670d4" name="theme-color">
+    <link href="https://meshlogic.github.io/posts/blender/bake-helper-in-final-version-1-0/" rel="canonical">
+    <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -22,152 +22,172 @@ article: http://ogp.me/ns/article#
         },
         displayAlign: 'center'
     });
-</script><!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Miki">
-<link rel="prev" href="../../jupyter/linear-algebra/linear-algebra-with-python-and-numpy-2/" title="Linear Algebra with Python and NumPy (II)" type="text/html">
-<link rel="next" href="../../jupyter/curve-fitting/parametric-curve-fitting/" title="Parametric Curve Fitting with Iterative Parametrization" type="text/html">
-<meta property="og:site_name" content="Meshlogic">
-<meta property="og:title" content="Bake Helper in final version 1.0">
-<meta property="og:url" content="https://meshlogic.github.io/posts/blender/bake-helper-in-final-version-1-0/">
-<meta property="og:description" content="I'm happy to announce the final version 1.0 of my Bake Helper addon for Blender.
+    </script><!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
+    <meta content="Miki" name="author">
+    <link href="../../jupyter/linear-algebra/linear-algebra-with-python-and-numpy-2/" rel="prev" title="Linear Algebra with Python and NumPy (II)" type="text/html">
+    <link href="../../jupyter/curve-fitting/parametric-curve-fitting/" rel="next" title="Parametric Curve Fitting with Iterative Parametrization" type="text/html">
+    <meta content="Meshlogic" property="og:site_name">
+    <meta content="Bake Helper in final version 1.0" property="og:title">
+    <meta content="https://meshlogic.github.io/posts/blender/bake-helper-in-final-version-1-0/" property="og:url">
+    <meta content="I'm happy to announce the final version 1.0 of my Bake Helper addon for Blender. Fixed compatibility with Blender 2.77 Added button to select a render engine used for baking When baking is finished," property="og:description">
+    <meta content="article" property="og:type">
+    <meta content="2016-07-13T17:43:22+02:00" property="article:published_time">
+    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" rel="stylesheet">
+  </head>
+  <body>
+    <!-- BODY CONTAINER -->
 
-Fixed compatibility with Blender 2.77
-Added button to select a render engine used for baking
-When baking is finished, ">
-<meta property="og:type" content="article">
-<meta property="article:published_time" content="2016-07-13T17:43:22+02:00">
-<!-- Link FontAwesome --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-</head>
-<body>
+    <div class="container" id="body_container">
+      <!-- HEADER -->
 
-<!-- BODY CONTAINER -->
-<div class="container" id="body_container">
-    
-    <!-- HEADER -->
-    <header id="body_header"><a href="../../../" title="Home"><i>A personal blog on computer graphics, scientific computing, Blender, Jupyter and Second Life</i></a>
-    </header><!-- NAVBAR --><nav class="navbar navbar-default navbar-static"><div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
+      <header id="body_header">
+        <a href="../../../" title="Home"><i>A personal blog on computer graphics, scientific computing, Blender, Jupyter and Second Life</i></a>
+      </header>
+      <!-- NAVBAR -->
+      <nav class="navbar navbar-default navbar-static">
+        <div class="navbar-header">
+          <button aria-controls="bs-navbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#bs-navbar" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
         </div>
-                
-        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false" role="navigation">
-            <ul class="nav navbar-nav">
-<li>
-<a href="../../../"><i class="fa fa-lg fa-home"></i>  Home</a>
-                </li>
-<li>
-<a href="../../../archive.html">Archive</a>
-                </li>
-<li>
-<a href="../../../categories/">Categories</a>
-                </li>
-<li>
-<a href="../../../pages/articles/">Articles</a>
+
+        <div aria-expanded="false" class="collapse navbar-collapse" id="bs-navbar" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="../../../"><i class="fa fa-lg fa-home"></i>&nbsp; Home</a>
             </li>
-<li class="dropdown">
-<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blender Addons <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-<li>
-<a href="../../../pages/blender-addons/bake-helper">Bake Helper</a>
-                    </li>
-<li>
-<a href="../../../pages/blender-addons/fitting-tools">Fitting Tools</a>
+
+            <li>
+              <a href="../../../archive.html">Archive</a>
             </li>
-</ul>
-</li>
-<li>
-<a href="../../../pages/about/">About</a>
 
-                
+            <li>
+              <a href="../../../categories/">Categories</a>
             </li>
-</ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-    <a href="index.rst" id="sourcelink">Source</a>
-    </li>
-                
-            </ul>
-</div>
 
-    </nav><!-- BODY CONTENT --><div class="container" id="body_content" role="main">
+            <li>
+              <a href="../../../pages/articles/">Articles</a>
+            </li>
 
-        <div id="page_content">
+            <li class="dropdown">
+              <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#">Blender Addons <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="../../../pages/blender-addons/bake-helper">Bake Helper</a>
+                </li>
 
-            
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><!--<h1 class="p-name entry-title" itemprop="headline name"><a href="/posts/blender/bake-helper-in-final-version-1-0/" class="u-url">Bake Helper in final version 1.0</a></h1> --><h1 class="p-name entry-title" itemprop="headline name">Bake Helper in final version 1.0</h1>
+                <li>
+                  <a href="../../../pages/blender-addons/fitting-tools">Fitting Tools</a>
+                </li>
+              </ul>
+            </li>
 
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                    Miki
-            </span></p>
-            <p class="dateline"><time class="published dt-published" datetime="2016-07-13T17:43:22+02:00" itemprop="datePublished" title="2016-07-13">2016-07-13</time></p>
-                    <p class="sourceline"><a href="index.rst" id="sourcelink">Source</a></p>
+            <li>
+              <a href="../../../pages/about/">About</a>
+            </li>
+          </ul>
 
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="index.rst" id="sourcelink">Source</a>
+            </li>
+          </ul>
         </div>
-        
-    </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p>I'm happy to announce the final version 1.0 of my Bake Helper addon for Blender.</p>
-<ul class="simple">
-<li>Fixed compatibility with Blender 2.77</li>
-<li>Added button to select a render engine used for baking</li>
-<li>When baking is finished, it automatically enters BlenderRender-Textured viewport to display the result of baking</li>
-</ul>
-<p><a class="reference external" href="../../../pages/blender-addons/bake-helper">Read more...</a></p>
-</div>
+      </nav>
+      <!-- BODY CONTENT !! -->
+      <div class="container" id="body_content" role="main">
+        <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
+          <header>
+            <!--<h1 class="p-name entry-title" itemprop="headline name"><a href="/posts/blender/bake-helper-in-final-version-1-0/" class="u-url">Bake Helper in final version 1.0</a></h1> -->
+            <h1 class="p-name entry-title" itemprop="headline name">
+              Bake Helper in final version 1.0
+            </h1>
+
+            <div class="metadata">
+              <p class="byline author vcard">
+                <span class="byline-name fn">Miki</span>
+              </p>
+
+              <p class="dateline">
+                <time class="published dt-published" datetime="2016-07-13T17:43:22+02:00" itemprop="datePublished" title="2016-07-13">2016-07-13</time>
+              </p>
+
+              <p class="sourceline">
+                <a href="index.rst" id="sourcelink">Source</a>
+              </p>
+            </div>
+          </header>
+
+          <div class="e-content entry-content" itemprop="articleBody text">
+            <div>
+              <p>
+                I'm happy to announce the final version 1.0 of my Bake Helper addon for Blender.
+              </p>
+
+              <ul class="simple">
+                <li>Fixed compatibility with Blender 2.77
+                </li>
+
+                <li>Added button to select a render engine used for baking
+                </li>
+
+                <li>When baking is finished, it automatically enters BlenderRender-Textured viewport to display the result of baking
+                </li>
+              </ul>
+
+              <p>
+                <a class="reference external" href="../../../pages/blender-addons/bake-helper">Read more...</a>
+              </p>
+            </div>
+          </div>
+
+          <aside class="postpromonav">
+            <nav>
+              <ul class="pager hidden-print">
+                <li class="previous">
+                  <a href="../../jupyter/linear-algebra/linear-algebra-with-python-and-numpy-2/" rel="prev" title="Linear Algebra with Python and NumPy (II)"><i class="fa fa-arrow-left"></i>&nbsp; Previous post</a>
+                </li>
+
+                <li class="next">
+                  <a href="../../jupyter/curve-fitting/parametric-curve-fitting/" rel="next" title="Parametric Curve Fitting with Iterative Parametrization">Next post &nbsp;<i class="fa fa-arrow-right"></i></a>
+                </li>
+              </ul>
+            </nav>
+          </aside>
+        </article>
+        <script>
+        var disqus_shortname="meshlogic";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());
+        </script>
+      </div>
     </div>
-    <aside class="postpromonav"><nav><ul class="pager hidden-print">
-<li class="previous">
-                <a href="../../jupyter/linear-algebra/linear-algebra-with-python-and-numpy-2/" rel="prev" title="Linear Algebra with Python and NumPy (II)"><i class="fa fa-arrow-left"></i>  Previous post</a>
-            </li>
-            <li class="next">
-                <a href="../../jupyter/curve-fitting/parametric-curve-fitting/" rel="next" title="Parametric Curve Fitting with Iterative Parametrization">Next post  <i class="fa fa-arrow-right"></i></a>
-            </li>
-        </ul></nav></aside></article><script>var disqus_shortname="meshlogic";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
-</div>
+    <!-- BODY FOOTER -->
 
-    </div>
-
-</div>
-
-
-<!-- FOOTER -->
-<div class="container">
-    <footer id="body_footer">
-
-        Contents © 2016 by <a href="mailto:meshlogic@gmail.com">Miki</a> — Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> 
-        
-        —
-        <!-- COUNTER -->
+    <div class="container">
+      <footer id="body_footer">
+        Contents © 2016 by <a href="mailto:meshlogic@gmail.com">Miki</a> — Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
         <div class="counter">
-            <script src="https://www.w3counter.com/tracker.js?id=103452"></script>
-</div>
+          <script src="https://www.w3counter.com/tracker.js?id=103452">
+          </script>
+          <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        <div class="social-icons">
-            <a href="https://github.com/meshlogic/" title="My GitHub"><i class="fa fa-3x fa-github"></i></a>
+            ga('create', 'UA-82334406-1', 'auto');
+            ga('send', 'pageview');
+          </script>
         </div>
 
-    </footer>
-</div>
-
-
-<!-- SCRIPTS -->
-            <script src="../../../assets/js/all-nocdn.js"></script><script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-82334406-1', 'auto');
-  ga('send', 'pageview');
-
-</script><!-- Fancy dates --><script>
+        <div id="social_icons">
+          <a href="https://github.com/meshlogic/" title="My GitHub"><i class="fa fa-3x fa-github"></i></a>
+        </div>
+      </footer>
+    </div>
+    <!-- SCRIPTS -->
+    <script src="../../../assets/js/all-nocdn.js">
+    </script>
+    <script>
     moment.locale("en");
     fancydates(0, "YYYY-MM-DD HH:mm");
-</script>
-</body>
+    </script>
+  </body>
 </html>
