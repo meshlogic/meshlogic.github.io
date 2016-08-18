@@ -30,6 +30,7 @@ $ git pull origin master --allow-unrelated-histories
 nikola github_deploy
 
 
+
 ####################################
 ### INSTALL NIKOLA ON WINDOWS 10 ###
 ####################################
@@ -49,7 +50,6 @@ $ pip install --upgrade "Nikola[extras]"
 
 (5) Create demo site
 $ nikola version
-Nikola v7.7.12
 
 $ nikola init --demo
 $ cd demo

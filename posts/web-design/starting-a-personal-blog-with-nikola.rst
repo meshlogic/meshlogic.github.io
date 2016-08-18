@@ -28,7 +28,7 @@ Hello and welcome to my new personal blog that I'm just creating using a site ge
 Before I start discussing my experience with Nikola, let me explain why I've decided for this tool. I'm a very picky person when it comes to customization, so I looked for a tool that would satisfy all my needs, particularly...
 
 
-.. class:: basic-list
+.. class:: li-smallskip
 
     - Have full control over every aspect of the style and layout.
 

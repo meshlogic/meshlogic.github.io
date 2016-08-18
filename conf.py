@@ -47,6 +47,7 @@ NAVIGATION_LINKS = {
             ('/pages/blender-addons/bake-helper', 'Bake Helper'),
             ('/pages/blender-addons/fitting-tools', 'Fitting Tools'),
             ), 'Blender Addons'),
+        ('/gallery/', 'Gallery'),
         ('/pages/about/', 'About'),
     ),
 }
@@ -118,7 +119,7 @@ GALLERY_FOLDERS = {"gallery": "gallery"}
 USE_FILENAME_AS_TITLE = True
 EXTRA_IMAGE_EXTENSIONS = []
 
-THUMBNAIL_SIZE = 192    # 180 - 192 - 240
+THUMBNAIL_SIZE = 240    # 180 - 192 - 240
 MAX_IMAGE_SIZE = 1440   # 1440x960, 1440x1080 - 1620x1080, 1620x1215
 
 # If set to False, it will sort by filename instead. Defaults to True
@@ -127,6 +128,7 @@ GALLERY_SORT_BY_DATE = False
 # If set to True, EXIF data will be copied when an image is thumbnailed or resized.
 PRESERVE_EXIF_DATA = True
 EXIF_WHITELIST = {"*": "*"}
+
 
 ###############################################################################
 # Theme !!

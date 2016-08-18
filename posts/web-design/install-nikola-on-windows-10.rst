@@ -19,19 +19,17 @@ Because of the fact that **Nikola** site generator is written in **Python** scri
 .. TEASER_END
 
 
-.. class:: instruction-list bigskip
+.. class:: instruction-list li-bigskip
 
     - :html:`❶` Nikola is powered by `Python <https://www.python.org/>`_, so first you need to make sure Python is installed on your computer.
 
-.. class:: instruction-list bigskip
+
 
     - :html:`❷` To install Nikola, you will need a command-line console. Even though the default Windows console (cmd) should be perfectly suitable, I recommend to get `ConEmu <https://conemu.github.io/>`_, because it's configurable, feature-rich and looks much better.
 
-.. class:: instruction-list bigskip
+
 
     - :html:`❸` The best way to install Nikola is to use `pip` in a `virtualenv`. So, open console in admin mode at desired path and install `virtualenv`.
-
-.. class:: instruction-list
 
     .. code:: console 
 
@@ -40,12 +38,8 @@ Because of the fact that **Nikola** site generator is written in **Python** scri
         $ cd nikola
 
 
-.. class:: instruction-list bigskip
 
     - :html:`❹` Download packages `lxml` and `Pillow` compiled for Windows and for your installed version of Python. Copy them into nikola folder and install them using `pip`. I downloaded the packages `here <http://www.lfd.uci.edu/~gohlke/pythonlibs/>`_.
-
-
-.. class:: instruction-list
 
     .. code:: console
 
@@ -53,24 +47,16 @@ Because of the fact that **Nikola** site generator is written in **Python** scri
         $ pip install Pillow-3.3.0-cp35-cp35m-win32.whl
 
 
-.. class:: instruction-list bigskip
 
-    - :html:`❺` Install Nikola extras.
-
-
-.. class:: instruction-list
+    - :html:`❺` Finally, install Nikola with "extras" option.
 
     .. code:: console
 
         $ pip install --upgrade "Nikola[extras]"
 
 
-.. class:: instruction-list bigskip
 
-    - :html:`❻` Now you should have Nikola installed and ready to use. You can get all available commands by command `nikola help`.
-
-
-.. class:: instruction-list
+    - :html:`❻` Now, you should have Nikola installed and ready to use. You can get all available commands by typing `nikola help`.
 
     .. code-block:: console
 
@@ -116,11 +102,7 @@ Because of the fact that **Nikola** site generator is written in **Python** scri
 
 
 
-.. class:: instruction-list bigskip
-
     - :html:`❼` To test if Nikola works as intended, you can create a demo site by few commands and display it in your browser.
-
-.. class:: instruction-list
 
     .. code-block:: console
 
@@ -130,6 +112,5 @@ Because of the fact that **Nikola** site generator is written in **Python** scri
         $ nikola serve -a 127.0.0.1 -b    # Display the site in your default browser
 
 
-.. raw:: html
+|
 
-    <br>
