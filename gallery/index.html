@@ -6,7 +6,7 @@
     <base href="https://meshlogic.github.io/gallery/">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>
-      gallery | Meshlogic
+      Gallery | Meshlogic
     </title>
     <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
@@ -80,6 +80,10 @@
               </ul>
             </li>
 
+            <li class="active">
+              <a href=".">Gallery <span class="sr-only">(active)</span></a>
+            </li>
+
             <li>
               <a href="../pages/about/">About</a>
             </li>
@@ -93,14 +97,24 @@
       <div class="container" id="body_content" role="main">
         <nav class="breadcrumbs">
           <ul class="breadcrumb">
-            <li>gallery
+            <li>Gallery
             </li>
           </ul>
         </nav>
 
         <h1>
-          gallery
+          Gallery
         </h1>
+
+        <p>
+          <span></span>
+        </p>
+
+        <ul>
+          <li>
+            <a class="listtitle" href="3d-creations/"><i class="glyphicon glyphicon-folder-open"></i>&nbsp;&nbsp;&nbsp;3D Creations</a>
+          </li>
+        </ul>
 
         <div id="gallery_container">
         </div>
@@ -143,9 +157,10 @@
     jsonContent = [];
     $("#gallery_container").flowr({
         data : jsonContent,
-        height : 192*.6,
+        height : 240*.6,
         padding: 5,
         rows: -1,
+        maxScale: 1,
         render : function(params) {
             // Just return a div, string or a dom object, anything works fine
             img = $("<img />").attr({
@@ -174,7 +189,7 @@
             }
         }
     });
-    $("a.image-reference").colorbox({rel:"gal", maxWidth:"100%",maxHeight:"100%",scalePhotos:true});
+    $("a.image-reference").colorbox({rel:"gal", maxWidth:"100%", maxHeight:"100%", scalePhotos:true, transition:"elastic", speed:300, fadeOut:300});
     $('a.image-reference[href="'+window.location.hash.substring(1,1000)+'"]').click();
     </script>
   </body>

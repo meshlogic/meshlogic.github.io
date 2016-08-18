@@ -27,7 +27,7 @@
     <meta content="Meshlogic" property="og:site_name">
     <meta content="Bake Helper - Addon for Blender" property="og:title">
     <meta content="https://meshlogic.github.io/pages/blender-addons/bake-helper/" property="og:url">
-    <meta content="Motivation todo... Features todo... Notes for baking using Cycles-Render todo... Notes for baking using Blender-Render todo... Purchase This addon is for sale at Blender Market ChangeLog" property="og:description">
+    <meta content="Rendering to textures, or baking&nbsp;textures, allows you to create texture/image&nbsp;maps based on the object's appearance in the rendered scene. Later, these image maps can be re-mapped onto the object usin" property="og:description">
     <meta content="article" property="og:type">
     <meta content="2016-07-13T18:02:42+02:00" property="article:published_time">
     <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" rel="stylesheet">
@@ -79,6 +79,10 @@
             </li>
 
             <li>
+              <a href="../../../gallery/">Gallery</a>
+            </li>
+
+            <li>
               <a href="../../about/">About</a>
             </li>
           </ul>
@@ -102,9 +106,49 @@
 
           <div class="e-content entry-content" itemprop="articleBody text">
             <div>
-              <div class="thumbnail figure align-right">
-                <img alt="bake_helper_cycles.png" src="bake_helper_cycles.png">
+              <!-- ............................................................................. -->
+              <!-- ............................................................................. -->
+
+              <div class="container-990px">
+                <div class="carousel slide" data-interval="false" id="slides_8c4cf4d7908e4936939accb8a69d425e">
+                  <ol class="carousel-indicators">
+                    <li class="active" data-slide-to="0" data-target="#slides_8c4cf4d7908e4936939accb8a69d425e">
+                    </li>
+
+                    <li data-slide-to="1" data-target="#slides_8c4cf4d7908e4936939accb8a69d425e">
+                    </li>
+
+                    <li data-slide-to="2" data-target="#slides_8c4cf4d7908e4936939accb8a69d425e">
+                    </li>
+
+                    <li data-slide-to="3" data-target="#slides_8c4cf4d7908e4936939accb8a69d425e">
+                    </li>
+                  </ol>
+
+                  <div class="carousel-inner">
+                    <div class="item active">
+                      <img alt="" src="BakeHelper_00.png" style="margin: 0 auto 0 auto;">
+                    </div>
+
+                    <div class="item">
+                      <img alt="" src="BakeHelper_02.png" style="margin: 0 auto 0 auto;">
+                    </div>
+
+                    <div class="item">
+                      <img alt="" src="BakeHelper_03.png" style="margin: 0 auto 0 auto;">
+                    </div>
+
+                    <div class="item">
+                      <img alt="" src="BakeHelper_04.png" style="margin: 0 auto 0 auto;">
+                    </div>
+                  </div>
+                  <a class="left carousel-control" data-slide="prev" href="#slides_8c4cf4d7908e4936939accb8a69d425e"><span class="icon-prev"></span></a> <a class="right carousel-control" data-slide="next" href="#slides_8c4cf4d7908e4936939accb8a69d425e"><span class="icon-next"></span></a>
+                </div>
               </div>
+
+              <p>
+                Rendering to textures, or <strong>baking&nbsp;textures</strong>, allows you to create <strong>texture/image&nbsp;maps</strong> based on the object's appearance in the rendered scene. Later, these image maps can be re-mapped onto the object using the object’s UV-coordinate system, this process is called <strong>UV &nbsp;mapping</strong>. It enables to speed up any further rendering, since colors and details are already computed and baked into the object's textures. This approach is essential for real-time rendering engines used in computer games or virtual worlds.
+              </p>
 
               <div class="section" id="motivation">
                 <h2>
@@ -112,37 +156,121 @@
                 </h2>
 
                 <p>
-                  todo...
+                  By default, Blender already enables to bake textures, but the workflow is very time-consuming, requiring to manually repeat lots of tasks, especially when you need to bake large scenes containing lots of objects. Here is an example, what all you need to do when baking textures in Blender using Cycles-Render.
+                </p>
+
+                <ul class="li-smallskip simple">
+                  <li>In UV Editor, for each object/material in the scene, manually create and name an image map.
+                  </li>
+
+                  <li>In Node Editor, for each material, add a node with the named image map and don't forget to leave it selected!
+                  </li>
+
+                  <li>Now, you can finally click the Bake button and wait for the result.
+                  </li>
+
+                  <li>Although you still can't see the baked textures mapped onto the objects. You need to enter Blender-Render Textured viewport mode, and manually assign all baked textures to each object in the scene.
+                  </li>
+                </ul>
+
+                <p>
+                  So, it's obvious such workflow is very slow and requires to manually repeat lots of tasks that could be automated, and that's the goal of <strong>Bake&nbsp;Helper</strong> addon.
                 </p>
               </div>
 
-              <div class="section" id="features">
+              <div class="section" id="features-of-bake-helper">
                 <h2>
-                  Features
+                  Features of Bake Helper
                 </h2>
 
+                <div class="figure align-right">
+                  <img alt="bake_helper_cycles.png" class="thumbnail" src="bake_helper_cycles.png">
+                </div>
+
                 <p>
-                  todo...
+                  Bake Helper is intended to automate the baking workflow and to save your time by creating, assigning and saving all desired texture/image maps. In contrast to other tools, it enables to bake a separate image map for each material. This makes it especially useful for creating content for virtual grids like Second&nbsp;Life.
                 </p>
 
-                <div class="section" id="notes-for-baking-using-cycles-render">
-                  <h3>
-                    Notes for baking using Cycles-Render
-                  </h3>
+                <ul class="li-smallskip simple">
+                  <li>Works with both Blender-Render and Cycles-Render.
+                  </li>
 
-                  <p>
-                    todo...
-                  </p>
-                </div>
+                  <li>Enables to bake all objects marked in the list or a single selected object.
+                  </li>
+
+                  <li>Automatically creates and assigns image maps for each object and its materials with the default name: <span class="html"><br></span> <code>ObjectName_MaterialName_BakeType.png</code>
+                  </li>
+
+                  <li>Enables to merge all object's materials into a single image map named: <span class="html"><br></span> <code>ObjectName_BakeType.png</code>
+                  </li>
+
+                  <li>Automatically assigns image maps of various types (UV&nbsp;Grid, Color Grid, AO, Combined, Full&nbsp;Render) to all selected objects.
+                  </li>
+
+                  <li>When baking is finished, Blender-Render Textured viewport is invoked to display the baked image maps.
+                  </li>
+
+                  <li>Save all baked image maps into the desired folder by a single click.
+                  </li>
+
+                  <li>You can use shortcut to bake (F5) and shortcut to switch viewport engine and shading (F4).
+                  </li>
+                </ul>
 
                 <div class="section" id="notes-for-baking-using-blender-render">
                   <h3>
                     Notes for baking using Blender-Render
                   </h3>
 
-                  <p>
-                    todo...
-                  </p>
+                  <ul class="instruction-list li-medskip simple">
+                    <li>
+                      <span class="html">❶</span> Add selected objects to the bake list. <span class="html"><br></span><span class="text-info">Objects intended for baking must contain a valid UV map and material(s) for Blender-Render.</span>
+                    </li>
+
+                    <li>
+                      <span class="html">❷</span> Select dimensions for each image map associated to each material. Or, you can set to merge all materials into a single image map. <span class="html"><br></span><span class="text-info">Note that you need to provide an UV map where polygons do not overlap.</span>
+                    </li>
+
+                    <li>
+                      <span class="html">❸</span> Specify the bake options like Bake Type, Ray Samples or Shadows Falloff. Don't forget to enable Ambient Occlusion in World settings if you need it. Then hit BAKE button (or F5) to start the baking process. <span class="html"><br></span><span class="text-info">The addon automatically creates and assigns all needed image maps for baking.</span>
+                    </li>
+
+                    <li>
+                      <span class="html">❹</span> When baking is finished, Blender-Render Textured viewport is invoked to display the baked image maps. <span class="html"><br></span><span class="text-info">You can also assign and display image maps of other types by clicking the dedicated buttons (UV&nbsp;Grid, Color Grid, AO, Combined, Full&nbsp;Render).</span>
+                    </li>
+
+                    <li>
+                      <span class="html">❺</span> Save the baked image maps into the desired folder. <span class="html"><br></span><span class="text-info">The path must end with "\".</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="section" id="notes-for-baking-using-cycles-render">
+                  <h3>
+                    Notes for baking using Cycles-Render
+                  </h3>
+
+                  <ul class="instruction-list li-medskip simple">
+                    <li>
+                      <span class="html">❶</span> Add selected objects to the bake list. <span class="html"><br></span><span class="text-info">Objects intended for baking must contain a valid UV map and material(s) for Cycles-Render.</span>
+                    </li>
+
+                    <li>
+                      <span class="html">❷</span> Select dimensions for each image map associated to each material. Or, you can set to merge all materials into a single image map. <span class="html"><br></span><span class="text-info">Note that you need to provide an UV map where polygons do not overlap.</span>
+                    </li>
+
+                    <li>
+                      <span class="html">❸</span> Specify the bake options like Bake Type or Render Samples. Don't forget to enable Ambient Occlusion in World settings if you need it. Then hit BAKE button (or F5) to start the baking process. <span class="html"><br></span><span class="text-info">The addon automatically creates all needed image maps for baking. Also it adds an image node with the image map for each Cycles material and removes it after baking. This way the same material can be shared by multiple objects.</span>
+                    </li>
+
+                    <li>
+                      <span class="html">❹</span> When baking is finished, Blender-Render Textured viewport is invoked to display the baked image maps. <span class="html"><br></span><span class="text-info">You can also assign and display image maps of other types by clicking the dedicated buttons (UV&nbsp;Grid, Color Grid, AO, Combined, Full&nbsp;Render).</span>
+                    </li>
+
+                    <li>
+                      <span class="html">❺</span> Save the baked image maps into the desired folder. <span class="html"><br></span><span class="text-info">The path must end with "\".</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
 
@@ -175,7 +303,7 @@
                       <li>Added button to select a render engine used for baking
                       </li>
 
-                      <li>When baking is finished, it automatically enters BlenderRender-Textured viewport to display the result of baking
+                      <li>When baking is finished, Blender-Render Textured viewport is invoked to display the baked image maps
                       </li>
                     </ul>
                   </dd>

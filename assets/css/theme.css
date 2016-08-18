@@ -1,4 +1,136 @@
 /*******************************************************************************
+** Body Containers
+*******************************************************************************/
+body {
+    background-color: #707070;
+    background-image: url(../img/noisy-texture-256x256-o5-d10-c-707070-t0.png);
+    background-attachment: fixed;
+    padding-top: 20px;
+    line-height: 1.6;
+}
+#body_container {
+    background-color: #eae1d3;
+    background-image: url(../img/paper_grid_01.png);
+    border-radius: 15px;
+    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.5), 0 3px 20px 0 rgba(0, 0, 0, 0.4);
+    padding: 0;
+}
+#body_content {
+    width: 100%;
+    min-height: 550px;
+    padding: 50px 50px 50px 50px;
+}
+
+
+/*******************************************************************************
+** Body Header
+*******************************************************************************/
+#body_header {
+    background-image: url(../img/header_01_blue.jpg);
+    background-position: center top;
+    border-radius: 15px 15px 0 0;
+    position: relative;
+    height: 190px;
+}
+#body_header > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 190px;
+}
+#body_header > a > i {
+    display: none;
+}
+
+
+/*******************************************************************************
+** Navbar
+*******************************************************************************/
+.navbar {
+    background-image: url(../img/noisy-texture-128x128-o4-d10-c-373737-t0.png);
+    background-repeat: repeat;
+    border-left-width: 0;
+    border-right-width: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.5), inset 0px 0px 1px 0 rgba(0, 0, 0, 0.3);
+    margin: 0 auto -50px auto;
+    z-index: 1000;
+}
+.navbar.affix {
+    position: fixed;
+    top: 0;
+}
+.navbar-collapse {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.navbar-right {
+    margin-right: 0;
+}
+.dropdown-menu {
+    background-image: url(../img/noisy-texture-128x128-o4-d10-c-373737-t0.png);
+    background-repeat: repeat;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4), inset 0px 0px 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+
+/*******************************************************************************
+** Comments
+*******************************************************************************/
+.comments {
+    margin-top: 40px;
+}
+.comments > h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+#disqus_thread {
+    padding: 0 5px;
+    margin-bottom: -20px;
+}
+
+
+/*******************************************************************************
+** Footer
+*******************************************************************************/
+#body_footer {
+    color: #000;
+    text-align: center;
+    font-size: 15px;
+    padding: 0;
+    margin: 15px auto 15px auto;
+}
+#body_footer a {
+    color: navy;
+}
+#body_footer a:hover {
+    color: #eee;
+}
+
+.counter {
+    display: inline;
+    vertical-align: 1px;
+    opacity: 0.7;
+}
+.counter:before {
+    content: " — ";
+}
+
+#social_icons {
+    margin-top: 3px;
+}
+#social_icons a {
+    margin-left: 4px;
+    margin-right: 4px;
+    color: #303030;
+}
+
+
+/*******************************************************************************
 ** Post header & container
 *******************************************************************************/
 /* Post header container */
@@ -31,37 +163,44 @@
 
 
 /*******************************************************************************
-** Post lists
+** Post list
 *******************************************************************************/
 .metadata p:before,
 .postlist .listdate:after {
     content: " — ";
 }
-
 .postlist li {
     margin-bottom: 0.5ex;
 }
-
 .listtitle {
     font-weight: bold;
 }
-
 .metadata p:first-of-type:before {
     content: "";
 }
-
 .metadata p {
     display: inline;
 }
-
 .posttranslations h3 {
     display: inline;
     font-size: 1em;
     font-weight: bold;
 }
-
 .posttranslations h3:last-child {
     display: none;
+}
+
+
+/*******************************************************************************
+** Post navigation
+*******************************************************************************/
+.postpromonav {
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+.pager {
+    margin-top: 20px;
+    margin-bottom: 0px;
 }
 
 
@@ -69,31 +208,37 @@
 /*******************************************************************************
 ** Other
 *******************************************************************************/
-.navbar-brand {
-    padding: 0 15px;
-}
-
-.navbar-brand #blog-title {
-    padding: 15px 0;
-    display: inline-block;
-}
-
-.navbar-brand #logo {
-    max-width: 100%;
-}
-
-.navbar-brand>img {
-    display: inline;
-}
-
 #container {
     width: 960px;
     margin: 0 auto;
 }
 
+.flowr_row {
+    width: 100%;
+}
+
+.row {
+    margin: 0;
+}
+
+.navbar-brand {
+    padding: 0 15px;
+}
+.navbar-brand #blog-title {
+    padding: 15px 0;
+    display: inline-block;
+}
+.navbar-brand #logo {
+    max-width: 100%;
+}
+.navbar-brand>img {
+    display: inline;
+}
+
 #contentcolumn {
     max-width: 760px;
 }
+
 #q {
     width: 150px;
 }
@@ -169,43 +314,26 @@ article.post-micro {
     display: inline-block;
 }
 
-.flowr_row {
-    width: 100%;
-}
 
-.tags {
-    padding-left: 0;
-    margin-left: -5px;
-    list-style: none;
-    text-align: center;
-}
+/*******************************************************************************
+** Print Style
+*******************************************************************************/
+@media print
+{
+    #body_footer, #body_header, .navbar, .tags, .badge {
+        display: none;
+    }
 
-.tags > li {
-    display: inline-block;
-    min-width: 10px;
-    padding: 4px 10px 6px 10px;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    background-color: #999;
-    border-radius: 20px;
-}
+    body, #body_content, #body_container {
+        padding: 0;
+        margin: 0;
+    }
 
-.tags > li a {
-    color: #fff;
-}
+    .container {
+        width: 100% !important;
+        float: none !important;
+    }
 
-.row {
-    margin: 0;
-}
-
-
-/* hat tip bootstrap/html5 boilerplate */
-@media print {
     article .entry-title a[href]:after,
     article .metadata a[href]:after,
     article .tags a[href]:after {
@@ -218,10 +346,6 @@ article.post-micro {
 
     article .metadata .linkline a[href]:after {
         content: " (" attr(href) ")";
-    }
-
-    .navbar {
-        display: none;
     }
 }
 

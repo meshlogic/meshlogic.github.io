@@ -82,6 +82,10 @@
             </li>
 
             <li>
+              <a href="../../../gallery/">Gallery</a>
+            </li>
+
+            <li>
               <a href="../../../pages/about/">About</a>
             </li>
           </ul>
@@ -141,7 +145,7 @@
                 Before I start discussing my experience with Nikola, let me explain why I've decided for this tool. I'm a very picky person when it comes to customization, so I looked for a tool that would satisfy all my needs, particularly...
               </p>
 
-              <ul class="basic-list simple">
+              <ul class="li-smallskip simple">
                 <li>Have full control over every aspect of the style and layout.
                 </li>
 
@@ -275,22 +279,22 @@
                     There are some ready to use themes for Nikola, but really none of them corresponded to what I wanted to create. The good thing is that you don't need to create a new theme from scratch, but you can inherit it from an existing theme. All you need to do is just copy files you want to modify from an existing theme into a new folder inside <code>[themes]</code>. Then the folder tree for the new theme should look similar to this...
                   </p>
 
-                  <pre class="code text"><a id="rest_code_ee438a50870d4f588e32318769618054-1" name="rest_code_ee438a50870d4f588e32318769618054-1"></a>[themes]
-<a id="rest_code_ee438a50870d4f588e32318769618054-2" name="rest_code_ee438a50870d4f588e32318769618054-2"></a>    [mytheme]
-<a id="rest_code_ee438a50870d4f588e32318769618054-3" name="rest_code_ee438a50870d4f588e32318769618054-3"></a>        [assets]
-<a id="rest_code_ee438a50870d4f588e32318769618054-4" name="rest_code_ee438a50870d4f588e32318769618054-4"></a>            [css]
-<a id="rest_code_ee438a50870d4f588e32318769618054-5" name="rest_code_ee438a50870d4f588e32318769618054-5"></a>                bootstrap.css
-<a id="rest_code_ee438a50870d4f588e32318769618054-6" name="rest_code_ee438a50870d4f588e32318769618054-6"></a>                bootstrap.min.css
-<a id="rest_code_ee438a50870d4f588e32318769618054-7" name="rest_code_ee438a50870d4f588e32318769618054-7"></a>                custom.css
-<a id="rest_code_ee438a50870d4f588e32318769618054-8" name="rest_code_ee438a50870d4f588e32318769618054-8"></a>                nikola_ipython.css
-<a id="rest_code_ee438a50870d4f588e32318769618054-9" name="rest_code_ee438a50870d4f588e32318769618054-9"></a>                theme.css
-<a id="rest_code_ee438a50870d4f588e32318769618054-10" name="rest_code_ee438a50870d4f588e32318769618054-10"></a>            [img]
-<a id="rest_code_ee438a50870d4f588e32318769618054-11" name="rest_code_ee438a50870d4f588e32318769618054-11"></a>            [js]
-<a id="rest_code_ee438a50870d4f588e32318769618054-12" name="rest_code_ee438a50870d4f588e32318769618054-12"></a>                custom.js
-<a id="rest_code_ee438a50870d4f588e32318769618054-13" name="rest_code_ee438a50870d4f588e32318769618054-13"></a>        [templates]
-<a id="rest_code_ee438a50870d4f588e32318769618054-14" name="rest_code_ee438a50870d4f588e32318769618054-14"></a>            base.tmpl
-<a id="rest_code_ee438a50870d4f588e32318769618054-15" name="rest_code_ee438a50870d4f588e32318769618054-15"></a>        bundles
-<a id="rest_code_ee438a50870d4f588e32318769618054-16" name="rest_code_ee438a50870d4f588e32318769618054-16"></a>        parent
+                  <pre class="code text"><a id="rest_code_78aca78fb79d4191adad1fe6419ab699-1" name="rest_code_78aca78fb79d4191adad1fe6419ab699-1"></a>[themes]
+<a id="rest_code_78aca78fb79d4191adad1fe6419ab699-2" name="rest_code_78aca78fb79d4191adad1fe6419ab699-2"></a>    [mytheme]
+<a id="rest_code_78aca78fb79d4191adad1fe6419ab699-3" name="rest_code_78aca78fb79d4191adad1fe6419ab699-3"></a>        [assets]
+<a id="rest_code_78aca78fb79d4191adad1fe6419ab699-4" name="rest_code_78aca78fb79d4191adad1fe6419ab699-4"></a>            [css]
+<a id="rest_code_78aca78fb79d4191adad1fe6419ab699-5" name="rest_code_78aca78fb79d4191adad1fe6419ab699-5"></a>                bootstrap.css
+<a id="rest_code_78aca78fb79d4191adad1fe6419ab699-6" name="rest_code_78aca78fb79d4191adad1fe6419ab699-6"></a>                bootstrap.min.css
+<a id="rest_code_78aca78fb79d4191adad1fe6419ab699-7" name="rest_code_78aca78fb79d4191adad1fe6419ab699-7"></a>                custom.css
+<a id="rest_code_78aca78fb79d4191adad1fe6419ab699-8" name="rest_code_78aca78fb79d4191adad1fe6419ab699-8"></a>                nikola_ipython.css
+<a id="rest_code_78aca78fb79d4191adad1fe6419ab699-9" name="rest_code_78aca78fb79d4191adad1fe6419ab699-9"></a>                theme.css
+<a id="rest_code_78aca78fb79d4191adad1fe6419ab699-10" name="rest_code_78aca78fb79d4191adad1fe6419ab699-10"></a>            [img]
+<a id="rest_code_78aca78fb79d4191adad1fe6419ab699-11" name="rest_code_78aca78fb79d4191adad1fe6419ab699-11"></a>            [js]
+<a id="rest_code_78aca78fb79d4191adad1fe6419ab699-12" name="rest_code_78aca78fb79d4191adad1fe6419ab699-12"></a>                custom.js
+<a id="rest_code_78aca78fb79d4191adad1fe6419ab699-13" name="rest_code_78aca78fb79d4191adad1fe6419ab699-13"></a>        [templates]
+<a id="rest_code_78aca78fb79d4191adad1fe6419ab699-14" name="rest_code_78aca78fb79d4191adad1fe6419ab699-14"></a>            base.tmpl
+<a id="rest_code_78aca78fb79d4191adad1fe6419ab699-15" name="rest_code_78aca78fb79d4191adad1fe6419ab699-15"></a>        bundles
+<a id="rest_code_78aca78fb79d4191adad1fe6419ab699-16" name="rest_code_78aca78fb79d4191adad1fe6419ab699-16"></a>        parent
 </pre>
                   <p>
                     I decided to create a theme based on <strong>Bootstrap3</strong> framework, which must be specified in the file <code>parent</code>. Basically, the look of the site based on Bootstrap is given by file with CSS styles named <code>bootstrap.css</code>. I really don't recommend to modify this file itself since it's a really huge file (over 6000 lines). But we can use this useful online application <a class="reference external" href="http://bootstrap-live-customizer.com">http://bootstrap-live-customizer.com</a> that enables to play with all the colors and styles and then generate the desired CSS files for us. For any later fine-tuning, I've added files <code>custom.css</code>, <code>theme.css</code> to override existing styles or add some new ones, and make things better arranged. If we are using Jupyter files, we can specify their styling by <code>nikola_ipython.css</code>.
@@ -397,19 +401,19 @@
                     So, to deploy a new site to GitHub, first we must have a GitHub account. Then, we need to create a new repository named after the site URL - in my case I created a repository named <code>meshlogic.github.io</code>, because my user name is "meshlogic". Now, we can do some basic customization in the Nikola config file <code>conf.py</code>.
                   </p>
 
-                  <pre class="code python"><a id="rest_code_f72f27437c9e49c6a793d37d5ad66ef1-1" name="rest_code_f72f27437c9e49c6a793d37d5ad66ef1-1"></a><span class="n">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s1">'master'</span>  <span class="c1"># Deploy the Nikola output to the master branch of your repository</span>
-<a id="rest_code_f72f27437c9e49c6a793d37d5ad66ef1-2" name="rest_code_f72f27437c9e49c6a793d37d5ad66ef1-2"></a><span class="n">GITHUB_SOURCE_BRANCH</span> <span class="o">=</span> <span class="s1">'src'</span>     <span class="c1"># Deploy Nikola project source files to src branch of your repository</span>
-<a id="rest_code_f72f27437c9e49c6a793d37d5ad66ef1-3" name="rest_code_f72f27437c9e49c6a793d37d5ad66ef1-3"></a><span class="n">GITHUB_COMMIT_SOURCE</span> <span class="o">=</span> <span class="bp">True</span>
+                  <pre class="code python"><a id="rest_code_1515432aa500444b9c8b476d05783744-1" name="rest_code_1515432aa500444b9c8b476d05783744-1"></a><span class="n">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s1">'master'</span>  <span class="c1"># Deploy the Nikola output to the master branch of your repository</span>
+<a id="rest_code_1515432aa500444b9c8b476d05783744-2" name="rest_code_1515432aa500444b9c8b476d05783744-2"></a><span class="n">GITHUB_SOURCE_BRANCH</span> <span class="o">=</span> <span class="s1">'src'</span>     <span class="c1"># Deploy Nikola project source files to src branch of your repository</span>
+<a id="rest_code_1515432aa500444b9c8b476d05783744-3" name="rest_code_1515432aa500444b9c8b476d05783744-3"></a><span class="n">GITHUB_COMMIT_SOURCE</span> <span class="o">=</span> <span class="bp">True</span>
 </pre>
                   <p>
                     When everything ready to deploy, we open console in the path of our Nikola project and start using Git. Of course, you need to have Git installed on your computer and available from command line.
                   </p>
 
-                  <pre class="code console"><a id="rest_code_07c14a0068c243b689d556ea9cf98d3c-1" name="rest_code_07c14a0068c243b689d556ea9cf98d3c-1"></a><span class="gp">$</span> git config --global user.name <span class="s2">"USER_NAME"</span>
-<a id="rest_code_07c14a0068c243b689d556ea9cf98d3c-2" name="rest_code_07c14a0068c243b689d556ea9cf98d3c-2"></a><span class="gp">$</span> git config --global user.email <span class="s2">"USER_EMAIL"</span>
-<a id="rest_code_07c14a0068c243b689d556ea9cf98d3c-3" name="rest_code_07c14a0068c243b689d556ea9cf98d3c-3"></a><span class="gp">$</span> git init
-<a id="rest_code_07c14a0068c243b689d556ea9cf98d3c-4" name="rest_code_07c14a0068c243b689d556ea9cf98d3c-4"></a><span class="gp">$</span> git remote add origin https://github.com/meshlogic/meshlogic.github.io.git
-<a id="rest_code_07c14a0068c243b689d556ea9cf98d3c-5" name="rest_code_07c14a0068c243b689d556ea9cf98d3c-5"></a><span class="gp">$</span> git pull origin master --allow-unrelated-histories
+                  <pre class="code console"><a id="rest_code_84df60943ee8406dbe74f240939b478b-1" name="rest_code_84df60943ee8406dbe74f240939b478b-1"></a><span class="gp">$</span> git config --global user.name <span class="s2">"USER_NAME"</span>
+<a id="rest_code_84df60943ee8406dbe74f240939b478b-2" name="rest_code_84df60943ee8406dbe74f240939b478b-2"></a><span class="gp">$</span> git config --global user.email <span class="s2">"USER_EMAIL"</span>
+<a id="rest_code_84df60943ee8406dbe74f240939b478b-3" name="rest_code_84df60943ee8406dbe74f240939b478b-3"></a><span class="gp">$</span> git init
+<a id="rest_code_84df60943ee8406dbe74f240939b478b-4" name="rest_code_84df60943ee8406dbe74f240939b478b-4"></a><span class="gp">$</span> git remote add origin https://github.com/meshlogic/meshlogic.github.io.git
+<a id="rest_code_84df60943ee8406dbe74f240939b478b-5" name="rest_code_84df60943ee8406dbe74f240939b478b-5"></a><span class="gp">$</span> git pull origin master --allow-unrelated-histories
 </pre>
                   <p>
                     Note that <code>git init</code> creates a hidden folder <code>[.git]</code> inside your project folder. <code>git remote</code> makes a branch named "origin" linked to your GitHub repository specified by its URL. <code>git pull</code> seems to be necessary to run even when your repository is still empty (at least in my case it was).
