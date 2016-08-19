@@ -42,12 +42,12 @@ NAVIGATION_LINKS = {
         ('/', '<i class="fa fa-lg fa-home"></i>&nbsp; Home'),
         ('/archive.html', 'Archive'),
         ('/categories/', 'Categories'),
+        ('/gallery/', 'Gallery'),
         ('/pages/articles/', 'Articles'),
         ((
             ('/pages/blender-addons/bake-helper', 'Bake Helper'),
             ('/pages/blender-addons/fitting-tools', 'Fitting Tools'),
             ), 'Blender Addons'),
-        ('/gallery/', 'Gallery'),
         ('/pages/about/', 'About'),
     ),
 }

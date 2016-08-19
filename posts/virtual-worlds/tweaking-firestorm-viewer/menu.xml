@@ -1,0 +1,26 @@
+<menu create_jump_keys="true" label="Upload" layout="topleft" name="Upload" tear_off="true" visible="true">
+    <menu_item_call label="Mesh Model..." layout="topleft" name="Upload Model" shortcut="control|alt|M">
+        <menu_item_call.on_click function="File.UploadModel" parameter=""/>
+        <menu_item_call.on_enable function="File.EnableUploadModel"/>
+        <menu_item_call.on_visible function="File.VisibleUploadModel"/>
+    </menu_item_call>
+    <menu_item_call label="Animation ([COST])..." layout="topleft" name="Upload Animation">
+        <menu_item_call.on_click function="File.UploadAnim" parameter=""/>
+        <menu_item_call.on_enable function="File.EnableUpload"/>
+        <menu_item_call.on_visible function="Upload.CalculateCosts" parameter="Upload Animation"/>
+    </menu_item_call>
+    <menu_item_call label="Image ([COST])..." layout="topleft" name="Upload Image" shortcut="control|U">
+        <menu_item_call.on_click function="File.UploadImage" parameter=""/>
+        <menu_item_call.on_enable function="File.EnableUpload"/>
+        <menu_item_call.on_visible function="Upload.CalculateCosts" parameter="Upload Image"/>
+    </menu_item_call>
+    <menu_item_call label="Sound ([COST])..." layout="topleft" name="Upload Sound">
+        <menu_item_call.on_click function="File.UploadSound" parameter=""/>
+        <menu_item_call.on_enable function="File.EnableUpload"/>
+        <menu_item_call.on_visible function="Upload.CalculateCosts" parameter="Upload Sound"/>
+    </menu_item_call>
+    <menu_item_call label="Bulk ([COST] per file)..." layout="topleft" name="Bulk Upload">
+        <menu_item_call.on_click function="File.UploadBulk" parameter=""/>
+        <menu_item_call.on_visible function="Upload.CalculateCosts" parameter="Bulk Upload"/>
+    </menu_item_call>
+</menu>
