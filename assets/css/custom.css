@@ -305,6 +305,7 @@ ul.list-inline {
 }
 .figure.align-center {
     margin-top: 1.5em;
+    margin-bottom: 1.5em;
 }
 .figure img {
     max-width: none !important;

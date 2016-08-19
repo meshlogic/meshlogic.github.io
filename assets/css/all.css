@@ -578,6 +578,10 @@ body {
 /*******************************************************************************
 ** Post header & container
 *******************************************************************************/
+.postindex > article {
+    clear: both;
+}
+
 /* Post header container */
 .post-text > header {
     border-bottom: 2px solid rgba(0, 0, 0, 0.20);
@@ -1102,6 +1106,7 @@ ul.list-inline {
 }
 .figure.align-center {
     margin-top: 1.5em;
+    margin-bottom: 1.5em;
 }
 .figure img {
     max-width: none !important;
