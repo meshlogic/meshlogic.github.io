@@ -7,15 +7,23 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://meshlogic.github.io/</loc>
-  <lastmod>2016-08-18T13:53:00Z</lastmod>
+  <lastmod>2016-08-19T17:35:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/archive.html</loc>
-  <lastmod>2016-08-19T17:26:00Z</lastmod>
+  <lastmod>2016-08-30T11:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/categories/</loc>
-  <lastmod>2016-08-19T11:14:00Z</lastmod>
+  <lastmod>2016-08-29T16:49:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/categories/blender/</loc>
+  <lastmod>2016-08-29T16:49:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/categories/cat_blender/</loc>
+  <lastmod>2016-08-29T16:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/categories/cat_scientific-computing/</loc>
@@ -52,6 +60,10 @@
  <url>
   <loc>https://meshlogic.github.io/categories/nikola/</loc>
   <lastmod>2016-08-11T20:58:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/categories/procedural-materials/</loc>
+  <lastmod>2016-08-29T16:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/categories/python/</loc>
@@ -98,6 +110,10 @@
   <lastmod>2016-08-11T20:58:00Z</lastmod>
  </url>
  <url>
+  <loc>https://meshlogic.github.io/posts/blender/hsl-color-model-nodes/</loc>
+  <lastmod>2016-08-30T11:04:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://meshlogic.github.io/posts/jupyter/curve-fitting/fitting-a-circle-to-cluster-of-3d-points/</loc>
   <lastmod>2016-08-11T20:58:00Z</lastmod>
  </url>
@@ -115,7 +131,7 @@
  </url>
  <url>
   <loc>https://meshlogic.github.io/posts/virtual-worlds/tweaking-firestorm-viewer/</loc>
-  <lastmod>2016-08-19T17:23:00Z</lastmod>
+  <lastmod>2016-08-19T17:35:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/posts/web-design/install-nikola-on-windows-10/</loc>

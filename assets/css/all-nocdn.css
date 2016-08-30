@@ -7839,6 +7839,9 @@ ul.list-inline {
     border: 0;
     box-shadow: 0px 2px 3px 0 rgba(0,0,0,0.4);
 }
+.figure-radius {
+    border-radius: 4px;
+}
 .figure {
     display: table !important;
     width: 50px;
