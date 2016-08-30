@@ -92,26 +92,18 @@
 			}
 		},
 		{
-			"file": "themes/meshlogic/assets/css/theme.css",
+			"file": "posts/blender/hsl-color-model-nodes.rst",
 			"settings":
 			{
-				"buffer_size": 7088,
-				"line_ending": "Unix"
+				"buffer_size": 3016,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "themes/meshlogic/assets/css/custom.css",
 			"settings":
 			{
-				"buffer_size": 9238,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "nikola_commands.txt",
-			"settings":
-			{
-				"buffer_size": 1268,
+				"buffer_size": 9307,
 				"line_ending": "Windows"
 			}
 		}
@@ -124,9 +116,13 @@
 	"command_palette":
 	{
 		"height": 375.0,
-		"last_filter": "Package Control: ",
+		"last_filter": "inde",
 		"selected_items":
 		[
+			[
+				"inde",
+				"Indent XML"
+			],
 			[
 				"Package Control: ",
 				"Package Control: Install Package"
@@ -140,7 +136,7 @@
 				"Preferences: Browse Packages"
 			]
 		],
-		"width": 418.0
+		"width": 386.0
 	},
 	"console":
 	{
@@ -165,19 +161,23 @@
 	[
 		"/D/PROJECTS/WEBSITES/Meshlogic/web",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/images",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/blender-addons",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/virtual-worlds",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/web-design",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/img",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/js",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates"
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css"
 	],
 	"file_history":
 	[
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/virtual-worlds/tweaking-firestorm-viewer.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/web-design/starting-a-personal-blog-with-nikola.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/theme.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/nikola_commands.txt",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/virtual-worlds/tweaking-firestorm-viewer/menu.xml",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/custom.css",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/bake-helper-in-final-version-1-0.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/gallery.tmpl",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/bootstrap.css",
@@ -185,14 +185,10 @@
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/js/custom.js",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/web-design/install-nikola-on-windows-10.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/blender-addons/bake-helper.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/web-design/starting-a-personal-blog-with-nikola.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/slides.tmpl",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/nikola_ipython.css",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/custom.css",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/theme.css",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/articles.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/about.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/nikola_commands.txt",
 		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/RestructuredText Improved/demo.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/Archive/03/starting-a-personal-blog-with-nikola.rst",
 		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
@@ -232,7 +228,7 @@
 	],
 	"find":
 	{
-		"height": 36.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -332,7 +328,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -348,8 +344,8 @@
 						"selection":
 						[
 							[
-								3923,
-								3930
+								1841,
+								1841
 							]
 						],
 						"settings":
@@ -359,40 +355,38 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1050.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "themes/meshlogic/assets/css/theme.css",
+					"file": "posts/blender/hsl-color-model-nodes.rst",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7088,
+						"buffer_size": 3016,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4076,
-								4085
+								3016,
+								3016
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/RestructuredText Improved/reStructuredText Improved.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2010.0,
+						"translation.y": 900.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -401,15 +395,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9238,
+						"buffer_size": 9307,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								737,
-								737
+								6231,
+								6231
 							]
 						],
 						"settings":
@@ -419,38 +413,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 337.0,
+						"translation.y": 4050.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "nikola_commands.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1268,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								243,
-								243
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
 					"type": "text"
 				}
 			]
