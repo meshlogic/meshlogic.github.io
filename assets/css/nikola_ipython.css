@@ -17,9 +17,6 @@ div.cell {
 ** Left side In/Out prompt "In [12]:" 
 *******************************************************************************/
 div.prompt {
-    /*display: none;*/
-    /*background-color: rgba(255, 255, 255, 0.25);
-    border: 1px solid rgba(0, 0, 0, 0.2);*/
 	background-color: rgba(0, 0, 0, 0.08);
     border-radius: 0px;
     padding: 0.4em 0.3em;
@@ -51,10 +48,10 @@ div.inner_cell {
     font-size: 24px;
 }
 .rendered_html h4 {
-    font-size: 18px;
+    font-size: 20px;
 }
 .rendered_html h5 {
-    font-size: 16px;
+    font-size: 18px;
 }
 .rendered_html h1, .rendered_html h2, .rendered_html h3, .rendered_html h4, .rendered_html h5 {
     margin-top: 1.8em !important;
@@ -71,17 +68,24 @@ div.text_cell_render {
 }
 .rendered_html p {
     margin-top: 0px;        /* Paragraph top gap !! */
-    margin-bottom: 12px;    /* Paragraph bottom gap !! */
+    margin-bottom: 15px;    /* Paragraph bottom gap !! */
     text-align: justify;
     font-size: 15px;
     line-height: 24px;
+}
+.rendered_html img {
+    margin-top: 15px;
+    margin-bottom: 15px; 
 }
 .rendered_html p:last-child {
     margin-bottom: 0px;     /* Disable bottom gap for last <p> !! */
 }
 .rendered_html ul, .rendered_html ol {
-    margin: 12px 0 12px 2.5em;
-    padding: 0;
+    margin: 12px 0 12px 2.5em !important;
+    padding: 0 !important;
+}
+.rendered_html li {
+    margin-bottom: 0.5ex;
 }
 .rendered_html :visited, .rendered_html :link {
     text-decoration: none;
@@ -103,7 +107,6 @@ pre {
 
 div.input_area {
     background-color: rgba(255, 255, 255, 0.25);
-    /*background-color: rgba(0, 0, 0, 0.08);*/
     border: 1px solid rgba(0, 0, 0, 0.25);
 	border-radius: 3px;  
 }
@@ -111,11 +114,16 @@ div.input_area > div.highlight {
     margin: 6px 9px;
 }
 
-div.output_area {
+div.output_area pre {
     margin-top: 0px;
+    /*color: #303f9f;*/
 }
 div.output_subarea {
     padding: 8px 10px;
+}
+
+div.output_png {
+    padding: 15px 0px !important;
 }
 
 /*** Math !! ***/

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PBR Shader Node for Blender | Meshlogic</title>
+<link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="canonical" href="https://meshlogic.github.io/posts/blender/materials/nodes-pbr-basic-shader/">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+        },
+        displayAlign: 'center'
+    });
+</script><!--[if lt IE 9]><script src="../../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Miki">
+<link rel="prev" href="../nodes-exposure/" title="Custom Exposure Node for Blender" type="text/html">
+<link rel="next" href="../../addons/toggle-object-wire/" title="Toggle Object Wire - Blender Addon" type="text/html">
+<meta property="og:site_name" content="Meshlogic">
+<meta property="og:title" content="PBR Shader Node for Blender">
+<meta property="og:url" content="https://meshlogic.github.io/posts/blender/materials/nodes-pbr-basic-shader/">
+<meta property="og:description" content="PBR (Physically Based Rendering) seems to be the standard for photorealistic rendering in these days. All major rendering and texturing packages like 3D-Coat, Substance Painter or Marmoset already hav">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-02-23T15:00:00+02:00">
+<meta property="article:tag" content="blender-materials">
+<meta property="article:tag" content="mathjax">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+</head>
+<body>
+
+
+<!-- BODY CONTAINER -->
+<div class="container" id="body_container">
+
+    <!-- HEADER -->
+    <header id="body_header"><a href="../../../../" title="Home"><i>A personal blog on computer graphics, scientific computing, Blender, Jupyter and Second Life</i></a>
+    </header><!-- NAVBAR --><nav class="navbar navbar-default navbar-static"><div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+        </div>
+                
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false" role="navigation">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../../../"><i class="fa fa-lg fa-home"></i>  Home</a>
+                </li>
+<li>
+<a href="../../../../archive.html">Archive</a>
+                </li>
+<li>
+<a href="../../../../categories/">Categories</a>
+                </li>
+<li>
+<a href="../../../../gallery/">Gallery</a>
+                </li>
+<li>
+<a href="../../../../pages/articles/">Articles</a>
+                </li>
+<li>
+<a href="../../../../pages/blender-addons/">Blender Addons</a>
+                </li>
+<li>
+<a href="../../../../pages/about/">About</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="index.rst" id="sourcelink">Source</a>
+    </li>
+                
+            </ul>
+</div>
+    </nav><!-- BODY CONTENT !! --><div class="container" id="body_content" role="main">
+
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><!--<h1 class="p-name entry-title" itemprop="headline name"><a href="/posts/blender/materials/nodes-pbr-basic-shader/" class="u-url">PBR Shader Node for Blender</a></h1> --><h1 class="p-name entry-title" itemprop="headline name">PBR Shader Node for Blender</h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    Miki
+            </span></p>
+            <p class="dateline"><time class="published dt-published" datetime="2017-02-23T15:00:00+02:00" itemprop="datePublished" title="2017-02-23">2017-02-23</time></p>
+                <p class="commentline">            <a href="#disqus_thread" data-disqus-identifier="cache/posts/blender/materials/nodes-pbr-basic-shader.html">Comments</a>
+
+
+                    </p>
+<p class="sourceline"><a href="index.rst" id="sourcelink">Source</a></p>
+
+        </div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p><strong>PBR (Physically Based Rendering)</strong> seems to be the standard for photorealistic rendering in these days. All major rendering and texturing packages like 3D-Coat, Substance Painter or Marmoset already have this lighting model implemented. Blender is going to include a real-time PBR viewport in version 2.8. However, no need to wait for the new release, thanks to the <strong>Cycles Render</strong>, we can already create a dedicated node setup for the <strong>PBR shader</strong>. We can also use this shader for rendering material maps baked in other programs that already works on the PBR basis.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="pbr_maps.png"><img alt="pbr_maps_alpha.png" class="figure-radius" src="pbr_maps_alpha.png"></a>
+<p class="caption">PBR (Physically Based Rendering) material maps.</p>
+</div>
+<!-- TEASER_END -->
+<div class="section" id="building-a-pbr-shader-node">
+<h2>1 Building a PBR Shader Node</h2>
+<div class="figure align-right">
+<a class="reference external image-reference" href="pbr-shader-node.png"><img alt="pbr-shader-node.tn.png" class="figure-radius" src="pbr-shader-node.tn.png"></a>
+<p class="caption">Node group for the PBR shader.</p>
+</div>
+<p>There have been already published many node setups implementing a PBR shader, but I wanted to make a more versatile setup that would enable to modify things like texture color tint, exposure, etc within a single node. Moreover, I have included the fix to remove some artifact caused by rendering normal maps (viz <a class="reference external" href="https://blenderartists.org/forum/showthread.php?382497-Black-material-artifacts-on-flat-angle-surface-areas&amp;p=3156851&amp;viewfull=1#post3156851">this post</a>).</p>
+<p>To build a PBR shader we need to take into account these material features:</p>
+<ul class="li-medskip simple">
+<li>
+<strong>Albedo Map</strong> - defines the material color under diffuse light. Compared to the diffuse map, albedo doesn't contain any directional light or ambient occlusion which should be provided by a separate map. However, if not aspiring for perfect physical accuracy, we can use diffuse map as well.</li>
+<li>
+<strong>Ambient Occlusion Map</strong> - represents occluded light based on the 3D geometry of the material surface.</li>
+<li>
+<strong>Metalness Map</strong> - specifies <strong>dielectric</strong> (black 0.0) or <strong>metallic</strong> (white 1.0) reflection type.</li>
+<li>
+<strong>Roughness Map</strong> - specifies <strong>smooth</strong> (black 0.0) or <strong>rough</strong> (white 1.0) microsurface.</li>
+<li>
+<strong>Height Map</strong> - material surface displacements described by a greyscale image.</li>
+<li>
+<strong>Normal Map</strong> - material surface displacements described by a RGB image.</li>
+<li>
+<strong>Fresnel Effect (IOR value)</strong> - is quite complicated physical effect, hard to implement accurately in Blender. Basically, the material reflection increases with angle of incidence, so the object rim at grazing angles is more reflexive than the rest of the object. Blender's Fresnel node approximates that behavior by <strong>IOR</strong> (index of reflection) value, but we should also consider that this effect decreases with growing roughness.</li>
+</ul>
+<video class="video center" autoplay loop><source src="demo_pbr_metallic_360p.mp4">
+    Your browser does not support the video tag.
+</source></video><p class="caption">
+    Animated demo for a metallic PBR material (metalness=1.0, roughness varies from 0.0 to 1.0 and back).
+</p>
+
+<video class="video center" autoplay loop><source src="demo_pbr_dielectric_360p.mp4">
+    Your browser does not support the video tag.
+</source></video><p class="caption">
+    Animated demo for a dielectric PBR material (metalness=0.0, roughness varies from 0.0 to 1.0 and back).
+</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="pbr-shader-nodesetup.png"><img alt="pbr-shader-nodesetup.tn.png" class="figure-radius" src="pbr-shader-nodesetup.tn.png"></a>
+<p class="caption">Node setup for the PBR shader.</p>
+</div>
+</div>
+<div class="section" id="rendering-pbr-maps-from-3d-coat">
+<h2>2 Rendering PBR Maps from 3D-Coat</h2>
+<div class="figure align-center">
+<a class="reference external image-reference" href="pbr-shader-for-3dcoat.png"><img alt="pbr-shader-for-3dcoat.tn.png" class="figure-radius" src="pbr-shader-for-3dcoat.tn.png"></a>
+<p class="caption">PBR maps from 3D-Coat rendered in Blender.</p>
+</div>
+<div class="thumbnail figure align-center">
+<a class="reference external image-reference" href="cycles-render-3dcoat.jpg"><img alt="cycles-render-3dcoat.tn.jpg" src="cycles-render-3dcoat.tn.jpg"></a>
+<p class="caption">PBR maps from 3D-Coat rendered in Blender.</p>
+</div>
+</div>
+<div class="section" id="rendering-pbr-maps-from-substance-painter">
+<h2>3 Rendering PBR Maps from Substance Painter</h2>
+<div class="figure align-center">
+<a class="reference external image-reference" href="pbr-shader-for-substance.png"><img alt="pbr-shader-for-substance.tn.png" class="figure-radius" src="pbr-shader-for-substance.tn.png"></a>
+<p class="caption">PBR maps from Substance Painter rendered in Blender.</p>
+</div>
+<div class="figures-container center docutils container">
+<div class="thumbnail figure">
+<a class="reference external image-reference" href="cycles-render-sp-bronze.jpg"><img alt="cycles-render-sp-bronze.tn.jpg" src="cycles-render-sp-bronze.tn.jpg"></a>
+</div>
+<div class="thumbnail figure">
+<a class="reference external image-reference" href="cycles-render-sp-painted.jpg"><img alt="cycles-render-sp-painted.tn.jpg" src="cycles-render-sp-painted.tn.jpg"></a>
+</div>
+<div class="thumbnail figure">
+<a class="reference external image-reference" href="cycles-render-sp-silver.jpg"><img alt="cycles-render-sp-silver.tn.jpg" src="cycles-render-sp-silver.tn.jpg"></a>
+</div>
+</div>
+</div>
+<div class="section" id="download">
+<h2>Download</h2>
+<ul class="simple">
+<li>Download a <a class="reference external" href="https://www.dropbox.com/s/455pxqcqicucboq/PBR_BasicShader.blend?dl=0">blend file</a> with the PBR shader node (made in Blender 2.78).</li>
+</ul>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../../categories/blender-materials/" rel="tag">blender-materials</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../nodes-exposure/" rel="prev" title="Custom Exposure Node for Blender"><i class="fa fa-arrow-left"></i>  Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../addons/toggle-object-wire/" rel="next" title="Toggle Object Wire - Blender Addon">Next post  <i class="fa fa-arrow-right"></i></a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="meshlogic",
+            disqus_url="https://meshlogic.github.io/posts/blender/materials/nodes-pbr-basic-shader/",
+        disqus_title="PBR Shader Node for Blender",
+        disqus_identifier="cache/posts/blender/materials/nodes-pbr-basic-shader.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+        },
+        displayAlign: 'center'
+    });
+</script></article><script>var disqus_shortname="meshlogic";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+</div>
+
+
+<!-- BODY FOOTER -->
+<div class="container">
+    <footer id="body_footer">
+
+        
+    Contents © 2017 by <a href="mailto:meshlogic@gmail.com">Miki</a>
+    — Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
+    
+
+        
+
+            
+    <div class="counter">
+        <script src="https://www.w3counter.com/tracker.js?id=103452"></script><script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-82334406-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+</div>
+
+    <div id="social_icons">
+        <a href="https://github.com/meshlogic/" title="My GitHub"><i class="fa fa-3x fa-github"></i></a>
+
+        <a href="http://www.flickr.com/photos/meshlogic/" title="See my photos on Flickr!"><i class="fa fa-3x fa-flickr"></i></a>
+
+        <a href="https://www.youtube.com/channel/UCJn5IgykaGERrwvzLhayJiw" title="See my videos on YouTube!"><i class="fa fa-3x fa-youtube-square"></i></a>
+    </div>
+
+
+    </footer>
+</div>
+
+
+<!-- SCRIPTS -->
+            <script src="../../../../assets/js/all-nocdn.js"></script><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+</script>
+</body>
+</html>

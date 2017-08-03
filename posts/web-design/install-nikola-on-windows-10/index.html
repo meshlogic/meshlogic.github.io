@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
-  <head>
-    <meta content="HTML Tidy for HTML5 for Windows version 5.2.0" name="generator">
-    <meta charset="utf-8">
-    <base href="https://meshlogic.github.io/posts/web-design/install-nikola-on-windows-10/">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>
-      Install Nikola on Windows 10 | Meshlogic
-    </title>
-    <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-    <link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-    <link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-    <meta content="#5670d4" name="theme-color">
-    <link href="https://meshlogic.github.io/posts/web-design/install-nikola-on-windows-10/" rel="canonical">
-    <script type="text/x-mathjax-config">
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install Nikola on Windows 10 | Meshlogic</title>
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="canonical" href="https://meshlogic.github.io/posts/web-design/install-nikola-on-windows-10/">
+<script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -22,291 +21,225 @@
         },
         displayAlign: 'center'
     });
-    </script><!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
-    <meta content="Miki" name="author">
-    <link href="../starting-a-personal-blog-with-nikola/" rel="prev" title="Starting a Personal Blog with Nikola" type="text/html">
-    <link href="../../jupyter/linear-algebra/linear-algebra-with-python-and-numpy-1/" rel="next" title="Linear Algebra with Python and NumPy (I)" type="text/html">
-    <meta content="Meshlogic" property="og:site_name">
-    <meta content="Install Nikola on Windows 10" property="og:title">
-    <meta content="https://meshlogic.github.io/posts/web-design/install-nikola-on-windows-10/" property="og:url">
-    <meta content="Because of the fact that Nikola site generator is written in Python scripting language, it should run on any major operating system. The installation process might vary depending on the system though." property="og:description">
-    <meta content="article" property="og:type">
-    <meta content="2016-06-30T19:25:00+02:00" property="article:published_time">
-    <meta content="nikola" property="article:tag">
-    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" rel="stylesheet">
-  </head>
-  <body>
-    <!-- BODY CONTAINER -->
+</script><!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Miki">
+<link rel="prev" href="../starting-a-personal-blog-with-nikola/" title="Starting a Personal Blog with Nikola" type="text/html">
+<link rel="next" href="../../jupyter/linear-algebra/linear-algebra-with-python-and-numpy-1/" title="Linear Algebra with Python and NumPy (I)" type="text/html">
+<meta property="og:site_name" content="Meshlogic">
+<meta property="og:title" content="Install Nikola on Windows 10">
+<meta property="og:url" content="https://meshlogic.github.io/posts/web-design/install-nikola-on-windows-10/">
+<meta property="og:description" content="Because of the fact that Nikola site generator is written in Python scripting language, it should run on any major operating system. The installation process might vary depending on the system though.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-06-30T19:25:00+02:00">
+<meta property="article:tag" content="nikola">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+</head>
+<body>
 
-    <div class="container" id="body_container">
-      <!-- HEADER -->
 
-      <header id="body_header">
-        <a href="../../../" title="Home"><i>A personal blog on computer graphics, scientific computing, Blender, Jupyter and Second Life</i></a>
-      </header>
-      <!-- NAVBAR -->
-      <nav class="navbar navbar-default navbar-static">
-        <div class="navbar-header">
-          <button aria-controls="bs-navbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#bs-navbar" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+<!-- BODY CONTAINER -->
+<div class="container" id="body_container">
+
+    <!-- HEADER -->
+    <header id="body_header"><a href="../../../" title="Home"><i>A personal blog on computer graphics, scientific computing, Blender, Jupyter and Second Life</i></a>
+    </header><!-- NAVBAR --><nav class="navbar navbar-default navbar-static"><div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
         </div>
-
-        <div aria-expanded="false" class="collapse navbar-collapse" id="bs-navbar" role="navigation">
-          <ul class="nav navbar-nav">
-            <li>
-              <a href="../../../"><i class="fa fa-lg fa-home"></i>&nbsp; Home</a>
-            </li>
-
-            <li>
-              <a href="../../../archive.html">Archive</a>
-            </li>
-
-            <li>
-              <a href="../../../categories/">Categories</a>
-            </li>
-
-            <li>
-              <a href="../../../gallery/">Gallery</a>
-            </li>
-
-            <li>
-              <a href="../../../pages/articles/">Articles</a>
-            </li>
-
-            <li class="dropdown">
-              <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#">Blender Addons <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="../../../pages/blender-addons/bake-helper">Bake Helper</a>
+                
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false" role="navigation">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../../"><i class="fa fa-lg fa-home"></i>  Home</a>
                 </li>
-
-                <li>
-                  <a href="../../../pages/blender-addons/fitting-tools">Fitting Tools</a>
+<li>
+<a href="../../../archive.html">Archive</a>
                 </li>
-              </ul>
-            </li>
+<li>
+<a href="../../../categories/">Categories</a>
+                </li>
+<li>
+<a href="../../../gallery/">Gallery</a>
+                </li>
+<li>
+<a href="../../../pages/articles/">Articles</a>
+                </li>
+<li>
+<a href="../../../pages/blender-addons/">Blender Addons</a>
+                </li>
+<li>
+<a href="../../../pages/about/">About</a>
 
-            <li>
-              <a href="../../../pages/about/">About</a>
+                
             </li>
-          </ul>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="index.rst" id="sourcelink">Source</a>
+    </li>
+                
+            </ul>
+</div>
+    </nav><!-- BODY CONTENT !! --><div class="container" id="body_content" role="main">
 
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="index.rst" id="sourcelink">Source</a>
-            </li>
-          </ul>
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><!--<h1 class="p-name entry-title" itemprop="headline name"><a href="/posts/web-design/install-nikola-on-windows-10/" class="u-url">Install Nikola on Windows 10</a></h1> --><h1 class="p-name entry-title" itemprop="headline name">Install Nikola on Windows 10</h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    Miki
+            </span></p>
+            <p class="dateline"><time class="published dt-published" datetime="2016-06-30T19:25:00+02:00" itemprop="datePublished" title="2016-06-30">2016-06-30</time></p>
+                <p class="commentline">            <a href="#disqus_thread" data-disqus-identifier="cache/posts/web-design/install-nikola-on-windows-10.html">Comments</a>
+
+
+                    </p>
+<p class="sourceline"><a href="index.rst" id="sourcelink">Source</a></p>
+
         </div>
-      </nav>
-      <!-- BODY CONTENT !! -->
-      <div class="container" id="body_content" role="main">
-        <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
-          <header>
-            <!--<h1 class="p-name entry-title" itemprop="headline name"><a href="/posts/web-design/install-nikola-on-windows-10/" class="u-url">Install Nikola on Windows 10</a></h1> -->
-            <h1 class="p-name entry-title" itemprop="headline name">
-              Install Nikola on Windows 10
-            </h1>
-
-            <div class="metadata">
-              <p class="byline author vcard">
-                <span class="byline-name fn">Miki</span>
-              </p>
-
-              <p class="dateline">
-                <time class="published dt-published" datetime="2016-06-30T19:25:00+02:00" itemprop="datePublished" title="2016-06-30">2016-06-30</time>
-              </p>
-
-              <p class="commentline">
-                <a data-disqus-identifier="cache/posts/web-design/install-nikola-on-windows-10.html" href="#disqus_thread">Comments</a>
-              </p>
-
-              <p class="sourceline">
-                <a href="index.rst" id="sourcelink">Source</a>
-              </p>
-            </div>
-          </header>
-
-          <div class="e-content entry-content" itemprop="articleBody text">
-            <div>
-              <!-- ............................................................................. -->
-              <!-- ............................................................................. -->
-
-              <p>
-                Because of the fact that <strong>Nikola</strong> site generator is written in <strong>Python</strong> scripting language, it should run on any major operating system. The installation process might vary depending on the system though. Here, I'm going to share how I've managed to install Nikola on Windows 10.
-              </p>
-              <!-- TEASER_END -->
-
-              <ul class="instruction-list li-bigskip simple">
-                <li>
-                  <span class="html">❶</span> Nikola is powered by <a class="reference external" href="https://www.python.org/">Python</a>, so first you need to make sure Python is installed on your computer.
-                </li>
-
-                <li>
-                  <span class="html">❷</span> To install Nikola, you will need a command-line console. Even though the default Windows console (cmd) should be perfectly suitable, I recommend to get <a class="reference external" href="https://conemu.github.io/">ConEmu</a>, because it's configurable, feature-rich and looks much better.
-                </li>
-
-                <li>
-                  <span class="html">❸</span> The best way to install Nikola is to use <code>pip</code> in a <code>virtualenv</code>. So, open console in admin mode at desired path and install <code>virtualenv</code>.
-                </li>
-              </ul>
-
-              <div class="instruction-list li-bigskip">
-                <pre class="code console"><a id="rest_code_e135834442a94bf3916b89f3d65871cf-1" name="rest_code_e135834442a94bf3916b89f3d65871cf-1"></a><span class="gp">$</span> py -m pip install virtualenv
-<a id="rest_code_e135834442a94bf3916b89f3d65871cf-2" name="rest_code_e135834442a94bf3916b89f3d65871cf-2"></a><span class="gp">$</span> virtualenv nikola
-<a id="rest_code_e135834442a94bf3916b89f3d65871cf-3" name="rest_code_e135834442a94bf3916b89f3d65871cf-3"></a><span class="gp">$</span> <span class="nb">cd</span> nikola
-</pre>
-              </div>
-
-              <ul class="instruction-list li-bigskip simple">
-                <li>
-                  <span class="html">❹</span> Download packages <code>lxml</code> and <code>Pillow</code> compiled for Windows and for your installed version of Python. Copy them into nikola folder and install them using <code>pip</code>. I downloaded the packages <a class="reference external" href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">here</a>.
-                </li>
-              </ul>
-
-              <div class="instruction-list li-bigskip">
-                <pre class="code console"><a id="rest_code_38c9c1cfe70641919c99088c51240bba-1" name="rest_code_38c9c1cfe70641919c99088c51240bba-1"></a><span class="gp">$</span> pip install lxml-3.6.1-cp35-cp35m-win32.whl
-<a id="rest_code_38c9c1cfe70641919c99088c51240bba-2" name="rest_code_38c9c1cfe70641919c99088c51240bba-2"></a><span class="gp">$</span> pip install Pillow-3.3.0-cp35-cp35m-win32.whl
-</pre>
-              </div>
-
-              <ul class="instruction-list li-bigskip simple">
-                <li>
-                  <span class="html">❺</span> Finally, install Nikola with "extras" option.
-                </li>
-              </ul>
-
-              <div class="instruction-list li-bigskip">
-                <pre class="code console"><a id="rest_code_f005263d078c4f41ae112bcf36a3b63e-1" name="rest_code_f005263d078c4f41ae112bcf36a3b63e-1"></a><span class="gp">$</span> pip install --upgrade <span class="s2">"Nikola[extras]"</span>
-</pre>
-              </div>
-
-              <ul class="instruction-list li-bigskip simple">
-                <li>
-                  <span class="html">❻</span> Now, you should have Nikola installed and ready to use. You can get all available commands by typing <code>nikola help</code>.
-                </li>
-              </ul>
-
-              <div class="instruction-list li-bigskip">
-                <pre class="code console"><a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-1" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-1"></a><span class="gp">$</span> nikola <span class="nb">help</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-2" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-2"></a><span class="go">Nikola is a tool to create static websites and blogs. For full documentation and more information,</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-3" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-3"></a><span class="go">please visit https://getnikola.com/</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-4" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-4"></a>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-5" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-5"></a><span class="go">Available commands:</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-6" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-6"></a><span class="go">  nikola auto                 builds and serves a site; automatically detects site changes</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-7" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-7"></a><span class="go">  nikola bootswatch_theme     given a swatch name from bootswatch.com and a parent theme, creates a custom theme</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-8" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-8"></a><span class="go">  nikola build                run tasks</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-9" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-9"></a><span class="go">  nikola check                check links and files in the generated site</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-10" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-10"></a><span class="go">  nikola clean                clean action / remove targets</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-11" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-11"></a><span class="go">  nikola console              start an interactive Python console with access to your site</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-12" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-12"></a><span class="go">  nikola deploy               deploy the site</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-13" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-13"></a><span class="go">  nikola doit_auto            automatically execute tasks when a dependency changes</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-14" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-14"></a><span class="go">  nikola dumpdb               dump dependency DB</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-15" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-15"></a><span class="go">  nikola forget               clear successful run status from internal DB</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-16" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-16"></a><span class="go">  nikola github_deploy        deploy the site to GitHub Pages</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-17" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-17"></a><span class="go">  nikola help                 show help</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-18" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-18"></a><span class="go">  nikola ignore               ignore task (skip) on subsequent runs</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-19" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-19"></a><span class="go">  nikola import_wordpress     import a WordPress dump</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-20" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-20"></a><span class="go">  nikola info                 show info about a task</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-21" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-21"></a><span class="go">  nikola init                 create a Nikola site in the specified folder</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-22" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-22"></a><span class="go">  nikola install_theme        install theme into current site</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-23" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-23"></a><span class="go">  nikola list                 list tasks from dodo file</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-24" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-24"></a><span class="go">  nikola new_page             create a new page in the site</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-25" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-25"></a><span class="go">  nikola new_post             create a new blog post or site page</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-26" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-26"></a><span class="go">  nikola orphans              list all orphans</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-27" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-27"></a><span class="go">  nikola plugin               manage plugins</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-28" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-28"></a><span class="go">  nikola reset-dep            recompute and save the state of file dependencies without executing actions</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-29" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-29"></a><span class="go">  nikola rst2html             compile reStructuredText to HTML files</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-30" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-30"></a><span class="go">  nikola serve                start the test webserver</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-31" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-31"></a><span class="go">  nikola status               display site status</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-32" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-32"></a><span class="go">  nikola strace               use strace to list file_deps and targets</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-33" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-33"></a><span class="go">  nikola tabcompletion        generate script for tab-completion</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-34" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-34"></a><span class="go">  nikola theme                manage themes</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-35" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-35"></a><span class="go">  nikola version              print the Nikola version number</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-36" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-36"></a>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-37" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-37"></a><span class="go">  nikola help                 show help / reference</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-38" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-38"></a><span class="go">  nikola help &lt;command&gt;       show command usage</span>
-<a id="rest_code_d1baafa36d274f4a8ab027038a7763f7-39" name="rest_code_d1baafa36d274f4a8ab027038a7763f7-39"></a><span class="go">  nikola help &lt;task-name&gt;     show task usage</span>
-</pre>
-              </div>
-
-              <ul class="instruction-list li-bigskip simple">
-                <li>
-                  <span class="html">❼</span> To test if Nikola works as intended, you can create a demo site by few commands and display it in your browser.
-                </li>
-              </ul>
-
-              <div class="instruction-list li-bigskip">
-                <pre class="code console"><a id="rest_code_1cb4a5aabf0344b59abc60918a8a9456-1" name="rest_code_1cb4a5aabf0344b59abc60918a8a9456-1"></a><span class="gp">$</span> nikola init --demo              <span class="c1"># Create and init a demo site</span>
-<a id="rest_code_1cb4a5aabf0344b59abc60918a8a9456-2" name="rest_code_1cb4a5aabf0344b59abc60918a8a9456-2"></a><span class="gp">$</span> <span class="nb">cd</span> demo
-<a id="rest_code_1cb4a5aabf0344b59abc60918a8a9456-3" name="rest_code_1cb4a5aabf0344b59abc60918a8a9456-3"></a><span class="gp">$</span> nikola build                    <span class="c1"># Build - generate the output</span>
-<a id="rest_code_1cb4a5aabf0344b59abc60918a8a9456-4" name="rest_code_1cb4a5aabf0344b59abc60918a8a9456-4"></a><span class="gp">$</span> nikola serve -a 127.0.0.1 -b    <span class="c1"># Display the site in your default browser</span>
-</pre>
-              </div>
-
-              <div class="line-block">
-                <div class="line">
-                  <br>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <aside class="postpromonav">
-            <nav>
-              <ul class="tags" itemprop="keywords">
-                <li>
-                  <a class="tag p-category" href="../../../categories/nikola/" rel="tag">nikola</a>
-                </li>
-              </ul>
-
-              <ul class="pager hidden-print">
-                <li class="previous">
-                  <a href="../starting-a-personal-blog-with-nikola/" rel="prev" title="Starting a Personal Blog with Nikola"><i class="fa fa-arrow-left"></i>&nbsp; Previous post</a>
-                </li>
-
-                <li class="next">
-                  <a href="../../jupyter/linear-algebra/linear-algebra-with-python-and-numpy-1/" rel="next" title="Linear Algebra with Python and NumPy (I)">Next post &nbsp;<i class="fa fa-arrow-right"></i></a>
-                </li>
-              </ul>
-            </nav>
-          </aside>
-
-          <section class="comments hidden-print">
-            <h2>
-              Comments
-            </h2>
-
-            <div id="disqus_thread">
-            </div>
-            <script>
-            var disqus_shortname ="meshlogic",
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<!-- ............................................................................. -->
+<!-- ............................................................................. -->
+<p>Because of the fact that <strong>Nikola</strong> site generator is written in <strong>Python</strong> scripting language, it should run on any major operating system. The installation process might vary depending on the system though. Here, I'm going to share how I've managed to install Nikola on Windows 10.</p>
+<!-- TEASER_END -->
+<ul class="instruction-list li-bigskip simple">
+<li>
+<span class="html">❶</span> Nikola is powered by <a class="reference external" href="https://www.python.org/">Python</a>, so first you need to make sure Python is installed on your computer.</li>
+<li>
+<span class="html">❷</span> To install Nikola, you will need a command-line console. Even though the default Windows console (cmd) should be perfectly suitable, I recommend to get <a class="reference external" href="https://conemu.github.io/">ConEmu</a>, because it's configurable, feature-rich and looks much better.</li>
+<li>
+<span class="html">❸</span> The best way to install Nikola is to use <code>pip</code> in a <code>virtualenv</code>. So, open console in admin mode at desired path and install <code>virtualenv</code>.</li>
+</ul>
+<div class="instruction-list li-bigskip"><pre class="code console"><a name="rest_code_23a8260e7e9f4a11ac633f1706a6d30b-1"></a><span class="gp">$</span> py -m pip install virtualenv
+<a name="rest_code_23a8260e7e9f4a11ac633f1706a6d30b-2"></a><span class="gp">$</span> virtualenv nikola
+<a name="rest_code_23a8260e7e9f4a11ac633f1706a6d30b-3"></a><span class="gp">$</span> <span class="nb">cd</span> nikola
+</pre></div>
+<ul class="instruction-list li-bigskip simple">
+<li>
+<span class="html">❹</span> Download packages <code>lxml</code> and <code>Pillow</code> compiled for Windows and for your installed version of Python. Copy them into nikola folder and install them using <code>pip</code>. I downloaded the packages <a class="reference external" href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">here</a>.</li>
+</ul>
+<div class="instruction-list li-bigskip"><pre class="code console"><a name="rest_code_b98f34b1f2f743d6b982372de6a3daa3-1"></a><span class="gp">$</span> pip install lxml-3.6.1-cp35-cp35m-win32.whl
+<a name="rest_code_b98f34b1f2f743d6b982372de6a3daa3-2"></a><span class="gp">$</span> pip install Pillow-3.3.0-cp35-cp35m-win32.whl
+</pre></div>
+<ul class="instruction-list li-bigskip simple">
+<li>
+<span class="html">❺</span> Finally, install Nikola with "extras" option.</li>
+</ul>
+<div class="instruction-list li-bigskip"><pre class="code console"><a name="rest_code_0401838369c6467faadd7a49f6a8f3cb-1"></a><span class="gp">$</span> pip install --upgrade <span class="s2">"Nikola[extras]"</span>
+</pre></div>
+<ul class="instruction-list li-bigskip simple">
+<li>
+<span class="html">❻</span> Now, you should have Nikola installed and ready to use. You can get all available commands by typing <code>nikola help</code>.</li>
+</ul>
+<div class="instruction-list li-bigskip"><pre class="code console"><a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-1"></a><span class="gp">$</span> nikola <span class="nb">help</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-2"></a><span class="go">Nikola is a tool to create static websites and blogs. For full documentation and more information,</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-3"></a><span class="go">please visit https://getnikola.com/</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-4"></a>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-5"></a><span class="go">Available commands:</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-6"></a><span class="go">  nikola auto                 builds and serves a site; automatically detects site changes</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-7"></a><span class="go">  nikola bootswatch_theme     given a swatch name from bootswatch.com and a parent theme, creates a custom theme</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-8"></a><span class="go">  nikola build                run tasks</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-9"></a><span class="go">  nikola check                check links and files in the generated site</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-10"></a><span class="go">  nikola clean                clean action / remove targets</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-11"></a><span class="go">  nikola console              start an interactive Python console with access to your site</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-12"></a><span class="go">  nikola deploy               deploy the site</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-13"></a><span class="go">  nikola doit_auto            automatically execute tasks when a dependency changes</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-14"></a><span class="go">  nikola dumpdb               dump dependency DB</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-15"></a><span class="go">  nikola forget               clear successful run status from internal DB</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-16"></a><span class="go">  nikola github_deploy        deploy the site to GitHub Pages</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-17"></a><span class="go">  nikola help                 show help</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-18"></a><span class="go">  nikola ignore               ignore task (skip) on subsequent runs</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-19"></a><span class="go">  nikola import_wordpress     import a WordPress dump</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-20"></a><span class="go">  nikola info                 show info about a task</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-21"></a><span class="go">  nikola init                 create a Nikola site in the specified folder</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-22"></a><span class="go">  nikola install_theme        install theme into current site</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-23"></a><span class="go">  nikola list                 list tasks from dodo file</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-24"></a><span class="go">  nikola new_page             create a new page in the site</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-25"></a><span class="go">  nikola new_post             create a new blog post or site page</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-26"></a><span class="go">  nikola orphans              list all orphans</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-27"></a><span class="go">  nikola plugin               manage plugins</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-28"></a><span class="go">  nikola reset-dep            recompute and save the state of file dependencies without executing actions</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-29"></a><span class="go">  nikola rst2html             compile reStructuredText to HTML files</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-30"></a><span class="go">  nikola serve                start the test webserver</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-31"></a><span class="go">  nikola status               display site status</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-32"></a><span class="go">  nikola strace               use strace to list file_deps and targets</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-33"></a><span class="go">  nikola tabcompletion        generate script for tab-completion</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-34"></a><span class="go">  nikola theme                manage themes</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-35"></a><span class="go">  nikola version              print the Nikola version number</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-36"></a>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-37"></a><span class="go">  nikola help                 show help / reference</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-38"></a><span class="go">  nikola help &lt;command&gt;       show command usage</span>
+<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-39"></a><span class="go">  nikola help &lt;task-name&gt;     show task usage</span>
+</pre></div>
+<ul class="instruction-list li-bigskip simple">
+<li>
+<span class="html">❼</span> To test if Nikola works as intended, you can create a demo site by few commands and display it in your browser.</li>
+</ul>
+<div class="instruction-list li-bigskip"><pre class="code console"><a name="rest_code_459da041c66643bdbd5e32060ad895cb-1"></a><span class="gp">$</span> nikola init --demo              <span class="c1"># Create and init a demo site</span>
+<a name="rest_code_459da041c66643bdbd5e32060ad895cb-2"></a><span class="gp">$</span> <span class="nb">cd</span> demo
+<a name="rest_code_459da041c66643bdbd5e32060ad895cb-3"></a><span class="gp">$</span> nikola build                    <span class="c1"># Build - generate the output</span>
+<a name="rest_code_459da041c66643bdbd5e32060ad895cb-4"></a><span class="gp">$</span> nikola serve -a <span class="m">127</span>.0.0.1 -b    <span class="c1"># Display the site in your default browser</span>
+</pre></div>
+<div class="line-block">
+<div class="line"><br></div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../categories/nikola/" rel="tag">nikola</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../starting-a-personal-blog-with-nikola/" rel="prev" title="Starting a Personal Blog with Nikola"><i class="fa fa-arrow-left"></i>  Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../jupyter/linear-algebra/linear-algebra-with-python-and-numpy-1/" rel="next" title="Linear Algebra with Python and NumPy (I)">Next post  <i class="fa fa-arrow-right"></i></a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="meshlogic",
             disqus_url="https://meshlogic.github.io/posts/web-design/install-nikola-on-windows-10/",
-            disqus_title="Install Nikola on Windows 10",
-            disqus_identifier="cache/posts/web-design/install-nikola-on-windows-10.html",
-            disqus_config = function () {
+        disqus_title="Install Nikola on Windows 10",
+        disqus_identifier="cache/posts/web-design/install-nikola-on-windows-10.html",
+        disqus_config = function () {
             this.language = "en";
-            };
-            (function() {
+        };
+        (function() {
             var dsq = document.createElement('script'); dsq.async = true;
             dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-            </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> <a class="dsq-brlink" href="https://disqus.com" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
-          </section>
-        </article>
-        <script>
-        var disqus_shortname="meshlogic";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());
-        </script>
-      </div>
-    </div>
-    <!-- BODY FOOTER -->
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
-    <div class="container">
-      <footer id="body_footer">
-        Contents © 2016 by <a href="mailto:meshlogic@gmail.com">Miki</a> — Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
-        <div class="counter">
-          <script src="https://www.w3counter.com/tracker.js?id=103452">
-          </script>
-          <script>
+
+        </section></article><script>var disqus_shortname="meshlogic";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+</div>
+
+
+<!-- BODY FOOTER -->
+<div class="container">
+    <footer id="body_footer">
+
+        
+    Contents © 2017 by <a href="mailto:meshlogic@gmail.com">Miki</a>
+    — Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
+    
+
+        
+
+            
+    <div class="counter">
+        <script src="https://www.w3counter.com/tracker.js?id=103452"></script><script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -314,20 +247,26 @@
 
             ga('create', 'UA-82334406-1', 'auto');
             ga('send', 'pageview');
-          </script>
-        </div>
+        </script>
+</div>
 
-        <div id="social_icons">
-          <a href="https://github.com/meshlogic/" title="My GitHub"><i class="fa fa-3x fa-github"></i></a>
-        </div>
-      </footer>
+    <div id="social_icons">
+        <a href="https://github.com/meshlogic/" title="My GitHub"><i class="fa fa-3x fa-github"></i></a>
+
+        <a href="http://www.flickr.com/photos/meshlogic/" title="See my photos on Flickr!"><i class="fa fa-3x fa-flickr"></i></a>
+
+        <a href="https://www.youtube.com/channel/UCJn5IgykaGERrwvzLhayJiw" title="See my videos on YouTube!"><i class="fa fa-3x fa-youtube-square"></i></a>
     </div>
-    <!-- SCRIPTS -->
-    <script src="../../../assets/js/all-nocdn.js">
-    </script>
-    <script>
+
+
+    </footer>
+</div>
+
+
+<!-- SCRIPTS -->
+            <script src="../../../assets/js/all-nocdn.js"></script><script>
     moment.locale("en");
     fancydates(0, "YYYY-MM-DD HH:mm");
-    </script>
-  </body>
+</script>
+</body>
 </html>

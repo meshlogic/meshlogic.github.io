@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Correct HDRI Environment Map Exposure in Blender | Meshlogic</title>
+<link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="canonical" href="https://meshlogic.github.io/posts/blender/rendering/nodes-correct-hdri/">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+        },
+        displayAlign: 'center'
+    });
+</script><!--[if lt IE 9]><script src="../../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Miki">
+<link rel="prev" href="../../addons/collada-exporter-second-life/" title="Collada Exporter for Second Life - Blender Addon" type="text/html">
+<link rel="next" href="../../materials/nodes-custom-color-ramp/" title="Custom Color Ramp Nodes" type="text/html">
+<meta property="og:site_name" content="Meshlogic">
+<meta property="og:title" content="Correct HDRI Environment Map Exposure in Blender">
+<meta property="og:url" content="https://meshlogic.github.io/posts/blender/rendering/nodes-correct-hdri/">
+<meta property="og:description" content="Lighting your scene with a HDRI environment map is a great method how to improve quality of your renders. Not only that it provides realistic reflections for glossy materials, but also creates colored">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-06-05T15:00:00+02:00">
+<meta property="article:tag" content="blender-rendering">
+<meta property="article:tag" content="mathjax">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+</head>
+<body>
+
+
+<!-- BODY CONTAINER -->
+<div class="container" id="body_container">
+
+    <!-- HEADER -->
+    <header id="body_header"><a href="../../../../" title="Home"><i>A personal blog on computer graphics, scientific computing, Blender, Jupyter and Second Life</i></a>
+    </header><!-- NAVBAR --><nav class="navbar navbar-default navbar-static"><div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+        </div>
+                
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false" role="navigation">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../../../"><i class="fa fa-lg fa-home"></i>  Home</a>
+                </li>
+<li>
+<a href="../../../../archive.html">Archive</a>
+                </li>
+<li>
+<a href="../../../../categories/">Categories</a>
+                </li>
+<li>
+<a href="../../../../gallery/">Gallery</a>
+                </li>
+<li>
+<a href="../../../../pages/articles/">Articles</a>
+                </li>
+<li>
+<a href="../../../../pages/blender-addons/">Blender Addons</a>
+                </li>
+<li>
+<a href="../../../../pages/about/">About</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="index.rst" id="sourcelink">Source</a>
+    </li>
+                
+            </ul>
+</div>
+    </nav><!-- BODY CONTENT !! --><div class="container" id="body_content" role="main">
+
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><!--<h1 class="p-name entry-title" itemprop="headline name"><a href="/posts/blender/rendering/nodes-correct-hdri/" class="u-url">Correct HDRI Environment Map Exposure in Blender</a></h1> --><h1 class="p-name entry-title" itemprop="headline name">Correct HDRI Environment Map Exposure in Blender</h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    Miki
+            </span></p>
+            <p class="dateline"><time class="published dt-published" datetime="2017-06-05T15:00:00+02:00" itemprop="datePublished" title="2017-06-05">2017-06-05</time></p>
+                <p class="commentline">            <a href="#disqus_thread" data-disqus-identifier="cache/posts/blender/rendering/nodes-correct-hdri.html">Comments</a>
+
+
+                    </p>
+<p class="sourceline"><a href="index.rst" id="sourcelink">Source</a></p>
+
+        </div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>Lighting your scene with a HDRI environment map is a great method how to improve quality of your renders. Not only that it provides realistic reflections for glossy materials, but also creates colored lights and shadows in the most realistic way since every pixel of the environment map actually stands for a light source illuminating the scene.</p>
+<div class="thumbnail figure align-center">
+<a class="reference external image-reference" href="HDR_cgt040_Warehouse.jpg"><img alt="HDR_cgt040_Warehouse.tn.jpg" src="HDR_cgt040_Warehouse.tn.jpg"></a>
+<p class="caption">A simple mesh sphere and plane illuminated by a HDRI environment map.</p>
+</div>
+<!-- TEASER_END -->
+<div class="section" id="a-very-brief-introduction-to-hdri">
+<h2>1 A Very Brief Introduction to HDRI</h2>
+<p><strong>HDRI (high dynamic range images)</strong> are image files with extended bit depth (usually 32bit per color channel). Thanks to that, they are capable to capture extremely high range of luminance. That's simply essential for capturing real lighting conditions in outdoor environments, where the difference between the luminance of sun and the rest of the scene might be up to 20 EV (exposure value numbers) or even more.</p>
+<p>There are two most common file formats: <strong>Radiance HDR (.hdr)</strong> and <strong>OpenEXR (.exr)</strong>. OpenEXR is often preferred in Blender, because it enables to store renders with multiple layers and passes for post-processing and also seems to be more memory effective, but HDR files should work fine as well.</p>
+<p>Of course, capturing a 360deg panoramic environment map with such a high range of exposure is not an easy task. I think, there is no camera capable to capture such dynamic range in a single shot. Exposure bracketing and using filters is essential. All that difficulties are the reason why quality HDRI images are quite rare and expansive. However, there are many sites providing HDRIs for free, usually in reduced resolution.</p>
+</div>
+<div class="section" id="basic-node-setup-for-hdri-lighting">
+<h2>2 Basic Node Setup for HDRI Lighting</h2>
+<p>If you have a physically accurate HDRI environment map, using it for illuminating your scene in Blender is extremely easy (we use Cycles Render and Node Editor here). Just make a <strong>World Material</strong> with <strong>Environment Texture</strong> and <strong>Background Shader</strong>. If you want to rotate the environment, just add a <strong>Mapping</strong> node and you can rotate it around Z axis.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="basic-hdri-lighting.png"><img alt="basic-hdri-lighting.tn.png" class="figure-radius" src="basic-hdri-lighting.tn.png"></a>
+<p class="caption">Lighting the scene with a HDRI environment map.</p>
+</div>
+<p>If you want to use the HDRI only for lighting and reflections, but have a different background, you can do it directly with nodes. Just use the <strong>Is Camera Ray</strong> attribute and plug it into a <strong>Mix Shader</strong>. The example below uses a spherical gradient as a background to create sort of vignette effect.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="basic-hdri-lighting-bcg.png"><img alt="basic-hdri-lighting-bcg.tn.png" class="figure-radius" src="basic-hdri-lighting-bcg.tn.png"></a>
+<p class="caption">Lighting the scene with a HDRI, but using different background.</p>
+</div>
+<div class="section" id="render-with-a-shadow-catcher-plane">
+<h3>2.1 Render with a Shadow Catcher Plane</h3>
+<p>A neat effect can be achieved when we use an additional mesh plane to catch shadows of the mesh objects. In this case we just need to create a new material for the plane according the node setup below (don't forget to set the same Z axis rotation in the world shader and plane material).</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="shadow-catcher-plane.png"><img alt="shadow-catcher-plane.tn.png" class="figure-radius" src="shadow-catcher-plane.tn.png"></a>
+<p class="caption">Add an additional mesh plane to catch shadows.</p>
+</div>
+<div class="figure align-center">
+<a class="reference external image-reference" href="basic-hdri-shadow-catcher.png"><img alt="basic-hdri-shadow-catcher.tn.png" class="figure-radius" src="basic-hdri-shadow-catcher.tn.png"></a>
+<p class="caption">Node setup for the shadow catcher plane material.</p>
+</div>
+</div>
+</div>
+<div class="section" id="inaccurate-hdri-environment-maps">
+<h2>3 Inaccurate HDRI Environment Maps</h2>
+<p>If a HDRI map is physically inaccurate, there might be some problems being emerged:</p>
+<ul class="li-smallskip simple">
+<li>
+<strong>Missing strong shadows where expected</strong> - the HDRI has insufficient dynamic range, the sun luminance need to be significantly higher than the rest of the sky to create crisp and strong shadows.</li>
+<li>
+<strong>When using a shadow catcher plane, the plane is too dark or too light compared to the HDRI on the background</strong> - inaccurate exposure levels make the mesh scene illuminated inaccurately and sometimes color temperature might be wrong as well.</li>
+</ul>
+<p>Practically, almost all HDRI maps are more or less physically inaccurate (especially the free ones), because creating 100% accurate HDRI map is indeed a very difficult task. At least, I didn't find any free HDRI that wouldn't need any adjusting.</p>
+<div class="figures-container center docutils container">
+<div class="thumbnail figure">
+<a class="reference external image-reference" href="hdri-problem-01.jpg"><img alt="hdri-problem-01.tn.jpg" src="hdri-problem-01.tn.jpg"></a>
+<p class="caption">Too low exposure range, sun luminance is not strong enough to illuminate the scene properly and to create strong shadows.</p>
+</div>
+<div class="thumbnail figure">
+<a class="reference external image-reference" href="hdri-problem-02.jpg"><img alt="hdri-problem-02.tn.jpg" src="hdri-problem-02.tn.jpg"></a>
+<p class="caption">HDRI illuminates the shadow catcher plane too much.</p>
+</div>
+</div>
+</div>
+<div class="section" id="node-setups-to-correct-hdri-lighting">
+<h2>4 Node Setups to Correct HDRI Lighting</h2>
+<p>Using nodes within the shadow catcher material and the world shader, we can fix all problems of HDRI lighting without the need to modify the actual HDRI file.</p>
+<div class="section" id="match-the-shadow-catcher-material">
+<h3>4.1 Match the Shadow Catcher Material</h3>
+<p>The easiest thing we might try to do is to modify the shadow catcher material to match the background. I used my custom <strong>Exposure node</strong> here and also a setup to match color temperature.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="hdri-problem-02-fix-plane.jpg"><img alt="hdri-problem-02-fix-plane.tn.jpg" class="figure-radius" src="hdri-problem-02-fix-plane.tn.jpg"></a>
+<p class="caption">Here we fixed the problem nicely by lowering exposure and matching color temperature for the shadow catcher material.</p>
+</div>
+<div class="figure align-center">
+<a class="reference external image-reference" href="hdri-problem-01-fix-plane.jpg"><img alt="hdri-problem-01-fix-plane.tn.jpg" class="figure-radius" src="hdri-problem-01-fix-plane.tn.jpg"></a>
+<p class="caption">We managed to match the shadow catcher plane by increasing exposure and color temperature. Yet the result is not what I would expect at direct sunlight, the mesh object is too dark and shadows are too subtle.</p>
+</div>
+</div>
+<div class="section" id="a-versatile-node-setup-for-the-world-shader">
+<h3>4.2 A Versatile Node Setup for the World Shader</h3>
+<p>So, even when we match the shadow catcher plane, the result might look disappointing. We need to be able to increase the exposure range, especially for the sun. To do so, I've developed a versatile node setup that enables not only to increase the sun exposure, but also tune the strength separately for all these parts: <strong>background</strong>, <strong>lighting</strong>, <strong>reflections</strong>.</p>
+<p>To fine tune the strength of all rendering components separately, we can use the light path attributes <strong>Is Camera Ray</strong> and <strong>Is Glossy Ray</strong> with the mix shaders as in this node setup:</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="correct-hdri-split-shaders.png"><img alt="correct-hdri-split-shaders.tn.png" class="figure-radius" src="correct-hdri-split-shaders.tn.png"></a>
+<p class="caption">Node setup to split rendering shaders and set their strength.</p>
+</div>
+<p>To increase the sun luminance and the dynamic exposure range accordingly, we can create a mask detecting the sun area and multiply the luminance strength there. With nodes it can look like this:</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="correct-hdri-sun-enhance.png"><img alt="correct-hdri-sun-enhance.tn.png" class="figure-radius" src="correct-hdri-sun-enhance.tn.png"></a>
+<p class="caption">Node setup to enhance the sun exposure.</p>
+</div>
+<p>Now, lets put everything together into a complete node group to correct any HDRI world shader. The node can also correct the color temperature of the illuminating light, therefore the color fix is applied only for the lighting and reflection shaders, but not for the background shader.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="correct-hdri-nodesetup.png"><img alt="correct-hdri-nodesetup.tn.png" class="figure-radius" src="correct-hdri-nodesetup.tn.png"></a>
+<p class="caption">The complete node setup for correcting the HDRI World Shader.</p>
+</div>
+<p>In the example below, we managed to fix our problematic HDRI with insufficient exposure range. Now it looks as expected for a direct sunlight scene! Note that we didn't need to modify the actual HDRI file and we fixed it by world shader nodes.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="correct-hdri-example-01.png"><img alt="correct-hdri-example-01.tn.png" class="figure-radius" src="correct-hdri-example-01.tn.png"></a>
+<p class="caption">We increased the sun exposure and now it perfectly illuminates our scene and creates crisp shadows.</p>
+</div>
+</div>
+<div class="section" id="modify-the-hdri-file-using-blender-compositor">
+<h3>4.3 Modify the HDRI File using Blender Compositor</h3>
+<p>Another option is to fix the actual HDRI file. Of course, you could use a photo editor (like Photoshop) which supports HDRI files. But no need to use any expansive program, we can modify HDRI files directly in Blender!</p>
+<p>In the Node Editor, switch to the <strong>Compositing</strong> and the result of your modifications you can see in the UV/Image Editor as the <strong>Viewer Node</strong>. Then, you can save the Viewer Node image as a new HDRI file. <em>Hint: you can select the default export file type in Properties - Output</em>.</p>
+<p>To make things easier, I've created a correction node group also for the Compositor. It enables to increase the sun exposure the same way as the HDRI_Correct node for the World Shader. The only thing Compositor misses, is the color temperature in Kelvins, so we need to provide color correction in RGB format.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="compositor-correct-hdri.png"><img alt="compositor-correct-hdri.tn.png" class="figure-radius" src="compositor-correct-hdri.tn.png"></a>
+<p class="caption">The compositor node setup for HDRI_Correct.</p>
+</div>
+<div class="figure align-center">
+<a class="reference external image-reference" href="compositor-correct-hdri-example-01.png"><img alt="compositor-correct-hdri-example-01.tn.png" class="figure-radius" src="compositor-correct-hdri-example-01.tn.png"></a>
+<p class="caption">Correcting the HDRI file in the Compositor using our custom node.</p>
+</div>
+<div class="thumbnail figure align-center">
+<a class="reference external image-reference" href="HDR_sky080.jpg"><img alt="HDR_sky080.tn.jpg" src="HDR_sky080.tn.jpg"></a>
+<p class="caption">My final render made using the sun exposure corrected HDRI file. Note the blur and vignette effect added later in compositor.</p>
+</div>
+</div>
+</div>
+<div class="section" id="conclusion">
+<h2>5 Conclusion</h2>
+<p>We have proven that Blender is all capable of using HDRI maps for illuminating mesh scenes. If we need to use a physically incorrect HDRI file, we can workaround its exposure directly within the world shader. Moreover, we can use the Blender Compositor as a photo editor to correct the actual HDRI file and increase its exposure range and correct color temperature of the sun.</p>
+</div>
+<div class="section" id="references">
+<h2>References</h2>
+<ul class="simple">
+<li>Download a <a class="reference external" href="https://www.dropbox.com/s/21k1awgks1ai976/HDRI_CorrectExposure.blend?dl=0">blend file</a> (made in Blender 2.78) including free HDRI images (CC-BY licensed) from hdrihaven.com and hdri-skies.com.</li>
+<li>
+<a class="reference external" href="https://hdrihaven.com/">https://hdrihaven.com/</a> - HDRI of various sceneries incl. free versions in 1024x512px.</li>
+<li>
+<a class="reference external" href="http://hdri-skies.com/">http://hdri-skies.com/</a> - HDRI of skies and landscapes incl. free version in 2048x1024px.</li>
+<li>
+<a class="reference external" href="http://hdrmaps.com/">http://hdrmaps.com/</a> - HDRI of various sceneries incl. freebies.</li>
+</ul>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../../categories/blender-rendering/" rel="tag">blender-rendering</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../addons/collada-exporter-second-life/" rel="prev" title="Collada Exporter for Second Life - Blender Addon"><i class="fa fa-arrow-left"></i>  Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../materials/nodes-custom-color-ramp/" rel="next" title="Custom Color Ramp Nodes">Next post  <i class="fa fa-arrow-right"></i></a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="meshlogic",
+            disqus_url="https://meshlogic.github.io/posts/blender/rendering/nodes-correct-hdri/",
+        disqus_title="Correct HDRI Environment Map Exposure in Blender",
+        disqus_identifier="cache/posts/blender/rendering/nodes-correct-hdri.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+        },
+        displayAlign: 'center'
+    });
+</script></article><script>var disqus_shortname="meshlogic";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+</div>
+
+
+<!-- BODY FOOTER -->
+<div class="container">
+    <footer id="body_footer">
+
+        
+    Contents © 2017 by <a href="mailto:meshlogic@gmail.com">Miki</a>
+    — Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
+    
+
+        
+
+            
+    <div class="counter">
+        <script src="https://www.w3counter.com/tracker.js?id=103452"></script><script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-82334406-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+</div>
+
+    <div id="social_icons">
+        <a href="https://github.com/meshlogic/" title="My GitHub"><i class="fa fa-3x fa-github"></i></a>
+
+        <a href="http://www.flickr.com/photos/meshlogic/" title="See my photos on Flickr!"><i class="fa fa-3x fa-flickr"></i></a>
+
+        <a href="https://www.youtube.com/channel/UCJn5IgykaGERrwvzLhayJiw" title="See my videos on YouTube!"><i class="fa fa-3x fa-youtube-square"></i></a>
+    </div>
+
+
+    </footer>
+</div>
+
+
+<!-- SCRIPTS -->
+            <script src="../../../../assets/js/all-nocdn.js"></script><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+</script>
+</body>
+</html>

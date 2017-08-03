@@ -2,8 +2,10 @@
 ** Body Containers
 *******************************************************************************/
 body {
-    background-color: #707070;
-    background-image: url(../img/noisy-texture-256x256-o5-d10-c-707070-t0.png);
+    /*background-color: #707070;*/
+    background-color: #606060;
+    /*background: linear-gradient(#5C666B, #909090);*/
+    /*background-image: url(../img/noisy-texture-256x256-o5-d10-c-707070-t0.png);*/
     background-attachment: fixed;
     padding-top: 20px;
     line-height: 1.6;
@@ -11,8 +13,8 @@ body {
 #body_container {
     background-color: #eae1d3;
     background-image: url(../img/paper_grid_01.png);
-    border-radius: 15px;
-    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.5), 0 3px 20px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5), 0 2px 16px 0 rgba(0, 0, 0, 0.3);
     padding: 0;
 }
 #body_content {
@@ -28,7 +30,7 @@ body {
 #body_header {
     background-image: url(../img/header_01_blue.jpg);
     background-position: center top;
-    border-radius: 15px 15px 0 0;
+    border-radius: 10px 10px 0 0;
     position: relative;
     height: 190px;
 }
@@ -48,13 +50,15 @@ body {
 ** Navbar
 *******************************************************************************/
 .navbar {
-    background-image: url(../img/noisy-texture-128x128-o4-d10-c-373737-t0.png);
+    /*background-image: url(../img/noisy-texture-128x128-o4-d10-c-373737-t0.png);*/
+    background-color: #303030;
     background-repeat: repeat;
     border-left-width: 0;
     border-right-width: 0;
     border: 0;
     border-radius: 0;
-    box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.5), inset 0px 0px 1px 0 rgba(0, 0, 0, 0.3);
+    /*box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.5), inset 0px 0px 1px 0 rgba(0, 0, 0, 0.3);*/
+    box-shadow: 0px 1px 6px 0 rgba(0, 0, 0, 0.5);
     margin: 0 auto -50px auto;
     z-index: 1000;
 }
@@ -70,7 +74,8 @@ body {
     margin-right: 0;
 }
 .dropdown-menu {
-    background-image: url(../img/noisy-texture-128x128-o4-d10-c-373737-t0.png);
+    /*background-image: url(../img/noisy-texture-128x128-o4-d10-c-373737-t0.png);*/
+    background-color: #303030;
     background-repeat: repeat;
     border: 0;
     border-radius: 4px;
@@ -102,7 +107,7 @@ body {
     text-align: center;
     font-size: 15px;
     padding: 0;
-    margin: 15px auto 15px auto;
+    margin: 15px auto 20px auto;
 }
 #body_footer a {
     color: navy;
@@ -121,12 +126,12 @@ body {
 }
 
 #social_icons {
-    margin-top: 3px;
+    margin-top: 5px;
 }
 #social_icons a {
-    margin-left: 4px;
-    margin-right: 4px;
-    color: #303030;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #2a2a2a;
 }
 
 
@@ -142,9 +147,13 @@ body {
     border-bottom: 2px solid rgba(0, 0, 0, 0.20);
 }
 
-/* Post header > h1 */
 .post-text > header > h1 {
     margin-bottom: 10px;
+}
+
+.post-text > header > h1 > a {
+    font-weight: 400;
+    font-size: 28px;
 }
 
 /* Post header > metadata */

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toggle Object Wire - Blender Addon | Meshlogic</title>
+<link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="canonical" href="https://meshlogic.github.io/posts/blender/addons/toggle-object-wire/">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+        },
+        displayAlign: 'center'
+    });
+</script><!--[if lt IE 9]><script src="../../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Miki">
+<link rel="prev" href="../../materials/nodes-pbr-basic-shader/" title="PBR Shader Node for Blender" type="text/html">
+<link rel="next" href="../collada-exporter-second-life/" title="Collada Exporter for Second Life - Blender Addon" type="text/html">
+<meta property="og:site_name" content="Meshlogic">
+<meta property="og:title" content="Toggle Object Wire - Blender Addon">
+<meta property="og:url" content="https://meshlogic.github.io/posts/blender/addons/toggle-object-wire/">
+<meta property="og:description" content="This addon makes toggling object wire and subsurf modifiers really quick. You can select to toggle all objects in the scene or selected objects only. You can use two dedicated buttons in the Info pane">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-04-10T15:00:00+02:00">
+<meta property="article:tag" content="blender-addons">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+</head>
+<body>
+
+
+<!-- BODY CONTAINER -->
+<div class="container" id="body_container">
+
+    <!-- HEADER -->
+    <header id="body_header"><a href="../../../../" title="Home"><i>A personal blog on computer graphics, scientific computing, Blender, Jupyter and Second Life</i></a>
+    </header><!-- NAVBAR --><nav class="navbar navbar-default navbar-static"><div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+        </div>
+                
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false" role="navigation">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../../../"><i class="fa fa-lg fa-home"></i>  Home</a>
+                </li>
+<li>
+<a href="../../../../archive.html">Archive</a>
+                </li>
+<li>
+<a href="../../../../categories/">Categories</a>
+                </li>
+<li>
+<a href="../../../../gallery/">Gallery</a>
+                </li>
+<li>
+<a href="../../../../pages/articles/">Articles</a>
+                </li>
+<li>
+<a href="../../../../pages/blender-addons/">Blender Addons</a>
+                </li>
+<li>
+<a href="../../../../pages/about/">About</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="index.rst" id="sourcelink">Source</a>
+    </li>
+                
+            </ul>
+</div>
+    </nav><!-- BODY CONTENT !! --><div class="container" id="body_content" role="main">
+
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><!--<h1 class="p-name entry-title" itemprop="headline name"><a href="/posts/blender/addons/toggle-object-wire/" class="u-url">Toggle Object Wire - Blender Addon</a></h1> --><h1 class="p-name entry-title" itemprop="headline name">Toggle Object Wire - Blender Addon</h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    Miki
+            </span></p>
+            <p class="dateline"><time class="published dt-published" datetime="2017-04-10T15:00:00+02:00" itemprop="datePublished" title="2017-04-10">2017-04-10</time></p>
+                <p class="commentline">            <a href="#disqus_thread" data-disqus-identifier="cache/posts/blender/addons/toggle-object-wire.html">Comments</a>
+
+
+                    </p>
+<p class="sourceline"><a href="index.rst" id="sourcelink">Source</a></p>
+
+        </div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<!-- TEASER_END -->
+<div class="thumbnail figure align-right">
+<a class="reference external image-reference" href="toggle-object-wire.png"><img alt="toggle-object-wire.tn.png" src="toggle-object-wire.tn.png"></a>
+</div>
+<p>This addon makes toggling object wire and subsurf modifiers really quick. You can select to toggle all objects in the scene or selected objects only. You can use two dedicated buttons in the Info panel, Shading section or key shortcuts.</p>
+<dl class="docutils">
+<dt>It assigns two new shortcuts:</dt>
+<dd><ul class="first last simple">
+<li>Toggle object wire <tt class="docutils literal">\</tt>
+</li>
+<li>Toggle object subsurf modifiers <tt class="docutils literal">shift + \</tt>
+</li>
+</ul></dd>
+</dl>
+<p>Note: The used key <tt class="docutils literal">\</tt> (which is located between Shift and Z key on English keyboards) is named GRLESS in Blender's keymap.</p>
+<div class="youtube-video align-center">
+<iframe width="425" height="344" src="https://www.youtube.com/embed/ZvgctYIe_O4?rel=0&amp;hd=1&amp;wmode=transparent"></iframe>
+</div>
+<div class="section" id="download">
+<h2>Download</h2>
+<ul class="simple">
+<li><a class="reference external" href="https://www.blendswap.com/blends/view/87996">From BlendSwap</a></li>
+<li><a class="reference external" href="https://github.com/meshlogic/blender-addons/tree/master/toggle-object-wire">From GitHub</a></li>
+</ul>
+</div>
+<div class="section" id="changelog">
+<h2>ChangeLog</h2>
+<dl class="docutils">
+<dt>Version 0.1 (29.03.2017)</dt>
+<dd><ul class="first last simple">
+<li>Initial release (made for Blender 2.78)</li>
+</ul></dd>
+</dl>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../../categories/blender-addons/" rel="tag">blender-addons</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../materials/nodes-pbr-basic-shader/" rel="prev" title="PBR Shader Node for Blender"><i class="fa fa-arrow-left"></i>  Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../collada-exporter-second-life/" rel="next" title="Collada Exporter for Second Life - Blender Addon">Next post  <i class="fa fa-arrow-right"></i></a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="meshlogic",
+            disqus_url="https://meshlogic.github.io/posts/blender/addons/toggle-object-wire/",
+        disqus_title="Toggle Object Wire - Blender Addon",
+        disqus_identifier="cache/posts/blender/addons/toggle-object-wire.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="meshlogic";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+</div>
+
+
+<!-- BODY FOOTER -->
+<div class="container">
+    <footer id="body_footer">
+
+        
+    Contents © 2017 by <a href="mailto:meshlogic@gmail.com">Miki</a>
+    — Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
+    
+
+        
+
+            
+    <div class="counter">
+        <script src="https://www.w3counter.com/tracker.js?id=103452"></script><script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-82334406-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+</div>
+
+    <div id="social_icons">
+        <a href="https://github.com/meshlogic/" title="My GitHub"><i class="fa fa-3x fa-github"></i></a>
+
+        <a href="http://www.flickr.com/photos/meshlogic/" title="See my photos on Flickr!"><i class="fa fa-3x fa-flickr"></i></a>
+
+        <a href="https://www.youtube.com/channel/UCJn5IgykaGERrwvzLhayJiw" title="See my videos on YouTube!"><i class="fa fa-3x fa-youtube-square"></i></a>
+    </div>
+
+
+    </footer>
+</div>
+
+
+<!-- SCRIPTS -->
+            <script src="../../../../assets/js/all-nocdn.js"></script><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+</script>
+</body>
+</html>

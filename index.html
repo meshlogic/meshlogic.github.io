@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
-  <head>
-    <meta content="HTML Tidy for HTML5 for Windows version 5.2.0" name="generator">
-    <meta charset="utf-8">
-    <base href="https://meshlogic.github.io/">
-    <meta content="A personal blog on computer graphics, scientific computing, Blender, Jupyter and Second Life" name="description">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>
-      Meshlogic
-    </title>
-    <link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-    <meta content="#5670d4" name="theme-color">
-    <link href="https://meshlogic.github.io/" rel="canonical">
-    <script type="text/x-mathjax-config">
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="A personal blog on computer graphics, scientific computing, Blender, Jupyter and Second Life">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meshlogic</title>
+<link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="canonical" href="https://meshlogic.github.io/">
+<link rel="next" href="index-1.html" type="text/html">
+<script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -23,564 +23,292 @@
         },
         displayAlign: 'center'
     });
-    </script><!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]-->
-    <link href="posts/blender/hsl-color-model-nodes/" rel="prefetch" type="text/html">
-    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" rel="stylesheet">
-  </head>
-  <body>
-    <!-- BODY CONTAINER -->
+</script><!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/blender/materials/nodes-custom-color-ramp/" type="text/html">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+</head>
+<body>
 
-    <div class="container" id="body_container">
-      <!-- HEADER -->
 
-      <header id="body_header">
-        <a href="." title="Home"><i>A personal blog on computer graphics, scientific computing, Blender, Jupyter and Second Life</i></a>
-      </header>
-      <!-- NAVBAR -->
-      <nav class="navbar navbar-default navbar-static">
-        <div class="navbar-header">
-          <button aria-controls="bs-navbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#bs-navbar" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+<!-- BODY CONTAINER -->
+<div class="container" id="body_container">
+
+    <!-- HEADER -->
+    <header id="body_header"><a href="." title="Home"><i>A personal blog on computer graphics, scientific computing, Blender, Jupyter and Second Life</i></a>
+    </header><!-- NAVBAR --><nav class="navbar navbar-default navbar-static"><div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
         </div>
-
-        <div aria-expanded="false" class="collapse navbar-collapse" id="bs-navbar" role="navigation">
-          <ul class="nav navbar-nav">
-            <li class="active">
-              <a href="."><i class="fa fa-lg fa-home"></i>&nbsp; Home <span class="sr-only">(active)</span></a>
-            </li>
-
-            <li>
-              <a href="archive.html">Archive</a>
-            </li>
-
-            <li>
-              <a href="categories/">Categories</a>
-            </li>
-
-            <li>
-              <a href="gallery/">Gallery</a>
-            </li>
-
-            <li>
-              <a href="pages/articles/">Articles</a>
-            </li>
-
-            <li class="dropdown">
-              <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#">Blender Addons <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="pages/blender-addons/bake-helper">Bake Helper</a>
+                
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false" role="navigation">
+            <ul class="nav navbar-nav">
+<li class="active">
+<a href="."><i class="fa fa-lg fa-home"></i>  Home <span class="sr-only">(active)</span></a>
                 </li>
-
-                <li>
-                  <a href="pages/blender-addons/fitting-tools">Fitting Tools</a>
+<li>
+<a href="archive.html">Archive</a>
                 </li>
-              </ul>
+<li>
+<a href="categories/">Categories</a>
+                </li>
+<li>
+<a href="gallery/">Gallery</a>
+                </li>
+<li>
+<a href="pages/articles/">Articles</a>
+                </li>
+<li>
+<a href="pages/blender-addons/">Blender Addons</a>
+                </li>
+<li>
+<a href="pages/about/">About</a>
+
+                
             </li>
+</ul>
+<ul class="nav navbar-nav navbar-right"></ul>
+</div>
+    </nav><!-- BODY CONTENT !! --><div class="container" id="body_content" role="main">
 
-            <li>
-              <a href="pages/about/">About</a>
+        
+    
+<div class="postindex">
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/blender/materials/nodes-custom-color-ramp/" class="u-url">Custom Color Ramp Nodes</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Miki
+            </span></p>
+            <p class="dateline"><a href="posts/blender/materials/nodes-custom-color-ramp/" rel="bookmark"><time class="published dt-published" datetime="2017-06-17T15:00:00+02:00" title="2017-06-17">2017-06-17</time></a></p>
+                <p class="commentline">            <a href="posts/blender/materials/nodes-custom-color-ramp/#disqus_thread" data-disqus-identifier="cache/posts/blender/materials/nodes-custom-color-ramp.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>The default color ramp node in Blender is indeed a very useful node whenever you need to modify range of some color values. However, when creating some versatile node setups, you might be faced with the lack of inputs for the ramp control points. And there is the time to create your custom color ramp node with control inputs.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="posts/blender/materials/nodes-custom-color-ramp/color-ramp-nodes.png"><img alt="color-ramp-nodes.png" class="figure-radius" src="posts/blender/materials/nodes-custom-color-ramp/color-ramp-nodes.png"></a>
+<p class="caption">Color ramp nodes: Blender's default node and two custom nodes with control inputs.</p>
+</div>
+<p class="more"><a href="posts/blender/materials/nodes-custom-color-ramp/">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/blender/rendering/nodes-correct-hdri/" class="u-url">Correct HDRI Environment Map Exposure in Blender</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Miki
+            </span></p>
+            <p class="dateline"><a href="posts/blender/rendering/nodes-correct-hdri/" rel="bookmark"><time class="published dt-published" datetime="2017-06-05T15:00:00+02:00" title="2017-06-05">2017-06-05</time></a></p>
+                <p class="commentline">            <a href="posts/blender/rendering/nodes-correct-hdri/#disqus_thread" data-disqus-identifier="cache/posts/blender/rendering/nodes-correct-hdri.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Lighting your scene with a HDRI environment map is a great method how to improve quality of your renders. Not only that it provides realistic reflections for glossy materials, but also creates colored lights and shadows in the most realistic way since every pixel of the environment map actually stands for a light source illuminating the scene.</p>
+<div class="thumbnail figure align-center">
+<a class="reference external image-reference" href="posts/blender/rendering/nodes-correct-hdri/HDR_cgt040_Warehouse.jpg"><img alt="HDR_cgt040_Warehouse.tn.jpg" src="posts/blender/rendering/nodes-correct-hdri/HDR_cgt040_Warehouse.tn.jpg"></a>
+<p class="caption">A simple mesh sphere and plane illuminated by a HDRI environment map.</p>
+</div>
+<p class="more"><a href="posts/blender/rendering/nodes-correct-hdri/">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/blender/addons/collada-exporter-second-life/" class="u-url">Collada Exporter for Second Life - Blender Addon</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Miki
+            </span></p>
+            <p class="dateline"><a href="posts/blender/addons/collada-exporter-second-life/" rel="bookmark"><time class="published dt-published" datetime="2017-05-17T15:00:00+02:00" title="2017-05-17">2017-05-17</time></a></p>
+                <p class="commentline">            <a href="posts/blender/addons/collada-exporter-second-life/#disqus_thread" data-disqus-identifier="cache/posts/blender/addons/collada-exporter-second-life.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p class="more"><a href="posts/blender/addons/collada-exporter-second-life/">Read more…</a></p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/blender/addons/toggle-object-wire/" class="u-url">Toggle Object Wire - Blender Addon</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Miki
+            </span></p>
+            <p class="dateline"><a href="posts/blender/addons/toggle-object-wire/" rel="bookmark"><time class="published dt-published" datetime="2017-04-10T15:00:00+02:00" title="2017-04-10">2017-04-10</time></a></p>
+                <p class="commentline">            <a href="posts/blender/addons/toggle-object-wire/#disqus_thread" data-disqus-identifier="cache/posts/blender/addons/toggle-object-wire.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p class="more"><a href="posts/blender/addons/toggle-object-wire/">Read more…</a></p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/blender/materials/nodes-pbr-basic-shader/" class="u-url">PBR Shader Node for Blender</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Miki
+            </span></p>
+            <p class="dateline"><a href="posts/blender/materials/nodes-pbr-basic-shader/" rel="bookmark"><time class="published dt-published" datetime="2017-02-23T15:00:00+02:00" title="2017-02-23">2017-02-23</time></a></p>
+                <p class="commentline">            <a href="posts/blender/materials/nodes-pbr-basic-shader/#disqus_thread" data-disqus-identifier="cache/posts/blender/materials/nodes-pbr-basic-shader.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p><strong>PBR (Physically Based Rendering)</strong> seems to be the standard for photorealistic rendering in these days. All major rendering and texturing packages like 3D-Coat, Substance Painter or Marmoset already have this lighting model implemented. Blender is going to include a real-time PBR viewport in version 2.8. However, no need to wait for the new release, thanks to the <strong>Cycles Render</strong>, we can already create a dedicated node setup for the <strong>PBR shader</strong>. We can also use this shader for rendering material maps baked in other programs that already works on the PBR basis.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="posts/blender/materials/nodes-pbr-basic-shader/pbr_maps.png"><img alt="pbr_maps_alpha.png" class="figure-radius" src="posts/blender/materials/nodes-pbr-basic-shader/pbr_maps_alpha.png"></a>
+<p class="caption">PBR (Physically Based Rendering) material maps.</p>
+</div>
+<p class="more"><a href="posts/blender/materials/nodes-pbr-basic-shader/">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/blender/materials/nodes-exposure/" class="u-url">Custom Exposure Node for Blender</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Miki
+            </span></p>
+            <p class="dateline"><a href="posts/blender/materials/nodes-exposure/" rel="bookmark"><time class="published dt-published" datetime="2017-02-19T15:00:00+02:00" title="2017-02-19">2017-02-19</time></a></p>
+                <p class="commentline">            <a href="posts/blender/materials/nodes-exposure/#disqus_thread" data-disqus-identifier="cache/posts/blender/materials/nodes-exposure.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Exposure value (EV) is indeed essential for every photographer and computer artist. In Blender there is an exposure slider in Color Management allowing us to edit the overall exposure (in EV stops) of the output viewport or render. However, what if we wanted to edit exposure of certain material map in the node editor? Such node is still missing in Blender (2.78), but we can easily create a custom group node for that purpose.</p>
+<div class="figure align-center">
+<img alt="exposure-node.png" class="figure-radius" src="posts/blender/materials/nodes-exposure/exposure-node.png"><p class="caption">Custom exposure node for Blender.</p>
+</div>
+<p class="more"><a href="posts/blender/materials/nodes-exposure/">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/blender/themes/elegant-grey-theme/" class="u-url">Elegant Grey Flat Theme for Blender</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Miki
+            </span></p>
+            <p class="dateline"><a href="posts/blender/themes/elegant-grey-theme/" rel="bookmark"><time class="published dt-published" datetime="2017-02-09T12:00:00+02:00" title="2017-02-09">2017-02-09</time></a></p>
+                <p class="commentline">            <a href="posts/blender/themes/elegant-grey-theme/#disqus_thread" data-disqus-identifier="cache/posts/blender/themes/elegant-grey-theme.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p class="more"><a href="posts/blender/themes/elegant-grey-theme/">Read more…</a></p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/blender/materials/nodes-hsl-color-model/" class="u-url">HSL Color Model Decomposition in Blender</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Miki
+            </span></p>
+            <p class="dateline"><a href="posts/blender/materials/nodes-hsl-color-model/" rel="bookmark"><time class="published dt-published" datetime="2016-08-29T18:00:00+02:00" title="2016-08-29">2016-08-29</time></a></p>
+                <p class="commentline">            <a href="posts/blender/materials/nodes-hsl-color-model/#disqus_thread" data-disqus-identifier="cache/posts/blender/materials/nodes-hsl-color-model.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>In the current version, Blender contains decomposition nodes only for <strong>HSV</strong> and <strong>RGB</strong> color models, but still missing nodes for <strong>HSL</strong> color model. Since I find the HSL model very useful for color manipulations, especially its <strong>lightness</strong> value, I've created both <strong>Separate HSL</strong> and <strong>Combine HSL</strong> nodes, which enables me to modify each part of the HSL model.</p>
+<div class="figure align-center">
+<img alt="hsl_hsv_models.png" src="posts/blender/materials/nodes-hsl-color-model/hsl_hsv_models.png">
+</div>
+<p class="more"><a href="posts/blender/materials/nodes-hsl-color-model/">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/virtual-worlds/tweaking-firestorm-viewer/" class="u-url">Tweaking the Firestorm Viewer</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Miki
+            </span></p>
+            <p class="dateline"><a href="posts/virtual-worlds/tweaking-firestorm-viewer/" rel="bookmark"><time class="published dt-published" datetime="2016-08-19T12:40:00+02:00" title="2016-08-19">2016-08-19</time></a></p>
+                <p class="commentline">            <a href="posts/virtual-worlds/tweaking-firestorm-viewer/#disqus_thread" data-disqus-identifier="cache/posts/virtual-worlds/tweaking-firestorm-viewer.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<!-- ............................................................................. -->
+<!-- ............................................................................. -->
+<div class="figure align-right">
+<img alt="FSLogoTrans.png" src="posts/virtual-worlds/tweaking-firestorm-viewer/FSLogoTrans.png">
+</div>
+<p>Just a few days ago, a new version <strong>4.7.9</strong> of the <strong>Firestorm viewer</strong> has been released. Since it brings a few of really neat features, like <strong>avatar rendering complexity</strong> controls, it still doesn't fix some of the older issues. So, let me summarize the issues I will try to tweak...</p>
+<p class="more"><a href="posts/virtual-worlds/tweaking-firestorm-viewer/">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/jupyter/curve-fitting/fitting-a-circle-to-cluster-of-3d-points/" class="u-url">Fitting a Circle to Cluster of 3D Points</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Miki
+            </span></p>
+            <p class="dateline"><a href="posts/jupyter/curve-fitting/fitting-a-circle-to-cluster-of-3d-points/" rel="bookmark"><time class="published dt-published" datetime="2016-07-29T22:38:00+02:00" title="2016-07-29">2016-07-29</time></a></p>
+                <p class="commentline">            <a href="posts/jupyter/curve-fitting/fitting-a-circle-to-cluster-of-3d-points/#disqus_thread" data-disqus-identifier="cache/posts/jupyter/curve-fitting/fitting-a-circle-to-cluster-of-3d-points.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Fitting-a-Circle-to-Cluster-of-3D-Points">Fitting a Circle to Cluster of 3D Points<a class="anchor-link" href="posts/jupyter/curve-fitting/fitting-a-circle-to-cluster-of-3d-points/#Fitting-a-Circle-to-Cluster-of-3D-Points">¶</a>
+</h2>
+<p>This article describes a method how to fit a circle to cluster of points in 3D space. It utilizes the <strong><em>singular value decomposition (SVD)</em></strong> and method of <strong><em>least-squares</em></strong> for optimal circle fitting.</p>
+<p><img src="posts/jupyter/curve-fitting/fitting-a-circle-to-cluster-of-3d-points/fit_circle_3d_axis.png" style="float:none"></p>
+<p class="more"><a href="posts/jupyter/curve-fitting/fitting-a-circle-to-cluster-of-3d-points/">Read more…</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article>
+</div>
+        <nav class="postindexpager"><ul class="pager">
+<li class="next">
+                <a href="index-1.html" rel="next">Older posts</a>
             </li>
-          </ul>
-
-          <ul class="nav navbar-nav navbar-right">
-          </ul>
-        </div>
-      </nav>
-      <!-- BODY CONTENT !! -->
-      <div class="container" id="body_content" role="main">
-        <div class="postindex">
-          <article class="h-entry post-text">
-            <header>
-              <h1 class="p-name entry-title">
-                <a class="u-url" href="posts/blender/hsl-color-model-nodes/">HSL Color Model Decomposition in Blender</a>
-              </h1>
-
-              <div class="metadata">
-                <p class="byline author vcard">
-                  <span class="byline-name fn">Miki</span>
-                </p>
-
-                <p class="dateline">
-                  <a href="posts/blender/hsl-color-model-nodes/" rel="bookmark"><time class="published dt-published" datetime="2016-08-29T18:00:00+02:00" title="2016-08-29">2016-08-29</time></a>
-                </p>
-
-                <p class="commentline">
-                  <a data-disqus-identifier="cache/posts/blender/hsl-color-model-nodes.html" href="posts/blender/hsl-color-model-nodes/#disqus_thread">Comments</a>
-                </p>
-              </div>
-            </header>
-
-            <div class="p-summary entry-summary">
-              <div>
-                <p>
-                  In the current version, Blender contains decomposition nodes only for <strong>HSV</strong> and <strong>RGB</strong> color models, but still missing nodes for <strong>HSL</strong> color model. Since I find the HSL model very useful for color manipulations, especially its <strong>lightness</strong> value, I've created both <strong>Separate HSL</strong> and <strong>Combine HSL</strong> nodes, which enables me to modify each part of the HSL model.
-                </p>
-
-                <div class="figure align-center">
-                  <img alt="hsl_hsv_models.png" src="posts/blender/hsl-color-model-nodes/hsl_hsv_models.png">
-                </div>
-
-                <p class="more">
-                  <a href="posts/blender/hsl-color-model-nodes/">Read more…</a>
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <article class="h-entry post-text">
-            <header>
-              <h1 class="p-name entry-title">
-                <a class="u-url" href="posts/virtual-worlds/tweaking-firestorm-viewer/">Tweaking the Firestorm Viewer</a>
-              </h1>
-
-              <div class="metadata">
-                <p class="byline author vcard">
-                  <span class="byline-name fn">Miki</span>
-                </p>
-
-                <p class="dateline">
-                  <a href="posts/virtual-worlds/tweaking-firestorm-viewer/" rel="bookmark"><time class="published dt-published" datetime="2016-08-19T12:40:00+02:00" title="2016-08-19">2016-08-19</time></a>
-                </p>
-
-                <p class="commentline">
-                  <a data-disqus-identifier="cache/posts/virtual-worlds/tweaking-firestorm-viewer.html" href="posts/virtual-worlds/tweaking-firestorm-viewer/#disqus_thread">Comments</a>
-                </p>
-              </div>
-            </header>
-
-            <div class="p-summary entry-summary">
-              <div>
-                <!-- ............................................................................. -->
-                <!-- ............................................................................. -->
-
-                <div class="figure align-right">
-                  <img alt="FSLogoTrans.png" src="posts/virtual-worlds/tweaking-firestorm-viewer/FSLogoTrans.png">
-                </div>
-
-                <p>
-                  Just a few days ago, a new version <strong>4.7.9</strong> of the <strong>Firestorm viewer</strong> has been released. Since it brings a few of really neat features, like <strong>avatar rendering complexity</strong> controls, it still doesn't fix some of the older issues. So, let me summarize the issues I will try to tweak...
-                </p>
-
-                <p class="more">
-                  <a href="posts/virtual-worlds/tweaking-firestorm-viewer/">Read more…</a>
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <article class="h-entry post-text">
-            <header>
-              <h1 class="p-name entry-title">
-                <a class="u-url" href="posts/jupyter/curve-fitting/fitting-a-circle-to-cluster-of-3d-points/">Fitting a Circle to Cluster of 3D Points</a>
-              </h1>
-
-              <div class="metadata">
-                <p class="byline author vcard">
-                  <span class="byline-name fn">Miki</span>
-                </p>
-
-                <p class="dateline">
-                  <a href="posts/jupyter/curve-fitting/fitting-a-circle-to-cluster-of-3d-points/" rel="bookmark"><time class="published dt-published" datetime="2016-07-29T22:38:00+02:00" title="2016-07-29">2016-07-29</time></a>
-                </p>
-
-                <p class="commentline">
-                  <a data-disqus-identifier="cache/posts/jupyter/curve-fitting/fitting-a-circle-to-cluster-of-3d-points.html" href="posts/jupyter/curve-fitting/fitting-a-circle-to-cluster-of-3d-points/#disqus_thread">Comments</a>
-                </p>
-              </div>
-            </header>
-
-            <div class="p-summary entry-summary">
-              <div class="border-box-sizing" id="notebook" tabindex="-1">
-                <div class="container" id="notebook-container">
-                  <div class="cell border-box-sizing text_cell rendered">
-                    <div class="prompt input_prompt">
-                    </div>
-
-                    <div class="inner_cell">
-                      <div class="text_cell_render border-box-sizing rendered_html">
-                        <h2 id="Fitting-a-Circle-to-Cluster-of-3D-Points">
-                          Fitting a Circle to Cluster of 3D Points<a class="anchor-link" href="posts/jupyter/curve-fitting/fitting-a-circle-to-cluster-of-3d-points/#Fitting-a-Circle-to-Cluster-of-3D-Points">¶</a>
-                        </h2>
-
-                        <p>
-                          This article describes a method how to fit a circle to cluster of points in 3D space. It utilizes the <strong><em>singular value decomposition (SVD)</em></strong> and method of <strong><em>least-squares</em></strong> for optimal circle fitting.
-                        </p>
-
-                        <p>
-                          <img src="posts/jupyter/curve-fitting/fitting-a-circle-to-cluster-of-3d-points/fit_circle_3d_axis.png" style="float:none">
-                        </p>
-
-                        <p class="more">
-                          <a href="posts/jupyter/curve-fitting/fitting-a-circle-to-cluster-of-3d-points/">Read more…</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="h-entry post-text">
-            <header>
-              <h1 class="p-name entry-title">
-                <a class="u-url" href="posts/jupyter/curve-fitting/parametric-curve-fitting/">Parametric Curve Fitting with Iterative Parametrization</a>
-              </h1>
-
-              <div class="metadata">
-                <p class="byline author vcard">
-                  <span class="byline-name fn">Miki</span>
-                </p>
-
-                <p class="dateline">
-                  <a href="posts/jupyter/curve-fitting/parametric-curve-fitting/" rel="bookmark"><time class="published dt-published" datetime="2016-07-20T21:04:00+02:00" title="2016-07-20">2016-07-20</time></a>
-                </p>
-
-                <p class="commentline">
-                  <a data-disqus-identifier="cache/posts/jupyter/curve-fitting/parametric-curve-fitting.html" href="posts/jupyter/curve-fitting/parametric-curve-fitting/#disqus_thread">Comments</a>
-                </p>
-              </div>
-            </header>
-
-            <div class="p-summary entry-summary">
-              <div class="border-box-sizing" id="notebook" tabindex="-1">
-                <div class="container" id="notebook-container">
-                  <div class="cell border-box-sizing text_cell rendered">
-                    <div class="prompt input_prompt">
-                    </div>
-
-                    <div class="inner_cell">
-                      <div class="text_cell_render border-box-sizing rendered_html">
-                        <h2 id="Parametric-Curve-Fitting-with-Iterative-Parametrization">
-                          Parametric Curve Fitting with Iterative Parametrization<a class="anchor-link" href="posts/jupyter/curve-fitting/parametric-curve-fitting/#Parametric-Curve-Fitting-with-Iterative-Parametrization">¶</a>
-                        </h2>
-
-                        <p>
-                          A common task in geometric modeling is to fit a smooth curve to set of 3D points. The usual approach of fitting an explicit function to given data is indeed not usable here since it cannot represent vertical lines and is only single-valued. Therefore, we will look for a curve in parametric representation to approximate the given points.
-                        </p>
-
-                        <p>
-                          The problem is to guess how the points are meant to be parametrized since it strongly affects the quality of approximation. This is a difficult problem that so far has not been solved in a satisfactory way (according to my knowledge). One of the possible methods, discussed in this article, is to iteratively modify the initial parametrization to minimize the error of approximation.
-                        </p>
-
-                        <p>
-                          <img src="posts/jupyter/curve-fitting/parametric-curve-fitting/parametric_curve_approx_2.png" style="float:none">
-                        </p>
-
-                        <p class="more">
-                          <a href="posts/jupyter/curve-fitting/parametric-curve-fitting/">Read more…</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="h-entry post-text">
-            <header>
-              <h1 class="p-name entry-title">
-                <a class="u-url" href="posts/blender/bake-helper-in-final-version-1-0/">Bake Helper in final version 1.0</a>
-              </h1>
-
-              <div class="metadata">
-                <p class="byline author vcard">
-                  <span class="byline-name fn">Miki</span>
-                </p>
-
-                <p class="dateline">
-                  <a href="posts/blender/bake-helper-in-final-version-1-0/" rel="bookmark"><time class="published dt-published" datetime="2016-07-13T17:43:22+02:00" title="2016-07-13">2016-07-13</time></a>
-                </p>
-              </div>
-            </header>
-
-            <div class="p-summary entry-summary">
-              <div>
-                <p>
-                  I'm happy to announce the final version 1.0 of my Bake Helper addon for Blender.
-                </p>
-
-                <ul class="simple">
-                  <li>Fixed compatibility with Blender 2.77
-                  </li>
-
-                  <li>Added button to select a render engine used for baking
-                  </li>
-
-                  <li>When baking is finished, Blender-Render Textured viewport is invoked to display the baked image maps
-                  </li>
-                </ul>
-
-                <p>
-                  <a class="reference external" href="pages/blender-addons/bake-helper">Read more...</a>
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <article class="h-entry post-text">
-            <header>
-              <h1 class="p-name entry-title">
-                <a class="u-url" href="posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-2/">Linear Algebra with Python and NumPy (II)</a>
-              </h1>
-
-              <div class="metadata">
-                <p class="byline author vcard">
-                  <span class="byline-name fn">Miki</span>
-                </p>
-
-                <p class="dateline">
-                  <a href="posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-2/" rel="bookmark"><time class="published dt-published" datetime="2016-07-12T16:42:00+02:00" title="2016-07-12">2016-07-12</time></a>
-                </p>
-
-                <p class="commentline">
-                  <a data-disqus-identifier="cache/posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-2.html" href="posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-2/#disqus_thread">Comments</a>
-                </p>
-              </div>
-            </header>
-
-            <div class="p-summary entry-summary">
-              <div class="border-box-sizing" id="notebook" tabindex="-1">
-                <div class="container" id="notebook-container">
-                  <div class="cell border-box-sizing text_cell rendered">
-                    <div class="prompt input_prompt">
-                    </div>
-
-                    <div class="inner_cell">
-                      <div class="text_cell_render border-box-sizing rendered_html">
-                        <h2 id="Linear-Algebra-with-Python-and-NumPy-(II)">
-                          Linear Algebra with Python and NumPy (II)<a class="anchor-link" href="posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-2/#Linear-Algebra-with-Python-and-NumPy-(II)">¶</a>
-                        </h2>
-
-                        <p>
-                          <img alt="svd algorithm" src="posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-2/svd_algorithm_1x1.png" style="float:right; border-radius:10px;"> This post is a continuation of the previous post on using Python and NumPy package for linear algebra.
-                        </p>
-
-                        <p>
-                          We will briefly cover topics such as:
-                        </p>
-
-                        <ul>
-                          <li>Solving systems of linear equations
-                          </li>
-
-                          <li>Eigenvalues, eigenvectors and matrix spectral decomposition
-                          </li>
-
-                          <li>Singular value decomposition (SVD)
-                          </li>
-
-                          <li>Solving overdetermined linear systems using method of least-squares
-                          </li>
-
-                          <li>Moore-Penrose pseudoinverse matrix
-                          </li>
-                        </ul>
-
-                        <p>
-                          <br>
-                        </p>
-
-                        <p class="more">
-                          <a href="posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-2/">Read more…</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="h-entry post-text">
-            <header>
-              <h1 class="p-name entry-title">
-                <a class="u-url" href="posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-1/">Linear Algebra with Python and NumPy (I)</a>
-              </h1>
-
-              <div class="metadata">
-                <p class="byline author vcard">
-                  <span class="byline-name fn">Miki</span>
-                </p>
-
-                <p class="dateline">
-                  <a href="posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-1/" rel="bookmark"><time class="published dt-published" datetime="2016-07-11T19:54:16+02:00" title="2016-07-11">2016-07-11</time></a>
-                </p>
-
-                <p class="commentline">
-                  <a data-disqus-identifier="cache/posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-1.html" href="posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-1/#disqus_thread">Comments</a>
-                </p>
-              </div>
-            </header>
-
-            <div class="p-summary entry-summary">
-              <div class="border-box-sizing" id="notebook" tabindex="-1">
-                <div class="container" id="notebook-container">
-                  <div class="cell border-box-sizing text_cell rendered">
-                    <div class="prompt input_prompt">
-                    </div>
-
-                    <div class="inner_cell">
-                      <div class="text_cell_render border-box-sizing rendered_html">
-                        <h2 id="Linear-Algebra-with-Python-and-NumPy-(I)">
-                          Linear Algebra with Python and NumPy (I)<a class="anchor-link" href="posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-1/#Linear-Algebra-with-Python-and-NumPy-(I)">¶</a>
-                        </h2>
-
-                        <p>
-                          Recently, I've learned to use <strong><em>Python</em></strong> for creating <strong><em>Blender</em></strong> addons, which made me appreciate the simplicity and flexibility of this brilliant scripting language. Also, I've discovered there is lots of Python based tools like <strong><em>Jupyter Notebook</em></strong> (that I'm just using to write this post). Or <strong><em>Spyder</em></strong>, the complete IDE for scientific computing that is quite similar to well known Matlab, just with the difference that Spyder is Python based.
-                        </p>
-
-                        <p>
-                          Although as a former user of Matlab/Octave language, I've faced few differences and difficulties related to algebraic structures. It's known that Matlab is probably the most intuitive language when it comes to numerical computing, but compared to Python it has other shortcomings. Besides, when the final code for my usage is going to by Python, it seems reasonable to use Python from start of development process, rather than try to develop an algorithm in Matlab and then need to translate it into Python. Therefore, this post is mainly focused on the differences one need to keep in mind when coming to Python from Matlab.
-                        </p>
-
-                        <p>
-                          <img src="posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-1/jupyter_python_numpy.png">
-                        </p>
-
-                        <p class="more">
-                          <a href="posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-1/">Read more…</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="h-entry post-text">
-            <header>
-              <h1 class="p-name entry-title">
-                <a class="u-url" href="posts/web-design/install-nikola-on-windows-10/">Install Nikola on Windows 10</a>
-              </h1>
-
-              <div class="metadata">
-                <p class="byline author vcard">
-                  <span class="byline-name fn">Miki</span>
-                </p>
-
-                <p class="dateline">
-                  <a href="posts/web-design/install-nikola-on-windows-10/" rel="bookmark"><time class="published dt-published" datetime="2016-06-30T19:25:00+02:00" title="2016-06-30">2016-06-30</time></a>
-                </p>
-
-                <p class="commentline">
-                  <a data-disqus-identifier="cache/posts/web-design/install-nikola-on-windows-10.html" href="posts/web-design/install-nikola-on-windows-10/#disqus_thread">Comments</a>
-                </p>
-              </div>
-            </header>
-
-            <div class="p-summary entry-summary">
-              <div>
-                <!-- ............................................................................. -->
-                <!-- ............................................................................. -->
-
-                <p>
-                  Because of the fact that <strong>Nikola</strong> site generator is written in <strong>Python</strong> scripting language, it should run on any major operating system. The installation process might vary depending on the system though. Here, I'm going to share how I've managed to install Nikola on Windows 10.
-                </p>
-
-                <p class="more">
-                  <a href="posts/web-design/install-nikola-on-windows-10/">Read more…</a>
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <article class="h-entry post-text">
-            <header>
-              <h1 class="p-name entry-title">
-                <a class="u-url" href="posts/web-design/starting-a-personal-blog-with-nikola/">Starting a Personal Blog with Nikola</a>
-              </h1>
-
-              <div class="metadata">
-                <p class="byline author vcard">
-                  <span class="byline-name fn">Miki</span>
-                </p>
-
-                <p class="dateline">
-                  <a href="posts/web-design/starting-a-personal-blog-with-nikola/" rel="bookmark"><time class="published dt-published" datetime="2016-06-29T16:34:02+02:00" title="2016-06-29">2016-06-29</time></a>
-                </p>
-
-                <p class="commentline">
-                  <a data-disqus-identifier="cache/posts/web-design/starting-a-personal-blog-with-nikola.html" href="posts/web-design/starting-a-personal-blog-with-nikola/#disqus_thread">Comments</a>
-                </p>
-              </div>
-            </header>
-
-            <div class="p-summary entry-summary">
-              <div>
-                <!-- ............................................................................. -->
-                <!-- ............................................................................. -->
-
-                <div class="thumbnail figure align-right">
-                  <a class="reference external image-reference" href="posts/web-design/starting-a-personal-blog-with-nikola/nikola_tesla_quote.jpg"><img alt="nikola_tesla_quote.tn.jpg" src="posts/web-design/starting-a-personal-blog-with-nikola/nikola_tesla_quote.tn.jpg"></a>
-                  <p class="caption">
-                    Nikola Tesla, one of the greatest inventors ever.
-                  </p>
-                </div>
-
-                <p>
-                  Hello and welcome to my new personal blog that I'm just creating using a site generator called <a class="reference external" href="http://getnikola.com/">Nikola</a>. Indeed! it's named after the famous scientist and inventor <strong>Nikola Tesla</strong>, but that wasn't the only reason why I've decided for this interesting tool. Recently, I was tempted to set a personal blog, where I could post things I'm currently working on, or my ideas before I totally forget them. Of course, I was faced with the problem what site engine I should choose, because there is truly lots of options in the year of 2016.
-                </p>
-
-                <p>
-                  Before I start discussing my experience with Nikola, let me explain why I've decided for this tool. I'm a very picky person when it comes to customization, so I looked for a tool that would satisfy all my needs, particularly...
-                </p>
-
-                <ul class="li-smallskip simple">
-                  <li>Have full control over every aspect of the style and layout.
-                  </li>
-
-                  <li>I'm not a fan of phones, however smart they try to appear. So, I really don't care about mobile-first, responsive web design that hides all relevant information and menus and just pushes irrelevant photos to the whole screen!
-                  </li>
-
-                  <li>Enable to insert both blog posts and non-blog pages.
-                  </li>
-
-                  <li>Be able to type math (ideally using Syntax of <strong>TeX</strong>), because mathematics is indeed the language of nature, thus the most universal language ever&nbsp;:)
-                  </li>
-
-                  <li>Use native <strong>Jupyter</strong> files (.ipynb) as source files for the site. <span class="text-info">Jupyter is a very handy web application that allows you to create and share documents containing live code, equations, visualizations and explanatory text. It supports many languages including Python, which makes it a perfect tool for writing scientific articles.</span>
-                  </li>
-
-                  <li>Open source tool without any commercial ads is preferred (very important in todays over-commercialized world).
-                  </li>
-                </ul>
-
-                <p class="more">
-                  <a href="posts/web-design/starting-a-personal-blog-with-nikola/">Read more…</a>
-                </p>
-              </div>
-            </div>
-          </article>
-        </div>
-        <script>
-        var disqus_shortname="meshlogic";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());
-        </script>
-        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
-        </script>
-        <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
+        </ul></nav><script>var disqus_shortname="meshlogic";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
             displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
             processEscapes: true
         },
         displayAlign: 'center'
-        });
-        </script>
-      </div>
-    </div>
-    <!-- BODY FOOTER -->
+    });
+</script>
+</div>
+</div>
 
-    <div class="container">
-      <footer id="body_footer">
-        Contents © 2016 by <a href="mailto:meshlogic@gmail.com">Miki</a> — Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
-        <div class="counter">
-          <script src="https://www.w3counter.com/tracker.js?id=103452">
-          </script>
-          <script>
+
+<!-- BODY FOOTER -->
+<div class="container">
+    <footer id="body_footer">
+
+        
+    Contents © 2017 by <a href="mailto:meshlogic@gmail.com">Miki</a>
+    — Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
+    
+
+        
+
+            
+    <div class="counter">
+        <script src="https://www.w3counter.com/tracker.js?id=103452"></script><script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -588,20 +316,26 @@
 
             ga('create', 'UA-82334406-1', 'auto');
             ga('send', 'pageview');
-          </script>
-        </div>
+        </script>
+</div>
 
-        <div id="social_icons">
-          <a href="https://github.com/meshlogic/" title="My GitHub"><i class="fa fa-3x fa-github"></i></a>
-        </div>
-      </footer>
+    <div id="social_icons">
+        <a href="https://github.com/meshlogic/" title="My GitHub"><i class="fa fa-3x fa-github"></i></a>
+
+        <a href="http://www.flickr.com/photos/meshlogic/" title="See my photos on Flickr!"><i class="fa fa-3x fa-flickr"></i></a>
+
+        <a href="https://www.youtube.com/channel/UCJn5IgykaGERrwvzLhayJiw" title="See my videos on YouTube!"><i class="fa fa-3x fa-youtube-square"></i></a>
     </div>
-    <!-- SCRIPTS -->
-    <script src="assets/js/all-nocdn.js">
-    </script>
-    <script>
+
+
+    </footer>
+</div>
+
+
+<!-- SCRIPTS -->
+            <script src="assets/js/all-nocdn.js"></script><script>
     moment.locale("en");
     fancydates(0, "YYYY-MM-DD HH:mm");
-    </script>
-  </body>
+</script>
+</body>
 </html>

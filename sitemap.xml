@@ -7,138 +7,174 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://meshlogic.github.io/</loc>
-  <lastmod>2016-08-19T17:35:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/archive.html</loc>
-  <lastmod>2016-08-30T11:36:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/categories/</loc>
-  <lastmod>2016-08-29T16:49:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
-  <loc>https://meshlogic.github.io/categories/blender/</loc>
-  <lastmod>2016-08-29T16:49:00Z</lastmod>
+  <loc>https://meshlogic.github.io/categories/blender-addons/</loc>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/categories/blender-materials/</loc>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/categories/blender-rendering/</loc>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/categories/blender-themes/</loc>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/categories/cat_blender/</loc>
-  <lastmod>2016-08-29T16:49:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/categories/cat_scientific-computing/</loc>
-  <lastmod>2016-08-11T20:58:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/categories/cat_virtual-worlds/</loc>
-  <lastmod>2016-08-19T11:14:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/categories/cat_web-design/</loc>
-  <lastmod>2016-08-11T20:58:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/categories/curve-fitting/</loc>
-  <lastmod>2016-08-11T20:58:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/categories/jupyter/</loc>
-  <lastmod>2016-08-11T20:58:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/categories/linear-algebra/</loc>
-  <lastmod>2016-08-11T20:58:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/categories/mathematics/</loc>
-  <lastmod>2016-08-11T20:58:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/categories/mathjax/</loc>
-  <lastmod>2016-08-11T20:58:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/categories/nikola/</loc>
-  <lastmod>2016-08-11T20:58:00Z</lastmod>
- </url>
- <url>
-  <loc>https://meshlogic.github.io/categories/procedural-materials/</loc>
-  <lastmod>2016-08-29T16:49:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/categories/python/</loc>
-  <lastmod>2016-08-11T20:58:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/categories/second-life/</loc>
-  <lastmod>2016-08-19T11:14:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/gallery/</loc>
-  <lastmod>2016-08-17T20:09:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
-  <loc>https://meshlogic.github.io/gallery/3d-creations/</loc>
-  <lastmod>2016-08-17T20:09:00Z</lastmod>
+  <loc>https://meshlogic.github.io/gallery/my-first-3d-creations/</loc>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
-  <loc>https://meshlogic.github.io/gallery/3d-creations/my-first-steps/</loc>
-  <lastmod>2016-08-18T13:53:00Z</lastmod>
+  <loc>https://meshlogic.github.io/index-1.html</loc>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/listings/</loc>
-  <lastmod>2016-08-11T20:58:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/pages/about/</loc>
-  <lastmod>2016-08-11T20:58:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/pages/articles/</loc>
-  <lastmod>2016-08-11T20:58:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
-  <loc>https://meshlogic.github.io/pages/blender-addons/bake-helper/</loc>
-  <lastmod>2016-08-18T13:53:00Z</lastmod>
+  <loc>https://meshlogic.github.io/pages/blender-addons/</loc>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
-  <loc>https://meshlogic.github.io/pages/blender-addons/fitting-tools/</loc>
-  <lastmod>2016-08-11T20:58:00Z</lastmod>
+  <loc>https://meshlogic.github.io/posts/blender/addons/bake-helper/</loc>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
-  <loc>https://meshlogic.github.io/posts/blender/bake-helper-in-final-version-1-0/</loc>
-  <lastmod>2016-08-11T20:58:00Z</lastmod>
+  <loc>https://meshlogic.github.io/posts/blender/addons/collada-exporter-second-life/</loc>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
-  <loc>https://meshlogic.github.io/posts/blender/hsl-color-model-nodes/</loc>
-  <lastmod>2016-08-30T11:04:00Z</lastmod>
+  <loc>https://meshlogic.github.io/posts/blender/addons/toggle-object-wire/</loc>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/posts/blender/materials/nodes-curvature-map/</loc>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/posts/blender/materials/nodes-custom-color-ramp/</loc>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/posts/blender/materials/nodes-exposure/</loc>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/posts/blender/materials/nodes-hsl-color-model/</loc>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/posts/blender/materials/nodes-pbr-basic-shader/</loc>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/posts/blender/rendering/nodes-correct-hdri/</loc>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/posts/blender/themes/elegant-grey-theme/</loc>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/posts/jupyter/curve-fitting/fitting-a-circle-to-cluster-of-3d-points/</loc>
-  <lastmod>2016-08-11T20:58:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/posts/jupyter/curve-fitting/parametric-curve-fitting/</loc>
-  <lastmod>2016-08-11T20:58:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-1/</loc>
-  <lastmod>2016-08-11T20:58:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-2/</loc>
-  <lastmod>2016-08-11T20:58:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/posts/virtual-worlds/tweaking-firestorm-viewer/</loc>
-  <lastmod>2016-08-19T17:35:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/posts/web-design/install-nikola-on-windows-10/</loc>
-  <lastmod>2016-08-12T10:56:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/posts/web-design/starting-a-personal-blog-with-nikola/</loc>
-  <lastmod>2016-08-11T20:58:00Z</lastmod>
+  <lastmod>2017-08-03T21:42:00Z</lastmod>
  </url>
 </urlset>

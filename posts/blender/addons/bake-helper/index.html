@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bake Helper - Blender Addon | Meshlogic</title>
+<link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="canonical" href="https://meshlogic.github.io/posts/blender/addons/bake-helper/">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+        },
+        displayAlign: 'center'
+    });
+</script><!--[if lt IE 9]><script src="../../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Miki">
+<link rel="prev" href="../../../jupyter/linear-algebra/linear-algebra-with-python-and-numpy-2/" title="Linear Algebra with Python and NumPy (II)" type="text/html">
+<link rel="next" href="../../../jupyter/curve-fitting/parametric-curve-fitting/" title="Parametric Curve Fitting with Iterative Parametrization" type="text/html">
+<meta property="og:site_name" content="Meshlogic">
+<meta property="og:title" content="Bake Helper - Blender Addon">
+<meta property="og:url" content="https://meshlogic.github.io/posts/blender/addons/bake-helper/">
+<meta property="og:description" content="Rendering to textures, or baking textures, allows you to create texture/image maps based on the object's appearance in the rendered scene. Later, these image maps can be re-mapped onto the object usin">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-07-15T15:00:00+02:00">
+<meta property="article:tag" content="blender-addons">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+</head>
+<body>
+
+
+<!-- BODY CONTAINER -->
+<div class="container" id="body_container">
+
+    <!-- HEADER -->
+    <header id="body_header"><a href="../../../../" title="Home"><i>A personal blog on computer graphics, scientific computing, Blender, Jupyter and Second Life</i></a>
+    </header><!-- NAVBAR --><nav class="navbar navbar-default navbar-static"><div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+        </div>
+                
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false" role="navigation">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../../../"><i class="fa fa-lg fa-home"></i>  Home</a>
+                </li>
+<li>
+<a href="../../../../archive.html">Archive</a>
+                </li>
+<li>
+<a href="../../../../categories/">Categories</a>
+                </li>
+<li>
+<a href="../../../../gallery/">Gallery</a>
+                </li>
+<li>
+<a href="../../../../pages/articles/">Articles</a>
+                </li>
+<li>
+<a href="../../../../pages/blender-addons/">Blender Addons</a>
+                </li>
+<li>
+<a href="../../../../pages/about/">About</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="index.rst" id="sourcelink">Source</a>
+    </li>
+                
+            </ul>
+</div>
+    </nav><!-- BODY CONTENT !! --><div class="container" id="body_content" role="main">
+
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><!--<h1 class="p-name entry-title" itemprop="headline name"><a href="/posts/blender/addons/bake-helper/" class="u-url">Bake Helper - Blender Addon</a></h1> --><h1 class="p-name entry-title" itemprop="headline name">Bake Helper - Blender Addon</h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    Miki
+            </span></p>
+            <p class="dateline"><time class="published dt-published" datetime="2016-07-15T15:00:00+02:00" itemprop="datePublished" title="2016-07-15">2016-07-15</time></p>
+                <p class="commentline">            <a href="#disqus_thread" data-disqus-identifier="cache/posts/blender/addons/bake-helper.html">Comments</a>
+
+
+                    </p>
+<p class="sourceline"><a href="index.rst" id="sourcelink">Source</a></p>
+
+        </div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<!-- ............................................................................. -->
+<!-- ............................................................................. -->
+<!-- TEASER_END -->
+<div class="container-990px">
+<div id="slides_692de034f9664ba8afc52802fdf1bb67" class="carousel slide" data-interval="false">
+    <ol class="carousel-indicators">
+<li data-target="#slides_692de034f9664ba8afc52802fdf1bb67" data-slide-to="0" class="active">
+            </li>
+<li data-target="#slides_692de034f9664ba8afc52802fdf1bb67" data-slide-to="1">
+            </li>
+<li data-target="#slides_692de034f9664ba8afc52802fdf1bb67" data-slide-to="2">
+            </li>
+<li data-target="#slides_692de034f9664ba8afc52802fdf1bb67" data-slide-to="3">
+    </li>
+</ol>
+<div class="carousel-inner">
+                <div class="item active"><img src="BakeHelper_00.png" alt="" style="margin: 0 auto 0 auto;"></div>
+                <div class="item"><img src="BakeHelper_02.png" alt="" style="margin: 0 auto 0 auto;"></div>
+                <div class="item"><img src="BakeHelper_03.png" alt="" style="margin: 0 auto 0 auto;"></div>
+                <div class="item"><img src="BakeHelper_04.png" alt="" style="margin: 0 auto 0 auto;"></div>
+    </div>
+    <a class="left carousel-control" href="#slides_692de034f9664ba8afc52802fdf1bb67" data-slide="prev"><span class="icon-prev"></span></a>
+    <a class="right carousel-control" href="#slides_692de034f9664ba8afc52802fdf1bb67" data-slide="next"><span class="icon-next"></span></a>
+</div>
+</div>
+<p>Rendering to textures, or <strong>baking textures</strong>, allows you to create <strong>texture/image maps</strong> based on the object's appearance in the rendered scene. Later, these image maps can be re-mapped onto the object using the object’s UV-coordinate system, this process is called <strong>UV  mapping</strong>. It enables to speed up any further rendering, since colors and details are already computed and baked into the object's textures. This approach is essential for real-time rendering engines used in computer games or virtual worlds.</p>
+<div class="section" id="motivation">
+<h2>Motivation</h2>
+<p>By default, Blender already enables to bake textures, but the workflow is very time-consuming, requiring to manually repeat lots of tasks, especially when you need to bake large scenes containing lots of objects. Here is an example, what all you need to do when baking textures in Blender using Cycles-Render.</p>
+<ul class="li-smallskip simple">
+<li>In UV Editor, for each object/material in the scene, manually create and name an image map.</li>
+<li>In Node Editor, for each material, add a node with the named image map and don't forget to leave it selected!</li>
+<li>Now, you can finally click the Bake button and wait for the result.</li>
+<li>Although you still can't see the baked textures mapped onto the objects. You need to enter Blender-Render Textured viewport mode, and manually assign all baked textures to each object in the scene.</li>
+</ul>
+<p>So, it's obvious such workflow is very slow and requires to manually repeat lots of tasks that could be automated, and that's the goal of <strong>Bake Helper</strong> addon.</p>
+</div>
+<div class="section" id="features-of-bake-helper">
+<h2>Features of Bake Helper</h2>
+<div class="figure align-right">
+<img alt="bake_helper_cycles.png" class="thumbnail" src="bake_helper_cycles.png">
+</div>
+<p>Bake Helper is intended to automate the baking workflow and to save your time by creating, assigning and saving all desired texture/image maps. In contrast to other tools, it enables to bake a separate image map for each material. This makes it especially useful for creating content for virtual grids like Second Life.</p>
+<ul class="li-smallskip simple">
+<li>Works with both Blender-Render and Cycles-Render.</li>
+<li>Enables to bake all objects marked in the list or a single selected object.</li>
+<li>Automatically creates and assigns image maps for each object and its materials with the default name: <span class="html"><br></span> <code>ObjectName_MaterialName_BakeType.png</code>
+</li>
+<li>Enables to merge all object's materials into a single image map named: <span class="html"><br></span> <code>ObjectName_BakeType.png</code>
+</li>
+<li>Automatically assigns image maps of various types (UV Grid, Color Grid, AO, Combined, Full Render) to all selected objects.</li>
+<li>When baking is finished, Blender-Render Textured viewport is invoked to display the baked image maps.</li>
+<li>Save all baked image maps into the desired folder by a single click.</li>
+<li>You can use shortcut to bake (F5) and shortcut to switch viewport engine and shading (F4).</li>
+</ul>
+<div class="section" id="notes-for-baking-using-blender-render">
+<h3>Notes for baking using Blender-Render</h3>
+<ul class="instruction-list li-medskip simple">
+<li>
+<span class="html">❶</span> Add selected objects to the bake list. <span class="html"><br></span><span class="text-info">Objects intended for baking must contain a valid UV map and material(s) for Blender-Render.</span>
+</li>
+<li>
+<span class="html">❷</span> Select dimensions for each image map associated to each material. Or, you can set to merge all materials into a single image map. <span class="html"><br></span><span class="text-info">Note that you need to provide an UV map where polygons do not overlap.</span>
+</li>
+<li>
+<span class="html">❸</span> Specify the bake options like Bake Type, Ray Samples or Shadows Falloff. Don't forget to enable Ambient Occlusion in World settings if you need it. Then hit BAKE button (or F5) to start the baking process. <span class="html"><br></span><span class="text-info">The addon automatically creates and assigns all needed image maps for baking.</span>
+</li>
+<li>
+<span class="html">❹</span> When baking is finished, Blender-Render Textured viewport is invoked to display the baked image maps. <span class="html"><br></span><span class="text-info">You can also assign and display image maps of other types by clicking the dedicated buttons (UV Grid, Color Grid, AO, Combined, Full Render).</span>
+</li>
+<li>
+<span class="html">❺</span> Save the baked image maps into the desired folder. <span class="html"><br></span><span class="text-info">The path must end with "\".</span>
+</li>
+</ul>
+</div>
+<div class="section" id="notes-for-baking-using-cycles-render">
+<h3>Notes for baking using Cycles-Render</h3>
+<ul class="instruction-list li-medskip simple">
+<li>
+<span class="html">❶</span> Add selected objects to the bake list. <span class="html"><br></span><span class="text-info">Objects intended for baking must contain a valid UV map and material(s) for Cycles-Render.</span>
+</li>
+<li>
+<span class="html">❷</span> Select dimensions for each image map associated to each material. Or, you can set to merge all materials into a single image map. <span class="html"><br></span><span class="text-info">Note that you need to provide an UV map where polygons do not overlap.</span>
+</li>
+<li>
+<span class="html">❸</span> Specify the bake options like Bake Type or Render Samples. Don't forget to enable Ambient Occlusion in World settings if you need it. Then hit BAKE button (or F5) to start the baking process. <span class="html"><br></span><span class="text-info">The addon automatically creates all needed image maps for baking.  Also it adds an image node with the image map for each Cycles material and removes it after baking. This way the same material can be shared by multiple objects.</span>
+</li>
+<li>
+<span class="html">❹</span> When baking is finished, Blender-Render Textured viewport is invoked to display the baked image maps. <span class="html"><br></span><span class="text-info">You can also assign and display image maps of other types by clicking the dedicated buttons (UV Grid, Color Grid, AO, Combined, Full Render).</span>
+</li>
+<li>
+<span class="html">❺</span> Save the baked image maps into the desired folder. <span class="html"><br></span><span class="text-info">The path must end with "\".</span>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br></div>
+</div>
+<div class="youtube-video align-center">
+<iframe width="425" height="344" src="https://www.youtube.com/embed/u6Cq7CkIeXc?rel=0&amp;hd=1&amp;wmode=transparent"></iframe>
+</div>
+</div>
+</div>
+<div class="section" id="purchase">
+<h2>Purchase</h2>
+<ul class="simple">
+<li>This addon is for sale at <a class="reference external" href="https://cgcookiemarkets.com/all-products/bake-helper/">Blender Market</a>
+</li>
+</ul>
+</div>
+<div class="section" id="changelog">
+<h2>ChangeLog</h2>
+<dl class="docutils">
+<dt>Version 1.0 (26.04.2016):</dt>
+<dd><ul class="first last simple">
+<li>Fixed compatibility with Blender 2.77</li>
+<li>Added button to select a render engine used for baking</li>
+<li>When baking is finished, Blender-Render Textured viewport is invoked to display the baked image maps</li>
+</ul></dd>
+<dt>Version 0.1 (12.12.2014):</dt>
+<dd><ul class="first last simple">
+<li>Initial release for Blender 2.72</li>
+</ul></dd>
+</dl>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../../categories/blender-addons/" rel="tag">blender-addons</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../../jupyter/linear-algebra/linear-algebra-with-python-and-numpy-2/" rel="prev" title="Linear Algebra with Python and NumPy (II)"><i class="fa fa-arrow-left"></i>  Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../../jupyter/curve-fitting/parametric-curve-fitting/" rel="next" title="Parametric Curve Fitting with Iterative Parametrization">Next post  <i class="fa fa-arrow-right"></i></a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="meshlogic",
+            disqus_url="https://meshlogic.github.io/posts/blender/addons/bake-helper/",
+        disqus_title="Bake Helper - Blender Addon",
+        disqus_identifier="cache/posts/blender/addons/bake-helper.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="meshlogic";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+</div>
+
+
+<!-- BODY FOOTER -->
+<div class="container">
+    <footer id="body_footer">
+
+        
+    Contents © 2017 by <a href="mailto:meshlogic@gmail.com">Miki</a>
+    — Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
+    
+
+        
+
+            
+    <div class="counter">
+        <script src="https://www.w3counter.com/tracker.js?id=103452"></script><script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-82334406-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+</div>
+
+    <div id="social_icons">
+        <a href="https://github.com/meshlogic/" title="My GitHub"><i class="fa fa-3x fa-github"></i></a>
+
+        <a href="http://www.flickr.com/photos/meshlogic/" title="See my photos on Flickr!"><i class="fa fa-3x fa-flickr"></i></a>
+
+        <a href="https://www.youtube.com/channel/UCJn5IgykaGERrwvzLhayJiw" title="See my videos on YouTube!"><i class="fa fa-3x fa-youtube-square"></i></a>
+    </div>
+
+
+    </footer>
+</div>
+
+
+<!-- SCRIPTS -->
+            <script src="../../../../assets/js/all-nocdn.js"></script><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+</script>
+</body>
+</html>
