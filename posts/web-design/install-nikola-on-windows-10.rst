@@ -1,8 +1,8 @@
 .. title: Install Nikola on Windows 10
 .. slug: install-nikola-on-windows-10
 .. date: 2016-06-30 19:25:00 UTC+02:00
-.. tags: nikola
 .. category: web-design
+.. tags: nikola
 .. link: 
 .. description:
 .. type: text

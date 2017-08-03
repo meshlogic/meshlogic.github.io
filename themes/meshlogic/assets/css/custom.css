@@ -2,13 +2,10 @@
 ** Header Titles
 *******************************************************************************/
 h1 {
-    margin-top: 45px;
+    margin-top: 40px;
     margin-bottom: 10px;
     font-weight: 700;
     font-size: 32px;
-}
-h1 > a {
-    font-weight: 400;
 }
 h2 {
     font-size: 26px;
@@ -23,9 +20,19 @@ h5 {
     font-size: 16px;
 }
 h2, h3, h4, h5, h6 {
-    margin-top: 2em;
+    margin-top: 1.8em;
     margin-bottom: 10px;
     font-weight: 700;
+}
+/* RST rubric directive, like an informal heading */
+p.rubric{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: left;
+    margin-top: 1.8em;
+    margin-bottom: 10px;
+    color: #303030;
 }
 
 
@@ -64,16 +71,31 @@ div.line-block {
 
 
 /*******************************************************************************
+** Text Blocks
+*******************************************************************************/
+blockquote {
+    font-size: 15px;
+    line-height: 1.6;
+    border-left: 5px solid #a09a90;
+    padding: 10px 24px;
+    margin: 0 0 1em;
+}
+
+
+/*******************************************************************************
 ** Lists
 *******************************************************************************/
 
 /* Description list
 *******************************************************************************/
+dl {
+    margin-bottom: 1.5em;
+}
 dt {
     font-weight: bold;
     font-size: 16px;
-    margin-top: 1.6em;
-    margin-bottom: 8px;
+    margin-top: 1.5em;
+    margin-bottom: 0.5ex;
 }
 dd {
     margin-top: 0px;
@@ -87,7 +109,7 @@ ul.simple {
     margin-bottom: 1em;
 }
 ul.simple li{
-    margin-bottom: 0;
+    margin-bottom: 0.5ex;
 }
 
 
@@ -171,17 +193,17 @@ ul.instruction-list > li > span:first-child {
 /*******************************************************************************
 ** Vertical Skips
 *******************************************************************************/
-ul.li-smallskip > li {
+.li-smallskip li {
     margin-top: 1ex !important;
     margin-bottom: 1ex !important;
 }
 
-ul.li-medskip > li {
+.li-medskip li {
     margin-top: 1em !important;
     margin-bottom: 1em !important;
 }
 
-ul.li-bigskip > li {
+.li-bigskip li {
     margin-top: 2em !important;
     margin-bottom: 2em !important;
 }
@@ -194,6 +216,11 @@ div.li-bigskip {
 ** Code blocks
 *******************************************************************************/
 /* Code in-block */
+pre.code {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 .code {
     background-color: rgba(255, 255, 255, 0.25) !important;
     border: 1px solid rgba(0, 0, 0, 0.25);
@@ -207,7 +234,7 @@ div.li-bigskip {
 }
 
 /* Code in-line */
-code {
+tt, code {
     background-color: rgba(255, 255, 255, 0.3) !important;
     border: 1px solid rgba(0, 0, 0, 0.25) !important;
     border-radius: 3px !important;
@@ -271,26 +298,25 @@ ul.list-inline {
 /*******************************************************************************
 ** Figures, Images
 *******************************************************************************/
-.figures {
+/* Flexbox for figures, reST usage (.. container:: figures-container center) */
+.figures-container {
     width: 100%;
     padding: 0;
     margin: 1.5em 0 0 0;
     display: flex;
     flex-wrap: wrap;
 }
-.figures-center {
+.figures-container.center {
     justify-content: space-around;
 }
-.figures div {
+.figures-container div {
     clear: none !important;
     margin: 0 24px 24px 0 !important;
     flex-grow: 1;
     flex-basis: 0;
 }
-.thumbnail {
-    border: 0;
-    box-shadow: 0px 2px 3px 0 rgba(0,0,0,0.4);
-}
+
+/* Single figure */
 .figure-radius {
     border-radius: 4px;
 }
@@ -313,11 +339,36 @@ ul.list-inline {
 .figure img {
     max-width: none !important;
 }
+.thumbnail {
+    border: 0;
+    box-shadow: 0px 2px 3px 0 rgba(0,0,0,0.4);
+}
 .caption {
     font-size: 14px;
     line-height: 1.285714286;
     margin: 0;
     padding: 8px 0px 4px 0px !important;
+}
+
+
+/*******************************************************************************
+** Videos
+*******************************************************************************/
+.youtube-video {
+    margin-top: 2em;
+}
+
+.video {
+    display: block;
+    border-radius: 4px;
+    margin-top: 2em;
+}
+
+.video.center {
+    display: block;
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 

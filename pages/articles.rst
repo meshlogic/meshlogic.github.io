@@ -1,17 +1,17 @@
 .. title: Articles on Scientific Computing with Jupyter
 .. slug: articles
 .. date: 2016-07-11 13:50:43 UTC+02:00
-.. tags: 
 .. category: 
+.. tags: 
 .. link: 
 .. description: 
 .. type: text
 
 
-.. image:: img/jupyter.png
+.. image:: jupyter.png
     :align: right
 
-.. image:: img/python_logo.png
+.. image:: python_logo.png
     :align: right
 
 

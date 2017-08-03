@@ -44,10 +44,11 @@ NAVIGATION_LINKS = {
         ('/categories/', 'Categories'),
         ('/gallery/', 'Gallery'),
         ('/pages/articles/', 'Articles'),
-        ((
-            ('/pages/blender-addons/bake-helper', 'Bake Helper'),
-            ('/pages/blender-addons/fitting-tools', 'Fitting Tools'),
-            ), 'Blender Addons'),
+        ('/pages/blender-addons/', 'Blender Addons'),
+        #((
+        #    ('/pages/blender-addons/bake-helper', 'Bake Helper'),
+        #    ('/pages/blender-addons/fitting-tools', 'Fitting Tools'),
+        #    ), 'Blender Addons'),
         ('/pages/about/', 'About'),
     ),
 }
@@ -120,7 +121,7 @@ USE_FILENAME_AS_TITLE = True
 EXTRA_IMAGE_EXTENSIONS = []
 
 THUMBNAIL_SIZE = 240    # 180 - 192 - 240
-MAX_IMAGE_SIZE = 1440   # 1440x960, 1440x1080 - 1620x1080, 1620x1215
+MAX_IMAGE_SIZE = 1620   # 1440x960, 1440x1080 - 1620x1080, 1620x1215
 
 # If set to False, it will sort by filename instead. Defaults to True
 GALLERY_SORT_BY_DATE = False
@@ -328,6 +329,10 @@ SOCIAL_BUTTONS_CODE = """
 
     <div id="social_icons">
         <a href="https://github.com/meshlogic/" title="My GitHub"><i class="fa fa-3x fa-github"></i></a>
+
+        <a href="http://www.flickr.com/photos/meshlogic/" title="See my photos on Flickr!"><i class="fa fa-3x fa-flickr"></i></a>
+
+        <a href="https://www.youtube.com/channel/UCJn5IgykaGERrwvzLhayJiw" title="See my videos on YouTube!"><i class="fa fa-3x fa-youtube-square"></i></a>
     </div>
 """
 
@@ -364,9 +369,9 @@ SOCIAL_BUTTONS_CODE = """
 #    ".js": [filters.closure_compiler],
 #    ".jpg": ["jpegoptim --strip-all -m75 -v %s"],
 # }
-FILTERS = {
-    ".html": [filters.html_tidy_nowrap]
-}
+#FILTERS = {
+#    ".html": [filters.html_tidy_nowrap]
+#}
 
 # Templates will use those filters, along with the defaults.
 # Consult your engine's documentation on filters if you need help defining

@@ -1,0 +1,13 @@
+.. title: My First 3D Creations
+.. slug: my-first-3d-creations
+.. date:
+.. tags: 
+.. category:
+.. link: 
+.. description:
+.. type:
+
+
+My first 3D creations, all made using Blender since version 2.49.
+
+

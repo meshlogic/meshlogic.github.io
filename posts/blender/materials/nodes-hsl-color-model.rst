@@ -1,8 +1,8 @@
 .. title: HSL Color Model Decomposition in Blender
-.. slug: hsl-color-model-nodes
+.. slug: nodes-hsl-color-model
 .. date: 2016-08-29 18:00:00 UTC+02:00
 .. category: blender
-.. tags: mathjax, blender, procedural-materials
+.. tags: mathjax, blender-materials
 .. link: 
 .. description:
 .. type: text

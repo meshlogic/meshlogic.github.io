@@ -1,8 +1,8 @@
-.. title: Bake Helper - Addon for Blender
+.. title: Bake Helper - Blender Addon
 .. slug: bake-helper
-.. date: 2016-07-13 18:02:42 UTC+02:00
-.. tags: 
-.. category: Blender-Addons
+.. date: 2016-07-15 15:00:00 UTC+02:00
+.. category: blender
+.. tags: blender-addons
 .. link: 
 .. description: 
 .. type: text
@@ -15,6 +15,8 @@
 .. .............................................................................
 
 
+.. TEASER_END
+
 .. class:: container-990px
 
     .. slides::
@@ -24,7 +26,11 @@
         BakeHelper_04.png
 
 
+
+
 Rendering to textures, or **baking textures**, allows you to create **texture/image maps** based on the object's appearance in the rendered scene. Later, these image maps can be re-mapped onto the object using the object’s UV-coordinate system, this process is called **UV  mapping**. It enables to speed up any further rendering, since colors and details are already computed and baked into the object's textures. This approach is essential for real-time rendering engines used in computer games or virtual worlds.
+
+
 
 
 
@@ -109,6 +115,11 @@ Notes for baking using Cycles-Render
 
     - :html:`❺` Save the baked image maps into the desired folder. :html:`<br>`:text-info:`The path must end with "\\".`
 
+
+|
+
+.. youtube:: u6Cq7CkIeXc
+    :align: center
 
 
 

@@ -1,8 +1,8 @@
 .. title: Starting a Personal Blog with Nikola
 .. slug: starting-a-personal-blog-with-nikola
 .. date: 2016-06-29 16:34:02 UTC+02:00
-.. tags: mathjax, nikola
 .. category: web-design
+.. tags: mathjax, nikola
 .. link: 
 .. description:
 .. type: text
@@ -25,6 +25,7 @@
 
 Hello and welcome to my new personal blog that I'm just creating using a site generator called `Nikola <http://getnikola.com/>`_. Indeed! it's named after the famous scientist and inventor **Nikola Tesla**, but that wasn't the only reason why I've decided for this interesting tool. Recently, I was tempted to set a personal blog, where I could post things I'm currently working on, or my ideas before I totally forget them. Of course, I was faced with the problem what site engine I should choose, because there is truly lots of options in the year of 2016.
 
+
 Before I start discussing my experience with Nikola, let me explain why I've decided for this tool. I'm a very picky person when it comes to customization, so I looked for a tool that would satisfy all my needs, particularly...
 
 
@@ -32,7 +33,7 @@ Before I start discussing my experience with Nikola, let me explain why I've dec
 
     - Have full control over every aspect of the style and layout.
 
-    - I'm not a fan of phones, however smart they try to appear. So, I really don't care about mobile-first, responsive web design that hides all relevant information and menus and just pushes irrelevant photos to the whole screen!
+    - I'm not a fan of phones, however smart they try to appear. So, mobile-first, ultra-responsive web designs that hide all control elements and relevant information cannot really attract me.
 
     - Enable to insert both blog posts and non-blog pages.
 
@@ -41,6 +42,7 @@ Before I start discussing my experience with Nikola, let me explain why I've dec
     - Use native **Jupyter** files (.ipynb) as source files for the site. :text-info:`Jupyter is a very handy web application that allows you to create and share documents containing live code, equations, visualizations and explanatory text. It supports many languages including Python, which makes it a perfect tool for writing scientific articles.`
 
     - Open source tool without any commercial ads is preferred (very important in todays over-commercialized world).
+
 
 .. TEASER_END
 
@@ -81,7 +83,7 @@ Design a website from scratch
 
     .. class:: cons-list
 
-        - It would be probably so time-consuming that would be hard to even finish the basic framework.
+        - It would be probably so time-consuming that would be hard to finish even a basic framework.
 
 
 Use static site generator Nikola
