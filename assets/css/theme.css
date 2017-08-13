@@ -11,6 +11,7 @@ body {
     line-height: 1.6;
 }
 #body_container {
+    /*background-color: #fff;*/
     background-color: #eae1d3;
     background-image: url(../img/paper_grid_01.png);
     border-radius: 10px;
@@ -164,14 +165,14 @@ body {
 
 /* Post container */
 .entry-content {
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 12px;
+    margin-bottom: 0px;
 }
 
 /* Post teaser container */
 .entry-summary {
-    margin-top: 15px;
-    margin-bottom: 50px;
+    margin-top: 12px;
+    margin-bottom: -10px;
 }
 
 
@@ -212,7 +213,7 @@ body {
     margin-bottom: 0px;
 }
 .pager {
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 0px;
 }
 

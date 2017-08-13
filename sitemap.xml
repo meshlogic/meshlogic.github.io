@@ -11,11 +11,11 @@
  </url>
  <url>
   <loc>https://meshlogic.github.io/archive.html</loc>
-  <lastmod>2017-08-03T21:42:00Z</lastmod>
+  <lastmod>2017-08-13T18:06:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/categories/</loc>
-  <lastmod>2017-08-03T21:42:00Z</lastmod>
+  <lastmod>2017-08-13T16:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/categories/blender-addons/</loc>
@@ -28,6 +28,10 @@
  <url>
   <loc>https://meshlogic.github.io/categories/blender-rendering/</loc>
   <lastmod>2017-08-03T21:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/categories/blender-scripting/</loc>
+  <lastmod>2017-08-13T16:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/categories/blender-themes/</loc>
@@ -91,7 +95,7 @@
  </url>
  <url>
   <loc>https://meshlogic.github.io/index-1.html</loc>
-  <lastmod>2017-08-03T21:42:00Z</lastmod>
+  <lastmod>2017-08-13T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/listings/</loc>
@@ -123,7 +127,7 @@
  </url>
  <url>
   <loc>https://meshlogic.github.io/posts/blender/materials/nodes-curvature-map/</loc>
-  <lastmod>2017-08-03T21:42:00Z</lastmod>
+  <lastmod>2017-08-13T16:12:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/posts/blender/materials/nodes-custom-color-ramp/</loc>
@@ -144,6 +148,10 @@
  <url>
   <loc>https://meshlogic.github.io/posts/blender/rendering/nodes-correct-hdri/</loc>
   <lastmod>2017-08-03T21:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/posts/blender/scripting/eliminate-material-duplicates/</loc>
+  <lastmod>2017-08-13T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/posts/blender/themes/elegant-grey-theme/</loc>
