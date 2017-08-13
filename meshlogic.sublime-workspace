@@ -88,20 +88,30 @@
 	"buffers":
 	[
 		{
-			"file": "gallery/index.txt",
+			"file": "themes/meshlogic/assets/css/custom.css",
 			"settings":
 			{
-				"buffer_size": 178,
+				"buffer_size": 10555,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "posts/blender/materials/nodes-custom-color-ramp.rst",
+			"file": "themes/meshlogic/assets/css/nikola_ipython.css",
 			"settings":
 			{
-				"buffer_size": 2843,
-				"line_ending": "Windows"
+				"buffer_size": 8403,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "themes/meshlogic/assets/css/theme.css",
+			"settings":
+			{
+				"buffer_size": 7435,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -160,22 +170,25 @@
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/gallery",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/scripting",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/web-design",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css"
 	],
 	"file_history":
 	[
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/scripting/eliminate-material-duplicates.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/custom.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/theme.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/gallery/index.txt",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/conf.py",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/gallery/my-first-3d-creations/index.txt",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-curvature-map.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/theme.css",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/articles.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/blender-addons.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/nikola_ipython.css",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/custom.css",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/web-design/starting-a-personal-blog-with-nikola.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/about.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/themes/elegant-grey-theme.rst",
@@ -368,65 +381,97 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "gallery/index.txt",
+					"file": "themes/meshlogic/assets/css/custom.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 178,
+						"buffer_size": 10555,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								178,
-								178
+								5213,
+								5213
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2968.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "themes/meshlogic/assets/css/nikola_ipython.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8403,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								564,
+								564
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 158.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "posts/blender/materials/nodes-custom-color-ramp.rst",
-					"semi_transient": true,
+					"buffer": 2,
+					"file": "themes/meshlogic/assets/css/theme.css",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2843,
+						"buffer_size": 7435,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								554,
+								554
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/RestructuredText Improved/reStructuredText Improved.tmLanguage",
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 727.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
