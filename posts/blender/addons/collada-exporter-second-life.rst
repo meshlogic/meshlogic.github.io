@@ -48,12 +48,6 @@ Notes
 
 
 
-Download
-========
-
-- `From my GitHub <https://github.com/meshlogic/blender-addons/tree/master/collada-exporter-sl>`_
-
-
 
 ChangeLog
 =========
@@ -65,3 +59,14 @@ Version 0.1 (12.05.2017)
     - Initial release
 
 
+
+Download
+========
+
+- `From my GitHub <https://github.com/meshlogic/blender-addons/tree/master/collada-exporter-sl>`_
+
+
+
+
+.. listing:: blender-addons/collada-exporter-sl/0.2/ColladaExporterSL.py python
+    :number-lines:

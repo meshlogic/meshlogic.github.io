@@ -7264,7 +7264,6 @@ table.codetable { width: 100%;} td.linenos {text-align: right; width: 4em;}
 ** Body Containers
 *******************************************************************************/
 body {
-    /*background-color: #707070;*/
     background-color: #606060;
     /*background: linear-gradient(#5C666B, #909090);*/
     /*background-image: url(../img/noisy-texture-256x256-o5-d10-c-707070-t0.png);*/
@@ -7717,13 +7716,13 @@ blockquote {
 /* Description list
 *******************************************************************************/
 dl {
-    margin-bottom: 1.5em;
+    margin-bottom: 15px;
 }
 dt {
-    font-weight: bold;
-    font-size: 16px;
-    margin-top: 1.5em;
+    margin-top: 15px;
     margin-bottom: 0.5ex;
+    font-size: 16px;
+    font-weight: 700;
 }
 dd {
     margin-top: 0px;
@@ -7843,33 +7842,82 @@ div.li-bigskip {
 /*******************************************************************************
 ** Code blocks
 *******************************************************************************/
-/* Code in-block */
+/*** IN-BLOCK Code ***/
 pre.code {
-    margin-left: 0;
-    margin-right: 0;
-}
-
-pre.code {
-    /*background-color: rgba(255, 255, 255, 0.25) !important;*/
     background-color: rgba(128, 128, 128, 0.1) !important;
     border: 1px solid rgba(0, 0, 0, 0.25);
-    border-radius: 3px;
+    border-radius: 5px;
     margin-top: 1.2em;
     margin-bottom: 1.2em;
+    margin-left: 0;
+    margin-right: 0;
     padding: 7px 9px;
     color: black;
     font-size: 14px;
     line-height: 18px;
+    overflow: visible;
+    /*white-space: pre-wrap;*/
 }
 
-/* Code in-line */
+/* Code in-table with line numbers */
+table.codetable {
+    background-color: rgba(128, 128, 128, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    border-collapse: initial;
+    overflow: visible;
+    margin: 1.2em 0;
+}
+table.codetable td {
+    max-width: 0;
+    padding: 0;
+    margin: 0;
+}
+/* Line numbers style */
+td.linenos {
+    width: 10px;
+}
+td.linenos pre {
+    padding: 7px 10px;
+    margin: 0;
+    border: 0;
+    /*color: #303f9f;*/
+    color: #202020;
+    font-size: 13px;
+    background-color: rgba(0, 0, 0, 0.15);
+    /*background-color: rgba(128, 128, 128, 0.3);*/
+    cursor: default;
+    pointer-events: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+td.linenos pre a {
+    color: inherit;
+}
+.linenodiv {
+    width: 70px;
+}
+
+/* Code style */
+td.code {
+    padding-left: 70px !important;
+    width: 100%;
+}
+td.code pre {
+    padding-left: 10px;
+    margin: 0;
+    background: 0 !important;
+    border: 0;
+}
+
+/*** IN-LINE Code ***/
 tt, code {
     /*background-color: rgba(255, 255, 255, 0.3) !important;*/
     background-color: rgba(128, 128, 128, 0.1) !important;
     border: 1px solid rgba(0, 0, 0, 0.25) !important;
     border-radius: 3px !important;
     padding: 2px 4px 1px 4px !important;
-    color: #000 !important;
+    color: black !important;
     font-size: 14px !important;
 }
 

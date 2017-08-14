@@ -11,7 +11,7 @@
  </url>
  <url>
   <loc>https://meshlogic.github.io/archive.html</loc>
-  <lastmod>2017-08-13T18:06:00Z</lastmod>
+  <lastmod>2017-08-14T16:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/categories/</loc>
@@ -99,7 +99,59 @@
  </url>
  <url>
   <loc>https://meshlogic.github.io/listings/</loc>
-  <lastmod>2017-08-03T21:42:00Z</lastmod>
+  <lastmod>2017-08-14T12:11:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/listings/ToggleObjectWire.py.html</loc>
+  <lastmod>2017-08-14T12:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/listings/blender-addons/</loc>
+  <lastmod>2017-08-14T16:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/listings/blender-addons/ToggleObjectWire.py.html</loc>
+  <lastmod>2017-08-14T12:11:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/listings/blender-addons/collada-exporter-sl/</loc>
+  <lastmod>2017-08-14T16:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/listings/blender-addons/collada-exporter-sl/0.1/</loc>
+  <lastmod>2017-08-14T16:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/listings/blender-addons/collada-exporter-sl/0.1/ColladaExporterSL.py.html</loc>
+  <lastmod>2017-08-14T16:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/listings/blender-addons/collada-exporter-sl/0.2/</loc>
+  <lastmod>2017-08-14T16:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/listings/blender-addons/collada-exporter-sl/0.2/ColladaExporterSL.py.html</loc>
+  <lastmod>2017-08-14T16:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/listings/blender-addons/extra-image-list/</loc>
+  <lastmod>2017-08-14T16:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/listings/blender-addons/extra-material-list/</loc>
+  <lastmod>2017-08-14T16:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/listings/blender-addons/toggle-object-wire/</loc>
+  <lastmod>2017-08-14T16:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/listings/blender-addons/toggle-object-wire/0.1/</loc>
+  <lastmod>2017-08-14T16:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/listings/blender-addons/toggle-object-wire/0.1/ToggleObjectWire.py.html</loc>
+  <lastmod>2017-08-14T16:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/pages/about/</loc>
@@ -123,11 +175,11 @@
  </url>
  <url>
   <loc>https://meshlogic.github.io/posts/blender/addons/toggle-object-wire/</loc>
-  <lastmod>2017-08-03T21:42:00Z</lastmod>
+  <lastmod>2017-08-14T12:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/posts/blender/materials/nodes-curvature-map/</loc>
-  <lastmod>2017-08-13T16:12:00Z</lastmod>
+  <lastmod>2017-08-14T12:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/posts/blender/materials/nodes-custom-color-ramp/</loc>
