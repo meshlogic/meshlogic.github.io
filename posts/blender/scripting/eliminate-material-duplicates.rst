@@ -20,6 +20,7 @@ After running the script **the eliminated node groups and materials will have ze
 
 
 .. code-block:: python
+    :number-lines:
 
     import bpy
 
