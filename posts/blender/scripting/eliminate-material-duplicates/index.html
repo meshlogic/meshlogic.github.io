@@ -105,136 +105,136 @@ article: http://ogp.me/ns/article#
     <div>
 <!-- TEASER_END -->
 <p>I got to the point when wishing to build and organize a decent library of smart materials for Blender (something like you can have in 3D Coat or Substance Painter if you don't mind using proprietary software). I got really tempted to start making such library when Blender 2.79 officially included the material library addon called <strong>MatLib VX</strong>.</p>
-<p>But alas, even this useful addon <strong>MatLib VX</strong> doesn't bring any significantly new functionality to Blender. It just uses the old <strong>append/link</strong> feature which enables you to include various datablocks from external Blender files. And here comes the problematic aspect of appending materials from external files. Imagine your materials use custom node groups (like shader setups, etc). <strong>Then every time you append a material, Blender automatically creates numbered duplicates for all node groups with the same name, even when the groups are supposed to be exactly the same!</strong> And this means huge mess in your node groups. A similar problem occurs when you are appending mesh assets containing the same materials.</p>
+<p>But alas, even this useful addon <strong>MatLib VX</strong> doesn't bring any significantly new functionality to Blender. It just uses the existing <strong>append/link</strong> feature which enables you to include various datablocks from external Blender files. And here comes the problematic aspect of appending materials from external files. Imagine your materials use custom node groups (like shader setups, etc). <strong>Then every time you append a material, Blender automatically creates numbered duplicates for all node groups with the same name, even when the groups are supposed to be exactly the same!</strong> And this means huge mess in your node groups. A similar problem occurs when you are appending mesh assets containing the same materials.</p>
 <p>So, to fix this bug/feature, I have created a simple script that eliminates all these duplicates after you append materials from your external files. It searches all existing node groups, materials, worlds and if finds any duplicates (ending with .001, .002, etc), it replaces them with the original group or material if it is found.</p>
 <p>After running the script <strong>the eliminated node groups and materials will have zero 0 users</strong>, so after you save and reopen your file, they should disappear and your group list should be clean and tidy :)</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-1"> 1</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-2"> 2</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-3"> 3</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-4"> 4</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-5"> 5</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-6"> 6</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-7"> 7</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-8"> 8</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-9"> 9</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-10">10</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-11">11</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-12">12</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-13">13</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-14">14</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-15">15</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-16">16</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-17">17</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-18">18</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-19">19</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-20">20</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-21">21</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-22">22</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-23">23</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-24">24</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-25">25</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-26">26</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-27">27</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-28">28</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-29">29</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-30">30</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-31">31</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-32">32</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-33">33</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-34">34</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-35">35</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-36">36</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-37">37</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-38">38</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-39">39</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-40">40</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-41">41</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-42">42</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-43">43</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-44">44</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-45">45</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-46">46</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-47">47</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-48">48</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-49">49</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-50">50</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-51">51</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-52">52</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-53">53</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-54">54</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-55">55</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-56">56</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-57">57</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-58">58</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-59">59</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-60">60</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-61">61</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-62">62</a>
-<a href="#rest_code_a54837d052f346e784ee0be90ac8b2d7-63">63</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-1"></a><span class="kn">import</span> <span class="nn">bpy</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-2"></a>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-3"></a><span class="c1">#--- Eliminate Node Group Duplicates</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-4"></a><span class="k">def</span> <span class="nf">eliminate_node_groups</span><span class="p">():</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-5"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Eliminate Node Group Duplicates:"</span><span class="p">)</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-6"></a>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-7"></a>    <span class="c1">#--- Search for duplicates in the actual node groups</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-8"></a>    <span class="n">node_groups</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">node_groups</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-9"></a>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-10"></a>    <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">node_groups</span><span class="p">:</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-11"></a>        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">group</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-12"></a>            <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">'GROUP'</span><span class="p">:</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-13"></a>                <span class="n">eliminate</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-14"></a>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-15"></a>    <span class="c1">#--- Search for duplicates in materials</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-16"></a>    <span class="n">mats</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">materials</span><span class="p">)</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-17"></a>    <span class="n">worlds</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">worlds</span><span class="p">)</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-18"></a>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-19"></a>    <span class="k">for</span> <span class="n">mat</span> <span class="ow">in</span> <span class="n">mats</span> <span class="o">+</span> <span class="n">worlds</span><span class="p">:</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-20"></a>        <span class="k">if</span> <span class="n">mat</span><span class="o">.</span><span class="n">use_nodes</span><span class="p">:</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-21"></a>            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">mat</span><span class="o">.</span><span class="n">node_tree</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-22"></a>                <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">'GROUP'</span><span class="p">:</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-23"></a>                    <span class="n">eliminate</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-24"></a>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-25"></a>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-26"></a><span class="c1">#--- Eliminate the node group duplicate with the original group if found</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-27"></a><span class="k">def</span> <span class="nf">eliminate</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-28"></a>    <span class="n">node_groups</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">node_groups</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-29"></a>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-30"></a>    <span class="c1"># Get the node group name as 3-tuple (base, separator, extension)</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-31"></a>    <span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">sep</span><span class="p">,</span> <span class="n">ext</span><span class="p">)</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">node_tree</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">rpartition</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-32"></a>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-33"></a>    <span class="c1"># Replace the numbered duplicate with original if found</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-34"></a>    <span class="k">if</span> <span class="n">ext</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-35"></a>        <span class="k">if</span> <span class="n">base</span> <span class="ow">in</span> <span class="n">node_groups</span><span class="p">:</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-36"></a>            <span class="k">print</span><span class="p">(</span><span class="s2">"  Replace '</span><span class="si">%s</span><span class="s2">' with '</span><span class="si">%s</span><span class="s2">'"</span> <span class="o">%</span> <span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">node_tree</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">base</span><span class="p">))</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-37"></a>            <span class="n">node</span><span class="o">.</span><span class="n">node_tree</span><span class="o">.</span><span class="n">use_fake_user</span> <span class="o">=</span> <span class="bp">False</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-38"></a>            <span class="n">node</span><span class="o">.</span><span class="n">node_tree</span> <span class="o">=</span> <span class="n">node_groups</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-39"></a>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-40"></a>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-41"></a><span class="c1">#--- Eliminate Material Duplicates</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-42"></a><span class="k">def</span> <span class="nf">eliminate_materials</span><span class="p">():</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-43"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Eliminate Material Duplicates:"</span><span class="p">)</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-44"></a>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-45"></a>    <span class="c1">#--- Search for mat. slots in all objects</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-46"></a>    <span class="n">mats</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">materials</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-47"></a>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-48"></a>    <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">:</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-49"></a>        <span class="k">for</span> <span class="n">slot</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">material_slots</span><span class="p">:</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-50"></a>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-51"></a>            <span class="c1"># Get the material name as 3-tuple (base, separator, extension)</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-52"></a>            <span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">sep</span><span class="p">,</span> <span class="n">ext</span><span class="p">)</span> <span class="o">=</span> <span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">rpartition</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-53"></a>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-54"></a>            <span class="c1"># Replace the numbered duplicate with the original if found</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-55"></a>            <span class="k">if</span> <span class="n">ext</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-56"></a>                <span class="k">if</span> <span class="n">base</span> <span class="ow">in</span> <span class="n">mats</span><span class="p">:</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-57"></a>                    <span class="k">print</span><span class="p">(</span><span class="s2">"  For object '</span><span class="si">%s</span><span class="s2">' replace '</span><span class="si">%s</span><span class="s2">' with '</span><span class="si">%s</span><span class="s2">'"</span> <span class="o">%</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">base</span><span class="p">))</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-58"></a>                    <span class="n">slot</span><span class="o">.</span><span class="n">material</span> <span class="o">=</span> <span class="n">mats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-59"></a>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-60"></a>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-61"></a><span class="c1">#--- Execute</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-62"></a><span class="n">eliminate_node_groups</span><span class="p">()</span>
-<a name="rest_code_a54837d052f346e784ee0be90ac8b2d7-63"></a><span class="n">eliminate_materials</span><span class="p">()</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-1"> 1</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-2"> 2</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-3"> 3</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-4"> 4</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-5"> 5</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-6"> 6</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-7"> 7</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-8"> 8</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-9"> 9</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-10">10</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-11">11</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-12">12</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-13">13</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-14">14</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-15">15</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-16">16</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-17">17</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-18">18</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-19">19</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-20">20</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-21">21</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-22">22</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-23">23</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-24">24</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-25">25</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-26">26</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-27">27</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-28">28</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-29">29</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-30">30</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-31">31</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-32">32</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-33">33</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-34">34</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-35">35</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-36">36</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-37">37</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-38">38</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-39">39</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-40">40</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-41">41</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-42">42</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-43">43</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-44">44</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-45">45</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-46">46</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-47">47</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-48">48</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-49">49</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-50">50</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-51">51</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-52">52</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-53">53</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-54">54</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-55">55</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-56">56</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-57">57</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-58">58</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-59">59</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-60">60</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-61">61</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-62">62</a>
+<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-63">63</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-1"></a><span class="kn">import</span> <span class="nn">bpy</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-2"></a>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-3"></a><span class="c1">#--- Eliminate Node Group Duplicates</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-4"></a><span class="k">def</span> <span class="nf">eliminate_node_groups</span><span class="p">():</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-5"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Eliminate Node Group Duplicates:"</span><span class="p">)</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-6"></a>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-7"></a>    <span class="c1">#--- Search for duplicates in the actual node groups</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-8"></a>    <span class="n">node_groups</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">node_groups</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-9"></a>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-10"></a>    <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">node_groups</span><span class="p">:</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-11"></a>        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">group</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-12"></a>            <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">'GROUP'</span><span class="p">:</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-13"></a>                <span class="n">eliminate</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-14"></a>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-15"></a>    <span class="c1">#--- Search for duplicates in materials</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-16"></a>    <span class="n">mats</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">materials</span><span class="p">)</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-17"></a>    <span class="n">worlds</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">worlds</span><span class="p">)</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-18"></a>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-19"></a>    <span class="k">for</span> <span class="n">mat</span> <span class="ow">in</span> <span class="n">mats</span> <span class="o">+</span> <span class="n">worlds</span><span class="p">:</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-20"></a>        <span class="k">if</span> <span class="n">mat</span><span class="o">.</span><span class="n">use_nodes</span><span class="p">:</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-21"></a>            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">mat</span><span class="o">.</span><span class="n">node_tree</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-22"></a>                <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">'GROUP'</span><span class="p">:</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-23"></a>                    <span class="n">eliminate</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-24"></a>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-25"></a>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-26"></a><span class="c1">#--- Eliminate the node group duplicate with the original group if found</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-27"></a><span class="k">def</span> <span class="nf">eliminate</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-28"></a>    <span class="n">node_groups</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">node_groups</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-29"></a>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-30"></a>    <span class="c1"># Get the node group name as 3-tuple (base, separator, extension)</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-31"></a>    <span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">sep</span><span class="p">,</span> <span class="n">ext</span><span class="p">)</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">node_tree</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">rpartition</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-32"></a>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-33"></a>    <span class="c1"># Replace the numbered duplicate with original if found</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-34"></a>    <span class="k">if</span> <span class="n">ext</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-35"></a>        <span class="k">if</span> <span class="n">base</span> <span class="ow">in</span> <span class="n">node_groups</span><span class="p">:</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-36"></a>            <span class="k">print</span><span class="p">(</span><span class="s2">"  Replace '</span><span class="si">%s</span><span class="s2">' with '</span><span class="si">%s</span><span class="s2">'"</span> <span class="o">%</span> <span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">node_tree</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">base</span><span class="p">))</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-37"></a>            <span class="n">node</span><span class="o">.</span><span class="n">node_tree</span><span class="o">.</span><span class="n">use_fake_user</span> <span class="o">=</span> <span class="bp">False</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-38"></a>            <span class="n">node</span><span class="o">.</span><span class="n">node_tree</span> <span class="o">=</span> <span class="n">node_groups</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-39"></a>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-40"></a>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-41"></a><span class="c1">#--- Eliminate Material Duplicates</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-42"></a><span class="k">def</span> <span class="nf">eliminate_materials</span><span class="p">():</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-43"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Eliminate Material Duplicates:"</span><span class="p">)</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-44"></a>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-45"></a>    <span class="c1">#--- Search for mat. slots in all objects</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-46"></a>    <span class="n">mats</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">materials</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-47"></a>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-48"></a>    <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">:</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-49"></a>        <span class="k">for</span> <span class="n">slot</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">material_slots</span><span class="p">:</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-50"></a>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-51"></a>            <span class="c1"># Get the material name as 3-tuple (base, separator, extension)</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-52"></a>            <span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">sep</span><span class="p">,</span> <span class="n">ext</span><span class="p">)</span> <span class="o">=</span> <span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">rpartition</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-53"></a>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-54"></a>            <span class="c1"># Replace the numbered duplicate with the original if found</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-55"></a>            <span class="k">if</span> <span class="n">ext</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-56"></a>                <span class="k">if</span> <span class="n">base</span> <span class="ow">in</span> <span class="n">mats</span><span class="p">:</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-57"></a>                    <span class="k">print</span><span class="p">(</span><span class="s2">"  For object '</span><span class="si">%s</span><span class="s2">' replace '</span><span class="si">%s</span><span class="s2">' with '</span><span class="si">%s</span><span class="s2">'"</span> <span class="o">%</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">base</span><span class="p">))</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-58"></a>                    <span class="n">slot</span><span class="o">.</span><span class="n">material</span> <span class="o">=</span> <span class="n">mats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-59"></a>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-60"></a>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-61"></a><span class="c1">#--- Execute</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-62"></a><span class="n">eliminate_node_groups</span><span class="p">()</span>
+<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-63"></a><span class="n">eliminate_materials</span><span class="p">()</span>
 </pre></td>
 </tr></table>
 <p>Now, I'm thinking I will include this code in my another addon <strong>Extra Material List</strong>, which displays materials in a more comfy way than the default short pop-up list.</p>

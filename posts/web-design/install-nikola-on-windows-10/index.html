@@ -116,75 +116,75 @@ article: http://ogp.me/ns/article#
 <li>
 <span class="html">❸</span> The best way to install Nikola is to use <code>pip</code> in a <code>virtualenv</code>. So, open console in admin mode at desired path and install <code>virtualenv</code>.</li>
 </ul>
-<div class="instruction-list li-bigskip"><pre class="code console"><a name="rest_code_23a8260e7e9f4a11ac633f1706a6d30b-1"></a><span class="gp">$</span> py -m pip install virtualenv
-<a name="rest_code_23a8260e7e9f4a11ac633f1706a6d30b-2"></a><span class="gp">$</span> virtualenv nikola
-<a name="rest_code_23a8260e7e9f4a11ac633f1706a6d30b-3"></a><span class="gp">$</span> <span class="nb">cd</span> nikola
+<div class="instruction-list li-bigskip"><pre class="code console"><a name="rest_code_cdde967e18f343d2af8990ac10a70be2-1"></a><span class="gp">$</span> py -m pip install virtualenv
+<a name="rest_code_cdde967e18f343d2af8990ac10a70be2-2"></a><span class="gp">$</span> virtualenv nikola
+<a name="rest_code_cdde967e18f343d2af8990ac10a70be2-3"></a><span class="gp">$</span> <span class="nb">cd</span> nikola
 </pre></div>
 <ul class="instruction-list li-bigskip simple">
 <li>
 <span class="html">❹</span> Download packages <code>lxml</code> and <code>Pillow</code> compiled for Windows and for your installed version of Python. Copy them into nikola folder and install them using <code>pip</code>. I downloaded the packages <a class="reference external" href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">here</a>.</li>
 </ul>
-<div class="instruction-list li-bigskip"><pre class="code console"><a name="rest_code_b98f34b1f2f743d6b982372de6a3daa3-1"></a><span class="gp">$</span> pip install lxml-3.6.1-cp35-cp35m-win32.whl
-<a name="rest_code_b98f34b1f2f743d6b982372de6a3daa3-2"></a><span class="gp">$</span> pip install Pillow-3.3.0-cp35-cp35m-win32.whl
+<div class="instruction-list li-bigskip"><pre class="code console"><a name="rest_code_7af9bff1192c434fb01ebd5aea546995-1"></a><span class="gp">$</span> pip install lxml-3.6.1-cp35-cp35m-win32.whl
+<a name="rest_code_7af9bff1192c434fb01ebd5aea546995-2"></a><span class="gp">$</span> pip install Pillow-3.3.0-cp35-cp35m-win32.whl
 </pre></div>
 <ul class="instruction-list li-bigskip simple">
 <li>
 <span class="html">❺</span> Finally, install Nikola with "extras" option.</li>
 </ul>
-<div class="instruction-list li-bigskip"><pre class="code console"><a name="rest_code_0401838369c6467faadd7a49f6a8f3cb-1"></a><span class="gp">$</span> pip install --upgrade <span class="s2">"Nikola[extras]"</span>
+<div class="instruction-list li-bigskip"><pre class="code console"><a name="rest_code_03a62b04b4c142b4802d9327472d8780-1"></a><span class="gp">$</span> pip install --upgrade <span class="s2">"Nikola[extras]"</span>
 </pre></div>
 <ul class="instruction-list li-bigskip simple">
 <li>
 <span class="html">❻</span> Now, you should have Nikola installed and ready to use. You can get all available commands by typing <code>nikola help</code>.</li>
 </ul>
-<div class="instruction-list li-bigskip"><pre class="code console"><a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-1"></a><span class="gp">$</span> nikola <span class="nb">help</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-2"></a><span class="go">Nikola is a tool to create static websites and blogs. For full documentation and more information,</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-3"></a><span class="go">please visit https://getnikola.com/</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-4"></a>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-5"></a><span class="go">Available commands:</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-6"></a><span class="go">  nikola auto                 builds and serves a site; automatically detects site changes</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-7"></a><span class="go">  nikola bootswatch_theme     given a swatch name from bootswatch.com and a parent theme, creates a custom theme</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-8"></a><span class="go">  nikola build                run tasks</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-9"></a><span class="go">  nikola check                check links and files in the generated site</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-10"></a><span class="go">  nikola clean                clean action / remove targets</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-11"></a><span class="go">  nikola console              start an interactive Python console with access to your site</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-12"></a><span class="go">  nikola deploy               deploy the site</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-13"></a><span class="go">  nikola doit_auto            automatically execute tasks when a dependency changes</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-14"></a><span class="go">  nikola dumpdb               dump dependency DB</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-15"></a><span class="go">  nikola forget               clear successful run status from internal DB</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-16"></a><span class="go">  nikola github_deploy        deploy the site to GitHub Pages</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-17"></a><span class="go">  nikola help                 show help</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-18"></a><span class="go">  nikola ignore               ignore task (skip) on subsequent runs</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-19"></a><span class="go">  nikola import_wordpress     import a WordPress dump</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-20"></a><span class="go">  nikola info                 show info about a task</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-21"></a><span class="go">  nikola init                 create a Nikola site in the specified folder</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-22"></a><span class="go">  nikola install_theme        install theme into current site</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-23"></a><span class="go">  nikola list                 list tasks from dodo file</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-24"></a><span class="go">  nikola new_page             create a new page in the site</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-25"></a><span class="go">  nikola new_post             create a new blog post or site page</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-26"></a><span class="go">  nikola orphans              list all orphans</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-27"></a><span class="go">  nikola plugin               manage plugins</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-28"></a><span class="go">  nikola reset-dep            recompute and save the state of file dependencies without executing actions</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-29"></a><span class="go">  nikola rst2html             compile reStructuredText to HTML files</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-30"></a><span class="go">  nikola serve                start the test webserver</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-31"></a><span class="go">  nikola status               display site status</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-32"></a><span class="go">  nikola strace               use strace to list file_deps and targets</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-33"></a><span class="go">  nikola tabcompletion        generate script for tab-completion</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-34"></a><span class="go">  nikola theme                manage themes</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-35"></a><span class="go">  nikola version              print the Nikola version number</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-36"></a>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-37"></a><span class="go">  nikola help                 show help / reference</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-38"></a><span class="go">  nikola help &lt;command&gt;       show command usage</span>
-<a name="rest_code_8f6808d030a14ecf9e21713ac6e0c5f7-39"></a><span class="go">  nikola help &lt;task-name&gt;     show task usage</span>
+<div class="instruction-list li-bigskip"><pre class="code console"><a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-1"></a><span class="gp">$</span> nikola <span class="nb">help</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-2"></a><span class="go">Nikola is a tool to create static websites and blogs. For full documentation and more information,</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-3"></a><span class="go">please visit https://getnikola.com/</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-4"></a>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-5"></a><span class="go">Available commands:</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-6"></a><span class="go">  nikola auto                 builds and serves a site; automatically detects site changes</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-7"></a><span class="go">  nikola bootswatch_theme     given a swatch name from bootswatch.com and a parent theme, creates a custom theme</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-8"></a><span class="go">  nikola build                run tasks</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-9"></a><span class="go">  nikola check                check links and files in the generated site</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-10"></a><span class="go">  nikola clean                clean action / remove targets</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-11"></a><span class="go">  nikola console              start an interactive Python console with access to your site</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-12"></a><span class="go">  nikola deploy               deploy the site</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-13"></a><span class="go">  nikola doit_auto            automatically execute tasks when a dependency changes</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-14"></a><span class="go">  nikola dumpdb               dump dependency DB</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-15"></a><span class="go">  nikola forget               clear successful run status from internal DB</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-16"></a><span class="go">  nikola github_deploy        deploy the site to GitHub Pages</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-17"></a><span class="go">  nikola help                 show help</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-18"></a><span class="go">  nikola ignore               ignore task (skip) on subsequent runs</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-19"></a><span class="go">  nikola import_wordpress     import a WordPress dump</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-20"></a><span class="go">  nikola info                 show info about a task</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-21"></a><span class="go">  nikola init                 create a Nikola site in the specified folder</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-22"></a><span class="go">  nikola install_theme        install theme into current site</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-23"></a><span class="go">  nikola list                 list tasks from dodo file</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-24"></a><span class="go">  nikola new_page             create a new page in the site</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-25"></a><span class="go">  nikola new_post             create a new blog post or site page</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-26"></a><span class="go">  nikola orphans              list all orphans</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-27"></a><span class="go">  nikola plugin               manage plugins</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-28"></a><span class="go">  nikola reset-dep            recompute and save the state of file dependencies without executing actions</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-29"></a><span class="go">  nikola rst2html             compile reStructuredText to HTML files</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-30"></a><span class="go">  nikola serve                start the test webserver</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-31"></a><span class="go">  nikola status               display site status</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-32"></a><span class="go">  nikola strace               use strace to list file_deps and targets</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-33"></a><span class="go">  nikola tabcompletion        generate script for tab-completion</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-34"></a><span class="go">  nikola theme                manage themes</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-35"></a><span class="go">  nikola version              print the Nikola version number</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-36"></a>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-37"></a><span class="go">  nikola help                 show help / reference</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-38"></a><span class="go">  nikola help &lt;command&gt;       show command usage</span>
+<a name="rest_code_27e8bb860b2c453a8b184cb1ae28c211-39"></a><span class="go">  nikola help &lt;task-name&gt;     show task usage</span>
 </pre></div>
 <ul class="instruction-list li-bigskip simple">
 <li>
 <span class="html">❼</span> To test if Nikola works as intended, you can create a demo site by few commands and display it in your browser.</li>
 </ul>
-<div class="instruction-list li-bigskip"><pre class="code console"><a name="rest_code_459da041c66643bdbd5e32060ad895cb-1"></a><span class="gp">$</span> nikola init --demo              <span class="c1"># Create and init a demo site</span>
-<a name="rest_code_459da041c66643bdbd5e32060ad895cb-2"></a><span class="gp">$</span> <span class="nb">cd</span> demo
-<a name="rest_code_459da041c66643bdbd5e32060ad895cb-3"></a><span class="gp">$</span> nikola build                    <span class="c1"># Build - generate the output</span>
-<a name="rest_code_459da041c66643bdbd5e32060ad895cb-4"></a><span class="gp">$</span> nikola serve -a <span class="m">127</span>.0.0.1 -b    <span class="c1"># Display the site in your default browser</span>
+<div class="instruction-list li-bigskip"><pre class="code console"><a name="rest_code_a6452475877140a18fb4798332b3f04b-1"></a><span class="gp">$</span> nikola init --demo              <span class="c1"># Create and init a demo site</span>
+<a name="rest_code_a6452475877140a18fb4798332b3f04b-2"></a><span class="gp">$</span> <span class="nb">cd</span> demo
+<a name="rest_code_a6452475877140a18fb4798332b3f04b-3"></a><span class="gp">$</span> nikola build                    <span class="c1"># Build - generate the output</span>
+<a name="rest_code_a6452475877140a18fb4798332b3f04b-4"></a><span class="gp">$</span> nikola serve -a <span class="m">127</span>.0.0.1 -b    <span class="c1"># Display the site in your default browser</span>
 </pre></div>
 <div class="line-block">
 <div class="line"><br></div>

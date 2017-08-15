@@ -139,392 +139,392 @@ article: http://ogp.me/ns/article#
 </ul>
 <p><a class="reference external" href="../../../../listings/blender-addons/toggle-object-wire/0.1/ToggleObjectWire.py.html">blender-addons/toggle-object-wire/0.1/ToggleObjectWire.py</a>  <a class="reference external" href="../../../../listings/blender-addons/toggle-object-wire/0.1/ToggleObjectWire.py">(Source)</a></p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-1">  1</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-2">  2</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-3">  3</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-4">  4</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-5">  5</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-6">  6</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-7">  7</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-8">  8</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-9">  9</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-10"> 10</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-11"> 11</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-12"> 12</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-13"> 13</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-14"> 14</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-15"> 15</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-16"> 16</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-17"> 17</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-18"> 18</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-19"> 19</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-20"> 20</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-21"> 21</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-22"> 22</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-23"> 23</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-24"> 24</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-25"> 25</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-26"> 26</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-27"> 27</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-28"> 28</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-29"> 29</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-30"> 30</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-31"> 31</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-32"> 32</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-33"> 33</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-34"> 34</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-35"> 35</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-36"> 36</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-37"> 37</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-38"> 38</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-39"> 39</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-40"> 40</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-41"> 41</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-42"> 42</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-43"> 43</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-44"> 44</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-45"> 45</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-46"> 46</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-47"> 47</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-48"> 48</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-49"> 49</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-50"> 50</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-51"> 51</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-52"> 52</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-53"> 53</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-54"> 54</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-55"> 55</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-56"> 56</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-57"> 57</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-58"> 58</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-59"> 59</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-60"> 60</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-61"> 61</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-62"> 62</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-63"> 63</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-64"> 64</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-65"> 65</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-66"> 66</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-67"> 67</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-68"> 68</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-69"> 69</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-70"> 70</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-71"> 71</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-72"> 72</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-73"> 73</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-74"> 74</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-75"> 75</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-76"> 76</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-77"> 77</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-78"> 78</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-79"> 79</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-80"> 80</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-81"> 81</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-82"> 82</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-83"> 83</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-84"> 84</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-85"> 85</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-86"> 86</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-87"> 87</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-88"> 88</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-89"> 89</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-90"> 90</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-91"> 91</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-92"> 92</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-93"> 93</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-94"> 94</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-95"> 95</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-96"> 96</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-97"> 97</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-98"> 98</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-99"> 99</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-100">100</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-101">101</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-102">102</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-103">103</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-104">104</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-105">105</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-106">106</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-107">107</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-108">108</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-109">109</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-110">110</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-111">111</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-112">112</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-113">113</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-114">114</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-115">115</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-116">116</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-117">117</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-118">118</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-119">119</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-120">120</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-121">121</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-122">122</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-123">123</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-124">124</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-125">125</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-126">126</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-127">127</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-128">128</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-129">129</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-130">130</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-131">131</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-132">132</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-133">133</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-134">134</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-135">135</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-136">136</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-137">137</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-138">138</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-139">139</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-140">140</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-141">141</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-142">142</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-143">143</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-144">144</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-145">145</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-146">146</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-147">147</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-148">148</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-149">149</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-150">150</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-151">151</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-152">152</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-153">153</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-154">154</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-155">155</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-156">156</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-157">157</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-158">158</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-159">159</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-160">160</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-161">161</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-162">162</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-163">163</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-164">164</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-165">165</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-166">166</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-167">167</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-168">168</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-169">169</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-170">170</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-171">171</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-172">172</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-173">173</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-174">174</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-175">175</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-176">176</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-177">177</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-178">178</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-179">179</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-180">180</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-181">181</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-182">182</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-183">183</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-184">184</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-185">185</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-186">186</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-187">187</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-188">188</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-189">189</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-190">190</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-191">191</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-192">192</a>
-<a href="#rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-193">193</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-1"></a><span class="c1">#-------------------------------------------------------------------------------</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-2"></a><span class="c1">#                      Toggle Object Wire - Addon for Blender</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-3"></a><span class="c1"># Version: 0.1</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-4"></a><span class="c1"># Revised: 29.03.2017</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-5"></a><span class="c1"># Author: Miki (Meshlogic)</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-6"></a><span class="c1">#-------------------------------------------------------------------------------</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-7"></a><span class="n">bl_info</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-8"></a>    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Toggle Object Wire"</span><span class="p">,</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-9"></a>    <span class="s2">"author"</span><span class="p">:</span> <span class="s2">"Meshlogic"</span><span class="p">,</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-10"></a>    <span class="s2">"category"</span><span class="p">:</span> <span class="s2">"3D View"</span><span class="p">,</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-11"></a>    <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Toggle object's wire display or subsurf modifiers for all objects or for the selection only. Shortcuts: wire (\), subsurf (shift+\)."</span><span class="p">,</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-12"></a>    <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"3D View &gt; Info Panel &gt; Shading"</span><span class="p">,</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-13"></a>    <span class="s2">"version"</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-14"></a>    <span class="s2">"blender"</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-15"></a><span class="p">}</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-16"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-17"></a><span class="kn">import</span> <span class="nn">bpy</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-18"></a><span class="kn">from</span> <span class="nn">bpy.props</span> <span class="kn">import</span> <span class="o">*</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-19"></a><span class="kn">from</span> <span class="nn">bpy.types</span> <span class="kn">import</span> <span class="n">Menu</span><span class="p">,</span> <span class="n">Operator</span><span class="p">,</span> <span class="n">Panel</span><span class="p">,</span> <span class="n">UIList</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-20"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-21"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-22"></a><span class="c1">#-------------------------------------------------------------------------------</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-23"></a><span class="c1"># ToggleObjectWire_OT</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-24"></a><span class="c1">#-------------------------------------------------------------------------------</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-25"></a><span class="k">class</span> <span class="nc">ToggleObjectWire_OT</span><span class="p">(</span><span class="n">Operator</span><span class="p">):</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-26"></a>    <span class="n">bl_idname</span> <span class="o">=</span> <span class="s2">"object.toggle_wire"</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-27"></a>    <span class="n">bl_label</span> <span class="o">=</span> <span class="s2">"Toggle Object Wire"</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-28"></a>    <span class="n">bl_description</span> <span class="o">=</span> <span class="s2">"Toggle object(s) wire display"</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-29"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-30"></a>    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-31"></a>        <span class="n">cs</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">scene</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-32"></a>        <span class="n">cs_props</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">toggle_object_wire</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-33"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-34"></a>        <span class="c1">#--- Toggle all objects or the selected objects only</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-35"></a>        <span class="k">if</span> <span class="n">cs_props</span><span class="o">.</span><span class="n">all_objects</span><span class="p">:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-36"></a>            <span class="n">obj_list</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-37"></a>        <span class="k">else</span><span class="p">:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-38"></a>            <span class="n">obj_list</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">selected_objects</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-39"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-40"></a>        <span class="c1">#--- Only one object selected - toggle according the object's state</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-41"></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">obj_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-42"></a>            <span class="n">obj</span> <span class="o">=</span> <span class="n">obj_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-43"></a>            <span class="k">if</span> <span class="n">obj</span> <span class="ow">and</span> <span class="n">obj</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">'MESH'</span><span class="p">,</span> <span class="s1">'CURVE'</span><span class="p">,</span> <span class="s1">'FONT'</span><span class="p">,</span> <span class="s1">'META'</span><span class="p">,</span> <span class="s1">'SURFACE'</span><span class="p">}:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-44"></a>                <span class="n">cs_props</span><span class="o">.</span><span class="n">toggle_wire</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">obj</span><span class="o">.</span><span class="n">show_wire</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-45"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-46"></a>        <span class="c1">#--- Multiple objects selected - toggle according the previous operator state</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-47"></a>        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">obj_list</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-48"></a>            <span class="n">cs_props</span><span class="o">.</span><span class="n">toggle_wire</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">cs_props</span><span class="o">.</span><span class="n">toggle_wire</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-49"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-50"></a>        <span class="c1">#--- Execute toggling!</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-51"></a>        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">obj_list</span><span class="p">:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-52"></a>            <span class="k">if</span> <span class="n">obj</span> <span class="ow">and</span> <span class="n">obj</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">'MESH'</span><span class="p">,</span> <span class="s1">'CURVE'</span><span class="p">,</span> <span class="s1">'FONT'</span><span class="p">,</span> <span class="s1">'META'</span><span class="p">,</span> <span class="s1">'SURFACE'</span><span class="p">}:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-53"></a>                <span class="n">obj</span><span class="o">.</span><span class="n">show_all_edges</span> <span class="o">=</span> <span class="bp">True</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-54"></a>                <span class="n">obj</span><span class="o">.</span><span class="n">show_wire</span> <span class="o">=</span> <span class="n">cs_props</span><span class="o">.</span><span class="n">toggle_wire</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-55"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-56"></a>                <span class="c1"># Optimal display for subsurf mod</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-57"></a>                <span class="k">for</span> <span class="n">mod</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">modifiers</span><span class="p">:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-58"></a>                    <span class="k">if</span> <span class="n">mod</span> <span class="ow">and</span> <span class="n">mod</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">'SUBSURF'</span><span class="p">:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-59"></a>                        <span class="n">mod</span><span class="o">.</span><span class="n">show_only_control_edges</span> <span class="o">=</span> <span class="n">cs_props</span><span class="o">.</span><span class="n">optimal_display</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-60"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-61"></a>        <span class="k">return</span><span class="p">{</span><span class="s1">'FINISHED'</span><span class="p">}</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-62"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-63"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-64"></a><span class="c1">#-------------------------------------------------------------------------------</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-65"></a><span class="c1"># ToggleSubsurf_OT</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-66"></a><span class="c1">#-------------------------------------------------------------------------------</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-67"></a><span class="k">class</span> <span class="nc">ToggleSubsurf_OT</span><span class="p">(</span><span class="n">Operator</span><span class="p">):</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-68"></a>    <span class="n">bl_idname</span> <span class="o">=</span> <span class="s2">"object.toggle_subsurf"</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-69"></a>    <span class="n">bl_label</span> <span class="o">=</span> <span class="s2">"Toggle Object Subsurf"</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-70"></a>    <span class="n">bl_description</span> <span class="o">=</span> <span class="s2">"Toggle object(s) subsurf modifiers"</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-71"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-72"></a>    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-73"></a>        <span class="n">cs</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">scene</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-74"></a>        <span class="n">cs_props</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">toggle_object_wire</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-75"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-76"></a>        <span class="c1">#--- Toggle all objects or the selected objects only</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-77"></a>        <span class="k">if</span> <span class="n">cs_props</span><span class="o">.</span><span class="n">all_objects</span><span class="p">:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-78"></a>            <span class="n">obj_list</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-79"></a>        <span class="k">else</span><span class="p">:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-80"></a>            <span class="n">obj_list</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">selected_objects</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-81"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-82"></a>        <span class="c1">#--- Only one object selected - toggle according the object's modifier state</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-83"></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">obj_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-84"></a>            <span class="n">obj</span> <span class="o">=</span> <span class="n">obj_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-85"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-86"></a>            <span class="c1"># Find state of an existing subsurf mod</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-87"></a>            <span class="k">if</span> <span class="n">obj</span> <span class="ow">and</span> <span class="n">obj</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">'MESH'</span><span class="p">,</span> <span class="s1">'CURVE'</span><span class="p">,</span> <span class="s1">'FONT'</span><span class="p">,</span> <span class="s1">'META'</span><span class="p">,</span> <span class="s1">'SURFACE'</span><span class="p">}:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-88"></a>                <span class="k">for</span> <span class="n">mod</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">modifiers</span><span class="p">:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-89"></a>                    <span class="k">if</span> <span class="n">mod</span> <span class="ow">and</span> <span class="n">mod</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">'SUBSURF'</span><span class="p">:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-90"></a>                        <span class="n">cs_props</span><span class="o">.</span><span class="n">toggle_subsurf</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">mod</span><span class="o">.</span><span class="n">show_viewport</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-91"></a>                        <span class="k">break</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-92"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-93"></a>        <span class="c1">#--- Multiple objects selected - toggle according the previous operator state</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-94"></a>        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">obj_list</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-95"></a>            <span class="n">cs_props</span><span class="o">.</span><span class="n">toggle_subsurf</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">cs_props</span><span class="o">.</span><span class="n">toggle_subsurf</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-96"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-97"></a>        <span class="c1">#--- Execute toggling!</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-98"></a>        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">obj_list</span><span class="p">:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-99"></a>            <span class="k">if</span> <span class="n">obj</span> <span class="ow">and</span> <span class="n">obj</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">'MESH'</span><span class="p">,</span> <span class="s1">'CURVE'</span><span class="p">,</span> <span class="s1">'FONT'</span><span class="p">,</span> <span class="s1">'META'</span><span class="p">,</span> <span class="s1">'SURFACE'</span><span class="p">}:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-100"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-101"></a>                <span class="k">for</span> <span class="n">mod</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">modifiers</span><span class="p">:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-102"></a>                    <span class="k">if</span> <span class="n">mod</span> <span class="ow">and</span> <span class="n">mod</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">'SUBSURF'</span><span class="p">:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-103"></a>                        <span class="n">mod</span><span class="o">.</span><span class="n">show_only_control_edges</span> <span class="o">=</span> <span class="n">cs_props</span><span class="o">.</span><span class="n">optimal_display</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-104"></a>                        <span class="n">mod</span><span class="o">.</span><span class="n">show_viewport</span> <span class="o">=</span> <span class="n">cs_props</span><span class="o">.</span><span class="n">toggle_subsurf</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-105"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-106"></a>        <span class="k">return</span><span class="p">{</span><span class="s1">'FINISHED'</span><span class="p">}</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-107"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-108"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-109"></a><span class="c1">#-------------------------------------------------------------------------------</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-110"></a><span class="c1"># update_optimal_display</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-111"></a><span class="c1"># - Optimal Display on/off for all subsurf modifiers</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-112"></a><span class="c1">#-------------------------------------------------------------------------------</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-113"></a><span class="k">def</span> <span class="nf">update_optimal_display</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-114"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-115"></a>    <span class="n">cs</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">scene</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-116"></a>    <span class="n">cs_props</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">toggle_object_wire</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-117"></a>    <span class="n">obj_list</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-118"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-119"></a>    <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">obj_list</span><span class="p">:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-120"></a>        <span class="k">if</span> <span class="n">obj</span> <span class="ow">and</span> <span class="n">obj</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">'MESH'</span><span class="p">,</span> <span class="s1">'CURVE'</span><span class="p">,</span> <span class="s1">'FONT'</span><span class="p">,</span> <span class="s1">'META'</span><span class="p">,</span> <span class="s1">'SURFACE'</span><span class="p">}:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-121"></a>            <span class="k">for</span> <span class="n">mod</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">modifiers</span><span class="p">:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-122"></a>                <span class="k">if</span> <span class="n">mod</span> <span class="ow">and</span> <span class="n">mod</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">'SUBSURF'</span><span class="p">:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-123"></a>                    <span class="n">mod</span><span class="o">.</span><span class="n">show_only_control_edges</span> <span class="o">=</span> <span class="n">cs_props</span><span class="o">.</span><span class="n">optimal_display</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-124"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-125"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-126"></a><span class="c1">#-------------------------------------------------------------------------------</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-127"></a><span class="c1"># ADD THIS TO THE INFO PANEL (VIEW3D_PT_view3d_shading)</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-128"></a><span class="c1">#-------------------------------------------------------------------------------</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-129"></a><span class="k">def</span> <span class="nf">toggle_object_wire_panel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-130"></a>    <span class="n">cs</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">scene</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-131"></a>    <span class="n">cs_props</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">toggle_object_wire</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-132"></a>    <span class="n">layout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-133"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-134"></a>    <span class="c1">#layout.separator()</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-135"></a>    <span class="n">col</span> <span class="o">=</span> <span class="n">layout</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-136"></a>    <span class="n">col</span><span class="o">.</span><span class="n">operator</span><span class="p">(</span><span class="s2">"object.toggle_wire"</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s1">'WIRE'</span><span class="p">)</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-137"></a>    <span class="n">col</span><span class="o">.</span><span class="n">operator</span><span class="p">(</span><span class="s2">"object.toggle_subsurf"</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s1">'MOD_SUBSURF'</span><span class="p">)</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-138"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-139"></a>    <span class="n">row</span> <span class="o">=</span>  <span class="n">layout</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-140"></a>    <span class="n">row</span><span class="o">.</span><span class="n">prop</span><span class="p">(</span><span class="n">cs_props</span><span class="p">,</span> <span class="s2">"all_objects"</span><span class="p">)</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-141"></a>    <span class="n">row</span><span class="o">.</span><span class="n">prop</span><span class="p">(</span><span class="n">cs_props</span><span class="p">,</span> <span class="s2">"optimal_display"</span><span class="p">)</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-142"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-143"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-144"></a><span class="c1">#-------------------------------------------------------------------------------</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-145"></a><span class="c1"># CUSTOM SCENE PROPS</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-146"></a><span class="c1">#-------------------------------------------------------------------------------</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-147"></a><span class="k">class</span> <span class="nc">ToggleObjectWire_Props</span><span class="p">(</span><span class="n">bpy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">PropertyGroup</span><span class="p">):</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-148"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-149"></a>    <span class="n">all_objects</span> <span class="o">=</span> <span class="n">BoolProperty</span><span class="p">(</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-150"></a>        <span class="n">name</span> <span class="o">=</span> <span class="s2">"All Objects"</span><span class="p">,</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-151"></a>        <span class="n">description</span> <span class="o">=</span> <span class="s2">"Toggle wire and subsurf modifiers for all objects"</span><span class="p">,</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-152"></a>        <span class="n">default</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-153"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-154"></a>    <span class="n">optimal_display</span> <span class="o">=</span> <span class="n">BoolProperty</span><span class="p">(</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-155"></a>        <span class="n">name</span> <span class="o">=</span> <span class="s2">"Optimal Display"</span><span class="p">,</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-156"></a>        <span class="n">description</span> <span class="o">=</span> <span class="s2">"Optimal display for subsurf modifiers"</span><span class="p">,</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-157"></a>        <span class="n">default</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-158"></a>        <span class="n">update</span> <span class="o">=</span> <span class="n">update_optimal_display</span><span class="p">)</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-159"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-160"></a>    <span class="c1"># Keep operator's toggle state</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-161"></a>    <span class="n">toggle_wire</span> <span class="o">=</span> <span class="n">BoolProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-162"></a>    <span class="n">toggle_subsurf</span> <span class="o">=</span> <span class="n">BoolProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-163"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-164"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-165"></a><span class="c1">#-------------------------------------------------------------------------------</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-166"></a><span class="c1"># REGISTER/UNREGISTER ADDON CLASSES</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-167"></a><span class="c1">#-------------------------------------------------------------------------------</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-168"></a><span class="n">addon_keymaps</span> <span class="o">=</span> <span class="p">[]</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-169"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-170"></a><span class="k">def</span> <span class="nf">register</span><span class="p">():</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-171"></a>    <span class="n">bpy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">register_module</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-172"></a>    <span class="n">bpy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">Scene</span><span class="o">.</span><span class="n">toggle_object_wire</span> <span class="o">=</span> <span class="n">PointerProperty</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">ToggleObjectWire_Props</span><span class="p">)</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-173"></a>    <span class="n">bpy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">VIEW3D_PT_view3d_shading</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">toggle_object_wire_panel</span><span class="p">)</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-174"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-175"></a>    <span class="c1"># Add custom shortcuts ('GRLESS' = backslash '\')</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-176"></a>    <span class="n">wm</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">window_manager</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-177"></a>    <span class="n">km</span> <span class="o">=</span> <span class="n">wm</span><span class="o">.</span><span class="n">keyconfigs</span><span class="o">.</span><span class="n">addon</span><span class="o">.</span><span class="n">keymaps</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Object Mode'</span><span class="p">,</span> <span class="n">space_type</span><span class="o">=</span><span class="s1">'EMPTY'</span><span class="p">)</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-178"></a>    <span class="n">kmi</span> <span class="o">=</span> <span class="n">km</span><span class="o">.</span><span class="n">keymap_items</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">"object.toggle_wire"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">'GRLESS'</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">'PRESS'</span><span class="p">,</span> <span class="n">ctrl</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">shift</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-179"></a>    <span class="n">kmi</span> <span class="o">=</span> <span class="n">km</span><span class="o">.</span><span class="n">keymap_items</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">"object.toggle_subsurf"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">'GRLESS'</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">'PRESS'</span><span class="p">,</span> <span class="n">ctrl</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">shift</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-180"></a>    <span class="n">addon_keymaps</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">km</span><span class="p">,</span> <span class="n">kmi</span><span class="p">))</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-181"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-182"></a><span class="k">def</span> <span class="nf">unregister</span><span class="p">():</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-183"></a>    <span class="c1"># Remove custom shortcuts</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-184"></a>    <span class="k">for</span> <span class="n">km</span><span class="p">,</span> <span class="n">kmi</span> <span class="ow">in</span> <span class="n">addon_keymaps</span><span class="p">:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-185"></a>        <span class="n">km</span><span class="o">.</span><span class="n">keymap_items</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">kmi</span><span class="p">)</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-186"></a>    <span class="n">addon_keymaps</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-187"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-188"></a>    <span class="n">bpy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">unregister_module</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-189"></a>    <span class="k">del</span> <span class="n">bpy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">Scene</span><span class="o">.</span><span class="n">toggle_object_wire</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-190"></a>    <span class="n">bpy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">VIEW3D_PT_view3d_shading</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">toggle_object_wire_panel</span><span class="p">)</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-191"></a>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-192"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-<a name="rest_code_613a8bd59c9d49e3a429ac7c3c0f1dbf-193"></a>    <span class="n">register</span><span class="p">()</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-1">  1</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-2">  2</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-3">  3</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-4">  4</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-5">  5</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-6">  6</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-7">  7</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-8">  8</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-9">  9</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-10"> 10</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-11"> 11</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-12"> 12</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-13"> 13</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-14"> 14</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-15"> 15</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-16"> 16</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-17"> 17</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-18"> 18</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-19"> 19</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-20"> 20</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-21"> 21</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-22"> 22</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-23"> 23</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-24"> 24</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-25"> 25</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-26"> 26</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-27"> 27</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-28"> 28</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-29"> 29</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-30"> 30</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-31"> 31</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-32"> 32</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-33"> 33</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-34"> 34</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-35"> 35</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-36"> 36</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-37"> 37</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-38"> 38</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-39"> 39</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-40"> 40</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-41"> 41</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-42"> 42</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-43"> 43</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-44"> 44</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-45"> 45</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-46"> 46</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-47"> 47</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-48"> 48</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-49"> 49</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-50"> 50</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-51"> 51</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-52"> 52</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-53"> 53</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-54"> 54</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-55"> 55</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-56"> 56</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-57"> 57</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-58"> 58</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-59"> 59</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-60"> 60</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-61"> 61</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-62"> 62</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-63"> 63</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-64"> 64</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-65"> 65</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-66"> 66</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-67"> 67</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-68"> 68</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-69"> 69</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-70"> 70</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-71"> 71</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-72"> 72</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-73"> 73</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-74"> 74</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-75"> 75</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-76"> 76</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-77"> 77</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-78"> 78</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-79"> 79</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-80"> 80</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-81"> 81</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-82"> 82</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-83"> 83</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-84"> 84</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-85"> 85</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-86"> 86</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-87"> 87</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-88"> 88</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-89"> 89</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-90"> 90</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-91"> 91</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-92"> 92</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-93"> 93</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-94"> 94</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-95"> 95</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-96"> 96</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-97"> 97</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-98"> 98</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-99"> 99</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-100">100</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-101">101</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-102">102</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-103">103</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-104">104</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-105">105</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-106">106</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-107">107</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-108">108</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-109">109</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-110">110</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-111">111</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-112">112</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-113">113</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-114">114</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-115">115</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-116">116</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-117">117</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-118">118</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-119">119</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-120">120</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-121">121</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-122">122</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-123">123</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-124">124</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-125">125</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-126">126</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-127">127</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-128">128</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-129">129</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-130">130</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-131">131</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-132">132</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-133">133</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-134">134</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-135">135</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-136">136</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-137">137</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-138">138</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-139">139</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-140">140</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-141">141</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-142">142</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-143">143</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-144">144</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-145">145</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-146">146</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-147">147</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-148">148</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-149">149</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-150">150</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-151">151</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-152">152</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-153">153</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-154">154</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-155">155</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-156">156</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-157">157</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-158">158</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-159">159</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-160">160</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-161">161</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-162">162</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-163">163</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-164">164</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-165">165</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-166">166</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-167">167</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-168">168</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-169">169</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-170">170</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-171">171</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-172">172</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-173">173</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-174">174</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-175">175</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-176">176</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-177">177</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-178">178</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-179">179</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-180">180</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-181">181</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-182">182</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-183">183</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-184">184</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-185">185</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-186">186</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-187">187</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-188">188</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-189">189</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-190">190</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-191">191</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-192">192</a>
+<a href="#rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-193">193</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-1"></a><span class="c1">#-------------------------------------------------------------------------------</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-2"></a><span class="c1">#                      Toggle Object Wire - Addon for Blender</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-3"></a><span class="c1"># Version: 0.1</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-4"></a><span class="c1"># Revised: 29.03.2017</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-5"></a><span class="c1"># Author: Miki (Meshlogic)</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-6"></a><span class="c1">#-------------------------------------------------------------------------------</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-7"></a><span class="n">bl_info</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-8"></a>    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Toggle Object Wire"</span><span class="p">,</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-9"></a>    <span class="s2">"author"</span><span class="p">:</span> <span class="s2">"Meshlogic"</span><span class="p">,</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-10"></a>    <span class="s2">"category"</span><span class="p">:</span> <span class="s2">"3D View"</span><span class="p">,</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-11"></a>    <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Toggle object's wire display or subsurf modifiers for all objects or for the selection only. Shortcuts: wire (\), subsurf (shift+\)."</span><span class="p">,</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-12"></a>    <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"3D View &gt; Info Panel &gt; Shading"</span><span class="p">,</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-13"></a>    <span class="s2">"version"</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-14"></a>    <span class="s2">"blender"</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-15"></a><span class="p">}</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-16"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-17"></a><span class="kn">import</span> <span class="nn">bpy</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-18"></a><span class="kn">from</span> <span class="nn">bpy.props</span> <span class="kn">import</span> <span class="o">*</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-19"></a><span class="kn">from</span> <span class="nn">bpy.types</span> <span class="kn">import</span> <span class="n">Menu</span><span class="p">,</span> <span class="n">Operator</span><span class="p">,</span> <span class="n">Panel</span><span class="p">,</span> <span class="n">UIList</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-20"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-21"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-22"></a><span class="c1">#-------------------------------------------------------------------------------</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-23"></a><span class="c1"># ToggleObjectWire_OT</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-24"></a><span class="c1">#-------------------------------------------------------------------------------</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-25"></a><span class="k">class</span> <span class="nc">ToggleObjectWire_OT</span><span class="p">(</span><span class="n">Operator</span><span class="p">):</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-26"></a>    <span class="n">bl_idname</span> <span class="o">=</span> <span class="s2">"object.toggle_wire"</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-27"></a>    <span class="n">bl_label</span> <span class="o">=</span> <span class="s2">"Toggle Object Wire"</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-28"></a>    <span class="n">bl_description</span> <span class="o">=</span> <span class="s2">"Toggle object(s) wire display"</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-29"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-30"></a>    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-31"></a>        <span class="n">cs</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">scene</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-32"></a>        <span class="n">cs_props</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">toggle_object_wire</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-33"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-34"></a>        <span class="c1">#--- Toggle all objects or the selected objects only</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-35"></a>        <span class="k">if</span> <span class="n">cs_props</span><span class="o">.</span><span class="n">all_objects</span><span class="p">:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-36"></a>            <span class="n">obj_list</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-37"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-38"></a>            <span class="n">obj_list</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">selected_objects</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-39"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-40"></a>        <span class="c1">#--- Only one object selected - toggle according the object's state</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-41"></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">obj_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-42"></a>            <span class="n">obj</span> <span class="o">=</span> <span class="n">obj_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-43"></a>            <span class="k">if</span> <span class="n">obj</span> <span class="ow">and</span> <span class="n">obj</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">'MESH'</span><span class="p">,</span> <span class="s1">'CURVE'</span><span class="p">,</span> <span class="s1">'FONT'</span><span class="p">,</span> <span class="s1">'META'</span><span class="p">,</span> <span class="s1">'SURFACE'</span><span class="p">}:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-44"></a>                <span class="n">cs_props</span><span class="o">.</span><span class="n">toggle_wire</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">obj</span><span class="o">.</span><span class="n">show_wire</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-45"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-46"></a>        <span class="c1">#--- Multiple objects selected - toggle according the previous operator state</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-47"></a>        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">obj_list</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-48"></a>            <span class="n">cs_props</span><span class="o">.</span><span class="n">toggle_wire</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">cs_props</span><span class="o">.</span><span class="n">toggle_wire</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-49"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-50"></a>        <span class="c1">#--- Execute toggling!</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-51"></a>        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">obj_list</span><span class="p">:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-52"></a>            <span class="k">if</span> <span class="n">obj</span> <span class="ow">and</span> <span class="n">obj</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">'MESH'</span><span class="p">,</span> <span class="s1">'CURVE'</span><span class="p">,</span> <span class="s1">'FONT'</span><span class="p">,</span> <span class="s1">'META'</span><span class="p">,</span> <span class="s1">'SURFACE'</span><span class="p">}:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-53"></a>                <span class="n">obj</span><span class="o">.</span><span class="n">show_all_edges</span> <span class="o">=</span> <span class="bp">True</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-54"></a>                <span class="n">obj</span><span class="o">.</span><span class="n">show_wire</span> <span class="o">=</span> <span class="n">cs_props</span><span class="o">.</span><span class="n">toggle_wire</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-55"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-56"></a>                <span class="c1"># Optimal display for subsurf mod</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-57"></a>                <span class="k">for</span> <span class="n">mod</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">modifiers</span><span class="p">:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-58"></a>                    <span class="k">if</span> <span class="n">mod</span> <span class="ow">and</span> <span class="n">mod</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">'SUBSURF'</span><span class="p">:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-59"></a>                        <span class="n">mod</span><span class="o">.</span><span class="n">show_only_control_edges</span> <span class="o">=</span> <span class="n">cs_props</span><span class="o">.</span><span class="n">optimal_display</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-60"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-61"></a>        <span class="k">return</span><span class="p">{</span><span class="s1">'FINISHED'</span><span class="p">}</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-62"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-63"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-64"></a><span class="c1">#-------------------------------------------------------------------------------</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-65"></a><span class="c1"># ToggleSubsurf_OT</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-66"></a><span class="c1">#-------------------------------------------------------------------------------</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-67"></a><span class="k">class</span> <span class="nc">ToggleSubsurf_OT</span><span class="p">(</span><span class="n">Operator</span><span class="p">):</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-68"></a>    <span class="n">bl_idname</span> <span class="o">=</span> <span class="s2">"object.toggle_subsurf"</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-69"></a>    <span class="n">bl_label</span> <span class="o">=</span> <span class="s2">"Toggle Object Subsurf"</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-70"></a>    <span class="n">bl_description</span> <span class="o">=</span> <span class="s2">"Toggle object(s) subsurf modifiers"</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-71"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-72"></a>    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-73"></a>        <span class="n">cs</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">scene</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-74"></a>        <span class="n">cs_props</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">toggle_object_wire</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-75"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-76"></a>        <span class="c1">#--- Toggle all objects or the selected objects only</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-77"></a>        <span class="k">if</span> <span class="n">cs_props</span><span class="o">.</span><span class="n">all_objects</span><span class="p">:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-78"></a>            <span class="n">obj_list</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-79"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-80"></a>            <span class="n">obj_list</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">selected_objects</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-81"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-82"></a>        <span class="c1">#--- Only one object selected - toggle according the object's modifier state</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-83"></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">obj_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-84"></a>            <span class="n">obj</span> <span class="o">=</span> <span class="n">obj_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-85"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-86"></a>            <span class="c1"># Find state of an existing subsurf mod</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-87"></a>            <span class="k">if</span> <span class="n">obj</span> <span class="ow">and</span> <span class="n">obj</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">'MESH'</span><span class="p">,</span> <span class="s1">'CURVE'</span><span class="p">,</span> <span class="s1">'FONT'</span><span class="p">,</span> <span class="s1">'META'</span><span class="p">,</span> <span class="s1">'SURFACE'</span><span class="p">}:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-88"></a>                <span class="k">for</span> <span class="n">mod</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">modifiers</span><span class="p">:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-89"></a>                    <span class="k">if</span> <span class="n">mod</span> <span class="ow">and</span> <span class="n">mod</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">'SUBSURF'</span><span class="p">:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-90"></a>                        <span class="n">cs_props</span><span class="o">.</span><span class="n">toggle_subsurf</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">mod</span><span class="o">.</span><span class="n">show_viewport</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-91"></a>                        <span class="k">break</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-92"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-93"></a>        <span class="c1">#--- Multiple objects selected - toggle according the previous operator state</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-94"></a>        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">obj_list</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-95"></a>            <span class="n">cs_props</span><span class="o">.</span><span class="n">toggle_subsurf</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">cs_props</span><span class="o">.</span><span class="n">toggle_subsurf</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-96"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-97"></a>        <span class="c1">#--- Execute toggling!</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-98"></a>        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">obj_list</span><span class="p">:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-99"></a>            <span class="k">if</span> <span class="n">obj</span> <span class="ow">and</span> <span class="n">obj</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">'MESH'</span><span class="p">,</span> <span class="s1">'CURVE'</span><span class="p">,</span> <span class="s1">'FONT'</span><span class="p">,</span> <span class="s1">'META'</span><span class="p">,</span> <span class="s1">'SURFACE'</span><span class="p">}:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-100"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-101"></a>                <span class="k">for</span> <span class="n">mod</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">modifiers</span><span class="p">:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-102"></a>                    <span class="k">if</span> <span class="n">mod</span> <span class="ow">and</span> <span class="n">mod</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">'SUBSURF'</span><span class="p">:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-103"></a>                        <span class="n">mod</span><span class="o">.</span><span class="n">show_only_control_edges</span> <span class="o">=</span> <span class="n">cs_props</span><span class="o">.</span><span class="n">optimal_display</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-104"></a>                        <span class="n">mod</span><span class="o">.</span><span class="n">show_viewport</span> <span class="o">=</span> <span class="n">cs_props</span><span class="o">.</span><span class="n">toggle_subsurf</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-105"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-106"></a>        <span class="k">return</span><span class="p">{</span><span class="s1">'FINISHED'</span><span class="p">}</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-107"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-108"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-109"></a><span class="c1">#-------------------------------------------------------------------------------</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-110"></a><span class="c1"># update_optimal_display</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-111"></a><span class="c1"># - Optimal Display on/off for all subsurf modifiers</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-112"></a><span class="c1">#-------------------------------------------------------------------------------</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-113"></a><span class="k">def</span> <span class="nf">update_optimal_display</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-114"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-115"></a>    <span class="n">cs</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">scene</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-116"></a>    <span class="n">cs_props</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">toggle_object_wire</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-117"></a>    <span class="n">obj_list</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-118"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-119"></a>    <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">obj_list</span><span class="p">:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-120"></a>        <span class="k">if</span> <span class="n">obj</span> <span class="ow">and</span> <span class="n">obj</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">'MESH'</span><span class="p">,</span> <span class="s1">'CURVE'</span><span class="p">,</span> <span class="s1">'FONT'</span><span class="p">,</span> <span class="s1">'META'</span><span class="p">,</span> <span class="s1">'SURFACE'</span><span class="p">}:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-121"></a>            <span class="k">for</span> <span class="n">mod</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">modifiers</span><span class="p">:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-122"></a>                <span class="k">if</span> <span class="n">mod</span> <span class="ow">and</span> <span class="n">mod</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">'SUBSURF'</span><span class="p">:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-123"></a>                    <span class="n">mod</span><span class="o">.</span><span class="n">show_only_control_edges</span> <span class="o">=</span> <span class="n">cs_props</span><span class="o">.</span><span class="n">optimal_display</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-124"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-125"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-126"></a><span class="c1">#-------------------------------------------------------------------------------</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-127"></a><span class="c1"># ADD THIS TO THE INFO PANEL (VIEW3D_PT_view3d_shading)</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-128"></a><span class="c1">#-------------------------------------------------------------------------------</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-129"></a><span class="k">def</span> <span class="nf">toggle_object_wire_panel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-130"></a>    <span class="n">cs</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">scene</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-131"></a>    <span class="n">cs_props</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">toggle_object_wire</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-132"></a>    <span class="n">layout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-133"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-134"></a>    <span class="c1">#layout.separator()</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-135"></a>    <span class="n">col</span> <span class="o">=</span> <span class="n">layout</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-136"></a>    <span class="n">col</span><span class="o">.</span><span class="n">operator</span><span class="p">(</span><span class="s2">"object.toggle_wire"</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s1">'WIRE'</span><span class="p">)</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-137"></a>    <span class="n">col</span><span class="o">.</span><span class="n">operator</span><span class="p">(</span><span class="s2">"object.toggle_subsurf"</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s1">'MOD_SUBSURF'</span><span class="p">)</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-138"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-139"></a>    <span class="n">row</span> <span class="o">=</span>  <span class="n">layout</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-140"></a>    <span class="n">row</span><span class="o">.</span><span class="n">prop</span><span class="p">(</span><span class="n">cs_props</span><span class="p">,</span> <span class="s2">"all_objects"</span><span class="p">)</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-141"></a>    <span class="n">row</span><span class="o">.</span><span class="n">prop</span><span class="p">(</span><span class="n">cs_props</span><span class="p">,</span> <span class="s2">"optimal_display"</span><span class="p">)</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-142"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-143"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-144"></a><span class="c1">#-------------------------------------------------------------------------------</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-145"></a><span class="c1"># CUSTOM SCENE PROPS</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-146"></a><span class="c1">#-------------------------------------------------------------------------------</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-147"></a><span class="k">class</span> <span class="nc">ToggleObjectWire_Props</span><span class="p">(</span><span class="n">bpy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">PropertyGroup</span><span class="p">):</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-148"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-149"></a>    <span class="n">all_objects</span> <span class="o">=</span> <span class="n">BoolProperty</span><span class="p">(</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-150"></a>        <span class="n">name</span> <span class="o">=</span> <span class="s2">"All Objects"</span><span class="p">,</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-151"></a>        <span class="n">description</span> <span class="o">=</span> <span class="s2">"Toggle wire and subsurf modifiers for all objects"</span><span class="p">,</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-152"></a>        <span class="n">default</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-153"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-154"></a>    <span class="n">optimal_display</span> <span class="o">=</span> <span class="n">BoolProperty</span><span class="p">(</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-155"></a>        <span class="n">name</span> <span class="o">=</span> <span class="s2">"Optimal Display"</span><span class="p">,</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-156"></a>        <span class="n">description</span> <span class="o">=</span> <span class="s2">"Optimal display for subsurf modifiers"</span><span class="p">,</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-157"></a>        <span class="n">default</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-158"></a>        <span class="n">update</span> <span class="o">=</span> <span class="n">update_optimal_display</span><span class="p">)</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-159"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-160"></a>    <span class="c1"># Keep operator's toggle state</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-161"></a>    <span class="n">toggle_wire</span> <span class="o">=</span> <span class="n">BoolProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-162"></a>    <span class="n">toggle_subsurf</span> <span class="o">=</span> <span class="n">BoolProperty</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-163"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-164"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-165"></a><span class="c1">#-------------------------------------------------------------------------------</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-166"></a><span class="c1"># REGISTER/UNREGISTER ADDON CLASSES</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-167"></a><span class="c1">#-------------------------------------------------------------------------------</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-168"></a><span class="n">addon_keymaps</span> <span class="o">=</span> <span class="p">[]</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-169"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-170"></a><span class="k">def</span> <span class="nf">register</span><span class="p">():</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-171"></a>    <span class="n">bpy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">register_module</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-172"></a>    <span class="n">bpy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">Scene</span><span class="o">.</span><span class="n">toggle_object_wire</span> <span class="o">=</span> <span class="n">PointerProperty</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">ToggleObjectWire_Props</span><span class="p">)</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-173"></a>    <span class="n">bpy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">VIEW3D_PT_view3d_shading</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">toggle_object_wire_panel</span><span class="p">)</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-174"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-175"></a>    <span class="c1"># Add custom shortcuts ('GRLESS' = backslash '\')</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-176"></a>    <span class="n">wm</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">window_manager</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-177"></a>    <span class="n">km</span> <span class="o">=</span> <span class="n">wm</span><span class="o">.</span><span class="n">keyconfigs</span><span class="o">.</span><span class="n">addon</span><span class="o">.</span><span class="n">keymaps</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Object Mode'</span><span class="p">,</span> <span class="n">space_type</span><span class="o">=</span><span class="s1">'EMPTY'</span><span class="p">)</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-178"></a>    <span class="n">kmi</span> <span class="o">=</span> <span class="n">km</span><span class="o">.</span><span class="n">keymap_items</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">"object.toggle_wire"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">'GRLESS'</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">'PRESS'</span><span class="p">,</span> <span class="n">ctrl</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">shift</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-179"></a>    <span class="n">kmi</span> <span class="o">=</span> <span class="n">km</span><span class="o">.</span><span class="n">keymap_items</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">"object.toggle_subsurf"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">'GRLESS'</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">'PRESS'</span><span class="p">,</span> <span class="n">ctrl</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">shift</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-180"></a>    <span class="n">addon_keymaps</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">km</span><span class="p">,</span> <span class="n">kmi</span><span class="p">))</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-181"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-182"></a><span class="k">def</span> <span class="nf">unregister</span><span class="p">():</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-183"></a>    <span class="c1"># Remove custom shortcuts</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-184"></a>    <span class="k">for</span> <span class="n">km</span><span class="p">,</span> <span class="n">kmi</span> <span class="ow">in</span> <span class="n">addon_keymaps</span><span class="p">:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-185"></a>        <span class="n">km</span><span class="o">.</span><span class="n">keymap_items</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">kmi</span><span class="p">)</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-186"></a>    <span class="n">addon_keymaps</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-187"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-188"></a>    <span class="n">bpy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">unregister_module</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-189"></a>    <span class="k">del</span> <span class="n">bpy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">Scene</span><span class="o">.</span><span class="n">toggle_object_wire</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-190"></a>    <span class="n">bpy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">VIEW3D_PT_view3d_shading</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">toggle_object_wire_panel</span><span class="p">)</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-191"></a>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-192"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+<a name="rest_code_7fc1cf2900ae4a9189ec8b2c631b83f0-193"></a>    <span class="n">register</span><span class="p">()</span>
 </pre></td>
 </tr></table>
 </div>
