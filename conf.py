@@ -121,7 +121,7 @@ USE_FILENAME_AS_TITLE = True
 EXTRA_IMAGE_EXTENSIONS = []
 
 THUMBNAIL_SIZE = 240    # 180 - 192 - 240
-MAX_IMAGE_SIZE = 1620   # 1440x960, 1440x1080 - 1620x1080, 1620x1215
+MAX_IMAGE_SIZE = 1920   # 1440x960, 1440x1080 - 1620x1080, 1620x1215
 
 # If set to False, it will sort by filename instead. Defaults to True
 GALLERY_SORT_BY_DATE = False
@@ -330,7 +330,7 @@ SOCIAL_BUTTONS_CODE = """
     <div id="social_icons">
         <a href="https://github.com/meshlogic/" title="My GitHub"><i class="fa fa-3x fa-github"></i></a>
 
-        <a href="http://www.flickr.com/photos/meshlogic/" title="See my photos on Flickr!"><i class="fa fa-3x fa-flickr"></i></a>
+        <a href="https://www.flickr.com/people/meshlogic/" title="See my photos on Flickr!"><i class="fa fa-3x fa-flickr"></i></a>
 
         <a href="https://www.youtube.com/channel/UCJn5IgykaGERrwvzLhayJiw" title="See my videos on YouTube!"><i class="fa fa-3x fa-youtube-square"></i></a>
     </div>

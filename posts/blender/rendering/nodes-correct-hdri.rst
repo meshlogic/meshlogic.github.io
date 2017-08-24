@@ -1,4 +1,4 @@
-.. title: Correct HDRI Environment Map Exposure in Blender
+.. title: Correct Exposure of HDRI Environment Map in Blender
 .. slug: nodes-correct-hdri
 .. date: 2017-06-05 15:00:00 UTC+02:00
 .. category: blender
@@ -8,7 +8,7 @@
 .. type: text
 
 
-Lighting your scene with a HDRI environment map is a great method how to improve quality of your renders. Not only that it provides realistic reflections for glossy materials, but also creates colored lights and shadows in the most realistic way since every pixel of the environment map actually stands for a light source illuminating the scene.
+Lighting your scene with a HDRI (HDR) environment map is a great method how to improve quality of your renders. Not only that it provides realistic reflections for glossy materials, but also creates colored lights and shadows in the most realistic way since every pixel of the environment map actually stands for a light source illuminating the scene.
 
 
 .. figure:: HDR_cgt040_Warehouse.tn.jpg
@@ -28,7 +28,7 @@ Lighting your scene with a HDRI environment map is a great method how to improve
 
 There are two most common file formats: **Radiance HDR (.hdr)** and **OpenEXR (.exr)**. OpenEXR is often preferred in Blender, because it enables to store renders with multiple layers and passes for post-processing and also seems to be more memory effective, but HDR files should work fine as well.
 
-Of course, capturing a 360deg panoramic environment map with such a high range of exposure is not an easy task. I think, there is no camera capable to capture such dynamic range in a single shot. Exposure bracketing and using filters is essential. All that difficulties are the reason why quality HDRI images are quite rare and expansive. However, there are many sites providing HDRIs for free, usually in reduced resolution.
+Of course, capturing a 360deg panoramic environment map with such a high range of exposure is not an easy task. I think, there is no camera capable to capture such dynamic range in a single shot. Exposure bracketing and using filters is essential. All that difficulties are the reason why quality HDR images are quite rare and expansive. However, there are many sites providing HDRIs for free, usually in reduced resolution.
 
 
 
@@ -43,7 +43,7 @@ If you have a physically accurate HDRI environment map, using it for illuminatin
     :align: center
     :class: figure-radius
 
-    Lighting the scene with a HDRI environment map.
+    Lighting the scene with a HDRI.
 
 
 If you want to use the HDRI only for lighting and reflections, but have a different background, you can do it directly with nodes. Just use the **Is Camera Ray** attribute and plug it into a **Mix Shader**. The example below uses a spherical gradient as a background to create sort of vignette effect.
@@ -80,7 +80,7 @@ A neat effect can be achieved when we use an additional mesh plane to catch shad
 3 Inaccurate HDRI Environment Maps
 ========================================
 
-If a HDRI map is physically inaccurate, there might be some problems being emerged:
+If your HDRI file is physically inaccurate, there might occur some problems:
 
 .. class:: li-smallskip
 
@@ -221,7 +221,7 @@ To make things easier, I've created a correction node group also for the Composi
 5 Conclusion
 =============
 
-We have proven that Blender is all capable of using HDRI maps for illuminating mesh scenes. If we need to use a physically incorrect HDRI file, we can workaround its exposure directly within the world shader. Moreover, we can use the Blender Compositor as a photo editor to correct the actual HDRI file and increase its exposure range and correct color temperature of the sun.
+We have proven that Blender is perfectly capable of using HDRI maps for illuminating mesh scenes. If we need to use a physically incorrect HDRI file, we can workaround its exposure directly within the world shader. Moreover, we can use the Blender Compositor as a photo editor to correct the actual HDRI file and increase its exposure range and correct color temperature of the sun.
 
 
 
