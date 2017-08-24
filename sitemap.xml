@@ -11,7 +11,7 @@
  </url>
  <url>
   <loc>https://meshlogic.github.io/archive.html</loc>
-  <lastmod>2017-08-15T17:38:00Z</lastmod>
+  <lastmod>2017-08-24T11:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/categories/</loc>
@@ -87,15 +87,23 @@
  </url>
  <url>
   <loc>https://meshlogic.github.io/gallery/</loc>
-  <lastmod>2017-08-15T17:26:00Z</lastmod>
+  <lastmod>2017-08-24T10:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://meshlogic.github.io/gallery/blender-renders-hdri/</loc>
+  <lastmod>2017-08-24T10:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/gallery/my-first-3d-creations/</loc>
   <lastmod>2017-08-15T17:26:00Z</lastmod>
  </url>
  <url>
+  <loc>https://meshlogic.github.io/gallery/procedural-art/</loc>
+  <lastmod>2017-08-24T10:01:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://meshlogic.github.io/index-1.html</loc>
-  <lastmod>2017-08-15T17:27:00Z</lastmod>
+  <lastmod>2017-08-24T10:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/listings/</loc>
@@ -115,7 +123,7 @@
  </url>
  <url>
   <loc>https://meshlogic.github.io/listings/blender-addons/collada-exporter-sl/0.1/ColladaExporterSL.py.html</loc>
-  <lastmod>2017-08-15T17:26:00Z</lastmod>
+  <lastmod>2017-08-24T10:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/listings/blender-addons/collada-exporter-sl/0.2/</loc>
@@ -123,7 +131,7 @@
  </url>
  <url>
   <loc>https://meshlogic.github.io/listings/blender-addons/collada-exporter-sl/0.2/ColladaExporterSL.py.html</loc>
-  <lastmod>2017-08-15T17:26:00Z</lastmod>
+  <lastmod>2017-08-24T10:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/listings/blender-addons/extra-image-list/</loc>
@@ -143,7 +151,7 @@
  </url>
  <url>
   <loc>https://meshlogic.github.io/listings/blender-addons/toggle-object-wire/0.1/ToggleObjectWire.py.html</loc>
-  <lastmod>2017-08-15T17:26:00Z</lastmod>
+  <lastmod>2017-08-24T10:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/pages/about/</loc>
@@ -171,7 +179,7 @@
  </url>
  <url>
   <loc>https://meshlogic.github.io/posts/blender/materials/nodes-curvature-map/</loc>
-  <lastmod>2017-08-15T17:27:00Z</lastmod>
+  <lastmod>2017-08-24T10:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://meshlogic.github.io/posts/blender/materials/nodes-custom-color-ramp/</loc>

@@ -6,7 +6,7 @@ article: http://ogp.me/ns/article#
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Correct HDRI Environment Map Exposure in Blender | Meshlogic</title>
+<title>Correct Exposure of HDRI Environment Map in Blender | Meshlogic</title>
 <link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
@@ -25,9 +25,9 @@ article: http://ogp.me/ns/article#
 <link rel="prev" href="../../addons/collada-exporter-second-life/" title="Collada Exporter for Second Life - Blender Addon" type="text/html">
 <link rel="next" href="../../materials/nodes-custom-color-ramp/" title="Custom Color Ramp Nodes" type="text/html">
 <meta property="og:site_name" content="Meshlogic">
-<meta property="og:title" content="Correct HDRI Environment Map Exposure in Blender">
+<meta property="og:title" content="Correct Exposure of HDRI Environment Map in Blender">
 <meta property="og:url" content="https://meshlogic.github.io/posts/blender/rendering/nodes-correct-hdri/">
-<meta property="og:description" content="Lighting your scene with a HDRI environment map is a great method how to improve quality of your renders. Not only that it provides realistic reflections for glossy materials, but also creates colored">
+<meta property="og:description" content="Lighting your scene with a HDRI (HDR) environment map is a great method how to improve quality of your renders. Not only that it provides realistic reflections for glossy materials, but also creates c">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2017-06-05T15:00:00+02:00">
 <meta property="article:tag" content="blender-rendering">
@@ -88,7 +88,7 @@ article: http://ogp.me/ns/article#
     </nav><!-- BODY CONTENT !! --><div class="container" id="body_content" role="main">
 
         
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><!--<h1 class="p-name entry-title" itemprop="headline name"><a href="/posts/blender/rendering/nodes-correct-hdri/" class="u-url">Correct HDRI Environment Map Exposure in Blender</a></h1> --><h1 class="p-name entry-title" itemprop="headline name">Correct HDRI Environment Map Exposure in Blender</h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><!--<h1 class="p-name entry-title" itemprop="headline name"><a href="/posts/blender/rendering/nodes-correct-hdri/" class="u-url">Correct Exposure of HDRI Environment Map in Blender</a></h1> --><h1 class="p-name entry-title" itemprop="headline name">Correct Exposure of HDRI Environment Map in Blender</h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
@@ -105,7 +105,7 @@ article: http://ogp.me/ns/article#
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<p>Lighting your scene with a HDRI environment map is a great method how to improve quality of your renders. Not only that it provides realistic reflections for glossy materials, but also creates colored lights and shadows in the most realistic way since every pixel of the environment map actually stands for a light source illuminating the scene.</p>
+<p>Lighting your scene with a HDRI (HDR) environment map is a great method how to improve quality of your renders. Not only that it provides realistic reflections for glossy materials, but also creates colored lights and shadows in the most realistic way since every pixel of the environment map actually stands for a light source illuminating the scene.</p>
 <div class="thumbnail figure align-center">
 <a class="reference external image-reference" href="HDR_cgt040_Warehouse.jpg"><img alt="HDR_cgt040_Warehouse.tn.jpg" src="HDR_cgt040_Warehouse.tn.jpg"></a>
 <p class="caption">A simple mesh sphere and plane illuminated by a HDRI environment map.</p>
@@ -115,14 +115,14 @@ article: http://ogp.me/ns/article#
 <h2>1 A Very Brief Introduction to HDRI</h2>
 <p><strong>HDRI (high dynamic range images)</strong> are image files with extended bit depth (usually 32bit per color channel). Thanks to that, they are capable to capture extremely high range of luminance. That's simply essential for capturing real lighting conditions in outdoor environments, where the difference between the luminance of sun and the rest of the scene might be up to 20 EV (exposure value numbers) or even more.</p>
 <p>There are two most common file formats: <strong>Radiance HDR (.hdr)</strong> and <strong>OpenEXR (.exr)</strong>. OpenEXR is often preferred in Blender, because it enables to store renders with multiple layers and passes for post-processing and also seems to be more memory effective, but HDR files should work fine as well.</p>
-<p>Of course, capturing a 360deg panoramic environment map with such a high range of exposure is not an easy task. I think, there is no camera capable to capture such dynamic range in a single shot. Exposure bracketing and using filters is essential. All that difficulties are the reason why quality HDRI images are quite rare and expansive. However, there are many sites providing HDRIs for free, usually in reduced resolution.</p>
+<p>Of course, capturing a 360deg panoramic environment map with such a high range of exposure is not an easy task. I think, there is no camera capable to capture such dynamic range in a single shot. Exposure bracketing and using filters is essential. All that difficulties are the reason why quality HDR images are quite rare and expansive. However, there are many sites providing HDRIs for free, usually in reduced resolution.</p>
 </div>
 <div class="section" id="basic-node-setup-for-hdri-lighting">
 <h2>2 Basic Node Setup for HDRI Lighting</h2>
 <p>If you have a physically accurate HDRI environment map, using it for illuminating your scene in Blender is extremely easy (we use Cycles Render and Node Editor here). Just make a <strong>World Material</strong> with <strong>Environment Texture</strong> and <strong>Background Shader</strong>. If you want to rotate the environment, just add a <strong>Mapping</strong> node and you can rotate it around Z axis.</p>
 <div class="figure align-center">
 <a class="reference external image-reference" href="basic-hdri-lighting.png"><img alt="basic-hdri-lighting.tn.png" class="figure-radius" src="basic-hdri-lighting.tn.png"></a>
-<p class="caption">Lighting the scene with a HDRI environment map.</p>
+<p class="caption">Lighting the scene with a HDRI.</p>
 </div>
 <p>If you want to use the HDRI only for lighting and reflections, but have a different background, you can do it directly with nodes. Just use the <strong>Is Camera Ray</strong> attribute and plug it into a <strong>Mix Shader</strong>. The example below uses a spherical gradient as a background to create sort of vignette effect.</p>
 <div class="figure align-center">
@@ -144,7 +144,7 @@ article: http://ogp.me/ns/article#
 </div>
 <div class="section" id="inaccurate-hdri-environment-maps">
 <h2>3 Inaccurate HDRI Environment Maps</h2>
-<p>If a HDRI map is physically inaccurate, there might be some problems being emerged:</p>
+<p>If your HDRI file is physically inaccurate, there might occur some problems:</p>
 <ul class="li-smallskip simple">
 <li>
 <strong>Missing strong shadows where expected</strong> - the HDRI has insufficient dynamic range, the sun luminance need to be significantly higher than the rest of the sky to create crisp and strong shadows.</li>
@@ -223,7 +223,7 @@ article: http://ogp.me/ns/article#
 </div>
 <div class="section" id="conclusion">
 <h2>5 Conclusion</h2>
-<p>We have proven that Blender is all capable of using HDRI maps for illuminating mesh scenes. If we need to use a physically incorrect HDRI file, we can workaround its exposure directly within the world shader. Moreover, we can use the Blender Compositor as a photo editor to correct the actual HDRI file and increase its exposure range and correct color temperature of the sun.</p>
+<p>We have proven that Blender is perfectly capable of using HDRI maps for illuminating mesh scenes. If we need to use a physically incorrect HDRI file, we can workaround its exposure directly within the world shader. Moreover, we can use the Blender Compositor as a photo editor to correct the actual HDRI file and increase its exposure range and correct color temperature of the sun.</p>
 </div>
 <div class="section" id="references">
 <h2>References</h2>
@@ -254,7 +254,7 @@ article: http://ogp.me/ns/article#
         <script>
         var disqus_shortname ="meshlogic",
             disqus_url="https://meshlogic.github.io/posts/blender/rendering/nodes-correct-hdri/",
-        disqus_title="Correct HDRI Environment Map Exposure in Blender",
+        disqus_title="Correct Exposure of HDRI Environment Map in Blender",
         disqus_identifier="cache/posts/blender/rendering/nodes-correct-hdri.html",
         disqus_config = function () {
             this.language = "en";
@@ -310,7 +310,7 @@ article: http://ogp.me/ns/article#
     <div id="social_icons">
         <a href="https://github.com/meshlogic/" title="My GitHub"><i class="fa fa-3x fa-github"></i></a>
 
-        <a href="http://www.flickr.com/photos/meshlogic/" title="See my photos on Flickr!"><i class="fa fa-3x fa-flickr"></i></a>
+        <a href="https://www.flickr.com/people/meshlogic/" title="See my photos on Flickr!"><i class="fa fa-3x fa-flickr"></i></a>
 
         <a href="https://www.youtube.com/channel/UCJn5IgykaGERrwvzLhayJiw" title="See my videos on YouTube!"><i class="fa fa-3x fa-youtube-square"></i></a>
     </div>

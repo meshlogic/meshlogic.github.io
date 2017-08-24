@@ -7991,7 +7991,7 @@ ul.list-inline {
     flex-wrap: wrap;
 }
 .figures-container.center {
-    justify-content: space-around;
+    /*justify-content: space-around;*/
 }
 .figures-container div {
     clear: none !important;
