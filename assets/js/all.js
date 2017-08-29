@@ -531,25 +531,37 @@ function fancydates(fanciness, date_format) {
 }
 
 /*******************************************************************************
-** Make Navbar sticky in the top when scrolling page down
+** - Make Navbar sticky on top when the page scrolls down
+** - Keep Navbar width inside container
 *******************************************************************************/
-$('.navbar').affix({
-	offset: {
-		top: $('header').height() + 20
-	}
-});
-	
-function update_navbar_width(){
-	var w = $('.container').width();
-	$('.navbar').width(w);
+function stiky_navbar()
+{
+    var scrollTop = $(document).scrollTop();
+    var offsetTop = $('#body_header').outerHeight() + parseInt($('body').css('padding-top'), 10);
+
+    if (scrollTop >= offsetTop)
+        $('.navbar').removeClass('navbar-static-top').addClass('navbar-fixed-top');
+    else
+        $('.navbar').removeClass('navbar-fixed-top').addClass('navbar-static-top');
+}
+
+function update_navbar_width()
+{
+    var w = $('.container').width();
+    $('.navbar').width(w);
 }
 
 $(document).ready(function(){
-    update_navbar_width()
+    update_navbar_width();
 });
 
 $(window).resize(function(){
-    update_navbar_width()
+    update_navbar_width();
+    stiky_navbar();
+});
+
+$(document).scroll(function(){
+    stiky_navbar();
 });
 
 

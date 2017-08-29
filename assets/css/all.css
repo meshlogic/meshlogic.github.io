@@ -519,13 +519,12 @@ table.codetable { width: 100%;} td.linenos {text-align: right; width: 4em;}
 body {
     background-color: #606060;
     /*background: linear-gradient(#5C666B, #909090);*/
-    /*background-image: url(../img/noisy-texture-256x256-o5-d10-c-707070-t0.png);*/
     background-attachment: fixed;
     padding-top: 20px;
     line-height: 1.6;
 }
 #body_container {
-    /*background-color: #fff;*/
+    /*background-color: white;*/
     background-color: #eae1d3;
     background-image: url(../img/paper_grid_01.png);
     border-radius: 10px;
@@ -565,36 +564,60 @@ body {
 ** Navbar
 *******************************************************************************/
 .navbar {
-    /*background-image: url(../img/noisy-texture-128x128-o4-d10-c-373737-t0.png);*/
     background-color: #303030;
-    background-repeat: repeat;
-    border-left-width: 0;
-    border-right-width: 0;
     border: 0;
     border-radius: 0;
-    /*box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.5), inset 0px 0px 1px 0 rgba(0, 0, 0, 0.3);*/
     box-shadow: 0px 1px 6px 0 rgba(0, 0, 0, 0.5);
     margin: 0 auto -50px auto;
     z-index: 1000;
 }
-.navbar.affix {
-    position: fixed;
-    top: 0;
-}
 .navbar-collapse {
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 25px !important;
+    padding-right: 25px !important;
 }
 .navbar-right {
     margin-right: 0;
 }
 .dropdown-menu {
-    /*background-image: url(../img/noisy-texture-128x128-o4-d10-c-373737-t0.png);*/
     background-color: #303030;
-    background-repeat: repeat;
     border: 0;
     border-radius: 4px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4), inset 0px 0px 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Modify style when the screen shrinks */
+@media (max-width:992px)
+{
+    .nav>li>a {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .navbar-collapse {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    .navbar-right {
+        display: none;
+    }
+    #body_content{
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+}
+
+/* Hide header when the screen shrinks even more */
+@media (max-width: 768px)
+{
+    #body_header {
+        display: none;
+        height: 0;
+    }
+    body{
+        padding-top: 0;
+    }
+    #body_container {
+        border-radius: 0px;
+    }
 }
 
 
@@ -907,7 +930,8 @@ h2, h3, h4, h5, h6 {
     margin-bottom: 10px;
     font-weight: 700;
 }
-/* RST rubric directive, like an informal heading */
+
+/* RST rubric directive (like informal heading) */
 p.rubric{
     font-size: 18px;
     font-weight: 700;
@@ -972,8 +996,8 @@ blockquote {
 ** Lists
 *******************************************************************************/
 
-/* Description list
-*******************************************************************************/
+/* Description list */
+/*----------------------------------------------------------------------------*/
 dl {
     margin-bottom: 15px;
 }
@@ -989,8 +1013,8 @@ dd {
 }
 
 
-/* Default simple list
-*******************************************************************************/
+/* Default simple list */
+/*----------------------------------------------------------------------------*/
 ul.simple {
     margin-bottom: 1em;
 }
@@ -999,8 +1023,8 @@ ul.simple li{
 }
 
 
-/* Pros x Cons lists
-*******************************************************************************/
+/* Pros x Cons lists */
+/*----------------------------------------------------------------------------*/
 ul.pros-list, ul.cons-list {
     list-style: none;
     margin-bottom: 0 !important;
@@ -1028,8 +1052,8 @@ ul.cons-list > li:before {
 }
 
 
-/* Custom List
-*******************************************************************************/
+/* Custom List */
+/*----------------------------------------------------------------------------*/
 ul.custom-list {
     list-style: none;
     margin-bottom: 0 !important;
@@ -1049,8 +1073,8 @@ ul.custom-list > li > span {
 }
 
 
-/* Instruction List
-*******************************************************************************/
+/* Instruction List */
+/*----------------------------------------------------------------------------*/
 ul.instruction-list {
     list-style: none;
     padding: 0;    
@@ -1099,9 +1123,8 @@ div.li-bigskip {
 
 
 /*******************************************************************************
-** Code blocks
+** Code Block
 *******************************************************************************/
-/*** IN-BLOCK Code ***/
 pre.code {
     background-color: rgba(128, 128, 128, 0.1) !important;
     border: 1px solid rgba(0, 0, 0, 0.25);
@@ -1115,10 +1138,12 @@ pre.code {
     font-size: 14px;
     line-height: 18px;
     overflow: visible;
-    /*white-space: pre-wrap;*/
 }
 
-/* Code in-table with line numbers */
+
+/*******************************************************************************
+** Code Block (table) with line numbers
+*******************************************************************************/
 table.codetable {
     background-color: rgba(128, 128, 128, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.25);
@@ -1132,6 +1157,19 @@ table.codetable td {
     padding: 0;
     margin: 0;
 }
+
+/* Code style */
+td.code {
+    padding-left: 70px !important;
+    width: 100%;
+}
+td.code pre {
+    padding-left: 10px;
+    margin: 0;
+    background: 0 !important;
+    border: 0;
+}
+
 /* Line numbers style */
 td.linenos {
     width: 10px;
@@ -1157,19 +1195,10 @@ td.linenos pre a {
     width: 70px;
 }
 
-/* Code style */
-td.code {
-    padding-left: 70px !important;
-    width: 100%;
-}
-td.code pre {
-    padding-left: 10px;
-    margin: 0;
-    background: 0 !important;
-    border: 0;
-}
 
-/*** IN-LINE Code ***/
+/*******************************************************************************
+** IN-LINE Code
+*******************************************************************************/
 tt, code {
     /*background-color: rgba(255, 255, 255, 0.3) !important;*/
     background-color: rgba(128, 128, 128, 0.1) !important;
@@ -1235,7 +1264,8 @@ ul.list-inline {
 /*******************************************************************************
 ** Figures, Images
 *******************************************************************************/
-/* Flexbox for figures, reST usage (.. container:: figures-container center) */
+/* Flexbox Container for Figures */
+/* RST usage: .. container:: figures-container center */
 .figures-container {
     width: 100%;
     padding: 0;
@@ -1243,23 +1273,22 @@ ul.list-inline {
     display: flex;
     flex-wrap: wrap;
 }
-.figures-container.center {
-    /*justify-content: space-around;*/
-}
-.figures-container div {
+.figures-container > .figure {
+    margin: 0 12px 24px 12px !important;
     clear: none !important;
-    margin: 0 24px 24px 0 !important;
-    flex-grow: 1;
-    flex-basis: 0;
+    /*flex-grow: 1;
+    flex-basis: 0;*/
 }
 
-/* Single figure */
-.figure-radius {
-    border-radius: 4px;
-}
+/*** Figure ***/
 .figure {
     display: table !important;
-    width: 50px;
+}
+.figure img {
+    width: 100%;
+}
+.figure-radius {
+    border-radius: 4px;
 }
 .figure.align-left {
     margin-left: 0;
@@ -1273,18 +1302,29 @@ ul.list-inline {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
 }
-.figure img {
-    max-width: none !important;
-}
-.thumbnail {
+
+/*** Thumbnail - Figure with frame ***/
+.thumbnail, .thumbnail > .caption {
     border: 0;
+    background-color: #faf9f5;
     box-shadow: 0px 2px 3px 0 rgba(0,0,0,0.4);
 }
+
+/*** Caption ***/
 .caption {
     font-size: 14px;
     line-height: 1.285714286;
     margin: 0;
-    padding: 8px 0px 4px 0px !important;
+    padding: 8px 2px 8px 2px !important;
+}
+.figure > .caption {
+    display: table-caption;
+    caption-side: bottom;
+    position: relative;
+}
+.thumbnail > .caption{
+    margin-top: -4px;
+    border-radius: 0 0 4px 4px;
 }
 
 
@@ -1397,7 +1437,7 @@ nav.breadcrumbs + h1 {
     margin: 0 auto;
 }
 .container-990px {
-    max-width: 960px;
+    max-width: 990px;
     margin: 0 auto;
 }
 .container-1000px {

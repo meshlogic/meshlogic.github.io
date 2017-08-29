@@ -4,13 +4,12 @@
 body {
     background-color: #606060;
     /*background: linear-gradient(#5C666B, #909090);*/
-    /*background-image: url(../img/noisy-texture-256x256-o5-d10-c-707070-t0.png);*/
     background-attachment: fixed;
     padding-top: 20px;
     line-height: 1.6;
 }
 #body_container {
-    /*background-color: #fff;*/
+    /*background-color: white;*/
     background-color: #eae1d3;
     background-image: url(../img/paper_grid_01.png);
     border-radius: 10px;
@@ -50,36 +49,60 @@ body {
 ** Navbar
 *******************************************************************************/
 .navbar {
-    /*background-image: url(../img/noisy-texture-128x128-o4-d10-c-373737-t0.png);*/
     background-color: #303030;
-    background-repeat: repeat;
-    border-left-width: 0;
-    border-right-width: 0;
     border: 0;
     border-radius: 0;
-    /*box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.5), inset 0px 0px 1px 0 rgba(0, 0, 0, 0.3);*/
     box-shadow: 0px 1px 6px 0 rgba(0, 0, 0, 0.5);
     margin: 0 auto -50px auto;
     z-index: 1000;
 }
-.navbar.affix {
-    position: fixed;
-    top: 0;
-}
 .navbar-collapse {
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 25px !important;
+    padding-right: 25px !important;
 }
 .navbar-right {
     margin-right: 0;
 }
 .dropdown-menu {
-    /*background-image: url(../img/noisy-texture-128x128-o4-d10-c-373737-t0.png);*/
     background-color: #303030;
-    background-repeat: repeat;
     border: 0;
     border-radius: 4px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4), inset 0px 0px 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Modify style when the screen shrinks */
+@media (max-width:992px)
+{
+    .nav>li>a {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .navbar-collapse {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    .navbar-right {
+        display: none;
+    }
+    #body_content{
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+}
+
+/* Hide header when the screen shrinks even more */
+@media (max-width: 768px)
+{
+    #body_header {
+        display: none;
+        height: 0;
+    }
+    body{
+        padding-top: 0;
+    }
+    #body_container {
+        border-radius: 0px;
+    }
 }
 
 
