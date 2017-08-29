@@ -21,7 +21,7 @@
     </header>
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-default navbar-static">    
+    <nav class="navbar navbar-default navbar-static-top">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -31,7 +31,7 @@
             </button>
 
             {% if show_blog_title %}
-                <a class="navbar-brand" href="/">
+                <a class="navbar-brand visible-xs" href="/">
                 <span id="blog-title">{{ blog_title|e }}</span>
                 </a>
             {% endif %}

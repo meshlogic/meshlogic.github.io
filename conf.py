@@ -7,7 +7,7 @@ from nikola import filters
 import time
 
 BLOG_AUTHOR = "Miki"
-BLOG_TITLE = "Meshlogic"
+BLOG_TITLE = "MeshLogic"
 BLOG_EMAIL = "meshlogic@gmail.com"
 BLOG_DESCRIPTION = "A personal blog on computer graphics, scientific computing, Blender, Jupyter and Second Life"
 DEFAULT_LANG = "en"
@@ -18,7 +18,7 @@ SITE_URL = "https://meshlogic.github.io/"
 
 # If you want to hide the title of your website (for example, if your logo
 # already contains the text), set this to False.
-SHOW_BLOG_TITLE = False
+SHOW_BLOG_TITLE = True
 
 # Logo image. Final output is <img src="LOGO_URL" id="logo" alt="BLOG_TITLE">.
 # The URL may be relative to the site root.
