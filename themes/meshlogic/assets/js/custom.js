@@ -21,6 +21,7 @@ function update_navbar_width()
 
 $(document).ready(function(){
     update_navbar_width();
+    stiky_navbar();
 });
 
 $(window).resize(function(){
