@@ -15,7 +15,7 @@ This python script is a replacement for the Blender's native Collada exporter ma
 
 .. figure:: ui-panel.png
     :align: right
-    :class: figure-radius
+    :class: figure-round
 
 
 Motivation
@@ -35,22 +35,28 @@ These issues prevent to quickly upload larger scenes (like a whole house) includ
 I wanted to try to fix these issues. But alas the default Collada exporter is made in C++ and I didn't want to recompile whole Blender. So, I decided to write my own Python based exporter that would work as an addon.
 
 
-Notes
-========
+Features
+===========
 
 .. class:: li-smallskip
 
     - Export static mesh objects to Collada (.dae), including images assigned to the active UV layer.
 
-    - Tested with Firestorm Viewer for Second Life and InWorldz.
+    - Export normals according the Auto-Smooth mesh option. Works also with face weighted normals.
+
+    - Tested with Firestorm Viewer for Second Life.
 
     - Requires python collada module https://github.com/pycollada/pycollada. Pycollada is not a part of official Blender, so must be installed into Blender's folder (eg. Blender/2.78/scripts/modules)
 
 
 
-
 ChangeLog
-=========
+===========
+
+Version 0.3 (30.11.2017)
+    - Remove model tags (PHY, LOD1, LOD2, etc) from material id names
+    - Export normals according the Auto-Smooth mesh option
+    - Added more shading options
 
 Version 0.2 (17.05.2017)
     - Objects (geometry nodes) are sorted by name now
@@ -63,10 +69,11 @@ Version 0.1 (12.05.2017)
 Download
 ========
 
-- `From my GitHub <https://github.com/meshlogic/blender-addons/tree/master/collada-exporter-sl>`_
+
+.. - `From my GitHub <https://github.com/meshlogic/blender-addons/tree/master/collada-exporter-sl>`_
 
 
-
-
-.. listing:: blender-addons/collada-exporter-sl/0.2/ColladaExporterSL.py python
+.. listing:: blender-addons/collada-exporter-sl/0.3/ColladaExporterSL.py python
     :number-lines:
+
+

@@ -23,21 +23,20 @@
     Nikola Tesla, one of the greatest inventors ever.
 
 
-Hello and welcome to my new personal blog that I'm just creating using a site generator called `Nikola <http://getnikola.com/>`_. Indeed! it's named after the famous scientist and inventor **Nikola Tesla**, but that wasn't the only reason why I've decided for this interesting tool. Recently, I was tempted to set a personal blog, where I could post things I'm currently working on, or my ideas before I totally forget them. Of course, I was faced with the problem what site engine I should choose, because there is truly lots of options in the year of 2016.
+Hello and welcome to my new personal blog that I'm just creating using a site generator called `Nikola <http://getnikola.com/>`_. Indeed! it's named after the famous scientist and inventor **Nikola Tesla**, but that wasn't the only reason why I've decided for this interesting tool. Recently, I was tempted to set a personal blog, where I could post things I'm currently working on and my ideas before I totally forget them. Of course, I was faced with the problem what site engine I should choose, because there is truly lots of options in the year of 2016.
 
-
-Before I start discussing my experience with Nikola, let me explain why I've decided for this tool. I'm a very picky person when it comes to customization, so I looked for a tool that would satisfy all my needs, particularly...
+Before I start discussing my experience with Nikola, let me explain why I've decided for this tool. I'm a very picky person when it comes to customization, so I looked for a tool that would satisfy all my desires, particularly...
 
 
 .. class:: li-smallskip
 
-    - Have full control over every aspect of the style and layout.
+    - Have full control over every aspect of style and layout to make a decent **desktop-first** theme.
 
     - I'm not a fan of phones, however smart they try to appear. So, mobile-first, ultra-responsive web designs that hide all control elements and relevant information cannot really attract me.
 
     - Enable to insert both blog posts and non-blog pages.
 
-    - Be able to type math (ideally using Syntax of **TeX**), because mathematics is indeed the language of nature, thus the most universal language ever :)
+    - Be able to type math (ideally using syntax of **LaTeX**), because mathematics is indeed the language of nature, thus the most universal language ever :)
 
     - Use native **Jupyter** files (.ipynb) as source files for the site. :text-info:`Jupyter is a very handy web application that allows you to create and share documents containing live code, equations, visualizations and explanatory text. It supports many languages including Python, which makes it a perfect tool for writing scientific articles.`
 
@@ -47,14 +46,15 @@ Before I start discussing my experience with Nikola, let me explain why I've dec
 .. TEASER_END
 
 
-Side note: :text-info:`An example how Nikola can render math using MathJax plugin. You can right-click the equation, get menu and see the TeX code (Show Math As - TeX Commands). Apropos, these are the famous Maxwell's equations describing electromagnetic field, probably one of the most favourite equations of Nikola Tesla :)`
+.. Tip::
 
-.. math::
-    \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \\
-    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-    \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-    \nabla \cdot \vec{\mathbf{B}} & = 0
+    An example how Nikola can render math using **MathJax** plugin. To display the LaTeX source code, right-click the equation and select *Show Math As - TeX Commands*. Apropos, these are the famous Maxwell's equations describing electromagnetic field, probably some the most favorite equations of Nikola Tesla :)
 
+    .. math::
+        \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \\
+        \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
+        \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
+        \nabla \cdot \vec{\mathbf{B}} & = 0
 
 
 Then, considering the very few requirements above, I've tried to choose the optimal website engine for my needs. Basically, I considered these options...
@@ -69,11 +69,11 @@ Use existing CMS (Content Management System)
 
     .. class:: cons-list
 
-        - I've never tried any CMS, but I guess options for customization will be limited since they are designed for users who know nothing about HTML or CSS. Also, CMS tend to be very complex and script-heavy, so it would take lots of effort to do the desired customizations.
+        - I've tried only a free CMS on wordpress.com, but was quite disappointed. You are not allowed to modify CSS style files, so you have to stuck with one of the provided themes (to be able to modify CSS files you have to pay a monthly fee). Moreover, you are not allowed to install any plugins. Another issue is writing math formulas, where you often get a massage "Formula does not parse", even when it's completely LaTeX valid. :text-info:`I don't say that Wordpress is bad, but to fully use its potential, one would need to install and configure it properly on a paid server and have all needed permissions.`
 
         - On CMS sites, every time a reader wants a page, a whole lot of database queries are made. Then a whole pile of code chews that data, and HTML is produced, which is sent to the user. All that requires time and server resources.
 
-        - And the most critical problem, I haven't found any CMS that would support native Jupyter files (.ipynb).
+        - And the most critical problem, I haven't found any CMS that would support native Jupyter files (.ipynb) and enable typing LaTeX math without any parsing issues.
 
 
 Design a website from scratch
@@ -97,9 +97,9 @@ Use static site generator Nikola
 
         - The options for customization are endless with Nikola, you own your files, and you can do anything with them.
 
-        - That all means you can create any possible look and feel of the site you might dream about.
+        - That all means you can create any possible look and feel for the site you might dream about.
 
-        - The obvious advantage is security since static pages don't use any heavy server-side framework.  
+        - The obvious advantage is security and low lag since static pages don't use any heavy server-side framework.
 
 
 

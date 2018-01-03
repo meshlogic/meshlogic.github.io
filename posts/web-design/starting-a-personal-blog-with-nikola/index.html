@@ -115,25 +115,28 @@ Hello and welcome to my new personal blog that I'm just creating using a site ge
 <a class="reference external image-reference" href="nikola_tesla_quote.jpg"><img alt="nikola_tesla_quote.tn.jpg" src="nikola_tesla_quote.tn.jpg"></a>
 <p class="caption">Nikola Tesla, one of the greatest inventors ever.</p>
 </div>
-<p>Hello and welcome to my new personal blog that I'm just creating using a site generator called <a class="reference external" href="http://getnikola.com/">Nikola</a>. Indeed! it's named after the famous scientist and inventor <strong>Nikola Tesla</strong>, but that wasn't the only reason why I've decided for this interesting tool. Recently, I was tempted to set a personal blog, where I could post things I'm currently working on, or my ideas before I totally forget them. Of course, I was faced with the problem what site engine I should choose, because there is truly lots of options in the year of 2016.</p>
-<p>Before I start discussing my experience with Nikola, let me explain why I've decided for this tool. I'm a very picky person when it comes to customization, so I looked for a tool that would satisfy all my needs, particularly...</p>
+<p>Hello and welcome to my new personal blog that I'm just creating using a site generator called <a class="reference external" href="http://getnikola.com/">Nikola</a>. Indeed! it's named after the famous scientist and inventor <strong>Nikola Tesla</strong>, but that wasn't the only reason why I've decided for this interesting tool. Recently, I was tempted to set a personal blog, where I could post things I'm currently working on and my ideas before I totally forget them. Of course, I was faced with the problem what site engine I should choose, because there is truly lots of options in the year of 2016.</p>
+<p>Before I start discussing my experience with Nikola, let me explain why I've decided for this tool. I'm a very picky person when it comes to customization, so I looked for a tool that would satisfy all my desires, particularly...</p>
 <ul class="li-smallskip simple">
-<li>Have full control over every aspect of the style and layout.</li>
+<li>Have full control over every aspect of style and layout to make a decent <strong>desktop-first</strong> theme.</li>
 <li>I'm not a fan of phones, however smart they try to appear. So, mobile-first, ultra-responsive web designs that hide all control elements and relevant information cannot really attract me.</li>
 <li>Enable to insert both blog posts and non-blog pages.</li>
-<li>Be able to type math (ideally using Syntax of <strong>TeX</strong>), because mathematics is indeed the language of nature, thus the most universal language ever :)</li>
+<li>Be able to type math (ideally using syntax of <strong>LaTeX</strong>), because mathematics is indeed the language of nature, thus the most universal language ever :)</li>
 <li>Use native <strong>Jupyter</strong> files (.ipynb) as source files for the site. <span class="text-info">Jupyter is a very handy web application that allows you to create and share documents containing live code, equations, visualizations and explanatory text. It supports many languages including Python, which makes it a perfect tool for writing scientific articles.</span>
 </li>
 <li>Open source tool without any commercial ads is preferred (very important in todays over-commercialized world).</li>
 </ul>
-<!-- TEASER_END --><p>Side note: <span class="text-info">An example how Nikola can render math using MathJax plugin. You can right-click the equation, get menu and see the TeX code (Show Math As - TeX Commands). Apropos, these are the famous Maxwell's equations describing electromagnetic field, probably one of the most favourite equations of Nikola Tesla :)</span></p>
-<div class="math">
+<!-- TEASER_END --><div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>An example how Nikola can render math using <strong>MathJax</strong> plugin. To display the LaTeX source code, right-click the equation and select <em>Show Math As - TeX Commands</em>. Apropos, these are the famous Maxwell's equations describing electromagnetic field, probably some the most favorite equations of Nikola Tesla :)</p>
+<div class="last math">
 \begin{align*}
 \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \\
 \nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho \\
 \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp; = \vec{\mathbf{0}} \\
 \nabla \cdot \vec{\mathbf{B}} &amp; = 0
 \end{align*}
+</div>
 </div>
 <p>Then, considering the very few requirements above, I've tried to choose the optimal website engine for my needs. Basically, I considered these options...</p>
 <dl class="docutils">
@@ -144,9 +147,10 @@ Hello and welcome to my new personal blog that I'm just creating using a site ge
 <li>They are supposed to be the most user friendly and easy way for starting a new blog.</li>
 </ul>
 <ul class="cons-list last simple">
-<li>I've never tried any CMS, but I guess options for customization will be limited since they are designed for users who know nothing about HTML or CSS. Also, CMS tend to be very complex and script-heavy, so it would take lots of effort to do the desired customizations.</li>
+<li>I've tried only a free CMS on wordpress.com, but was quite disappointed. You are not allowed to modify CSS style files, so you have to stuck with one of the provided themes (to be able to modify CSS files you have to pay a monthly fee). Moreover, you are not allowed to install any plugins. Another issue is writing math formulas, where you often get a massage "Formula does not parse", even when it's completely LaTeX valid. <span class="text-info">I don't say that Wordpress is bad, but to fully use its potential, one would need to install and configure it properly on a paid server and have all needed permissions.</span>
+</li>
 <li>On CMS sites, every time a reader wants a page, a whole lot of database queries are made. Then a whole pile of code chews that data, and HTML is produced, which is sent to the user. All that requires time and server resources.</li>
-<li>And the most critical problem, I haven't found any CMS that would support native Jupyter files (.ipynb).</li>
+<li>And the most critical problem, I haven't found any CMS that would support native Jupyter files (.ipynb) and enable typing LaTeX math without any parsing issues.</li>
 </ul>
 </dd>
 <dt>Design a website from scratch</dt>
@@ -164,8 +168,8 @@ Hello and welcome to my new personal blog that I'm just creating using a site ge
 <li>Nikola is written in Python that I'm familiar with, I also use it for coding Blender addons and Jypyter articles.</li>
 <li>Nikola supports Jupyter files (.ipynb) as source files for your site (Yay!).</li>
 <li>The options for customization are endless with Nikola, you own your files, and you can do anything with them.</li>
-<li>That all means you can create any possible look and feel of the site you might dream about.</li>
-<li>The obvious advantage is security since static pages don't use any heavy server-side framework.</li>
+<li>That all means you can create any possible look and feel for the site you might dream about.</li>
+<li>The obvious advantage is security and low lag since static pages don't use any heavy server-side framework.</li>
 </ul></dd>
 </dl>
 <div class="section" id="getting-to-know-nikola">
@@ -180,22 +184,22 @@ Hello and welcome to my new personal blog that I'm just creating using a site ge
 <div class="section" id="creating-custom-look-for-nikola-site">
 <h3>Creating custom look for Nikola site</h3>
 <p>There are some ready to use themes for Nikola, but really none of them corresponded to what I wanted to create. The good thing is that you don't need to create a new theme from scratch, but you can inherit it from an existing theme. All you need to do is just copy files you want to modify from an existing theme into a new folder inside <code>[themes]</code>. Then the folder tree for the new theme should look similar to this...</p>
-<pre class="code text"><a name="rest_code_b432c3028d9c4914a7297970e981688f-1"></a>[themes]
-<a name="rest_code_b432c3028d9c4914a7297970e981688f-2"></a>    [mytheme]
-<a name="rest_code_b432c3028d9c4914a7297970e981688f-3"></a>        [assets]
-<a name="rest_code_b432c3028d9c4914a7297970e981688f-4"></a>            [css]
-<a name="rest_code_b432c3028d9c4914a7297970e981688f-5"></a>                bootstrap.css
-<a name="rest_code_b432c3028d9c4914a7297970e981688f-6"></a>                bootstrap.min.css
-<a name="rest_code_b432c3028d9c4914a7297970e981688f-7"></a>                custom.css
-<a name="rest_code_b432c3028d9c4914a7297970e981688f-8"></a>                nikola_ipython.css
-<a name="rest_code_b432c3028d9c4914a7297970e981688f-9"></a>                theme.css
-<a name="rest_code_b432c3028d9c4914a7297970e981688f-10"></a>            [img]
-<a name="rest_code_b432c3028d9c4914a7297970e981688f-11"></a>            [js]
-<a name="rest_code_b432c3028d9c4914a7297970e981688f-12"></a>                custom.js
-<a name="rest_code_b432c3028d9c4914a7297970e981688f-13"></a>        [templates]
-<a name="rest_code_b432c3028d9c4914a7297970e981688f-14"></a>            base.tmpl
-<a name="rest_code_b432c3028d9c4914a7297970e981688f-15"></a>        bundles
-<a name="rest_code_b432c3028d9c4914a7297970e981688f-16"></a>        parent
+<pre class="code text"><a name="rest_code_ae0eeae338114e1d98f1f16fce2aa52b-1"></a>[themes]
+<a name="rest_code_ae0eeae338114e1d98f1f16fce2aa52b-2"></a>    [mytheme]
+<a name="rest_code_ae0eeae338114e1d98f1f16fce2aa52b-3"></a>        [assets]
+<a name="rest_code_ae0eeae338114e1d98f1f16fce2aa52b-4"></a>            [css]
+<a name="rest_code_ae0eeae338114e1d98f1f16fce2aa52b-5"></a>                bootstrap.css
+<a name="rest_code_ae0eeae338114e1d98f1f16fce2aa52b-6"></a>                bootstrap.min.css
+<a name="rest_code_ae0eeae338114e1d98f1f16fce2aa52b-7"></a>                custom.css
+<a name="rest_code_ae0eeae338114e1d98f1f16fce2aa52b-8"></a>                nikola_ipython.css
+<a name="rest_code_ae0eeae338114e1d98f1f16fce2aa52b-9"></a>                theme.css
+<a name="rest_code_ae0eeae338114e1d98f1f16fce2aa52b-10"></a>            [img]
+<a name="rest_code_ae0eeae338114e1d98f1f16fce2aa52b-11"></a>            [js]
+<a name="rest_code_ae0eeae338114e1d98f1f16fce2aa52b-12"></a>                custom.js
+<a name="rest_code_ae0eeae338114e1d98f1f16fce2aa52b-13"></a>        [templates]
+<a name="rest_code_ae0eeae338114e1d98f1f16fce2aa52b-14"></a>            base.tmpl
+<a name="rest_code_ae0eeae338114e1d98f1f16fce2aa52b-15"></a>        bundles
+<a name="rest_code_ae0eeae338114e1d98f1f16fce2aa52b-16"></a>        parent
 </pre>
 <p>I decided to create a theme based on <strong>Bootstrap3</strong> framework, which must be specified in the file <code>parent</code>. Basically, the look of the site based on Bootstrap is given by file with CSS styles named <code>bootstrap.css</code>. I really don't recommend to modify this file itself since it's a really huge file (over 6000 lines). But we can use this useful online application <a class="reference external" href="http://bootstrap-live-customizer.com">http://bootstrap-live-customizer.com</a> that enables to play with all the colors and styles and then generate the desired CSS files for us. For any later fine-tuning, I've added files <code>custom.css</code>, <code>theme.css</code> to override existing styles or add some new ones, and make things better arranged. If we are using Jupyter files, we can specify their styling by <code>nikola_ipython.css</code>.</p>
 <p>Well, we have done some styling, but how to change the layout of our site? That's also easy to do with Nikola. We can use some template files from an existing theme and copy them into folder <code>[templates]</code>. Especially <code>base.tmpl</code> is essential, because it defines the actual layout for the whole site. Also, we can add other templates and modify the layout for posts, indexes, etc.</p>
@@ -242,16 +246,16 @@ Hello and welcome to my new personal blog that I'm just creating using a site ge
 <p>When we are happy with our new site, we just need to choose a webhosting service. We have really lots of options here, because Nikola generates static pages, thus doesn't require to run any server-side scripts. Finally, I've chosen <strong>GitHub</strong>, because it offers free space for static pages and doesn't contain any annoying commercial ads.</p>
 <p>GitHub is originally a service for version control system called <strong>Git</strong>, and the possibility for hosting static pages is quite new. Therefore, to use this service, one need to get familiar with Git protocol first. This makes things a bit more complicated in contrast to other webhostings, where you can just use FTP for uploading your site. On the other side, if you are interested in programming, learning to use Git is definitely worth of it.</p>
 <p>So, to deploy a new site to GitHub, first we must have a GitHub account. Then, we need to create a new repository named after the site URL - in my case I created a repository named <code>meshlogic.github.io</code>, because my user name is "meshlogic". Now, we can do some basic customization in the Nikola config file <code>conf.py</code>.</p>
-<pre class="code python"><a name="rest_code_b60c947f70504bb682331aa37cd57c18-1"></a><span class="n">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s1">'master'</span>  <span class="c1"># Deploy the Nikola output to the master branch of your repository</span>
-<a name="rest_code_b60c947f70504bb682331aa37cd57c18-2"></a><span class="n">GITHUB_SOURCE_BRANCH</span> <span class="o">=</span> <span class="s1">'src'</span>     <span class="c1"># Deploy Nikola project source files to src branch of your repository</span>
-<a name="rest_code_b60c947f70504bb682331aa37cd57c18-3"></a><span class="n">GITHUB_COMMIT_SOURCE</span> <span class="o">=</span> <span class="bp">True</span>
+<pre class="code python"><a name="rest_code_590aed59e310477ca66b87dbcff72452-1"></a><span class="n">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s1">'master'</span>  <span class="c1"># Deploy the Nikola output to the master branch of your repository</span>
+<a name="rest_code_590aed59e310477ca66b87dbcff72452-2"></a><span class="n">GITHUB_SOURCE_BRANCH</span> <span class="o">=</span> <span class="s1">'src'</span>     <span class="c1"># Deploy Nikola project source files to src branch of your repository</span>
+<a name="rest_code_590aed59e310477ca66b87dbcff72452-3"></a><span class="n">GITHUB_COMMIT_SOURCE</span> <span class="o">=</span> <span class="bp">True</span>
 </pre>
 <p>When everything ready to deploy, we open console in the path of our Nikola project and start using Git. Of course, you need to have Git installed on your computer and available from command line.</p>
-<pre class="code console"><a name="rest_code_c4c9bfd65cc5431e825dd92d6f3f3265-1"></a><span class="gp">$</span> git config --global user.name <span class="s2">"USER_NAME"</span>
-<a name="rest_code_c4c9bfd65cc5431e825dd92d6f3f3265-2"></a><span class="gp">$</span> git config --global user.email <span class="s2">"USER_EMAIL"</span>
-<a name="rest_code_c4c9bfd65cc5431e825dd92d6f3f3265-3"></a><span class="gp">$</span> git init
-<a name="rest_code_c4c9bfd65cc5431e825dd92d6f3f3265-4"></a><span class="gp">$</span> git remote add origin https://github.com/meshlogic/meshlogic.github.io.git
-<a name="rest_code_c4c9bfd65cc5431e825dd92d6f3f3265-5"></a><span class="gp">$</span> git pull origin master --allow-unrelated-histories
+<pre class="code console"><a name="rest_code_48266bfb103f40589f7999e72bbbe357-1"></a><span class="gp">$</span> git config --global user.name <span class="s2">"USER_NAME"</span>
+<a name="rest_code_48266bfb103f40589f7999e72bbbe357-2"></a><span class="gp">$</span> git config --global user.email <span class="s2">"USER_EMAIL"</span>
+<a name="rest_code_48266bfb103f40589f7999e72bbbe357-3"></a><span class="gp">$</span> git init
+<a name="rest_code_48266bfb103f40589f7999e72bbbe357-4"></a><span class="gp">$</span> git remote add origin https://github.com/meshlogic/meshlogic.github.io.git
+<a name="rest_code_48266bfb103f40589f7999e72bbbe357-5"></a><span class="gp">$</span> git pull origin master --allow-unrelated-histories
 </pre>
 <p>Note that <code>git init</code> creates a hidden folder <code>[.git]</code> inside your project folder. <code>git remote</code> makes a branch named "origin" linked to your GitHub repository specified by its URL. <code>git pull</code> seems to be necessary to run even when your repository is still empty (at least in my case it was).</p>
 <p>Finally, we can run simple command <code>nikola github_deploy</code>, which commits the output and pushes it to GitHub. Now if everything went right, your site should be running :)</p>
@@ -311,7 +315,7 @@ Hello and welcome to my new personal blog that I'm just creating using a site ge
     <footer id="body_footer">
 
         
-    Contents © 2017 by <a href="mailto:meshlogic@gmail.com">Miki</a>
+    Contents © 2018 by <a href="mailto:meshlogic@gmail.com">Miki</a>
     — Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
     
 
