@@ -30,6 +30,11 @@ $ git pull origin master --allow-unrelated-histories
 nikola github_deploy
 
 
+### INSTALL & REMOVE PLUGINS ###
+nikola plugin -i sidebar
+nikola plugin -r sidebar
+
+
 
 ####################################
 ### INSTALL NIKOLA ON WINDOWS 10 ###

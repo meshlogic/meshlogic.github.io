@@ -7,6 +7,7 @@ body {
     background-attachment: fixed;
     padding-top: 20px;
     line-height: 1.6;
+    font-size: 15px;
 }
 #body_container {
     /*background-color: white;*/
@@ -200,6 +201,7 @@ body {
 .more{
     clear: both;
 }
+
 
 /*******************************************************************************
 ** Post list

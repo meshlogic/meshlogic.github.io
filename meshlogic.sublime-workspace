@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"un",
+				"unset"
+			],
+			[
 				"margin-",
 				"margin-top"
 			],
@@ -46,10 +54,6 @@
 			[
 				"be",
 				"\\beta\tβ"
-			],
-			[
-				"padd",
-				"padding-top"
 			],
 			[
 				"im",
@@ -100,37 +104,10 @@
 	"buffers":
 	[
 		{
-			"file": "posts/blender/rendering/nodes-correct-hdri.rst",
+			"file": "conf.py",
 			"settings":
 			{
-				"buffer_size": 2982,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "themes/meshlogic/assets/css/theme.css",
-			"settings":
-			{
-				"buffer_size": 7575,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "themes/meshlogic/assets/js/custom.js",
-			"settings":
-			{
-				"buffer_size": 1871,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "themes/meshlogic/templates/base.tmpl",
-			"settings":
-			{
-				"buffer_size": 3234,
+				"buffer_size": 46001,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -143,17 +120,21 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 375.0,
-		"last_filter": "inde",
+		"height": 104.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
-				"inde",
-				"Indent XML"
+				"package",
+				"PackageResourceViewer: Open Resource"
 			],
 			[
 				"Package Control: ",
 				"Package Control: Install Package"
+			],
+			[
+				"inde",
+				"Indent XML"
 			],
 			[
 				"insta",
@@ -164,11 +145,11 @@
 				"Preferences: Browse Packages"
 			]
 		],
-		"width": 386.0
+		"width": 444.0
 	},
 	"console":
 	{
-		"height": 197.0,
+		"height": 317.0,
 		"history":
 		[
 			"cd",
@@ -188,43 +169,55 @@
 	"expanded_folders":
 	[
 		"/D/PROJECTS/WEBSITES/Meshlogic/web",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/rendering",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/web-design",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/plugins",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/plugins/sidebar",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/plugins/sidebar/templates",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/plugins/sidebar/templates/jinja",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/js",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates"
 	],
 	"file_history":
 	[
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/bootstrap.css",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/custom.css",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/js/custom.js",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/conf.py",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/plugins/sidebar/sidebar.py",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/plugins/sidebar/templates/jinja/sidebar.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/plugins/sidebar/templates/jinja/sidebar-helper.tmpl",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/base.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/base_helper.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/post_list_directive.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/nikola_commands.txt",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/plugins/sidebar/sidebar.plugin",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/conf.py",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/tags.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/custom.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/collada-exporter-second-life.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/nikola_ipython.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/tag.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/articles.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/blender-addons.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/_tags.tmpl",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-pbr-basic-shader.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-exposure.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/about.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/meshlogic.sublime-project",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/build.sublime-build",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-curvature-map.rst",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Visual Studio Bold Color Scheme/Visual Studio Bold.tmTheme",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/bootstrap.css",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/web-design/starting-a-personal-blog-with-nikola.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/theme.css",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-curvature-map.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/nikola_ipython.css",
+		"/C/Users/mickd/AppData/Roaming/XnViewMP/style_sheet.qss",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/base_helper.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/js/custom.js",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/post_header.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/img/header_01_blue.jpg",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/rendering/nodes-correct-hdri.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/scripting/eliminate-material-duplicates.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/index.tmpl",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/toggle-object-wire.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/collada-exporter-second-life.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/gallery/index.txt",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/gallery/my-first-3d-creations/index.txt",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/articles.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/blender-addons.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/about.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/themes/elegant-grey-theme.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-exposure.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/rendering/nodes-correct-hdri.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-correct-hdri-exposure.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-custom-color-ramp.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/bake-helper.rst",
@@ -239,7 +232,6 @@
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/hsl-color-model-nodes.rst",
 		"/C/Programs/3D/Blender/scripts/addons/ColladaExporterSL.py",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/virtual-worlds/tweaking-firestorm-viewer.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/nikola_commands.txt",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/virtual-worlds/tweaking-firestorm-viewer/menu.xml",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/bake-helper-in-final-version-1-0.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/gallery.tmpl",
@@ -270,7 +262,6 @@
 		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/blender-addons/fitting-tools.rst",
 		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/User/nikola.sublime-build",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/meshlogic.sublime-project",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates/tags.tmpl",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates/archiveindex.tmpl",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates/tag.tmpl",
@@ -284,7 +275,7 @@
 	],
 	"find":
 	{
-		"height": 36.0
+		"height": 41.0
 	},
 	"find_in_files":
 	{
@@ -298,6 +289,20 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"sidebar",
+			"lang",
+			"lng",
+			"Translat",
+			"tmpl",
+			"lang",
+			"translations",
+			"Recent Posts",
+			"lang",
+			"sidebar",
+			"sub",
+			"sub categorie",
+			"categorie",
+			"sourcelink",
 			"affix",
 			"@media ",
 			"visible-xs",
@@ -411,125 +416,37 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "posts/blender/rendering/nodes-correct-hdri.rst",
+					"file": "conf.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2982,
+						"buffer_size": 46001,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								903,
-								903
+								9372,
+								9379
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/RestructuredText Improved/reStructuredText Improved.tmLanguage",
+							"syntax": "Packages/Python/Python.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "themes/meshlogic/assets/css/theme.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7575,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2520,
-								2520
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 765.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "themes/meshlogic/assets/js/custom.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1871,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								668,
-								668
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3298.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "themes/meshlogic/templates/base.tmpl",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3234,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								730,
-								730
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -537,11 +454,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 22.0
 	},
 	"input":
 	{
-		"height": 31.0
+		"height": 35.0
 	},
 	"layout":
 	{
@@ -568,13 +485,13 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 102.0
+		"height": 172.0
 	},
 	"output.find_results":
 	{
 		"height": 0.0
 	},
-	"pinned_build_system": "Packages/User/nikola.sublime-build",
+	"pinned_build_system": "Nikola",
 	"project": "meshlogic.sublime-project",
 	"replace":
 	{
@@ -616,7 +533,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 365.0,
+	"side_bar_width": 345.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

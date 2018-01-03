@@ -13,7 +13,7 @@
 .. figure:: pbr_maps_alpha.png
     :target: pbr_maps.png
     :align: center
-    :class: figure-radius
+    
 
     PBR (Physically Based Rendering) material maps.
 

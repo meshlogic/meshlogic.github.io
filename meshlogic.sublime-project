@@ -4,5 +4,12 @@
 		{
 			"path": "."
 		}
-	]
+	],
+	"build_systems":
+    [
+        {
+            "name": "Nikola",
+            "shell_cmd": "nikola build"
+        }
+    ]
 }

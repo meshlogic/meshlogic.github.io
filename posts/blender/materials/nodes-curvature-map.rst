@@ -1,4 +1,4 @@
-.. title: A More Comfortable Node Setup For Curvature (Pointiness) Map
+.. title: A More Comfortable Node Setup For Curvature Map
 .. slug: nodes-curvature-map
 .. date: 2018-08-24 16:00:00 UTC+02:00
 .. category: blender
@@ -18,15 +18,34 @@
     Convexity map detecting edges in the mesh geometry.
 
 
-When creating smart materials, information about the mesh curvature is necessary. It's well known that Blender already has a node with the **Pointiness** attribute, but I've found the output of this node rather difficult to use as it is. There are many published tutorials that using this pointiness node with a color ramp or few math nodes to increase contrast, but still I've been trying to find a more comfortable approach how to remap the pointiness value.
-
-I wanted to have a node with easy to use controls, allowing to adjust sharpness and thickness of edges and cavities in the curvature map while keeping its mean (grey) value constant. For that purpose, I've created a node for remapping the pointiness value and a custom color ramp node. Because it woks quite well for me, I thought I could share it with you :)
+When creating **smart materials**, information about the mesh curvature is necessary. It's well known that Blender already has a node with the **Pointiness** attribute, but I've found the output of this node rather difficult to use as it is. There are many published tutorials using this pointiness node with a color ramp or few math nodes to increase contrast, but still I've been trying to find a more comfortable approach how to remap the pointiness value.
 
 .. TEASER_END
 
+I wanted to have a node with easy to use controls, allowing to adjust sharpness and thickness of edges and cavities in the curvature map while keeping its mean (grey) value constant. For that purpose, I've created a node for remapping the pointiness value and a custom color ramp node. Because it woks quite well for me, I thought I could share it with you :)
+
+
+.. Note::
+
+    * **Pointiness** attribute in Blender gives an approximation of the mesh curvature on the **per-vertex** basis. It means it works well only for dense meshes, so you might need to increase polygon density by some SubSurf modifiers. Any **per-pixel** attribute is not implemented in Blender yet.
+
+    * Cavity Map
+
+
+
+
+
+.. admonition:: Moot Support
+
+   Moot doesn't support comment counts on index pages, and it requires adding
+   this to your ``conf.py``:
+
 ..
 
-    Note that the **Pointiness** attribute gives an approximation of the mesh curvature on the **per-vertex** basis. It means it works well only for dense meshes, so you might need to increase polygon density by some SubSurf modifiers. Any **per-pixel** attribute is not implemented in Blender yet.
+
+    Note that the **Pointiness** attribute in Blender gives an approximation of the mesh curvature on the **per-vertex** basis. It means it works well only for dense meshes, so you might need to increase polygon density by some SubSurf modifiers. Any **per-pixel** attribute is not implemented in Blender yet.
+
+
 
 
 Curvature Map - Remapping the Pointiness Value
