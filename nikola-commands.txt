@@ -1,0 +1,67 @@
+### NEW POSTS & PAGES ###
+nikola new_post
+nikola new_post -f ipynb
+nikola new_page
+
+
+### CLEAN OUTPUT ###
+nikola orphans
+nikola clean
+nikola check -f --clean-files
+
+
+### BUILD ###
+nikola build
+
+
+### RUN LOCALLY ###
+nikola serve -a 127.0.0.1 -b
+
+
+### DEPPLOY - INIT GITHUB ACCESS ###
+$ git config --global user.name "meshlogic"
+$ git config --global user.email "meshlogic@gmail.com"
+$ git init
+$ git remote add origin https://github.com/meshlogic/meshlogic.github.io.git
+$ git pull origin master --allow-unrelated-histories
+
+
+### DEPPLOY ###
+nikola github_deploy
+
+### COPY TEMPLATE TO SITE THEME FOLDER ###
+nikola theme -c tags.tmpl
+
+
+### INSTALL & REMOVE PLUGINS ###
+nikola plugin -i sidebar
+nikola plugin -r sidebar
+
+
+
+
+####################################
+### INSTALL NIKOLA ON WINDOWS 10 ###
+####################################
+(1) Open console in admin mode at desired path and install `virtualenv`.
+$ py -m pip install virtualenv
+
+(2) The best way to install Nikola is to use pip in the virtualenv.
+$ virtualenv nikola
+$ cd nikola
+
+(3) Download `lxml` and `Pillow` compiled for your installed Python version and install them using `pip`.
+$ pip install lxml-3.6.1-cp35-cp35m-win32.whl
+$ pip install Pillow-3.3.0-cp35-cp35m-win32.whl
+
+(4) Install Nikola extras
+$ pip install --upgrade "Nikola[extras]"
+
+(5) Create demo site
+$ nikola version
+
+$ nikola init --demo
+$ cd demo
+$ nikola build
+$ nikola serve -a 127.0.0.1 -b
+

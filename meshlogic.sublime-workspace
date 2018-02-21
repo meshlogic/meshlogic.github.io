@@ -4,16 +4,120 @@
 		"selected_items":
 		[
 			[
+				"lin",
+				"linear-algebra"
+			],
+			[
+				"font-",
+				"font-style"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"borde",
+				"border-radius"
+			],
+			[
+				"text-",
+				"text-align"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"re",
+				"repeat-x"
+			],
+			[
+				"border-",
+				"border-bottom"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"margin-",
+				"margin-bottom"
+			],
+			[
+				"tra",
+				"transparent"
+			],
+			[
+				"min-",
+				"min-width"
+			],
+			[
+				"font-st",
+				"font-style"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"padding-",
+				"padding-top"
+			],
+			[
+				"border-bo",
+				"border-bottom"
+			],
+			[
+				"border-radius",
+				"border-top-left-radius"
+			],
+			[
+				"paddi",
+				"padding-left"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"bo",
+				"both"
+			],
+			[
+				"hid",
+				"hidden-xs"
+			],
+			[
+				"hidd",
+				"hidden-print"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"html_t",
+				"html_tidy_withconfig"
+			],
+			[
+				"app",
+				"Append"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"rgb",
+				"rgba()"
+			],
+			[
 				"padd",
 				"padding-left"
 			],
 			[
 				"un",
 				"unset"
-			],
-			[
-				"margin-",
-				"margin-top"
 			],
 			[
 				"margin",
@@ -30,10 +134,6 @@
 			[
 				"bac",
 				"background"
-			],
-			[
-				"marg",
-				"margin-left"
 			],
 			[
 				"max",
@@ -68,14 +168,6 @@
 				"padding-bottom"
 			],
 			[
-				"back",
-				"background-color"
-			],
-			[
-				"border",
-				"border-color"
-			],
-			[
 				"margi",
 				"margin-bottom"
 			],
@@ -104,10 +196,72 @@
 	"buffers":
 	[
 		{
-			"file": "conf.py",
+			"file": "themes/meshlogic/assets/css/theme.css",
 			"settings":
 			{
-				"buffer_size": 46001,
+				"buffer_size": 13773,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "themes/meshlogic/assets/css/custom.css",
+			"settings":
+			{
+				"buffer_size": 12737,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "pages/articles.rst",
+			"settings":
+			{
+				"buffer_size": 1579,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "pages/about.rst",
+			"settings":
+			{
+				"buffer_size": 2033,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "posts/blender/addons/toggle-object-wire.rst",
+			"settings":
+			{
+				"buffer_size": 1255,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "posts/blender/themes/blender-themes.rst",
+			"settings":
+			{
+				"buffer_size": 1813,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "posts/blender/addons/outliner-tweaks.rst",
+			"settings":
+			{
+				"buffer_size": 4133,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "posts/blender/addons/collada-exporter-second-life.rst",
+			"settings":
+			{
+				"buffer_size": 2783,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -120,17 +274,109 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 104.0,
-		"last_filter": "",
+		"height": 390.0,
+		"last_filter": "rem",
 		"selected_items":
 		[
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"extra",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"men",
+				"View: Toggle Menu"
+			],
+			[
+				"",
+				"About"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"extrac",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"resou",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"pack",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"color",
+				"UI: Select Color Scheme"
+			],
+			[
+				"theme",
+				"UI: Select Theme"
+			],
+			[
+				"ui",
+				"DA UI: Select Skin"
+			],
+			[
+				"daui",
+				"DA UI: Select Skin"
+			],
+			[
+				"da ui",
+				"DA UI: Select Skin"
+			],
+			[
+				"da ",
+				"DA UI: Select Skin"
+			],
+			[
+				"the",
+				"UI: Select Color Scheme"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"open",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"eopen",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"Package ",
+				"PackageResourceViewer: Extract Package"
+			],
 			[
 				"package",
 				"PackageResourceViewer: Open Resource"
 			],
 			[
-				"Package Control: ",
-				"Package Control: Install Package"
+				"resource",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"boxy",
+				"Boxy Theme: Activation"
+			],
+			[
+				"box",
+				"Boxy Theme: Activation"
 			],
 			[
 				"inde",
@@ -139,19 +385,19 @@
 			[
 				"insta",
 				"Package Control: Install Package"
-			],
-			[
-				"",
-				"Preferences: Browse Packages"
 			]
 		],
-		"width": 444.0
+		"width": 410.0
 	},
 	"console":
 	{
-		"height": 317.0,
+		"height": 199.0,
 		"history":
 		[
+			"help",
+			"cmd",
+			"nikola",
+			"nikola build",
 			"cd",
 			"dir",
 			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
@@ -168,118 +414,149 @@
 	},
 	"expanded_folders":
 	[
-		"/D/PROJECTS/WEBSITES/Meshlogic/web",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/plugins",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/plugins/sidebar",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/plugins/sidebar/templates",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/plugins/sidebar/templates/jinja",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates"
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/themes"
 	],
 	"file_history":
 	[
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/plugins/sidebar/sidebar.py",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/plugins/sidebar/templates/jinja/sidebar.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/plugins/sidebar/templates/jinja/sidebar-helper.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/base.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/post_list_directive.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/nikola_commands.txt",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/plugins/sidebar/sidebar.plugin",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/conf.py",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/tags.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/custom.css",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/collada-exporter-second-life.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/nikola_ipython.css",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/tag.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/articles.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/software/xnview/blender-inspired-theme-xnview.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/blender-addons.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/_tags.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-pbr-basic-shader.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-exposure.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/about.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/meshlogic.sublime-project",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/build.sublime-build",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-curvature-map.rst",
-		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Visual Studio Bold Color Scheme/Visual Studio Bold.tmTheme",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/bootstrap.css",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/web-design/starting-a-personal-blog-with-nikola.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/theme.css",
-		"/C/Users/mickd/AppData/Roaming/XnViewMP/style_sheet.qss",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/base_helper.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/js/custom.js",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/post_header.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/img/header_01_blue.jpg",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/rendering/nodes-correct-hdri.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/scripting/eliminate-material-duplicates.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/index.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/toggle-object-wire.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/gallery/index.txt",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/gallery/my-first-3d-creations/index.txt",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/themes/elegant-grey-theme.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-correct-hdri-exposure.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-custom-color-ramp.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/bake-helper.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-hsl-color-model.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/extra-material-list.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/extra-image-list.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/web-design/install-nikola-on-windows-10.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender-addons/toggle-object-wire.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/bundles",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/node-setup-for-curvature-map.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/custom-color-ramp-nodes.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/node-setup-for-curvature-map.md",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/bootstrap.min.css",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/hsl-color-model-nodes.rst",
-		"/C/Programs/3D/Blender/scripts/addons/ColladaExporterSL.py",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/outliner-tweaks.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/scripting/eliminate-material-duplicates.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/conf.py",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/code/code-palettes.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/code.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/code/monokai.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-exposure.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/virtual-worlds/tweaking-firestorm-viewer.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/virtual-worlds/tweaking-firestorm-viewer/menu.xml",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/bake-helper-in-final-version-1-0.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/gallery.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/gallery/3d-creations/my-first-steps/index.txt",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/blender-addons/bake-helper.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/slides.tmpl",
-		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/RestructuredText Improved/demo.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/Archive/03/starting-a-personal-blog-with-nikola.rst",
-		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
-		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
-		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/UnicodeCharacterInsert/Default.sublime-keymap",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/assets/css/theme.css",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/assets/css/custom.css",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates/base.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates/base_helper.tmpl",
-		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/assets/css/nikola_ipython.css",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates/index.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates/post_helper.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates/post_list_directive.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/assets/js/custom.js",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-1/complex_conjugate.png",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/assets/img/paper_grid_01.png",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/assets/img/noisy-texture-128x128-o4-d10-c-373737-t0.png",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/assets/css/bootstrap.css",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/messages/messages_en.py",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates/post_header.tmpl",
-		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/blender-addons/fitting-tools.rst",
-		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/User/nikola.sublime-build",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates/tags.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates/archiveindex.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/templates/tag.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/output/categories/cat_scientific-computing/index.html",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/web-design/starting-a-personal-blog-in-2016.rst",
-		"/D/PROJECTS/WEBSITES/test/test.txt",
-		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/User/reStructuredText.sublime-settings",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/assets/img/blender_grid_01.png",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/parent",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic_0.2/bundles"
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-hsl-color-model.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/rendering/nodes-correct-hdri.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-pbr-basic-shader.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/collada-exporter-second-life.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/toggle-object-wire.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-custom-color-ramp.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/custom.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/bake-helper.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/nikola_ipython.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/matlist.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/about.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/articles.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/post_list_directive.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/jupyter/curve-fitting/fitting-circle-3d.meta",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/bootstrap.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-1.meta",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/jupyter/curve-fitting/fitting-a-circle-to-cluster-of-3d-points.meta",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/jupyter/curve-fitting/parametric-curve-fitting.meta",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-2.meta",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/web-design/starting-a-personal-blog-with-nikola.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/sidebar-helper.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/base.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/sidebar.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/assets/css/nikola_ipython.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/assets/css/custom.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/assets/css/theme.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/templates/gallery.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/Nikola Source/Nikola 7.8.11/themes/bootstrap3-jinja/templates/gallery.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/Nikola Source/Nikola 7.8.11/themes/bootstrap3-jinja/templates/listing.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/gallery/blender-renders-hdri/index.txt",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/templates/base.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/assets/js/custom.js",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/assets/css/code.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/assets/css/bootstrap.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/assets/css/nikola_ipython(Copy).css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/listings/blender-addons/toggle-object-wire/0.1/ToggleObjectWire.py",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/assets/css/code/code-palettes.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/assets/css/code/monokai.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/code-palettes.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/templates/index.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/assets/css/code/palettes.css",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/User/Theme - Monokai Pro.sublime-settings",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/assets/css/code_monokai.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/assets/css/_code.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/Nikola Source/Nikola 7.8.11/themes/base-jinja/templates/comments_helper_disqus.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/Nikola Source/Nikola 7.8.11/themes/base-jinja/templates/comments_helper.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/templates/list_post.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/templates/sidebar.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/templates/sidebar-helper.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/bundles",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/templates/base_myhelper.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-2.ipynb",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-1.ipynb",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/jupyter/curve-fitting/parametric-curve-fitting.ipynb",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/jupyter/curve-fitting/fitting-a-circle-to-cluster-of-3d-points.ipynb",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/templates/post_header.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/templates/tagindex.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/templates/_list_post.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/Nikola Source/Nikola 7.8.11/themes/base-jinja/templates/list_post.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/templates/list.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/Nikola Source/Nikola 7.8.11/themes/base-jinja/templates/feeds_translations_helper.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/templates/_tags.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-curvature-map.rst",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Theme - Miki/Miki (Light Grey).sublime-theme",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/about/transhuman_01.jpg",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/output/sidebar-en.inc",
+		"/D/PROJECTS/WEBSITES/Meshlogic/Nikola Source/Nikola 7.8.11/themes/base-jinja/templates/base_header.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/Nikola Source/Nikola 7.8.11/themes/bootstrap3-jinja/templates/base_helper.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/tidy5.conf",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/templates/base_my_helper.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/templates/my_extra_head.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/Nikola Source/Nikola 7.8.11/themes/base-jinja/templates/base_helper.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/nikola_serve.bat",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Theme - Miki/Miki (Light Grey).tmTheme",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/listings/blender-addons/collada-exporter-sl/0.3/ColladaExporterSL.py",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Theme - Miki/Widget - Miki Light Grey.stTheme",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Theme - Miki/Miki Light Grey.tmTheme",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Theme - Miki/Miki Light Grey.sublime-theme",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Theme - Miki/Widget - Miki Light Grey.sublime-settings",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Theme - Miki/assets-other/Theme - Default/Default.sublime-theme",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Theme - Miki/Miki Alpha.sublime-theme",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Theme - Monokai Pro/Theme - Monokai Pro.sublime-settings",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/themes/elegant-grey-theme.rst",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Theme - Monokai Pro/Monokai Pro.sublime-theme-template",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Themes/Default Theme/Theme - Default/Default.sublime-theme",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Themes/Color Schemes/Miki Light Grey.tmTheme",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Energy Color Scheme/energy.sublime-theme",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/DA UI/DA.sublime-theme",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Themes/Default Theme/Theme - Default/adaptive/Adaptive.sublime-theme",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Themes/Default Theme/Theme - Default/Widgets.stTheme",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/User/Default.sublime-theme",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Theme - Afterglow/Afterglow/Widget - Afterglow-orange.sublime-settings",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Theme - Afterglow/Prefs/icon_markdown.tmPreferences",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Theme - Afterglow/Prefs/icon_bower.tmPreferences",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Theme - Afterglow/README.md",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Theme - Afterglow/package-metadata.json",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Theme - Afterglow/messages.json",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Energy Color Scheme/Preferences.sublime-settings",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Energy Color Scheme/Theme - Energy/energy.sublime-theme",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Theme - Afterglow/Afterglow.sublime-theme",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Theme - Afterglow/Afterglow.tmTheme",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/User/Terminal.sublime-settings",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Terminal/Terminal.sublime-settings",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/User/Terminal (Windows).sublime-settings",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/meshlogic.sublime-project",
+		"/D/PROJECTS/WEBSITES/Meshlogic/Dev/Tests/Include/include-test.html",
+		"/D/PROJECTS/WEBSITES/Meshlogic/Dev/Tests/Include/sidebar-en.inc",
+		"/D/PROJECTS/WEBSITES/Meshlogic/Dev/Tests/Syntax/Markdown-sample.md",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Themes/Color Schemes/Miki Dark Grey.tmTheme",
+		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Themes/Color Scheme/Miki Light Grey.tmTheme",
+		"/D/PROJECTS/WEBSITES/Meshlogic/Dev/Tests/Sublime/RestructuredText Improved/reStructuredText Improved.tmLanguage",
+		"/D/PROJECTS/WEBSITES/Meshlogic/Dev/Tests/Sublime/RestructuredText Improved/RestructuredText Improved.py",
+		"/D/PROJECTS/WEBSITES/Meshlogic/Dev/Tests/Sublime/RestructuredText Improved/Symbol List - Section.tmPreferences",
+		"/D/PROJECTS/WEBSITES/Meshlogic/Dev/Tests/Sublime/RestructuredText Improved/reStructuredText Improved.tmLang"
 	],
 	"find":
 	{
-		"height": 41.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 223.0,
 		"where_history":
 		[
 		]
@@ -289,116 +566,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"sidebar",
-			"lang",
-			"lng",
-			"Translat",
-			"tmpl",
-			"lang",
-			"translations",
-			"Recent Posts",
-			"lang",
-			"sidebar",
-			"sub",
-			"sub categorie",
-			"categorie",
-			"sourcelink",
-			"affix",
-			"@media ",
-			"visible-xs",
-			"@media",
-			"more",
-			"hr",
-			"dl",
-			"docutils",
-			"postlist",
-			"archive",
-			"posts",
-			"code",
-			"tt",
-			"Every",
-			".align-right",
-			".figure.align-right",
-			"mathjax",
-			"h1",
-			"p.rubric",
-			"rubric",
-			"center",
-			"html",
-			"text-info",
-			"cent",
-			"rest",
-			"social",
-			"social_icons",
-			"gallery",
-			"img",
-			"figure",
-			"image-block",
-			"GLYPHICONS",
-			".container",
-			".carousel-control .icon-prev",
-			"carousel",
-			"carousel-",
-			".line-block",
-			"hr",
-			"line-block",
-			".line-block",
-			"footnote",
-			"bigskip",
-			"hover",
-			"html",
-			"space",
-			"alt",
-			"social",
-			"code",
-			"social",
-			"lxml",
-			"filters",
-			"filter",
-			"filters",
-			"ident",
-			"minifier",
-			"minfy",
-			"minfy_lines",
-			"html",
-			"normalize",
-			"source",
-			"belowtitle",
-			"div.highlight",
-			"media print",
+			"align-right",
+			"ipyn",
+			"copy",
+			"pretty",
+			"copy",
+			"pretty",
+			"ipynb",
+			"PRETTY_URLS",
+			"output",
+			"888",
+			"808080",
+			"tag",
+			"bodyregion",
+			"bodyarea",
+			"math",
+			"@media print",
 			"print",
-			"badge",
-			"list-in",
-			"source",
-			"entry-summary",
-			"entry",
-			"FontAwesome",
-			"commen",
-			"prefix",
-			"inde",
-			"indent",
-			"inde",
-			"cloud",
-			"spaces",
-			"postpromonav",
-			"spac",
-			"space",
-			"comment",
-			"list",
-			"git",
-			"hit",
-			"github",
-			"listtitle",
-			"list-table",
-			"dt",
-			"plugin",
+			"code",
 			"archive",
-			"<h1>",
-			"<h1>Archive</h1>",
-			"index",
-			"categories",
+			"pre",
+			"codetable",
+			"code",
+			"linenos",
+			"pre",
+			"78B6F0",
+			"74C0FF",
+			"d0d0d0",
+			"e6db74",
+			"e0e0e0",
+			"E68494",
+			"eb8798",
+			"66D9EF",
+			"78B6F0",
+			"66ADEF",
+			"6DB8FF",
+			"66ADEF",
+			"66C4EF",
+			"66d9ef",
+			"B5CEA8",
+			"D33682",
+			"ab9df2",
+			"ae81ff",
+			"b58900",
+			"D33682",
+			"normal",
+			"D69D85",
+			"33c4fa",
+			"4EC9B0",
+			"A6E22E",
+			"bold",
+			"AE81FF",
+			"00dc49",
+			"fc6433",
+			"eb8798",
+			"9c749b",
+			"AE81FF",
+			"E6DB74",
+			"74C0FF",
+			"66D9EF",
+			"74C0FF",
+			"f92672",
+			"D69D85",
+			"74C0FF",
+			"835c8d",
+			"66D9EF",
+			"569CD6",
+			"FFDB3F",
+			"ff8f7e",
+			"e6db74",
+			"B58900",
+			"657B83",
+			"6b7678",
+			"CB4B16",
+			"33c4fa",
+			"f2872f",
+			"CB4B16",
+			"f0f0f0",
+			"f8f8f2",
+			"go",
+			"gp",
+			"75715e",
+			"eee",
+			"code",
+			"header",
+			"ipy",
+			"bold",
 			"tags",
-			"border"
+			"disqus",
+			"cdn",
+			"@media",
+			"item",
+			"media",
+			"@media",
+			"@media (max-width: ",
+			"303030",
+			"22",
+			"2020",
+			"img",
+			"region",
+			"section",
+			"area",
+			"tags",
+			"copy",
+			"ignore",
+			"source",
+			"tags",
+			"listtitle",
+			"Posts about",
+			"h1",
+			"teaser",
+			"h-entry",
+			"description",
+			"metadata",
+			"dateline",
+			"postindex",
+			"768",
+			"container",
+			"@media",
+			"container",
+			"archive",
+			"clearfix",
+			"container",
+			".row",
+			"container-960",
+			"container",
+			"reference",
+			"listtitle",
+			"post-list"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -406,6 +701,15 @@
 		"regex": false,
 		"replace_history":
 		[
+			"bodypart",
+			"bodyregion",
+			"e0e0e0",
+			"d0d0d0",
+			"e0e0e0",
+			"f0f0f0",
+			"d0d0d0",
+			"e0e0e0",
+			"181818"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -416,37 +720,554 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "conf.py",
+					"file": "themes/meshlogic/assets/css/theme.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 46001,
+						"buffer_size": 13773,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9372,
-								9379
+								6974,
+								6974
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Theme - Miki/Miki (Light Grey).tmTheme",
+							"color_helper.file_palette":
+							[
+								"#0000001A@1",
+								"#00000026@2",
+								"#00000040@2",
+								"#0000004D@1",
+								"#00000066@1",
+								"#00000080@1",
+								"#000000ff",
+								"#222222ff",
+								"#333333ff",
+								"#404040ff",
+								"#446e9bff",
+								"#505050ff",
+								"#508bf0ff",
+								"#777777ff",
+								"#a9a9a9ff",
+								"#add8e6ff",
+								"#c0c0c0ff",
+								"#dcd7c6ff",
+								"#ddddddff",
+								"#e0e0e0ff",
+								"#faf9f5ff",
+								"#ffffffff"
+							],
+							"color_helper.popup_active": false,
+							"color_helper.popup_auto": true,
+							"color_helper.preview_meta":
+							{
+								"1038":
+								[
+									-6738632435334587661,
+									7,
+									"hex",
+									-7723218263870231101,
+									4,
+									"1519161489.799287"
+								],
+								"1554":
+								[
+									-6738632435334587661,
+									7,
+									"hex",
+									-7723218263870231101,
+									5,
+									"1519161489.801289"
+								],
+								"199":
+								[
+									-6379480723828065972,
+									7,
+									"hex",
+									-7723218263870231101,
+									6,
+									"1519161490.288115"
+								],
+								"374":
+								[
+									-5516759959316893379,
+									4,
+									"hex_compressed",
+									-2753984636447850991,
+									1,
+									"1519161489.791985"
+								],
+								"674":
+								[
+									-8433582352662808679,
+									18,
+									"rgba",
+									-5469076080105141199,
+									2,
+									"1519161489.794782"
+								],
+								"709":
+								[
+									-8433582352662727204,
+									18,
+									"rgba",
+									-5469076080105141199,
+									3,
+									"1519161489.796284"
+								]
+							},
+							"color_helper.scan":
+							{
+								"allowed_colors":
+								[
+									"hsl",
+									"rgba",
+									"hex_compressed",
+									"webcolors",
+									"hex",
+									"hsla",
+									"rgb"
+								],
+								"compress_hex_output": true,
+								"current_ext": ".css",
+								"current_syntax": "CSS3/CSS3",
+								"enabled": true,
+								"last_updated": 1519159593.82,
+								"scan_completion_scopes":
+								[
+								],
+								"scan_scopes":
+								[
+									"meta.declaration-list.css -support.type.property-name.css -comment -string",
+									"meta.property-value.css -comment -string",
+									"meta.value.css -comment -string",
+									"meta.tag.inline.any.html string.quoted -constant.character.entity.html",
+									"meta.tag.any.html meta.attribute-with-value.style.html"
+								],
+								"use_hex_argb": false
+							},
+							"syntax": "Packages/CSS3/CSS3.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3298.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "themes/meshlogic/assets/css/custom.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12737,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1259,
+								1259
+							]
+						],
+						"settings":
+						{
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Theme - Miki/Miki (Light Grey).tmTheme",
+							"color_helper.file_palette":
+							[
+								"#00000014@2",
+								"#00000026@2",
+								"#00000033@1",
+								"#00000040@2",
+								"#0000004D@1",
+								"#00000066@1",
+								"#00000080@1",
+								"#000000CC@1",
+								"#000000ff",
+								"#0071aaff",
+								"#00c843ff",
+								"#303030ff",
+								"#343434ff",
+								"#3a87adff",
+								"#404040ff",
+								"#446e9bff",
+								"#555555ff",
+								"#666666ff",
+								"#8080801A@1",
+								"#80808026@2",
+								"#a09a90ff",
+								"#d01919ff",
+								"#eeeeeeff",
+								"#faf9f5ff",
+								"#ffffff1A@1"
+							],
+							"color_helper.popup_active": false,
+							"color_helper.popup_auto": true,
+							"color_helper.preview_meta":
+							{
+								"1085":
+								[
+									3853533376275005462,
+									7,
+									"hex",
+									-2753984636447850991,
+									3,
+									"1519159683.963146"
+								],
+								"1203":
+								[
+									-2579501938298542972,
+									19,
+									"rgba",
+									739119495748727061,
+									4,
+									"1519159683.966649"
+								],
+								"1673":
+								[
+									-1047949773670702378,
+									7,
+									"hex",
+									6897960172622467831,
+									5,
+									"1519161111.912863"
+								],
+								"215":
+								[
+									-5516760560231714504,
+									4,
+									"hex_compressed",
+									-2753984636447850991,
+									1,
+									"1519159683.95714"
+								],
+								"767":
+								[
+									9201324896530273057,
+									7,
+									"hex",
+									-2753984636447850991,
+									2,
+									"1519159683.961644"
+								]
+							},
+							"color_helper.scan":
+							{
+								"allowed_colors":
+								[
+									"hsl",
+									"rgba",
+									"hex_compressed",
+									"webcolors",
+									"hex",
+									"hsla",
+									"rgb"
+								],
+								"compress_hex_output": true,
+								"current_ext": ".css",
+								"current_syntax": "CSS3/CSS3",
+								"enabled": true,
+								"last_updated": 1519159593.82,
+								"scan_completion_scopes":
+								[
+								],
+								"scan_scopes":
+								[
+									"meta.declaration-list.css -support.type.property-name.css -comment -string",
+									"meta.property-value.css -comment -string",
+									"meta.value.css -comment -string",
+									"meta.tag.inline.any.html string.quoted -constant.character.entity.html",
+									"meta.tag.any.html meta.attribute-with-value.style.html"
+								],
+								"use_hex_argb": false
+							},
+							"syntax": "Packages/CSS3/CSS3.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 630.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "pages/articles.rst",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1579,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								582,
+								582
+							]
+						],
+						"settings":
+						{
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Theme - Miki/Miki (Light Grey).tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"current_ext": ".rst",
+								"current_syntax": "RestructuredText Improved/reStructuredText Improved",
+								"enabled": false,
+								"last_updated": 1519159593.82
+							},
+							"syntax": "Packages/RestructuredText Improved/reStructuredText Improved.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 225.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "pages/about.rst",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2033,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								211,
+								211
+							]
+						],
+						"settings":
+						{
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Theme - Miki/Miki (Light Grey).tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"current_ext": ".rst",
+								"current_syntax": "RestructuredText Improved/reStructuredText Improved",
+								"enabled": false,
+								"last_updated": 1519159593.82
+							},
+							"syntax": "Packages/RestructuredText Improved/reStructuredText Improved.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "posts/blender/addons/toggle-object-wire.rst",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1255,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								341,
+								341
+							]
+						],
+						"settings":
+						{
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Theme - Miki/Miki (Light Grey).tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"current_ext": ".rst",
+								"current_syntax": "RestructuredText Improved/reStructuredText Improved",
+								"enabled": false,
+								"last_updated": 1519159593.82
+							},
+							"syntax": "Packages/RestructuredText Improved/reStructuredText Improved.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "posts/blender/themes/blender-themes.rst",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1813,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								184,
+								184
+							]
+						],
+						"settings":
+						{
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Theme - Miki/Miki (Light Grey).tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"current_ext": ".rst",
+								"current_syntax": "RestructuredText Improved/reStructuredText Improved",
+								"enabled": false,
+								"last_updated": 1519159593.82
+							},
+							"syntax": "Packages/RestructuredText Improved/reStructuredText Improved.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "posts/blender/addons/outliner-tweaks.rst",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 4133,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								320,
+								298
+							]
+						],
+						"settings":
+						{
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Theme - Miki/Miki (Light Grey).tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"current_ext": ".rst",
+								"current_syntax": "RestructuredText Improved/reStructuredText Improved",
+								"enabled": false,
+								"last_updated": 1519159593.82
+							},
+							"syntax": "Packages/RestructuredText Improved/reStructuredText Improved.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "posts/blender/addons/collada-exporter-second-life.rst",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2783,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								317,
+								317
+							]
+						],
+						"settings":
+						{
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Theme - Miki/Miki (Light Grey).tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"current_ext": ".rst",
+								"current_syntax": "RestructuredText Improved/reStructuredText Improved",
+								"enabled": false,
+								"last_updated": 1519159593.82
+							},
+							"syntax": "Packages/RestructuredText Improved/reStructuredText Improved.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -454,11 +1275,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 22.0
+		"height": 23.0
 	},
 	"input":
 	{
-		"height": 35.0
+		"height": 64.0
 	},
 	"layout":
 	{
@@ -485,7 +1306,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 172.0
+		"height": 146.0
 	},
 	"output.find_results":
 	{
@@ -504,17 +1325,25 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"web\\themes\\meshlogic2\\templates\\index.tmpl"
+			],
+			[
+				"side",
+				"web\\output\\sidebar-en.inc"
+			]
 		],
 		"width": 0.0
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"last_filter": "",
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 424.0
 	},
 	"select_symbol":
 	{
@@ -533,9 +1362,10 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 345.0,
+	"side_bar_width": 288.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
+		"max_columns": 1
 	}
 }

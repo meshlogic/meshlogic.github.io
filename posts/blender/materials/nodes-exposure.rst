@@ -1,11 +1,12 @@
 .. title: Custom Exposure Node for Blender
 .. slug: nodes-exposure
 .. date: 2017-02-19 15:00:00 UTC+02:00
-.. category: blender
-.. tags: mathjax, blender-materials
+.. category: blender/materials
+.. tags: mathjax, blender
 .. link: 
-.. description:
 .. type: text
+.. previewimage: teaser.png
+.. description:
 
 
 Exposure value (EV) is indeed essential for every photographer and computer artist. In Blender there is an exposure slider in Color Management allowing us to edit the overall exposure (in EV stops) of the output viewport or render. However, what if we wanted to edit exposure of certain material map in the node editor? Such node is still missing in Blender (2.78), but we can easily create a custom group node for that purpose.

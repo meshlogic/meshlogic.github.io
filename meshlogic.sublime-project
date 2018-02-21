@@ -1,15 +1,30 @@
 {
+	"build_systems":
+	[
+		{
+			"cmd": "nikola build",
+			"name": "Nikola"
+		}
+	],
 	"folders":
 	[
 		{
+			"path": "D:\\PROJECTS\\WEBSITES\\Meshlogic\\Nikola Source\\Nikola 7.8.11"
+		},
+		{
 			"path": "."
+		},
+		{
+			"path": "themes"
+		},
+		{
+			"path": "listings"
+		},
+		{
+			"path": "pages"
+		},
+		{
+			"path": "posts"
 		}
-	],
-	"build_systems":
-    [
-        {
-            "name": "Nikola",
-            "shell_cmd": "nikola build"
-        }
-    ]
+	]
 }

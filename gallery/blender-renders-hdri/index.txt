@@ -1,4 +1,4 @@
-.. title: Blender Test Renders with HDR Environment Maps
+.. title: Test Renders with HDR Environment Maps
 .. slug: blender-renders-hdri
 .. date:
 .. tags: 

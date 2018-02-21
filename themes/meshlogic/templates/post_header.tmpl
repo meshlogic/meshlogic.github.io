@@ -4,7 +4,6 @@
 
 {% macro html_title() %}
 {% if title and not post.meta('hidetitle') %}
-    <!--<h1 class="p-name entry-title" itemprop="headline name"><a href="{{ post.permalink() }}" class="u-url">{{ post.title()|e }}</a></h1> -->
     <h1 class="p-name entry-title" itemprop="headline name">{{ post.title()|e }}</h1>
 {% endif %}
 {% endmacro %}
@@ -24,33 +23,52 @@
 
 {% macro html_sourcelink() %}
     {% if show_sourcelink %}
-        <p class="sourceline"><a href="{{ post.source_link() }}" class="sourcelink">{{ messages("Source") }}</a></p>
+        <p class="sourceline">
+            <a href="{{ post.source_link() }}" class="sourcelink">{{ messages("Source") }}</a>
+        </p>
     {% endif %}
 {% endmacro %}
 
 {% macro html_post_header() %}
     <header>
         {{ html_title() }}
+
+        <!-- Metadata -->
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+
+            {# Author #}
+            <p class="byline author vcard">
+                <span class="byline-name fn" itemprop="author">
                 {% if author_pages_generated %}
                     <a href="{{ _link('author', post.author()) }}">{{ post.author()|e }}</a>
                 {% else %}
                     {{ post.author()|e }}
                 {% endif %}
-            </span></p>
-            <p class="dateline"><time class="published dt-published" datetime="{{ post.formatted_date('webiso') }}" itemprop="datePublished" title="{{ post.formatted_date(date_format)|e }}">{{ post.formatted_date(date_format)|e }}</time></p>
+                </span>
+            </p>
+
+            {# Date #}
+            <p class="dateline">
+                <time class="published dt-published" datetime="{{ post.formatted_date('webiso') }}" title="{{ post.formatted_date(date_format)|e }}">{{ post.formatted_date(date_format)|e }}</time>
+            </p>
+
+            {# Comments #}
             {% if not post.meta('nocomments') and site_has_comments %}
                 <p class="commentline">{{ comments.comment_link(post.permalink(), post._base_path) }}
             {% endif %}
+
+            {# Tags #}
+            <p class="tagline">
+                {% for tag in post.alltags|sort %}
+                    {% if tag not in hidden_tags %}<span><a href="{{ _link('tag', tag) }}">{{ tag|e }}</a></span>{% endif %}
+                {% endfor %}
+            </p>
+
+            {# Source #}
             {{ html_sourcelink() }}
-            {% if post.meta('link') %}
-                    <p class="linkline"><a href="{{ post.meta('link') }}">{{ messages("Original site") }}</a></p>
-            {% endif %}
-            {% if post.description() %}
-                <meta name="description" itemprop="description" content="{{ post.description()|e }}">
-            {% endif %}
-        </div>
+            
+        </div>  
+
         {{ html_translations(post) }}
     </header>
 {% endmacro %}

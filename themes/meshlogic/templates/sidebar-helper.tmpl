@@ -1,0 +1,112 @@
+{# -*- coding: utf-8 -*- #}
+
+{### Macro: Recent Posts ###}
+{% macro list_posts(posts) %}
+
+    <aside id="widget-recent-posts" class="widget bodypart">
+
+        <h3 class="widget-title">
+            {{ messages("Recent Posts", lang) }}
+        </h3>
+
+        <ul class="recent-posts">
+            {% for post in posts %}
+                <li><a href="{{ post.permalink() }}">{{ post.title(lang) }}</a></li>
+            {% endfor %}
+        </ul>
+
+    </aside>
+{% endmacro %}
+
+
+{### Macro: Categories or Tags ###}
+{% macro list_taxonomy(title, items=None, hierarchy=None, type='tag') %}
+
+    {% if items or hierarchy %}
+
+        <aside id="widget-{{ type }}-list" class="widget bodypart">
+
+            <h3 class="widget-title">
+                {{ messages(title, lang) }}
+            </h3>
+
+            {% if hierarchy %}
+                {% for text, full_name, path, link, indent_levels, indent_change_before, indent_change_after, children_count, count in hierarchy %}
+                    {% for i in range(indent_change_before) %}
+                        <ul class="{{ type }}-list {{ type }}-level-{{ indent_levels|length + i }}">
+                    {% endfor %}
+                    <li>
+                        <a href="{{ link }}">{{ text|e }}</a> <span class="widget-list-count">({{ count }})</span>
+                        {% if indent_change_after <= 0 %}
+                            </li>
+                        {% endif %}
+                    {% for i in range(-indent_change_after) %}
+                        </ul>
+                        {% if i + 1 < indent_levels|length %}
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+
+            {% elif items %}
+                <ul class="{{ type }}-list">
+                    {% for text, count, link in items|sort(attribute='1', reverse=True)  %}
+                        {% if text not in hidden_tags %}
+                            <li><a href="{{ link }}">{{ text|e }}</a> <span class="widget-count">({{ count }})</span></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            
+        </aside>
+    {% endif %}
+{% endmacro %}
+
+
+{### Macro: Archives ###}
+{% macro archives(archives) %}
+    {{ list_taxonomy('Archives', hierarchy=archives, type='archive') }}
+{% endmacro %}
+
+
+{### Macro: Flickr ###}
+{% macro flickr() %}
+
+    <aside id="widget-flickr" class="widget bodypart">
+
+        <h3 class="widget-title">
+            Recent Pics on Flickr
+        </h3>
+
+        <div id="widget-flickr-pics"></div>
+
+        <script>
+            (function() {
+                var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+                $.getJSON( flickerAPI, {
+                    id: "155478827@N06",
+                    format: "json"
+                })
+
+                .done(function( data ) {
+                    $.each(data.items, function(i, item) {
+                        var $append = '';
+                        $append += '<div>';
+                        $append += '<a href="' + item.link + '" target="_blank">';
+                        $append += '<img src="' + item.media.m + '">';
+                        $append += '</a></div>';
+
+                        $('#widget-flickr-pics').append($append);
+
+                        if (i === 2)
+                            return false;
+                    });
+
+                });
+            })();
+        </script>
+        
+    </aside>
+{% endmacro %}
+
+

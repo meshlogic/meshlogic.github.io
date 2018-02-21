@@ -1,19 +1,20 @@
 .. title: Toggle Object Wire - Blender Addon
 .. slug: toggle-object-wire
 .. date: 2017-04-10 15:00:00 UTC+02:00
-.. category: blender
-.. tags: blender-addons
+.. category: blender/addons
+.. tags: blender, blender-addon, python
 .. link: 
-.. description:
 .. type: text
+.. previewimage: teaser.png
+.. description: A simple addon to toggle object wire and subsurf modifier by hotkey.
+
+.. default-role:: code
 
 
-.. TEASER_END
-
-.. figure:: toggle-object-wire.tn.png
+.. figure:: teaser.png
     :target: toggle-object-wire.png
     :align: right
-    :figclass: thumbnail
+    :class: thumbnail
 
 
 This addon makes toggling of object wire and subsurf modifiers really quick. You can select to toggle all objects in the scene or selected objects only. You can use two dedicated buttons in the Info panel, Shading section or key shortcuts.
@@ -41,11 +42,10 @@ Version 0.1 (29.03.2017)
 Download
 ========
 - `From BlendSwap <https://www.blendswap.com/blends/view/87996>`_
-- `From GitHub <https://github.com/meshlogic/blender-addons/tree/master/toggle-object-wire>`_
-
 
 
 .. listing:: blender-addons/toggle-object-wire/0.1/ToggleObjectWire.py python
     :number-lines:
+
 
 

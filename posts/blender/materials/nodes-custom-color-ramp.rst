@@ -1,11 +1,12 @@
 .. title: Custom Color Ramp Nodes
 .. slug: nodes-custom-color-ramp
 .. date: 2017-06-17 15:00:00 UTC+02:00
-.. category: blender
-.. tags: mathjax, blender-materials
+.. category: blender/materials
+.. tags: mathjax, blender
 .. link: 
-.. description:
 .. type: text
+.. previewimage: teaser.png
+.. description: Custom color ramp nodes with control inputs.
 
 The default color ramp node in Blender is indeed a very useful node whenever you need to modify range of some color values. However, when creating some versatile node setups, you might be faced with the lack of inputs for the ramp control points. And there is the time to create your custom color ramp node with control inputs.
 

@@ -1,14 +1,14 @@
-###############################################################################
+################################################################################
 # This is the configuration of Nikola !!
 # coding: utf-8
-###############################################################################
+################################################################################
 from __future__ import unicode_literals
 from nikola import filters
 import time
 
 BLOG_AUTHOR = "Miki"
 BLOG_TITLE = "MeshLogic"
-BLOG_EMAIL = "meshlogic@gmail.com"
+BLOG_EMAIL = "none"
 BLOG_DESCRIPTION = "A personal blog on computer graphics, scientific computing, Blender, Jupyter and Second Life"
 DEFAULT_LANG = "en"
 SITE_URL = "https://meshlogic.github.io/"
@@ -23,11 +23,11 @@ SHOW_BLOG_TITLE = True
 # Logo image. Final output is <img src="LOGO_URL" id="logo" alt="BLOG_TITLE">.
 # The URL may be relative to the site root.
 # LOGO_URL = ''
+   
 
-
-###############################################################################
+################################################################################
 # Navigation bar !!
-###############################################################################
+################################################################################
 # This is a dict, keys are languages - values are tuples.
 # Regular links:
 #   ('https://getnikola.com/', 'Nikola Homepage')
@@ -39,13 +39,13 @@ SHOW_BLOG_TITLE = True
 #
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/', '<i class="fa fa-lg fa-home"></i>&nbsp; Home'),
+        ('/', '<span id="homelink">Home</span>'),
         ('/archive.html', 'Archive'),
-        ('/categories/', 'Categories'),
+        # ('/categories/', 'Categories'),
         ('/gallery/', 'Gallery'),
-        ('/pages/articles/', 'Articles'),
         ('/pages/blender-addons/', 'Blender Addons'),
-        #((
+        ('/pages/articles/', 'Jupyter Articles'),
+        # ((
         #    ('/pages/blender-addons/bake-helper', 'Bake Helper'),
         #    ('/pages/blender-addons/fitting-tools', 'Fitting Tools'),
         #    ), 'Blender Addons'),
@@ -61,9 +61,16 @@ SHOW_SOURCELINK = True
 COPY_SOURCES = True
 
 
-###############################################################################
+################################################################################
+# Sidebar !!
+################################################################################
+SIDEBAR_MAXIMUM_POST_COUNT = 3
+
+
+
+################################################################################
 # POSTS and PAGES !!
-###############################################################################
+################################################################################
 # POSTS and PAGES contains (wildcard, destination, template) tuples.
 # The wildcard is used to generate a list of reSt source files (whatever/thing.txt).
 # The difference between POSTS and PAGES is that POSTS are added
@@ -93,18 +100,18 @@ PAGES = (
 DEMOTE_HEADERS = 1
 
 
-###############################################################################
+################################################################################
 # Files !!
-###############################################################################
+################################################################################
 # One or more folders containing files to be copied as-is into the output.
 # Default is: FILES_FOLDERS = {'files': ''} which means copy 'files' into 'output'
-#FILES_FOLDERS = {'files': 'files'}
+# FILES_FOLDERS = {'files': 'files'}
 FILES_FOLDERS = {'files':'files', 'posts':'posts', 'pages':'pages'}
 
 
-###############################################################################
+################################################################################
 # Images & Gallery !!
-###############################################################################
+################################################################################
 # Folders containing images to be used in normal posts or pages. Images will be
 # scaled down according to IMAGE_THUMBNAIL_SIZE and MAX_IMAGE_SIZE options, but
 # will have to be referenced manually to be visible on the site
@@ -131,9 +138,9 @@ PRESERVE_EXIF_DATA = True
 EXIF_WHITELIST = {"*": "*"}
 
 
-###############################################################################
+################################################################################
 # Theme !!
-###############################################################################
+################################################################################
 THEME = "meshlogic"
 
 # Primary color of your theme. This will be used to customize your theme and
@@ -141,43 +148,25 @@ THEME = "meshlogic"
 THEME_COLOR = '#5670d4'
 
 # Color scheme to be used for code blocks. If your theme provides
-# "assets/css/code.css" this is ignored.
+# "assets/css/code.css" this is ignored. Leave empty to disable.
 # Can be any of:
-# algol
-# algol_nu
-# arduino
-# autumn
-# borland
-# bw
-# colorful
-# default
-# emacs
-# friendly
-# fruity
-# igor
-# lovelace
-# manni
-# monokai
-# murphy
-# native
-# paraiso_dark
-# paraiso_light
-# pastie
-# perldoc
-# rrt
-# tango
-# trac
-# vim
-# vs
-# xcode
+# algol, algol_nu, autumn, borland, bw, colorful, default, emacs, friendly,
+# fruity, igor, lovelace, manni, monokai, murphy, native, paraiso-dark,
+# paraiso-light, pastie, perldoc, rrt, tango, trac, vim, vs, xcode
 # This list MAY be incomplete since pygments adds styles every now and then.
-CODE_COLOR_SCHEME = 'default'
-#CODE_COLOR_SCHEME = 'native'
+# Check with list(pygments.styles.get_all_styles()) in an interpreter.
+
+# CODE_COLOR_SCHEME = 'default'
+# CODE_COLOR_SCHEME = 'native'
+CODE_COLOR_SCHEME = 'perldoc'
+# CODE_COLOR_SCHEME = 'monokai'
+# CODE_COLOR_SCHEME = 'vs'
+# CODE_COLOR_SCHEME = 'emacs'
 
 
-###############################################################################
+################################################################################
 # Math !!
-###############################################################################
+################################################################################
 # Do you want a add a Mathjax config file?
 # MATHJAX_CONFIG = ""
 # If you are using the compile-ipynb plugin, just add this one:
@@ -199,12 +188,17 @@ CODE_COLOR_SCHEME = 'default'
 MATHJAX_CONFIG = """
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
+        jax: ["input/TeX", "output/CommonHTML"],
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\\(","\\\)"] ],
             displayMath: [ ['$$','$$'], ["\\\[","\\\]"] ],
-            processEscapes: true
+            processEscapes: true,
+            preview: "none",
         },
-        displayAlign: 'center'
+        CommonHTML: { scale: 100 },
+        "HTML-CSS": { scale: 100 },
+        displayAlign: 'center',
+        showMathMenu: true,
     });
 </script>
 """
@@ -217,15 +211,16 @@ MATHJAX_CONFIG = """
 # USE_KATEX = True
 
 # Do you want to customize the nbconversion of your IPython notebook?
-# IPYNB_CONFIG = {}
+IPYNB_CONFIG = {'html_embed':True}
+
 # With the following example configuration you can use a custom jinja template
 # called `toggle.tpl` which has to be located in your site/blog main folder:
 # IPYNB_CONFIG = {'Exporter':{'template_file': 'toggle'}}
 
 
-###############################################################################
+################################################################################
 # Post index !!
-###############################################################################
+################################################################################
 # Final location for the main blog page and sibling paginated pages is
 # output / TRANSLATION[lang] / INDEX_PATH / index-*.html
 # INDEX_PATH = ""
@@ -241,16 +236,16 @@ INDEX_TEASERS = True
 
 # Modify the number of Post per Index Page
 # Defaults to 10
-INDEX_DISPLAY_POST_COUNT = 10
+INDEX_DISPLAY_POST_COUNT = 50
 
 # By default, Nikola generates RSS files for the website and for tags, and
 # links to it.  Set this to False to disable everything RSS-related.
 GENERATE_RSS = False
 
 
-###############################################################################
+################################################################################
 # Comments !!
-###############################################################################
+################################################################################
 # To use comments, you can choose between different third party comment
 # systems.  The following comment systems are supported by Nikola:
 #   disqus, facebook, googleplus, intensedebate, isso, livefyre, muut
@@ -264,9 +259,10 @@ COMMENT_SYSTEM = "disqus"
 COMMENT_SYSTEM_ID = "meshlogic"
 
 
-###############################################################################
+
+################################################################################
 # Footer !!
-###############################################################################
+################################################################################
 # A HTML fragment describing the license, for the sidebar.
 # (translatable)
 LICENSE = ""
@@ -278,11 +274,13 @@ LICENSE = ""
 # style="border-width:0; margin-bottom:12px;"
 # src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>"""
 #
+# CONTENT_FOOTER = ""
 CONTENT_FOOTER = """
     Contents &copy; {date} by <a href="mailto:{email}">{author}</a>
     — Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
     {license}
-"""
+    
+""" 
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will
@@ -308,11 +306,18 @@ CONTENT_FOOTER_FORMATS = {
 }
 
 
-###############################################################################
-# Social Buttons & Counter Scripts !!
-###############################################################################
-# Social buttons
-SOCIAL_BUTTONS_CODE = """
+################################################################################
+# EXTRA HEAD & END
+################################################################################
+# Extra things you want in the pages HEAD tag. This will be added right
+# before </head>
+# (translatable)
+# EXTRA_HEAD_DATA = ""
+
+# Google Analytics or whatever else you use. Added to the bottom of <body>
+# in the default template (base.tmpl).
+# (translatable)
+BODY_END = """
     <div class="counter">
         <script src="https://www.w3counter.com/tracker.js?id=103452"></script>
 
@@ -337,9 +342,16 @@ SOCIAL_BUTTONS_CODE = """
 """
 
 
-###############################################################################
+################################################################################
+# Social Buttons & Counter Scripts !!
+################################################################################
+# Social buttons
+# SOCIAL_BUTTONS_CODE = ""
+
+
+################################################################################
 # Filters !!
-###############################################################################
+################################################################################
 # Filters to apply to the output.
 # A directory where the keys are either: a file extensions, or
 # a tuple of file extensions.
@@ -369,9 +381,27 @@ SOCIAL_BUTTONS_CODE = """
 #    ".js": [filters.closure_compiler],
 #    ".jpg": ["jpegoptim --strip-all -m75 -v %s"],
 # }
-#FILTERS = {
-#    ".html": [filters.html_tidy_nowrap]
-#}
+# FILTERS = {
+#    ".html": [filters.html_tidy_withconfig],
+# }
+
+# Executable for the "yui_compressor" filter (defaults to 'yui-compressor').
+# YUI_COMPRESSOR_EXECUTABLE = 'yui-compressor'
+
+# Executable for the "closure_compiler" filter (defaults to 'closure-compiler').
+# CLOSURE_COMPILER_EXECUTABLE = 'closure-compiler'
+
+# Executable for the "optipng" filter (defaults to 'optipng').
+# OPTIPNG_EXECUTABLE = 'optipng'
+
+# Executable for the "jpegoptim" filter (defaults to 'jpegoptim').
+# JPEGOPTIM_EXECUTABLE = 'jpegoptim'
+
+# Executable for the "html_tidy_withconfig", "html_tidy_nowrap",
+# "html_tidy_wrap", "html_tidy_wrap_attr" and "html_tidy_mini" filters
+# (defaults to 'tidy5').
+HTML_TIDY_EXECUTABLE = 'tidy'
+
 
 # Templates will use those filters, along with the defaults.
 # Consult your engine's documentation on filters if you need help defining
@@ -379,9 +409,9 @@ SOCIAL_BUTTONS_CODE = """
 #TEMPLATE_FILTERS = {".tmpl": [filters.html5lib_xmllike]}
 
 
-###############################################################################
+################################################################################
 # Deploy !!
-###############################################################################
+################################################################################
 # Presets of commands to execute to deploy. Can be anything, for
 # example, you may use rsync:
 # "rsync -rav --delete output/ joe@my.site:/srv/www/site"
@@ -423,7 +453,7 @@ GITHUB_COMMIT_SOURCE = True
 # CACHE_FOLDER = 'cache'
 
 
-###############################################################################
+################################################################################
 # Below this point, everything is optional
 
 # Post's dates are considered in UTC by default, if you want to use
@@ -568,75 +598,34 @@ POSTS_SECTIONS = True
 #     },
 # }
 
-# Paths for different autogenerated bits. These are combined with the
-# translation paths.
 
-# Final locations are:
-# output / TRANSLATION[lang] / TAG_PATH / index.html (list of tags)
-# output / TRANSLATION[lang] / TAG_PATH / tag.html (list of posts for a tag)
-# output / TRANSLATION[lang] / TAG_PATH / tag.xml (RSS feed for a tag)
- # (translatable)
-# TAG_PATH = "categories"
-
-# See TAG_PATH's "list of tags" for the default setting value. Can be overwritten
-# here any path relative to the output directory.
- # (translatable)
-# TAGS_INDEX_PATH = "tags.html"
-
-# If TAG_PAGES_ARE_INDEXES is set to True, each tag's page will contain
-# the posts themselves. If set to False, it will be just a list of links.
-# TAG_PAGES_ARE_INDEXES = False
-
-# Set descriptions for tag pages to make them more interesting. The
-# default is no description. The value is used in the meta description
-# and displayed underneath the tag list or index page’s title.
-# TAG_PAGES_DESCRIPTIONS = {
-#    DEFAULT_LANG: {
-#        "blogging": "Meta-blog posts about blogging about blogging.",
-#        "open source": "My contributions to my many, varied, ever-changing, and eternal libre software projects."
-#    },
-# }
-
-# Set special titles for tag pages. The default is "Posts about TAG".
-# TAG_PAGES_TITLES = {
-#    DEFAULT_LANG: {
-#        "blogging": "Meta-posts about blogging",
-#        "open source": "Posts about open source software"
-#    },
-# }
-
-# If you do not want to display a tag publicly, you can mark it as hidden.
-# The tag will not be displayed on the tag list page, the tag cloud and posts.
-# Tag pages will still be generated.
-HIDDEN_TAGS = ['mathjax']
-
-# Only include tags on the tag list/overview page if there are at least
-# TAGLIST_MINIMUM_POSTS number of posts or more with every tag. Every tag
-# page is still generated, linked from posts, and included in the sitemap.
-# However, more obscure tags can be hidden from the tag index page.
-# TAGLIST_MINIMUM_POSTS = 1
-
-# Final locations are:
-# output / TRANSLATION[lang] / CATEGORY_PATH / index.html (list of categories)
-# output / TRANSLATION[lang] / CATEGORY_PATH / CATEGORY_PREFIX category.html (list of posts for a category)
-# output / TRANSLATION[lang] / CATEGORY_PATH / CATEGORY_PREFIX category.xml (RSS feed for a category)
-# (translatable)
-# CATEGORY_PATH = "categories"
-# CATEGORY_PREFIX = "cat_"
+###############################################################################
+# CATEGORY & TAG INDEXES
+###############################################################################
 
 # If CATEGORY_ALLOW_HIERARCHIES is set to True, categories can be organized in
 # hierarchies. For a post, the whole path in the hierarchy must be specified,
 # using a forward slash ('/') to separate paths. Use a backslash ('\') to escape
 # a forward slash or a backslash (i.e. '\//\\' is a path specifying the
 # subcategory called '\' of the top-level category called '/').
-CATEGORY_ALLOW_HIERARCHIES = False
+CATEGORY_ALLOW_HIERARCHIES = True
+
 # If CATEGORY_OUTPUT_FLAT_HIERARCHY is set to True, the output written to output
 # contains only the name of the leaf category and not the whole path.
 CATEGORY_OUTPUT_FLAT_HIERARCHY = False
 
 # If CATEGORY_PAGES_ARE_INDEXES is set to True, each category's page will contain
 # the posts themselves. If set to False, it will be just a list of links.
-# CATEGORY_PAGES_ARE_INDEXES = False
+CATEGORY_PAGES_ARE_INDEXES = True
+
+# If TAG_PAGES_ARE_INDEXES is set to True, each tag's page will contain
+# the posts themselves. If set to False, it will be just a list of links.
+TAG_PAGES_ARE_INDEXES = True
+
+# If ARCHIVES_ARE_INDEXES is set to True, each archive page which contains a list
+# of posts will contain the posts themselves. If set to False, it will be just a
+# list of links.
+# ARCHIVES_ARE_INDEXES = False
 
 # Set descriptions for category pages to make them more interesting. The
 # default is no description. The value is used in the meta description
@@ -675,6 +664,60 @@ ENABLE_AUTHOR_PAGES = False
 # the posts themselves. If set to False, it will be just a list of links.
 # AUTHOR_PAGES_ARE_INDEXES = False
 
+
+# Paths for different autogenerated bits. These are combined with the
+# translation paths.
+
+# Final locations are:
+# output / TRANSLATION[lang] / TAG_PATH / index.html (list of tags)
+# output / TRANSLATION[lang] / TAG_PATH / tag.html (list of posts for a tag)
+# output / TRANSLATION[lang] / TAG_PATH / tag.xml (RSS feed for a tag)
+ # (translatable)
+# TAG_PATH = "categories"
+
+# See TAG_PATH's "list of tags" for the default setting value. Can be overwritten
+# here any path relative to the output directory.
+ # (translatable)
+# TAGS_INDEX_PATH = "tags.html"
+
+# Set descriptions for tag pages to make them more interesting. The
+# default is no description. The value is used in the meta description
+# and displayed underneath the tag list or index page’s title.
+# TAG_PAGES_DESCRIPTIONS = {
+#    DEFAULT_LANG: {
+#        "blogging": "Meta-blog posts about blogging about blogging.",
+#        "open source": "My contributions to my many, varied, ever-changing, and eternal libre software projects."
+#    },
+# }
+
+# Set special titles for tag pages. The default is "Posts about TAG".
+# TAG_PAGES_TITLES = {
+#    DEFAULT_LANG: {
+#        "blogging": "Meta-posts about blogging",
+#        "open source": "Posts about open source software"
+#    },
+# }
+
+# If you do not want to display a tag publicly, you can mark it as hidden.
+# The tag will not be displayed on the tag list page, the tag cloud and posts.
+# Tag pages will still be generated.
+HIDDEN_TAGS = ['mathjax']
+
+# Only include tags on the tag list/overview page if there are at least
+# TAGLIST_MINIMUM_POSTS number of posts or more with every tag. Every tag
+# page is still generated, linked from posts, and included in the sitemap.
+# However, more obscure tags can be hidden from the tag index page.
+# TAGLIST_MINIMUM_POSTS = 1
+
+# Final locations are:
+# output / TRANSLATION[lang] / CATEGORY_PATH / index.html (list of categories)
+# output / TRANSLATION[lang] / CATEGORY_PATH / CATEGORY_PREFIX category.html (list of posts for a category)
+# output / TRANSLATION[lang] / CATEGORY_PATH / CATEGORY_PREFIX category.xml (RSS feed for a category)
+# (translatable)
+# CATEGORY_PATH = "categories"
+# CATEGORY_PREFIX = "cat_"
+
+
 # Set descriptions for author pages to make them more interesting. The
 # default is no description. The value is used in the meta description
 # and displayed underneath the author list or index page’s title.
@@ -711,11 +754,6 @@ CREATE_SINGLE_ARCHIVE = True
 # ARCHIVE_PATH = ""
 # ARCHIVE_FILENAME = "archive.html"
 
-# If ARCHIVES_ARE_INDEXES is set to True, each archive page which contains a list
-# of posts will contain the posts themselves. If set to False, it will be just a
-# list of links.
-# ARCHIVES_ARE_INDEXES = False
-
 # URLs to other posts/pages can take 3 forms:
 # rel_path: a relative URL to the current page/post (default)
 # full_path: a URL with the full path from the root
@@ -750,8 +788,6 @@ CREATE_SINGLE_ARCHIVE = True
 # If you don't need any of these, just set to []
 REDIRECTIONS = []
 
-
-
 # Expert setting! Create a gzipped copy of each generated file. Cheap server-
 # side optimization for very high traffic sites or low memory servers.
 # GZIP_FILES = False
@@ -780,9 +816,9 @@ REDIRECTIONS = []
 # SASS_OPTIONS = []
 
 
-# #############################################################################
+# ##############################################################################
 # HTML fragments and diverse things that are used by the templates
-# #############################################################################
+# ##############################################################################
 
 # Data about post-per-page indexes.
 # INDEXES_PAGES defaults to ' old posts, page %d' or ' page %d' (translated),
@@ -1057,14 +1093,7 @@ MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite', 'extra']
 # can set this to False.
 # USE_CDN_WARNING = True
 
-# Extra things you want in the pages HEAD tag. This will be added right
-# before </head>
-# (translatable)
-# EXTRA_HEAD_DATA = ""
-# Google Analytics or whatever else you use. Added to the bottom of <body>
-# in the default template (base.tmpl).
-# (translatable)
-# BODY_END = ""
+
 
 # The possibility to extract metadata from the filename by using a
 # regular expression.
@@ -1140,8 +1169,6 @@ UNSLUGIFY_TITLES = True
 # USE WITH CARE!  This is also not guaranteed to be perfect, and may
 # sometimes crash Nikola, your web server, or eat your cat.
 # USE_SLUGIFY = True
-
-
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.

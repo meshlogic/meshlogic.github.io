@@ -1,11 +1,13 @@
 .. title: A More Comfortable Node Setup For Curvature Map
 .. slug: nodes-curvature-map
 .. date: 2018-08-24 16:00:00 UTC+02:00
-.. category: blender
+.. category: blender/materials
 .. tags: mathjax, blender-materials
 .. link: 
-.. description:
 .. type: text
+.. previewimage: teaser.png
+.. description: Lighting your scene with a HDRI (HDR) environment map is a great method how to improve quality of your renders.
+
 
 .. default-role:: code
 

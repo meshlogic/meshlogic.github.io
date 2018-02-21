@@ -1,11 +1,12 @@
 .. title: HSL Color Model Decomposition in Blender
 .. slug: nodes-hsl-color-model
 .. date: 2016-08-29 18:00:00 UTC+02:00
-.. category: blender
-.. tags: mathjax, blender-materials
+.. category: blender/materials
+.. tags: mathjax, blender
 .. link: 
-.. description:
 .. type: text
+.. previewimage: teaser.png
+.. description: HSL color nodes for Cycles Render.
 
 
 In the current version, Blender contains decomposition nodes only for **HSV** and **RGB** color models, but still missing nodes for **HSL** color model. Since I find the HSL model very useful for color manipulations, especially its **lightness** value, I've created both **Separate HSL** and **Combine HSL** nodes, which enables me to modify each part of the HSL model.

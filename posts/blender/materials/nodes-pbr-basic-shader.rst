@@ -1,11 +1,14 @@
 .. title: PBR Shader Node for Blender
 .. slug: nodes-pbr-basic-shader
 .. date: 2017-02-23 15:00:00 UTC+02:00
-.. category: blender
-.. tags: mathjax, blender-materials
+.. category: blender/materials
+.. tags: mathjax, blender
 .. link: 
-.. description:
 .. type: text
+.. previewimage: teaser.png
+.. description: PBR (Physically Based Rendering) shader node.
+
+
 
 **PBR (Physically Based Rendering)** seems to be the standard for photorealistic rendering in these days. All major rendering and texturing packages like 3D-Coat, Substance Painter or Marmoset already have this lighting model implemented. Blender is going to include a real-time PBR viewport in version 2.8. However, no need to wait for the new release, thanks to the **Cycles Render**, we can already create a dedicated node setup for the **PBR shader**. We can also use this shader for rendering material maps baked in other programs that already works on the PBR basis.
 

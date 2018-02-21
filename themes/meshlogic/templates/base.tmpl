@@ -1,27 +1,38 @@
 {#  -*- coding: utf-8 -*- #}
 {% import 'base_helper.tmpl' as base with context %}
+{% import 'base_myhelper.tmpl' as mybase with context %}
 {% import 'annotation_helper.tmpl' as notes with context %}
 {{ set_locale(lang) }}
-{{ base.html_headstart() }}
-{% block extra_head %}
-{#  Leave this block alone. #}
-{% endblock %}
-{{ template_hooks['extra_head']() }}
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
+{# HTML HEAD  #}
+    {# Macro from base_helper.tmpl #}
+    {{ base.html_headstart() }}
+
+    {# Macro from base_myhelper.tmpl #}
+    {{ mybase.extra_head() }}
+
+    {#  Leave this block alone (can be filled by various templates) #}
+    {% block extra_head %}{% endblock %}
+
+    {# Content added by plugins #}
+    {{ template_hooks['extra_head']() }}
 </head>
 <body>
 
 
-<!-- BODY CONTAINER -->
-<div class="container" id="body_container">
+<!-- BODY CONTAINER !! -->
+<div id="body_container" class="container">
 
     <!-- HEADER -->
-    <header id="body_header">
+    <header id="body_header" class="bodypart hidden-print">
         <a href="/" title="Home"><i>{{ blog_description }}</i></a>
-    </header>
 
+        {# Content added by plugins #}
+        {{ template_hooks['page_header']() }}
+    </header>
+    
     <!-- NAVBAR -->
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-default navbar-static-top hidden-print bodypart">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -32,12 +43,12 @@
 
             {% if show_blog_title %}
                 <a class="navbar-brand visible-xs" href="/">
-                <span id="blog-title">{{ blog_title|e }}</span>
+                    <span id="blog-title">{{ blog_title|e }}</span>
                 </a>
             {% endif %}
         </div>
-                
-        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false" role="navigation">
+
+        <div id="bs-navbar" class="collapse navbar-collapse" aria-expanded="false" role="navigation">
             <ul class="nav navbar-nav">
                 {{ base.html_navigation_links() }}
                 {{ template_hooks['menu']() }}
@@ -60,49 +71,51 @@
         </div>
     </nav>
 
-    <!-- BODY CONTENT !! -->
-    <div class="container" id="body_content" role="main">
 
-        {{ template_hooks['page_header']() }}
-        {% block content %}{% endblock %}
+    <!-- PAGE CONTAINER -->
+    <div id="page_container" class="clearfix">
 
+        <div id="page_main" class="bodypart" role="main">
+            {% block content %}{% endblock %}
+        </div>
+
+        <div id="page_sidebar" class="hidden-print" role="complementary"></div>
     </div>
-</div>
 
 
-<!-- BODY FOOTER -->
-<div class="container">
-    <footer id="body_footer">
+    <!-- BODY FOOTER !! -->
+    <footer id="body_footer" class="bodypart">
 
+        <!-- Footer content from conf.py -->
         {{ content_footer }}
+
+        <!-- Social buttons from conf.py -->
+        {{ body_end }}
+
+        {# Content added by plugins #}
         {{ template_hooks['page_footer']() }}
 
-        {% if social_buttons_code %}
-            {{ social_buttons_code }}
-        {% endif %}
-
+        {{ template_hooks['body_end']() }}
     </footer>
+
 </div>
 
 
-<!-- SCRIPTS -->
-{{ base.late_load_js() }}
-
+<!-- SCRIPTS !! -->
 <script>
     moment.locale("{{ momentjs_locales[lang] }}");
     fancydates({{ date_fanciness }}, {{ js_date_format }});
 </script>
 
+{# From base_helper.tmpl #}
+{{ base.late_load_js() }}
+
 {% block extra_js %}{% endblock %}
 {% if annotations and post and not post.meta('noannotations') %}
-{{ notes.code() }}
+    {{ notes.code() }}
 {% elif not annotations and post and post.meta('annotations') %}
-{{ notes.code() }}
+    {{ notes.code() }}
 {% endif %}
-
-{{ body_end }}
-{{ template_hooks['body_end']() }}
 
 </body>
 </html>
-

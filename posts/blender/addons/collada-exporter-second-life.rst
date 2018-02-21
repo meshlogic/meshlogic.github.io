@@ -1,21 +1,23 @@
 .. title: Collada Exporter for Second Life - Blender Addon
 .. slug: collada-exporter-second-life
 .. date: 2017-05-17 15:00:00 UTC+02:00
-.. category: blender
-.. tags: blender-addons
-.. link: 
-.. description:
+.. category: blender/addons
+.. tags: blender, blender-addon, python
 .. type: text
+.. link: 
+.. previewimage: teaser.png
+.. description: A python based Collada exporter for Blender.
 
-.. TEASER_END
-
-
-This python script is a replacement for the Blender's native Collada exporter made in C++. The main goal was to fix issues related to exporting static mesh objects including textures to the Second Life grid. Also, thanks to the python, this exporter can be easily modified/maintained without the need to go into Blender's source code and recompiling Blender.
+.. default-role:: code
 
 
 .. figure:: ui-panel.png
     :align: right
-    :class: figure-round
+    :class: figure
+
+
+This python script is a replacement for the Blender's native Collada exporter made in C++. The main goal was to fix issues related to exporting static mesh objects including textures to the Second Life grid. Also, thanks to the python, this exporter can be easily modified/maintained without the need to go into Blender's source code and recompiling Blender.
+
 
 
 Motivation
@@ -26,7 +28,7 @@ Recently, I've noticed that the default Collada exporter in Blender (2.78) has s
 
 .. class:: li-smallskip
 
-    - `Collada exporter assigns the same texture to all objects when they share the same material <https://developer.blender.org/T51259>`_
+    - `Collada exporter assigns the same texture to all objects <https://developer.blender.org/T51259>`_
 
     - `Collada exporter does not assign any texture when object has multiple UV maps <https://developer.blender.org/T51288>`_
 
@@ -46,7 +48,7 @@ Features
 
     - Tested with Firestorm Viewer for Second Life.
 
-    - Requires python collada module https://github.com/pycollada/pycollada. Pycollada is not a part of official Blender, so must be installed into Blender's folder (eg. Blender/2.78/scripts/modules)
+    - Requires python collada module https://github.com/pycollada/pycollada. Pycollada is not a part of official Blender, so must be installed into Blender's folder (e.g. Blender/2.78/scripts/modules)
 
 
 

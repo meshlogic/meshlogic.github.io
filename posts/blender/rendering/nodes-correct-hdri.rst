@@ -1,11 +1,12 @@
 .. title: Correct Exposure of HDRI Environment Map in Blender
 .. slug: nodes-correct-hdri
 .. date: 2017-06-05 15:00:00 UTC+02:00
-.. category: blender
-.. tags: mathjax, blender-rendering
+.. category: blender/materials
+.. tags: mathjax, blender
 .. link: 
-.. description:
 .. type: text
+.. previewimage: teaser.jpg
+.. description: Improve quality of your renders with the HDR environment maps.
 
 
 Lighting your scene with a HDRI (HDR) environment map is a great method how to improve quality of your renders. Not only that it provides realistic reflections for glossy materials, but also creates colored lights and shadows in the most realistic way since every pixel of the environment map actually stands for a light source illuminating the scene.
@@ -41,7 +42,7 @@ If you have a physically accurate HDRI environment map, using it for illuminatin
 .. figure:: basic-hdri-lighting.tn.png
     :target: basic-hdri-lighting.png
     :align: center
-    :class: figure-radius
+    :class: figure
 
     Lighting the scene with a HDRI.
 

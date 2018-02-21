@@ -1,0 +1,55 @@
+
+#code-monokai {
+	color: #a6e22e;  /* Class, Function */
+	color: #66d9ef;  /* Keyword */
+	color: #f92672;  /* Operator */
+	color: #e6db74;  /* String */
+	color: #ae81ff;  /* Number */
+	color: #f92672;  /* Tag */
+}
+#code-monokai-pro {
+	color: #a9dc76;  /* Function */
+	color: #78dce8;  /* Keyword */
+	color: #ff6188;  /* Operator */
+	color: #ffd866;  /* String */
+	color: #ab9df2;  /* Number */
+	color: #282A3A;  /* Background-FilterOctagon */
+}
+#code-vs-dark {
+	color: #608B4E;  /* Comment */
+	color: #4EC9B0;  /* Class */
+	color: #569CD6;  /* Keyword */
+	color: #D69D85;  /* String */
+	color: #B5CEA8;  /* Number */
+	color: #D7BA7D;  /* Tag */
+}
+#code-solarized {
+	color: #002b36;  /* base03  */
+	color: #073642;  /* base02  */
+	color: #586e75;  /* base01  */
+	color: #657b83;  /* base00  */
+	color: #839496;  /* base0   */
+	color: #93a1a1;  /* base1   */
+	color: #eee8d5;  /* base2   */
+	color: #fdf6e3;  /* base3   */
+	color: #b58900;  /* yellow  */
+	color: #cb4b16;  /* orange  */
+	color: #dc322f;  /* red     */
+	color: #d33682;  /* magenta */
+	color: #6c71c4;  /* violet  */
+	color: #268bd2;  /* blue    */
+	color: #2aa198;  /* cyan    */
+	color: #859900;  /* green   */
+}
+#code-synthcity {
+	color: #33c4fa;  /* blue */
+	color: #78dce8;  /* cyan */
+	color: #f1ee4f;  /* yellow */
+	color: #f2872f;  /* orange */
+	color: #fc6433;  /* red */
+	color: #00dc49;  /* green */
+	color: #835c8d;  /* purple */
+	color: #9c749b;  /* purple light */
+	color: #eb8798;  /* pink */
+	color: #eab7b4;  /* pink light */
+}
