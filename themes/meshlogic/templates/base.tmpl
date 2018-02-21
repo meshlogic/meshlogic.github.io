@@ -102,13 +102,14 @@
 
 
 <!-- SCRIPTS !! -->
+{# From base_helper.tmpl #}
+{{ base.late_load_js() }}
+
+{# Fancy dates #}
 <script>
     moment.locale("{{ momentjs_locales[lang] }}");
     fancydates({{ date_fanciness }}, {{ js_date_format }});
 </script>
-
-{# From base_helper.tmpl #}
-{{ base.late_load_js() }}
 
 {% block extra_js %}{% endblock %}
 {% if annotations and post and not post.meta('noannotations') %}

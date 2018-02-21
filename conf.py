@@ -188,7 +188,6 @@ CODE_COLOR_SCHEME = 'perldoc'
 MATHJAX_CONFIG = """
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
-        jax: ["input/TeX", "output/CommonHTML"],
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\\(","\\\)"] ],
             displayMath: [ ['$$','$$'], ["\\\[","\\\]"] ],

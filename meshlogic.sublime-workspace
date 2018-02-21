@@ -212,59 +212,6 @@
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
-		},
-		{
-			"file": "pages/articles.rst",
-			"settings":
-			{
-				"buffer_size": 1579,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "pages/about.rst",
-			"settings":
-			{
-				"buffer_size": 2033,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "posts/blender/addons/toggle-object-wire.rst",
-			"settings":
-			{
-				"buffer_size": 1255,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "posts/blender/themes/blender-themes.rst",
-			"settings":
-			{
-				"buffer_size": 1813,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "posts/blender/addons/outliner-tweaks.rst",
-			"settings":
-			{
-				"buffer_size": 4133,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "posts/blender/addons/collada-exporter-second-life.rst",
-			"settings":
-			{
-				"buffer_size": 2783,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
 		}
 	],
 	"build_system": "",
@@ -414,21 +361,35 @@
 	},
 	"expanded_folders":
 	[
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/themes"
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates"
 	],
 	"file_history":
 	[
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/sidebar.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/sidebar-helper.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/conf.py",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/bundles",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/js/custom.js",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/base.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/base_myhelper.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/nikola-commands.txt",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/post_header.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/post_list_directive.tmpl",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/software/xnview/blender-inspired-theme-xnview.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/tidy5.conf",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/collada-exporter-second-life.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/themes/blender-themes.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/articles.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/toggle-object-wire.rst",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/about.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/blender-addons.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/extra-material-list.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/extra-image-list.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/web-design/install-nikola-on-windows-10.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/outliner-tweaks.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/scripting/eliminate-material-duplicates.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/conf.py",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/code/code-palettes.css",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/code.css",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/code/monokai.css",
@@ -437,16 +398,11 @@
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-hsl-color-model.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/rendering/nodes-correct-hdri.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-pbr-basic-shader.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/collada-exporter-second-life.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/toggle-object-wire.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-custom-color-ramp.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/custom.css",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/bake-helper.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/nikola_ipython.css",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/matlist.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/about.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/articles.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/post_list_directive.tmpl",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/jupyter/curve-fitting/fitting-circle-3d.meta",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/bootstrap.css",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-1.meta",
@@ -454,9 +410,6 @@
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/jupyter/curve-fitting/parametric-curve-fitting.meta",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/jupyter/linear-algebra/linear-algebra-with-python-and-numpy-2.meta",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/web-design/starting-a-personal-blog-with-nikola.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/sidebar-helper.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/base.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/sidebar.tmpl",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/assets/css/nikola_ipython.css",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/assets/css/custom.css",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/assets/css/theme.css",
@@ -502,7 +455,6 @@
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/output/sidebar-en.inc",
 		"/D/PROJECTS/WEBSITES/Meshlogic/Nikola Source/Nikola 7.8.11/themes/base-jinja/templates/base_header.tmpl",
 		"/D/PROJECTS/WEBSITES/Meshlogic/Nikola Source/Nikola 7.8.11/themes/bootstrap3-jinja/templates/base_helper.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/tidy5.conf",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/templates/base_my_helper.tmpl",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/templates/my_extra_head.tmpl",
 		"/D/PROJECTS/WEBSITES/Meshlogic/Nikola Source/Nikola 7.8.11/themes/base-jinja/templates/base_helper.tmpl",
@@ -542,17 +494,11 @@
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/meshlogic.sublime-project",
 		"/D/PROJECTS/WEBSITES/Meshlogic/Dev/Tests/Include/include-test.html",
 		"/D/PROJECTS/WEBSITES/Meshlogic/Dev/Tests/Include/sidebar-en.inc",
-		"/D/PROJECTS/WEBSITES/Meshlogic/Dev/Tests/Syntax/Markdown-sample.md",
-		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Themes/Color Schemes/Miki Dark Grey.tmTheme",
-		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Themes/Color Scheme/Miki Light Grey.tmTheme",
-		"/D/PROJECTS/WEBSITES/Meshlogic/Dev/Tests/Sublime/RestructuredText Improved/reStructuredText Improved.tmLanguage",
-		"/D/PROJECTS/WEBSITES/Meshlogic/Dev/Tests/Sublime/RestructuredText Improved/RestructuredText Improved.py",
-		"/D/PROJECTS/WEBSITES/Meshlogic/Dev/Tests/Sublime/RestructuredText Improved/Symbol List - Section.tmPreferences",
-		"/D/PROJECTS/WEBSITES/Meshlogic/Dev/Tests/Sublime/RestructuredText Improved/reStructuredText Improved.tmLang"
+		"/D/PROJECTS/WEBSITES/Meshlogic/Dev/Tests/Syntax/Markdown-sample.md"
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 44.0
 	},
 	"find_in_files":
 	{
@@ -720,7 +666,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -771,63 +717,6 @@
 							],
 							"color_helper.popup_active": false,
 							"color_helper.popup_auto": true,
-							"color_helper.preview_meta":
-							{
-								"1038":
-								[
-									-6738632435334587661,
-									7,
-									"hex",
-									-7723218263870231101,
-									4,
-									"1519161489.799287"
-								],
-								"1554":
-								[
-									-6738632435334587661,
-									7,
-									"hex",
-									-7723218263870231101,
-									5,
-									"1519161489.801289"
-								],
-								"199":
-								[
-									-6379480723828065972,
-									7,
-									"hex",
-									-7723218263870231101,
-									6,
-									"1519161490.288115"
-								],
-								"374":
-								[
-									-5516759959316893379,
-									4,
-									"hex_compressed",
-									-2753984636447850991,
-									1,
-									"1519161489.791985"
-								],
-								"674":
-								[
-									-8433582352662808679,
-									18,
-									"rgba",
-									-5469076080105141199,
-									2,
-									"1519161489.794782"
-								],
-								"709":
-								[
-									-8433582352662727204,
-									18,
-									"rgba",
-									-5469076080105141199,
-									3,
-									"1519161489.796284"
-								]
-							},
 							"color_helper.scan":
 							{
 								"allowed_colors":
@@ -866,7 +755,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -882,8 +771,8 @@
 						"selection":
 						[
 							[
-								1259,
-								1259
+								555,
+								555
 							]
 						],
 						"settings":
@@ -924,67 +813,130 @@
 							{
 								"1085":
 								[
-									3853533376275005462,
+									-4408856718882767375,
 									7,
 									"hex",
-									-2753984636447850991,
-									3,
-									"1519159683.963146"
+									4278733586192014526,
+									1,
+									"1519206475.192275"
 								],
 								"1203":
 								[
-									-2579501938298542972,
+									-5710923580308381049,
 									19,
 									"rgba",
-									739119495748727061,
-									4,
-									"1519159683.966649"
+									-1902182723553364700,
+									2,
+									"1519206475.195278"
 								],
 								"1673":
 								[
-									-1047949773670702378,
+									-7263828601647906315,
 									7,
 									"hex",
-									6897960172622467831,
-									5,
-									"1519161111.912863"
+									-4964155873296040656,
+									3,
+									"1519206475.19728"
+								],
+								"2096":
+								[
+									-699556242879163556,
+									24,
+									"rgba",
+									-830414021955984060,
+									8,
+									"1519208771.858735"
+								],
+								"2144":
+								[
+									-5710924580019251844,
+									19,
+									"rgba",
+									8240700720619534396,
+									9,
+									"1519208771.861738"
 								],
 								"215":
 								[
-									-5516760560231714504,
+									-2188096479140595651,
 									4,
 									"hex_compressed",
-									-2753984636447850991,
-									1,
-									"1519159683.95714"
+									4278733586192014526,
+									5,
+									"1519206479.188815"
+								],
+								"2241":
+								[
+									3489303299152588196,
+									15,
+									"rgba",
+									-3932411970188779600,
+									10,
+									"1519208771.864741"
+								],
+								"2384":
+								[
+									-5710923580308381049,
+									19,
+									"rgba",
+									-830414021955984060,
+									11,
+									"1519208771.866743"
+								],
+								"2427":
+								[
+									-201145151392601577,
+									7,
+									"hex",
+									4278733586192014526,
+									12,
+									"1519208771.867744"
 								],
 								"767":
 								[
-									9201324896530273057,
+									6898393411417391806,
 									7,
 									"hex",
-									-2753984636447850991,
-									2,
-									"1519159683.961644"
+									4278733586192014526,
+									4,
+									"1519206478.197441"
+								],
+								"9096":
+								[
+									-4912030062780057323,
+									24,
+									"rgba",
+									-1902182723553364700,
+									6,
+									"1519208771.375897"
+								],
+								"9209":
+								[
+									-2188096172032762596,
+									4,
+									"hex_compressed",
+									4278733586192014526,
+									7,
+									"1519208771.380901"
 								]
 							},
 							"color_helper.scan":
 							{
 								"allowed_colors":
 								[
-									"hsl",
-									"rgba",
 									"hex_compressed",
-									"webcolors",
 									"hex",
+									"webcolors",
 									"hsla",
+									"rgba",
+									"hsl",
 									"rgb"
 								],
 								"compress_hex_output": true,
 								"current_ext": ".css",
 								"current_syntax": "CSS3/CSS3",
 								"enabled": true,
-								"last_updated": 1519159593.82,
+								"last_updated": 1519206210.36,
 								"scan_completion_scopes":
 								[
 								],
@@ -1003,271 +955,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 630.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "pages/articles.rst",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1579,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								582,
-								582
-							]
-						],
-						"settings":
-						{
-							"color_helper.box_height": 15,
-							"color_helper.color_scheme": "Packages/Theme - Miki/Miki (Light Grey).tmTheme",
-							"color_helper.file_palette":
-							[
-							],
-							"color_helper.preview_meta":
-							{
-							},
-							"color_helper.scan":
-							{
-								"current_ext": ".rst",
-								"current_syntax": "RestructuredText Improved/reStructuredText Improved",
-								"enabled": false,
-								"last_updated": 1519159593.82
-							},
-							"syntax": "Packages/RestructuredText Improved/reStructuredText Improved.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 225.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "pages/about.rst",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2033,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								211,
-								211
-							]
-						],
-						"settings":
-						{
-							"color_helper.box_height": 15,
-							"color_helper.color_scheme": "Packages/Theme - Miki/Miki (Light Grey).tmTheme",
-							"color_helper.file_palette":
-							[
-							],
-							"color_helper.preview_meta":
-							{
-							},
-							"color_helper.scan":
-							{
-								"current_ext": ".rst",
-								"current_syntax": "RestructuredText Improved/reStructuredText Improved",
-								"enabled": false,
-								"last_updated": 1519159593.82
-							},
-							"syntax": "Packages/RestructuredText Improved/reStructuredText Improved.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1332.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "posts/blender/addons/toggle-object-wire.rst",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1255,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								341,
-								341
-							]
-						],
-						"settings":
-						{
-							"color_helper.box_height": 15,
-							"color_helper.color_scheme": "Packages/Theme - Miki/Miki (Light Grey).tmTheme",
-							"color_helper.file_palette":
-							[
-							],
-							"color_helper.preview_meta":
-							{
-							},
-							"color_helper.scan":
-							{
-								"current_ext": ".rst",
-								"current_syntax": "RestructuredText Improved/reStructuredText Improved",
-								"enabled": false,
-								"last_updated": 1519159593.82
-							},
-							"syntax": "Packages/RestructuredText Improved/reStructuredText Improved.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "posts/blender/themes/blender-themes.rst",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1813,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								184,
-								184
-							]
-						],
-						"settings":
-						{
-							"color_helper.box_height": 15,
-							"color_helper.color_scheme": "Packages/Theme - Miki/Miki (Light Grey).tmTheme",
-							"color_helper.file_palette":
-							[
-							],
-							"color_helper.preview_meta":
-							{
-							},
-							"color_helper.scan":
-							{
-								"current_ext": ".rst",
-								"current_syntax": "RestructuredText Improved/reStructuredText Improved",
-								"enabled": false,
-								"last_updated": 1519159593.82
-							},
-							"syntax": "Packages/RestructuredText Improved/reStructuredText Improved.tmLanguage",
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "posts/blender/addons/outliner-tweaks.rst",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 4133,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								320,
-								298
-							]
-						],
-						"settings":
-						{
-							"color_helper.box_height": 15,
-							"color_helper.color_scheme": "Packages/Theme - Miki/Miki (Light Grey).tmTheme",
-							"color_helper.file_palette":
-							[
-							],
-							"color_helper.preview_meta":
-							{
-							},
-							"color_helper.scan":
-							{
-								"current_ext": ".rst",
-								"current_syntax": "RestructuredText Improved/reStructuredText Improved",
-								"enabled": false,
-								"last_updated": 1519159593.82
-							},
-							"syntax": "Packages/RestructuredText Improved/reStructuredText Improved.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "posts/blender/addons/collada-exporter-second-life.rst",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2783,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								317,
-								317
-							]
-						],
-						"settings":
-						{
-							"color_helper.box_height": 15,
-							"color_helper.color_scheme": "Packages/Theme - Miki/Miki (Light Grey).tmTheme",
-							"color_helper.file_palette":
-							[
-							],
-							"color_helper.preview_meta":
-							{
-							},
-							"color_helper.scan":
-							{
-								"current_ext": ".rst",
-								"current_syntax": "RestructuredText Improved/reStructuredText Improved",
-								"enabled": false,
-								"last_updated": 1519159593.82
-							},
-							"syntax": "Packages/RestructuredText Improved/reStructuredText Improved.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
 					"type": "text"
 				}
 			]
