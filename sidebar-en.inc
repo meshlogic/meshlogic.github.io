@@ -112,10 +112,9 @@
 
         <div id="widget-flickr-pics"></div>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script>
             (function() {
-                var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+                var flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
                 $.getJSON( flickerAPI, {
                     id: "155478827@N06",
                     format: "json"
