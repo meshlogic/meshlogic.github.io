@@ -38,10 +38,11 @@ $(function(){
 ** - Make Navbar sticky on top when the page scrolls down
 ** - Keep Navbar width inside container
 *******************************************************************************/
+var offsetTop = $('#body_header').outerHeight() + parseInt($('body').css('padding-top'), 10);
+
 function stiky_navbar()
 {
     var scrollTop = $(document).scrollTop();
-    var offsetTop = $('#body_header').outerHeight() + parseInt($('body').css('padding-top'), 10);
 
     if (scrollTop >= offsetTop)
         $('.navbar').removeClass('navbar-static-top').addClass('navbar-fixed-top');
