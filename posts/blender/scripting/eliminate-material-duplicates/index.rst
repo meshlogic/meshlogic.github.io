@@ -1,26 +1,64 @@
-.. title: Eliminate Material and Node Group Duplicates in Blender
+.. title: Eliminate Material and Node Group Duplicates
 .. slug: eliminate-material-duplicates
 .. date: 2017-08-13 15:00:00 UTC+02:00
-.. category: blender
-.. tags: blender-scripting
+.. category: blender/scripting
+.. tags: blender, python
 .. link: 
-.. description:
 .. type: text
+.. previewimage: teaser.png
+.. description: Get rid of the unwanted datablock duplicates.
 
 .. TEASER_END
 
 
-I got to the point when wishing to build and organize a decent library of smart materials for Blender (something like you can have in 3D Coat or Substance Painter if you don't mind using proprietary software). I got really tempted to start making such library when Blender 2.79 officially included the material library addon called **MatLib VX**.
+.. figure:: teaser.png
+    :align: right
+    :class: figure
 
-But alas, even this useful addon **MatLib VX** doesn't bring any significantly new functionality to Blender. It just uses the existing **append/link** feature which enables you to include various datablocks from external Blender files. And here comes the problematic aspect of appending materials from external files. Imagine your materials use custom node groups (like shader setups, etc). **Then every time you append a material, Blender automatically creates numbered duplicates for all node groups with the same name, even when the groups are supposed to be exactly the same!** And this means huge mess in your node groups. A similar problem occurs when you are appending mesh assets containing the same materials.
 
-So, to fix this bug/feature, I have created a simple script that eliminates all these duplicates after you append materials from your external files. It searches all existing node groups, materials, worlds and if finds any duplicates (ending with .001, .002, etc), it replaces them with the original group or material if it is found.
+I think the major shortage of Blender is a missing library system for materials (something like the library system in Substance Painter). There are addons trying to implement this, but I think such fundamental feature should be implemented in the program core.
 
-After running the script **the eliminated node groups and materials will have zero 0 users**, so after you save and reopen your file, they should disappear and your group list should be clean and tidy :)
+Moreover, everything what an addon can do is to utilize the standard **append** command from an external file. And here comes the annoying fact: **Every time you append an asset, Blender automatically creates numbered duplicates for all datablocks with the same name, even when they are intended to be exactly the same!** This is the reason, why after appending objects or materials, several duplicates (ending with .001, .002, etc) of the same material or node group appear in your scene.
 
+To clean the duplicates, I made a simple script. It searches all existing materials and node groups. Then, if any duplicates (ending with .001, .002, etc) are found, they are replaced with the original item.
+
+After running the script, **the eliminated datablock will have 0 users**. So, when you save and reopen your file, all duplicates should disappear and your material/group list should be clean :)
+
+
+Eliminate Material Duplicates
+=================================
 
 .. code-block:: python
-    :number-lines:
+
+    import bpy
+
+    #--- Eliminate Material Duplicates
+    def eliminate_materials():
+        print("\nEliminate Material Duplicates:")
+        
+        #--- Search for mat. slots in all objects
+        mats = bpy.data.materials
+        
+        for obj in bpy.data.objects:
+            for slot in obj.material_slots:
+                
+                # Get the material name as 3-tuple (base, separator, extension)
+                (base, sep, ext) = slot.name.rpartition('.')
+                
+                # Replace the numbered duplicate with the original if found
+                if ext.isnumeric():
+                    if base in mats:
+                        print("  For object '%s' replace '%s' with '%s'" % (obj.name, slot.name, base))
+                        slot.material = mats.get(base)
+
+    #--- Execute
+    eliminate_materials()
+
+
+Eliminate Node Group Duplicates
+=================================
+
+.. code-block:: python
 
     import bpy
 
@@ -46,7 +84,6 @@ After running the script **the eliminated node groups and materials will have ze
                     if node.type == 'GROUP':
                         eliminate(node)
          
-         
     #--- Eliminate the node group duplicate with the original group if found
     def eliminate(node):
         node_groups = bpy.data.node_groups
@@ -61,33 +98,53 @@ After running the script **the eliminated node groups and materials will have ze
                 node.node_tree.use_fake_user = False
                 node.node_tree = node_groups.get(base)
 
-
-    #--- Eliminate Material Duplicates
-    def eliminate_materials():
-        print("\nEliminate Material Duplicates:")
-        
-        #--- Search for mat. slots in all objects
-        mats = bpy.data.materials
-        
-        for obj in bpy.data.objects:
-            for slot in obj.material_slots:
-                
-                # Get the material name as 3-tuple (base, separator, extension)
-                (base, sep, ext) = slot.name.rpartition('.')
-                
-                # Replace the numbered duplicate with the original if found
-                if ext.isnumeric():
-                    if base in mats:
-                        print("  For object '%s' replace '%s' with '%s'" % (obj.name, slot.name, base))
-                        slot.material = mats.get(base)
-
-
     #--- Execute
     eliminate_node_groups()
-    eliminate_materials()
 
 
+Eliminate OSL Script Duplicates
+=================================
 
-Now, I'm thinking I will include this code in my another addon **Extra Material List**, which displays materials in a more comfy way than the default short pop-up list.
+A similar method should work also to clean duplicates of OSL scripts.
+
+.. code-block:: python
+
+    import bpy
+
+    #--- Eliminate OSL Script Duplicates
+    def eliminate_osl():
+
+        print("\nEliminate OSL Scripts:")
+        texts = bpy.data.texts
+
+        for mat in bpy.data.materials:
+            if mat.use_nodes:
+                for node in mat.node_tree.nodes:
+                    if node.type == 'SCRIPT':
+                        name = node.script.name
+                        (base, sep, ext) = name.rpartition('.')
+
+                        # Replace the numbered duplicate with the original if found
+                        if ext.isnumeric():
+                            if base in texts:
+                                print("  Replace '%s' with '%s'" % (name, base))
+
+                                # Replace the script duplicate for this node
+                                node.script = texts.get(base)
+
+                                # Remove the script duplicate from bpy.data.texts ?
+                                texts.get(name).user_clear()      
+
+    #--- Execute
+    eliminate_osl()
+
+
+Addon to Eliminate the Duplicates
+===================================
+
+I added this functionality as a button to eliminate material and node group duplicates to my addon `Extra Material List <link://slug/extra-material-list>`_.
+
+
+|
 
 

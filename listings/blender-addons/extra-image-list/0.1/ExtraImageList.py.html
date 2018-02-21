@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="ExtraImageList.py">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ExtraImageList.py | MeshLogic</title>
+<link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="https://meshlogic.github.io/listings/blender-addons/extra-image-list/0.1/ExtraImageList.py.html">
+<!--[if lt IE 9]><script src="../../../../assets/js/html5.js"></script><![endif]--><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+
+
+<!-- BODY CONTAINER !! -->
+<div id="body_container" class="container">
+
+    <!-- HEADER -->
+    <header id="body_header" class="bodypart hidden-print"><a href="../../../../" title="Home"><i>A personal blog on computer graphics, scientific computing, Blender, Jupyter and Second Life</i></a>
+
+        
+    </header><!-- NAVBAR --><nav class="navbar navbar-default navbar-static-top hidden-print bodypart"><div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand visible-xs" href="../../../../">
+                    <span id="blog-title">MeshLogic</span>
+                </a>
+        </div>
+
+        <div id="bs-navbar" class="collapse navbar-collapse" aria-expanded="false" role="navigation">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../../../"><span id="homelink">Home</span></a>
+                </li>
+<li>
+<a href="../../../../archive.html">Archive</a>
+                </li>
+<li>
+<a href="../../../../gallery/">Gallery</a>
+                </li>
+<li>
+<a href="../../../../pages/blender-addons/">Blender Addons</a>
+                </li>
+<li>
+<a href="../../../../pages/articles/">Jupyter Articles</a>
+                </li>
+<li>
+<a href="../../../../pages/about/">About</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="ExtraImageList.py" id="sourcelink">Source</a>
+    </li>
+                
+            </ul>
+</div>
+    </nav><!-- PAGE CONTAINER --><div id="page_container" class="clearfix">
+
+        <div id="page_main" class="bodypart" role="main">
+<nav class="breadcrumbs"><ul class="breadcrumb">
+<li><a href="../../../">listings</a></li>
+                <li><a href="../../">blender-addons</a></li>
+                <li><a href="../">extra-image-list</a></li>
+                <li><a href=".">0.1</a></li>
+                <li>ExtraImageList.py</li>
+</ul></nav><h1>ExtraImageList.py
+        <small><a href="ExtraImageList.py">(Source)</a></small>
+    </h1>
+    <table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="#listingsblender-addonsextra-image-list01extraimagelistpy-1">  1</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-2">  2</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-3">  3</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-4">  4</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-5">  5</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-6">  6</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-7">  7</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-8">  8</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-9">  9</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-10"> 10</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-11"> 11</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-12"> 12</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-13"> 13</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-14"> 14</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-15"> 15</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-16"> 16</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-17"> 17</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-18"> 18</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-19"> 19</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-20"> 20</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-21"> 21</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-22"> 22</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-23"> 23</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-24"> 24</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-25"> 25</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-26"> 26</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-27"> 27</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-28"> 28</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-29"> 29</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-30"> 30</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-31"> 31</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-32"> 32</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-33"> 33</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-34"> 34</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-35"> 35</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-36"> 36</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-37"> 37</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-38"> 38</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-39"> 39</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-40"> 40</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-41"> 41</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-42"> 42</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-43"> 43</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-44"> 44</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-45"> 45</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-46"> 46</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-47"> 47</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-48"> 48</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-49"> 49</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-50"> 50</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-51"> 51</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-52"> 52</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-53"> 53</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-54"> 54</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-55"> 55</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-56"> 56</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-57"> 57</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-58"> 58</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-59"> 59</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-60"> 60</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-61"> 61</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-62"> 62</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-63"> 63</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-64"> 64</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-65"> 65</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-66"> 66</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-67"> 67</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-68"> 68</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-69"> 69</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-70"> 70</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-71"> 71</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-72"> 72</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-73"> 73</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-74"> 74</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-75"> 75</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-76"> 76</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-77"> 77</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-78"> 78</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-79"> 79</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-80"> 80</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-81"> 81</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-82"> 82</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-83"> 83</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-84"> 84</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-85"> 85</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-86"> 86</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-87"> 87</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-88"> 88</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-89"> 89</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-90"> 90</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-91"> 91</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-92"> 92</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-93"> 93</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-94"> 94</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-95"> 95</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-96"> 96</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-97"> 97</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-98"> 98</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-99"> 99</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-100">100</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-101">101</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-102">102</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-103">103</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-104">104</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-105">105</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-106">106</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-107">107</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-108">108</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-109">109</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-110">110</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-111">111</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-112">112</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-113">113</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-114">114</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-115">115</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-116">116</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-117">117</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-118">118</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-119">119</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-120">120</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-121">121</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-122">122</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-123">123</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-124">124</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-125">125</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-126">126</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-127">127</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-128">128</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-129">129</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-130">130</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-131">131</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-132">132</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-133">133</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-134">134</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-135">135</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-136">136</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-137">137</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-138">138</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-139">139</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-140">140</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-141">141</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-142">142</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-143">143</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-144">144</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-145">145</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-146">146</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-147">147</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-148">148</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-149">149</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-150">150</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-151">151</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-152">152</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-153">153</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-154">154</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-155">155</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-156">156</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-157">157</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-158">158</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-159">159</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-160">160</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-161">161</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-162">162</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-163">163</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-164">164</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-165">165</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-166">166</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-167">167</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-168">168</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-169">169</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-170">170</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-171">171</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-172">172</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-173">173</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-174">174</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-175">175</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-176">176</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-177">177</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-178">178</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-179">179</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-180">180</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-181">181</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-182">182</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-183">183</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-184">184</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-185">185</a>
+<a href="#listingsblender-addonsextra-image-list01extraimagelistpy-186">186</a></pre></div></td>
+<td class="code"><pre class="code literal-block"><a name="listingsblender-addonsextra-image-list01extraimagelistpy-1"></a><span class="c1">#-------------------------------------------------------------------------------</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-2"></a><span class="c1">#                      Extra Image List - Addon for Blender</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-3"></a><span class="c1"># Version: 0.1</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-4"></a><span class="c1"># Revised: 02.03.2017</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-5"></a><span class="c1"># Author: Miki (Meshlogic)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-6"></a><span class="c1">#-------------------------------------------------------------------------------</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-7"></a><span class="n">bl_info</span> <span class="o">=</span> <span class="p">{</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-8"></a>    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Extra Image List"</span><span class="p">,</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-9"></a>    <span class="s2">"author"</span><span class="p">:</span> <span class="s2">"Meshlogic"</span><span class="p">,</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-10"></a>    <span class="s2">"category"</span><span class="p">:</span> <span class="s2">"UV"</span><span class="p">,</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-11"></a>    <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Alternative image browse list with tiles for UV/Image Editor."</span><span class="p">,</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-12"></a>    <span class="s2">"location"</span><span class="p">:</span> <span class="s2">"UV/Image Editor &gt; Tools &gt; Extra Image List"</span><span class="p">,</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-13"></a>    <span class="s2">"version"</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-14"></a>    <span class="s2">"blender"</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-15"></a><span class="p">}</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-16"></a>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-17"></a><span class="kn">import</span> <span class="nn">bpy</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-18"></a><span class="kn">from</span> <span class="nn">bpy.props</span> <span class="kn">import</span> <span class="o">*</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-19"></a><span class="kn">from</span> <span class="nn">bpy.types</span> <span class="kn">import</span> <span class="n">Menu</span><span class="p">,</span> <span class="n">Operator</span><span class="p">,</span> <span class="n">Panel</span><span class="p">,</span> <span class="n">UIList</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-20"></a>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-21"></a>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-22"></a><span class="c1">#-------------------------------------------------------------------------------</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-23"></a><span class="c1"># UI PANEL</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-24"></a><span class="c1">#------------------------------------------------------------------------------- </span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-25"></a><span class="k">class</span> <span class="nc">ExtraImageList_PT</span><span class="p">(</span><span class="n">Panel</span><span class="p">):</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-26"></a>    <span class="n">bl_label</span> <span class="o">=</span> <span class="s2">"Extra Image List"</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-27"></a>    <span class="n">bl_space_type</span> <span class="o">=</span> <span class="s1">'IMAGE_EDITOR'</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-28"></a>    <span class="n">bl_region_type</span> <span class="o">=</span> <span class="s1">'TOOLS'</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-29"></a>    <span class="n">bl_category</span> <span class="o">=</span> <span class="s2">"Extra Image List"</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-30"></a>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-31"></a>    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-32"></a>        <span class="n">layout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-33"></a>        <span class="n">cs</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">scene</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-34"></a>        <span class="n">cs_props</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">extra_image_list</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-35"></a>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-36"></a>        <span class="c1">#--- Get the current image in UV editor and list of all images</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-37"></a>        <span class="n">img</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">space_data</span><span class="o">.</span><span class="n">image</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-38"></a>        <span class="n">img_list</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">images</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-39"></a>                
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-40"></a>        <span class="c1">#--- Num. of rows &amp; cols for image browse list</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-41"></a>        <span class="n">row</span> <span class="o">=</span> <span class="n">layout</span><span class="o">.</span><span class="n">row</span><span class="p">()</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-42"></a>        <span class="n">split</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">percentage</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-43"></a>        
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-44"></a>        <span class="n">col</span> <span class="o">=</span> <span class="n">split</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-45"></a>        <span class="n">col</span><span class="o">.</span><span class="n">prop</span><span class="p">(</span><span class="n">cs</span><span class="o">.</span><span class="n">extra_image_list</span><span class="p">,</span> <span class="s2">"rows"</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-46"></a>        <span class="n">col</span><span class="o">.</span><span class="n">prop</span><span class="p">(</span><span class="n">cs</span><span class="o">.</span><span class="n">extra_image_list</span><span class="p">,</span> <span class="s2">"cols"</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-47"></a>        
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-48"></a>        <span class="c1">#--- Navigation button PREV</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-49"></a>        <span class="n">sub</span> <span class="o">=</span> <span class="n">split</span><span class="o">.</span><span class="n">column</span><span class="p">()</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-50"></a>        <span class="n">sub</span><span class="o">.</span><span class="n">scale_y</span> <span class="o">=</span> <span class="mi">2</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-51"></a>        <span class="n">sub</span><span class="o">.</span><span class="n">operator</span><span class="p">(</span><span class="s2">"extra_image_list.nav"</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s1">'BACK'</span><span class="p">)</span><span class="o">.</span><span class="n">dir</span> <span class="o">=</span> <span class="s1">'PREV'</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-52"></a>        
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-53"></a>        <span class="c1"># Disable button for the first image or for no images</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-54"></a>        <span class="n">sub</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="p">(</span><span class="n">img</span><span class="o">!=</span><span class="n">img_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="p">(</span><span class="n">img</span><span class="o">!=</span><span class="bp">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">img_list</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="k">else</span> <span class="bp">False</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-55"></a>        
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-56"></a>        <span class="c1">#--- Navigation button NEXT</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-57"></a>        <span class="n">sub</span> <span class="o">=</span> <span class="n">split</span><span class="o">.</span><span class="n">column</span><span class="p">()</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-58"></a>        <span class="n">sub</span><span class="o">.</span><span class="n">scale_y</span> <span class="o">=</span> <span class="mi">2</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-59"></a>        <span class="n">sub</span><span class="o">.</span><span class="n">operator</span><span class="p">(</span><span class="s2">"extra_image_list.nav"</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s1">'FORWARD'</span><span class="p">)</span><span class="o">.</span><span class="n">dir</span> <span class="o">=</span> <span class="s1">'NEXT'</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-60"></a>        
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-61"></a>        <span class="c1"># Disable button for the last image or for no images</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-62"></a>        <span class="n">sub</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="p">(</span><span class="n">img</span><span class="o">!=</span><span class="n">img_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="p">(</span><span class="n">img</span><span class="o">!=</span><span class="bp">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">img_list</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="k">else</span> <span class="bp">False</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-63"></a>        
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-64"></a>        <span class="c1">#--- Image browse list</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-65"></a>        <span class="n">layout</span><span class="o">.</span><span class="n">template_ID_preview</span><span class="p">(</span><span class="n">context</span><span class="o">.</span><span class="n">space_data</span><span class="p">,</span> <span class="s2">"image"</span><span class="p">,</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-66"></a>            <span class="n">new</span><span class="o">=</span><span class="s2">"image.new"</span><span class="p">,</span> <span class="nb">open</span><span class="o">=</span><span class="s2">"image.open"</span><span class="p">,</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-67"></a>            <span class="n">rows</span><span class="o">=</span><span class="n">cs_props</span><span class="o">.</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="n">cs_props</span><span class="o">.</span><span class="n">cols</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-68"></a>        
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-69"></a>        <span class="c1">#--- Image Info</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-70"></a>        <span class="k">if</span> <span class="n">img</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">:</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-71"></a>            <span class="n">row</span> <span class="o">=</span> <span class="n">layout</span><span class="o">.</span><span class="n">row</span><span class="p">()</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-72"></a>            <span class="n">row</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">"Source:"</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s1">'DISK_DRIVE'</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-73"></a>            <span class="n">row</span> <span class="o">=</span> <span class="n">layout</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-74"></a>            
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-75"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n">img</span><span class="o">.</span><span class="n">packed_file</span><span class="p">:</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-76"></a>                <span class="n">row</span><span class="o">.</span><span class="n">operator</span><span class="p">(</span><span class="s2">"image.pack"</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s1">'UGLYPACKAGE'</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-77"></a>            <span class="k">else</span><span class="p">:</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-78"></a>                <span class="n">row</span><span class="o">.</span><span class="n">operator</span><span class="p">(</span><span class="s2">"image.unpack"</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s1">'PACKAGE'</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-79"></a>                
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-80"></a>            <span class="n">row</span><span class="o">.</span><span class="n">prop</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="s2">"filepath"</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-81"></a>            <span class="n">row</span><span class="o">.</span><span class="n">operator</span><span class="p">(</span><span class="s2">"image.reload"</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s1">'FILE_REFRESH'</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-82"></a>            
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-83"></a>            <span class="c1">#--- Image size</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-84"></a>            <span class="n">row</span> <span class="o">=</span> <span class="n">layout</span><span class="o">.</span><span class="n">row</span><span class="p">()</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-85"></a>            <span class="n">row</span><span class="o">.</span><span class="n">alignment</span> <span class="o">=</span> <span class="s1">'LEFT'</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-86"></a>            
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-87"></a>            <span class="k">if</span> <span class="n">img</span><span class="o">.</span><span class="n">has_data</span><span class="p">:</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-88"></a>                <span class="n">row</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">"Size:"</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s1">'TEXTURE'</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-89"></a>                <span class="n">row</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="s2">" x "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="s2">" x "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">depth</span><span class="p">)</span><span class="o">+</span><span class="s2">"b"</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-90"></a>            <span class="k">else</span><span class="p">:</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-91"></a>                <span class="n">row</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">"Can't load image file!"</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s1">'ERROR'</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-92"></a>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-93"></a>            <span class="c1">#--- Scan</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-94"></a>            <span class="n">row</span> <span class="o">=</span> <span class="n">layout</span><span class="o">.</span><span class="n">row</span><span class="p">()</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-95"></a>            <span class="n">row</span> <span class="o">=</span> <span class="n">layout</span><span class="o">.</span><span class="n">row</span><span class="p">()</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-96"></a>            <span class="n">row</span><span class="o">.</span><span class="n">alignment</span> <span class="o">=</span> <span class="s1">'LEFT'</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-97"></a>            <span class="n">row</span><span class="o">.</span><span class="n">operator</span><span class="p">(</span><span class="s2">"extra_image_list.clear"</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"  Clear All Image Users  "</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s1">'RADIO'</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-98"></a>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-99"></a>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-100"></a><span class="c1">#-------------------------------------------------------------------------------</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-101"></a><span class="c1"># IMAGE NAVIGATION OPERATOR</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-102"></a><span class="c1">#------------------------------------------------------------------------------- </span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-103"></a><span class="k">class</span> <span class="nc">ExtraImageList_PT_Nav</span><span class="p">(</span><span class="n">Operator</span><span class="p">):</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-104"></a>    <span class="n">bl_idname</span> <span class="o">=</span> <span class="s2">"extra_image_list.nav"</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-105"></a>    <span class="n">bl_label</span> <span class="o">=</span> <span class="s2">"Nav"</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-106"></a>    <span class="n">bl_description</span> <span class="o">=</span> <span class="s2">"Navigation button"</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-107"></a> 
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-108"></a>    <span class="nb">dir</span> <span class="o">=</span> <span class="n">EnumProperty</span><span class="p">(</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-109"></a>        <span class="n">name</span> <span class="o">=</span> <span class="s2">"dir"</span><span class="p">,</span> <span class="n">default</span> <span class="o">=</span> <span class="s1">'NEXT'</span><span class="p">,</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-110"></a>        <span class="n">items</span> <span class="o">=</span> <span class="p">[</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-111"></a>            <span class="p">(</span><span class="s1">'NEXT'</span><span class="p">,</span> <span class="s2">"PREV"</span><span class="p">,</span> <span class="s2">"PREV"</span><span class="p">),</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-112"></a>            <span class="p">(</span><span class="s1">'PREV'</span><span class="p">,</span> <span class="s2">"PREV"</span><span class="p">,</span> <span class="s2">"PREV"</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-113"></a>        <span class="p">])</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-114"></a> 
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-115"></a>    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-116"></a>        <span class="c1"># Get list of all images</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-117"></a>        <span class="n">img_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">images</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-118"></a>        
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-119"></a>        <span class="c1"># Get index of current image in UV editor, return if there is none image</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-120"></a>        <span class="n">img</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">space_data</span><span class="o">.</span><span class="n">image</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-121"></a>        <span class="k">if</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">img_list</span><span class="p">:</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-122"></a>            <span class="nb">id</span> <span class="o">=</span> <span class="n">img_list</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-123"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-124"></a>            <span class="k">return</span><span class="p">{</span><span class="s1">'FINISHED'</span><span class="p">}</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-125"></a>        
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-126"></a>        <span class="c1"># Navigate</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-127"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dir</span> <span class="o">==</span> <span class="s1">'NEXT'</span><span class="p">:</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-128"></a>            <span class="k">if</span> <span class="nb">id</span><span class="o">+</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">img_list</span><span class="p">):</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-129"></a>                <span class="n">context</span><span class="o">.</span><span class="n">space_data</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">img_list</span><span class="p">[</span><span class="nb">id</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-130"></a>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-131"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dir</span> <span class="o">==</span> <span class="s1">'PREV'</span><span class="p">:</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-132"></a>            <span class="k">if</span> <span class="nb">id</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-133"></a>                <span class="n">context</span><span class="o">.</span><span class="n">space_data</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">img_list</span><span class="p">[</span><span class="nb">id</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-134"></a> 
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-135"></a>        <span class="k">return</span><span class="p">{</span><span class="s1">'FINISHED'</span><span class="p">}</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-136"></a>    
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-137"></a>    
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-138"></a><span class="c1">#-------------------------------------------------------------------------------</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-139"></a><span class="c1"># CLEAR USERS OPERATOR</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-140"></a><span class="c1">#------------------------------------------------------------------------------- </span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-141"></a><span class="k">class</span> <span class="nc">ExtraImageList_PT_Clear</span><span class="p">(</span><span class="n">Operator</span><span class="p">):</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-142"></a>    <span class="n">bl_idname</span> <span class="o">=</span> <span class="s2">"extra_image_list.clear"</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-143"></a>    <span class="n">bl_label</span> <span class="o">=</span> <span class="s2">"Clear Users"</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-144"></a>    <span class="n">bl_description</span> <span class="o">=</span> <span class="s2">"""[Use with caution]</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-145"></a><span class="s2">        Clear all users for this image datablock.</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-146"></a><span class="s2">        So the image datablock can disappear after save and reload of this blend file."""</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-147"></a>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-148"></a>    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-149"></a>        <span class="n">img</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">space_data</span><span class="o">.</span><span class="n">image</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-150"></a>        
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-151"></a>        <span class="k">if</span> <span class="n">img</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">:</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-152"></a>            <span class="n">img</span><span class="o">.</span><span class="n">user_clear</span><span class="p">()</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-153"></a>            
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-154"></a>        <span class="k">return</span><span class="p">{</span><span class="s1">'FINISHED'</span><span class="p">}</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-155"></a>    
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-156"></a>        
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-157"></a><span class="c1">#-------------------------------------------------------------------------------</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-158"></a><span class="c1"># CUSTOM SCENE PROPS</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-159"></a><span class="c1">#-------------------------------------------------------------------------------        </span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-160"></a><span class="k">class</span> <span class="nc">ExtraImageList_Props</span><span class="p">(</span><span class="n">bpy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">PropertyGroup</span><span class="p">):</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-161"></a>    
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-162"></a>    <span class="n">rows</span> <span class="o">=</span> <span class="n">IntProperty</span><span class="p">(</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-163"></a>        <span class="n">name</span> <span class="o">=</span> <span class="s2">"Rows"</span><span class="p">,</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-164"></a>        <span class="n">description</span> <span class="o">=</span> <span class="s2">"Num. of rows in image browse list"</span><span class="p">,</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-165"></a>        <span class="n">default</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="nb">min</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">max</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-166"></a>        
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-167"></a>    <span class="n">cols</span> <span class="o">=</span> <span class="n">IntProperty</span><span class="p">(</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-168"></a>        <span class="n">name</span> <span class="o">=</span> <span class="s2">"Cols"</span><span class="p">,</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-169"></a>        <span class="n">description</span> <span class="o">=</span> <span class="s2">"Num. of columns in image browse list"</span><span class="p">,</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-170"></a>        <span class="n">default</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="nb">min</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">max</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-171"></a>        
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-172"></a>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-173"></a><span class="c1">#-------------------------------------------------------------------------------</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-174"></a><span class="c1"># REGISTER/UNREGISTER ADDON CLASSES</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-175"></a><span class="c1">#-------------------------------------------------------------------------------</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-176"></a><span class="k">def</span> <span class="nf">register</span><span class="p">():</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-177"></a>    <span class="n">bpy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">register_module</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-178"></a>    <span class="n">bpy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">Scene</span><span class="o">.</span><span class="n">extra_image_list</span> <span class="o">=</span> <span class="n">PointerProperty</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">ExtraImageList_Props</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-179"></a>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-180"></a><span class="k">def</span> <span class="nf">unregister</span><span class="p">():</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-181"></a>    <span class="n">bpy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">unregister_module</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-182"></a>    <span class="k">del</span> <span class="n">bpy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">Scene</span><span class="o">.</span><span class="n">extra_image_list</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-183"></a>    
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-184"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-185"></a>    <span class="n">register</span><span class="p">()</span>
+<a name="listingsblender-addonsextra-image-list01extraimagelistpy-186"></a>    
+</pre></td>
+</tr></table>
+</div>
+
+        <div id="page_sidebar" class="hidden-print" role="complementary"></div>
+    </div>
+
+
+    <!-- BODY FOOTER !! -->
+    <footer id="body_footer" class="bodypart"><!-- Footer content from conf.py -->
+        
+    Contents © 2018 by <a href="mailto:none">Miki</a>
+    — Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
+    
+    
+
+
+        <!-- Social buttons from conf.py -->
+        
+    <div class="counter">
+        <script src="https://www.w3counter.com/tracker.js?id=103452"></script><script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-82334406-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+</div>
+
+    <div id="social_icons">
+        <a href="https://github.com/meshlogic/" title="My GitHub"><i class="fa fa-3x fa-github"></i></a>
+
+        <a href="https://www.flickr.com/people/meshlogic/" title="See my photos on Flickr!"><i class="fa fa-3x fa-flickr"></i></a>
+
+        <a href="https://www.youtube.com/channel/UCJn5IgykaGERrwvzLhayJiw" title="See my videos on YouTube!"><i class="fa fa-3x fa-youtube-square"></i></a>
+    </div>
+
+
+        
+
+        
+    </footer>
+</div>
+
+
+<!-- SCRIPTS !! -->
+<script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+</script><script src="../../../../assets/js/all-nocdn.js"></script>
+</body>
+</html>

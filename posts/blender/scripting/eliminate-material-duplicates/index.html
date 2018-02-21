@@ -5,42 +5,40 @@ article: http://ogp.me/ns/article#
 " lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="description" content="Get rid of the unwanted datablock duplicates.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Eliminate Material and Node Group Duplicates in Blender | MeshLogic</title>
+<title>Eliminate Material and Node Group Duplicates | MeshLogic</title>
 <link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta content="#5670d4" name="theme-color">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="canonical" href="https://meshlogic.github.io/posts/blender/scripting/eliminate-material-duplicates/">
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            processEscapes: true
-        },
-        displayAlign: 'center'
-    });
-</script><!--[if lt IE 9]><script src="../../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Miki">
+<!--[if lt IE 9]><script src="../../../../assets/js/html5.js"></script><![endif]--><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<meta name="author" content="Miki">
 <link rel="prev" href="../../materials/nodes-custom-color-ramp/" title="Custom Color Ramp Nodes" type="text/html">
+<link rel="next" href="../../addons/extra-image-list/" title="Extra Image List - Blender Addon" type="text/html">
 <meta property="og:site_name" content="MeshLogic">
-<meta property="og:title" content="Eliminate Material and Node Group Duplicates in Blender">
+<meta property="og:title" content="Eliminate Material and Node Group Duplicates">
 <meta property="og:url" content="https://meshlogic.github.io/posts/blender/scripting/eliminate-material-duplicates/">
-<meta property="og:description" content="I got to the point when wishing to build and organize a decent library of smart materials for Blender (something like you can have in 3D Coat or Substance Painter if you don't mind using proprietary s">
+<meta property="og:description" content="Get rid of the unwanted datablock duplicates.">
+<meta property="og:image" content="https://meshlogic.github.io/posts/blender/scripting/eliminate-material-duplicates/teaser.png">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2017-08-13T15:00:00+02:00">
-<meta property="article:tag" content="blender-scripting">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<meta property="article:tag" content="blender">
+<meta property="article:tag" content="python">
 </head>
 <body>
 
 
-<!-- BODY CONTAINER -->
-<div class="container" id="body_container">
+<!-- BODY CONTAINER !! -->
+<div id="body_container" class="container">
 
     <!-- HEADER -->
-    <header id="body_header"><a href="../../../../" title="Home"><i>A personal blog on computer graphics, scientific computing, Blender, Jupyter and Second Life</i></a>
-    </header><!-- NAVBAR --><nav class="navbar navbar-default navbar-static-top"><div class="navbar-header">
+    <header id="body_header" class="bodypart hidden-print"><a href="../../../../" title="Home"><i>A personal blog on computer graphics, scientific computing, Blender, Jupyter and Second Life</i></a>
+
+        
+    </header><!-- NAVBAR --><nav class="navbar navbar-default navbar-static-top hidden-print bodypart"><div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
@@ -49,29 +47,26 @@ article: http://ogp.me/ns/article#
             </button>
 
                 <a class="navbar-brand visible-xs" href="../../../../">
-                <span id="blog-title">MeshLogic</span>
+                    <span id="blog-title">MeshLogic</span>
                 </a>
         </div>
-                
-        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false" role="navigation">
+
+        <div id="bs-navbar" class="collapse navbar-collapse" aria-expanded="false" role="navigation">
             <ul class="nav navbar-nav">
 <li>
-<a href="../../../../"><i class="fa fa-lg fa-home"></i>  Home</a>
+<a href="../../../../"><span id="homelink">Home</span></a>
                 </li>
 <li>
 <a href="../../../../archive.html">Archive</a>
                 </li>
 <li>
-<a href="../../../../categories/">Categories</a>
-                </li>
-<li>
 <a href="../../../../gallery/">Gallery</a>
                 </li>
 <li>
-<a href="../../../../pages/articles/">Articles</a>
+<a href="../../../../pages/blender-addons/">Blender Addons</a>
                 </li>
 <li>
-<a href="../../../../pages/blender-addons/">Blender Addons</a>
+<a href="../../../../pages/articles/">Jupyter Articles</a>
                 </li>
 <li>
 <a href="../../../../pages/about/">About</a>
@@ -81,181 +76,185 @@ article: http://ogp.me/ns/article#
 </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-    <a href="index.rst" class="sourcelink">Source</a>
+    <a href="index.rst" id="sourcelink">Source</a>
     </li>
                 
             </ul>
 </div>
-    </nav><!-- BODY CONTENT !! --><div class="container" id="body_content" role="main">
+    </nav><!-- PAGE CONTAINER --><div id="page_container" class="clearfix">
 
-        
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><!--<h1 class="p-name entry-title" itemprop="headline name"><a href="/posts/blender/scripting/eliminate-material-duplicates/" class="u-url">Eliminate Material and Node Group Duplicates in Blender</a></h1> --><h1 class="p-name entry-title" itemprop="headline name">Eliminate Material and Node Group Duplicates in Blender</h1>
+        <div id="page_main" class="bodypart" role="main">
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name">Eliminate Material and Node Group Duplicates</h1>
 
+
+        <!-- Metadata -->
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+
+            <p class="byline author vcard">
+                <span class="byline-name fn" itemprop="author">
                     Miki
-            </span></p>
-            <p class="dateline"><time class="published dt-published" datetime="2017-08-13T15:00:00+02:00" itemprop="datePublished" title="2017-08-13">2017-08-13</time></p>
+                </span>
+            </p>
+
+            <p class="dateline">
+                <time class="published dt-published" datetime="2017-08-13T15:00:00+02:00" title="2017-08-13">2017-08-13</time></p>
+
                 <p class="commentline">            <a href="#disqus_thread" data-disqus-identifier="cache/posts/blender/scripting/eliminate-material-duplicates.html">Comments</a>
 
 
-                    </p>
-<p class="sourceline"><a href="index.rst" class="sourcelink">Source</a></p>
 
-        </div>
+            </p>
+<p class="tagline">
+<span><a href="../../../../categories/blender/">blender</a></span><span><a href="../../../../categories/python/">python</a></span>            </p>
+
+                    <p class="sourceline">
+            <a href="index.rst" class="sourcelink">Source</a>
+        </p>
+
+            
+        </div>  
+
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <!-- TEASER_END -->
-<p>I got to the point when wishing to build and organize a decent library of smart materials for Blender (something like you can have in 3D Coat or Substance Painter if you don't mind using proprietary software). I got really tempted to start making such library when Blender 2.79 officially included the material library addon called <strong>MatLib VX</strong>.</p>
-<p>But alas, even this useful addon <strong>MatLib VX</strong> doesn't bring any significantly new functionality to Blender. It just uses the existing <strong>append/link</strong> feature which enables you to include various datablocks from external Blender files. And here comes the problematic aspect of appending materials from external files. Imagine your materials use custom node groups (like shader setups, etc). <strong>Then every time you append a material, Blender automatically creates numbered duplicates for all node groups with the same name, even when the groups are supposed to be exactly the same!</strong> And this means huge mess in your node groups. A similar problem occurs when you are appending mesh assets containing the same materials.</p>
-<p>So, to fix this bug/feature, I have created a simple script that eliminates all these duplicates after you append materials from your external files. It searches all existing node groups, materials, worlds and if finds any duplicates (ending with .001, .002, etc), it replaces them with the original group or material if it is found.</p>
-<p>After running the script <strong>the eliminated node groups and materials will have zero 0 users</strong>, so after you save and reopen your file, they should disappear and your group list should be clean and tidy :)</p>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-1"> 1</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-2"> 2</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-3"> 3</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-4"> 4</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-5"> 5</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-6"> 6</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-7"> 7</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-8"> 8</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-9"> 9</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-10">10</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-11">11</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-12">12</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-13">13</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-14">14</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-15">15</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-16">16</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-17">17</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-18">18</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-19">19</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-20">20</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-21">21</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-22">22</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-23">23</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-24">24</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-25">25</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-26">26</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-27">27</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-28">28</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-29">29</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-30">30</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-31">31</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-32">32</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-33">33</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-34">34</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-35">35</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-36">36</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-37">37</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-38">38</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-39">39</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-40">40</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-41">41</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-42">42</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-43">43</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-44">44</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-45">45</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-46">46</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-47">47</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-48">48</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-49">49</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-50">50</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-51">51</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-52">52</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-53">53</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-54">54</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-55">55</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-56">56</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-57">57</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-58">58</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-59">59</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-60">60</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-61">61</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-62">62</a>
-<a href="#rest_code_50c57cdcfebf490d8ed064f35c676cba-63">63</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-1"></a><span class="kn">import</span> <span class="nn">bpy</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-2"></a>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-3"></a><span class="c1">#--- Eliminate Node Group Duplicates</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-4"></a><span class="k">def</span> <span class="nf">eliminate_node_groups</span><span class="p">():</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-5"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Eliminate Node Group Duplicates:"</span><span class="p">)</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-6"></a>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-7"></a>    <span class="c1">#--- Search for duplicates in the actual node groups</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-8"></a>    <span class="n">node_groups</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">node_groups</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-9"></a>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-10"></a>    <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">node_groups</span><span class="p">:</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-11"></a>        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">group</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-12"></a>            <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">'GROUP'</span><span class="p">:</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-13"></a>                <span class="n">eliminate</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-14"></a>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-15"></a>    <span class="c1">#--- Search for duplicates in materials</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-16"></a>    <span class="n">mats</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">materials</span><span class="p">)</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-17"></a>    <span class="n">worlds</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">worlds</span><span class="p">)</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-18"></a>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-19"></a>    <span class="k">for</span> <span class="n">mat</span> <span class="ow">in</span> <span class="n">mats</span> <span class="o">+</span> <span class="n">worlds</span><span class="p">:</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-20"></a>        <span class="k">if</span> <span class="n">mat</span><span class="o">.</span><span class="n">use_nodes</span><span class="p">:</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-21"></a>            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">mat</span><span class="o">.</span><span class="n">node_tree</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-22"></a>                <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">'GROUP'</span><span class="p">:</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-23"></a>                    <span class="n">eliminate</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-24"></a>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-25"></a>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-26"></a><span class="c1">#--- Eliminate the node group duplicate with the original group if found</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-27"></a><span class="k">def</span> <span class="nf">eliminate</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-28"></a>    <span class="n">node_groups</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">node_groups</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-29"></a>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-30"></a>    <span class="c1"># Get the node group name as 3-tuple (base, separator, extension)</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-31"></a>    <span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">sep</span><span class="p">,</span> <span class="n">ext</span><span class="p">)</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">node_tree</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">rpartition</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-32"></a>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-33"></a>    <span class="c1"># Replace the numbered duplicate with original if found</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-34"></a>    <span class="k">if</span> <span class="n">ext</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-35"></a>        <span class="k">if</span> <span class="n">base</span> <span class="ow">in</span> <span class="n">node_groups</span><span class="p">:</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-36"></a>            <span class="k">print</span><span class="p">(</span><span class="s2">"  Replace '</span><span class="si">%s</span><span class="s2">' with '</span><span class="si">%s</span><span class="s2">'"</span> <span class="o">%</span> <span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">node_tree</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">base</span><span class="p">))</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-37"></a>            <span class="n">node</span><span class="o">.</span><span class="n">node_tree</span><span class="o">.</span><span class="n">use_fake_user</span> <span class="o">=</span> <span class="bp">False</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-38"></a>            <span class="n">node</span><span class="o">.</span><span class="n">node_tree</span> <span class="o">=</span> <span class="n">node_groups</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-39"></a>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-40"></a>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-41"></a><span class="c1">#--- Eliminate Material Duplicates</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-42"></a><span class="k">def</span> <span class="nf">eliminate_materials</span><span class="p">():</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-43"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Eliminate Material Duplicates:"</span><span class="p">)</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-44"></a>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-45"></a>    <span class="c1">#--- Search for mat. slots in all objects</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-46"></a>    <span class="n">mats</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">materials</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-47"></a>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-48"></a>    <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">:</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-49"></a>        <span class="k">for</span> <span class="n">slot</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">material_slots</span><span class="p">:</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-50"></a>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-51"></a>            <span class="c1"># Get the material name as 3-tuple (base, separator, extension)</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-52"></a>            <span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">sep</span><span class="p">,</span> <span class="n">ext</span><span class="p">)</span> <span class="o">=</span> <span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">rpartition</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-53"></a>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-54"></a>            <span class="c1"># Replace the numbered duplicate with the original if found</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-55"></a>            <span class="k">if</span> <span class="n">ext</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-56"></a>                <span class="k">if</span> <span class="n">base</span> <span class="ow">in</span> <span class="n">mats</span><span class="p">:</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-57"></a>                    <span class="k">print</span><span class="p">(</span><span class="s2">"  For object '</span><span class="si">%s</span><span class="s2">' replace '</span><span class="si">%s</span><span class="s2">' with '</span><span class="si">%s</span><span class="s2">'"</span> <span class="o">%</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">base</span><span class="p">))</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-58"></a>                    <span class="n">slot</span><span class="o">.</span><span class="n">material</span> <span class="o">=</span> <span class="n">mats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-59"></a>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-60"></a>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-61"></a><span class="c1">#--- Execute</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-62"></a><span class="n">eliminate_node_groups</span><span class="p">()</span>
-<a name="rest_code_50c57cdcfebf490d8ed064f35c676cba-63"></a><span class="n">eliminate_materials</span><span class="p">()</span>
-</pre></td>
-</tr></table>
-<p>Now, I'm thinking I will include this code in my another addon <strong>Extra Material List</strong>, which displays materials in a more comfy way than the default short pop-up list.</p>
+<div class="figure align-right">
+<img alt="teaser.png" class="figure" src="teaser.png">
+</div>
+<p>I think the major shortage of Blender is a missing library system for materials (something like the library system in Substance Painter). There are addons trying to implement this, but I think such fundamental feature should be implemented in the program core.</p>
+<p>Moreover, everything what an addon can do is to utilize the standard <strong>append</strong> command from an external file. And here comes the annoying fact: <strong>Every time you append an asset, Blender automatically creates numbered duplicates for all datablocks with the same name, even when they are intended to be exactly the same!</strong> This is the reason, why after appending objects or materials, several duplicates (ending with .001, .002, etc) of the same material or node group appear in your scene.</p>
+<p>To clean the duplicates, I made a simple script. It searches all existing materials and node groups. Then, if any duplicates (ending with .001, .002, etc) are found, they are replaced with the original item.</p>
+<p>After running the script, <strong>the eliminated datablock will have 0 users</strong>. So, when you save and reopen your file, all duplicates should disappear and your material/group list should be clean :)</p>
+<div class="section" id="eliminate-material-duplicates">
+<h2>Eliminate Material Duplicates</h2>
+<pre class="code python"><a name="rest_code_75a8bb87655d4f10b7465b092d6914af-1"></a><span class="kn">import</span> <span class="nn">bpy</span>
+<a name="rest_code_75a8bb87655d4f10b7465b092d6914af-2"></a>
+<a name="rest_code_75a8bb87655d4f10b7465b092d6914af-3"></a><span class="c1">#--- Eliminate Material Duplicates</span>
+<a name="rest_code_75a8bb87655d4f10b7465b092d6914af-4"></a><span class="k">def</span> <span class="nf">eliminate_materials</span><span class="p">():</span>
+<a name="rest_code_75a8bb87655d4f10b7465b092d6914af-5"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Eliminate Material Duplicates:"</span><span class="p">)</span>
+<a name="rest_code_75a8bb87655d4f10b7465b092d6914af-6"></a>
+<a name="rest_code_75a8bb87655d4f10b7465b092d6914af-7"></a>    <span class="c1">#--- Search for mat. slots in all objects</span>
+<a name="rest_code_75a8bb87655d4f10b7465b092d6914af-8"></a>    <span class="n">mats</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">materials</span>
+<a name="rest_code_75a8bb87655d4f10b7465b092d6914af-9"></a>
+<a name="rest_code_75a8bb87655d4f10b7465b092d6914af-10"></a>    <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">:</span>
+<a name="rest_code_75a8bb87655d4f10b7465b092d6914af-11"></a>        <span class="k">for</span> <span class="n">slot</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">material_slots</span><span class="p">:</span>
+<a name="rest_code_75a8bb87655d4f10b7465b092d6914af-12"></a>
+<a name="rest_code_75a8bb87655d4f10b7465b092d6914af-13"></a>            <span class="c1"># Get the material name as 3-tuple (base, separator, extension)</span>
+<a name="rest_code_75a8bb87655d4f10b7465b092d6914af-14"></a>            <span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">sep</span><span class="p">,</span> <span class="n">ext</span><span class="p">)</span> <span class="o">=</span> <span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">rpartition</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)</span>
+<a name="rest_code_75a8bb87655d4f10b7465b092d6914af-15"></a>
+<a name="rest_code_75a8bb87655d4f10b7465b092d6914af-16"></a>            <span class="c1"># Replace the numbered duplicate with the original if found</span>
+<a name="rest_code_75a8bb87655d4f10b7465b092d6914af-17"></a>            <span class="k">if</span> <span class="n">ext</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
+<a name="rest_code_75a8bb87655d4f10b7465b092d6914af-18"></a>                <span class="k">if</span> <span class="n">base</span> <span class="ow">in</span> <span class="n">mats</span><span class="p">:</span>
+<a name="rest_code_75a8bb87655d4f10b7465b092d6914af-19"></a>                    <span class="k">print</span><span class="p">(</span><span class="s2">"  For object '</span><span class="si">%s</span><span class="s2">' replace '</span><span class="si">%s</span><span class="s2">' with '</span><span class="si">%s</span><span class="s2">'"</span> <span class="o">%</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">base</span><span class="p">))</span>
+<a name="rest_code_75a8bb87655d4f10b7465b092d6914af-20"></a>                    <span class="n">slot</span><span class="o">.</span><span class="n">material</span> <span class="o">=</span> <span class="n">mats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+<a name="rest_code_75a8bb87655d4f10b7465b092d6914af-21"></a>
+<a name="rest_code_75a8bb87655d4f10b7465b092d6914af-22"></a><span class="c1">#--- Execute</span>
+<a name="rest_code_75a8bb87655d4f10b7465b092d6914af-23"></a><span class="n">eliminate_materials</span><span class="p">()</span>
+</pre>
+</div>
+<div class="section" id="eliminate-node-group-duplicates">
+<h2>Eliminate Node Group Duplicates</h2>
+<pre class="code python"><a name="rest_code_6f713296071448f38d5dd4bcde26aae2-1"></a><span class="kn">import</span> <span class="nn">bpy</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-2"></a>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-3"></a><span class="c1">#--- Eliminate Node Group Duplicates</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-4"></a><span class="k">def</span> <span class="nf">eliminate_node_groups</span><span class="p">():</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-5"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Eliminate Node Group Duplicates:"</span><span class="p">)</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-6"></a>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-7"></a>    <span class="c1">#--- Search for duplicates in the actual node groups</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-8"></a>    <span class="n">node_groups</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">node_groups</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-9"></a>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-10"></a>    <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">node_groups</span><span class="p">:</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-11"></a>        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">group</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-12"></a>            <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">'GROUP'</span><span class="p">:</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-13"></a>                <span class="n">eliminate</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-14"></a>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-15"></a>    <span class="c1">#--- Search for duplicates in materials</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-16"></a>    <span class="n">mats</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">materials</span><span class="p">)</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-17"></a>    <span class="n">worlds</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">worlds</span><span class="p">)</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-18"></a>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-19"></a>    <span class="k">for</span> <span class="n">mat</span> <span class="ow">in</span> <span class="n">mats</span> <span class="o">+</span> <span class="n">worlds</span><span class="p">:</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-20"></a>        <span class="k">if</span> <span class="n">mat</span><span class="o">.</span><span class="n">use_nodes</span><span class="p">:</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-21"></a>            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">mat</span><span class="o">.</span><span class="n">node_tree</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-22"></a>                <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">'GROUP'</span><span class="p">:</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-23"></a>                    <span class="n">eliminate</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-24"></a>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-25"></a><span class="c1">#--- Eliminate the node group duplicate with the original group if found</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-26"></a><span class="k">def</span> <span class="nf">eliminate</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-27"></a>    <span class="n">node_groups</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">node_groups</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-28"></a>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-29"></a>    <span class="c1"># Get the node group name as 3-tuple (base, separator, extension)</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-30"></a>    <span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">sep</span><span class="p">,</span> <span class="n">ext</span><span class="p">)</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">node_tree</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">rpartition</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-31"></a>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-32"></a>    <span class="c1"># Replace the numbered duplicate with original if found</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-33"></a>    <span class="k">if</span> <span class="n">ext</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-34"></a>        <span class="k">if</span> <span class="n">base</span> <span class="ow">in</span> <span class="n">node_groups</span><span class="p">:</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-35"></a>            <span class="k">print</span><span class="p">(</span><span class="s2">"  Replace '</span><span class="si">%s</span><span class="s2">' with '</span><span class="si">%s</span><span class="s2">'"</span> <span class="o">%</span> <span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">node_tree</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">base</span><span class="p">))</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-36"></a>            <span class="n">node</span><span class="o">.</span><span class="n">node_tree</span><span class="o">.</span><span class="n">use_fake_user</span> <span class="o">=</span> <span class="bp">False</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-37"></a>            <span class="n">node</span><span class="o">.</span><span class="n">node_tree</span> <span class="o">=</span> <span class="n">node_groups</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-38"></a>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-39"></a><span class="c1">#--- Execute</span>
+<a name="rest_code_6f713296071448f38d5dd4bcde26aae2-40"></a><span class="n">eliminate_node_groups</span><span class="p">()</span>
+</pre>
+</div>
+<div class="section" id="eliminate-osl-script-duplicates">
+<h2>Eliminate OSL Script Duplicates</h2>
+<p>A similar method should work also to clean duplicates of OSL scripts.</p>
+<pre class="code python"><a name="rest_code_3d24844e65674d00a890e411a673a7df-1"></a><span class="kn">import</span> <span class="nn">bpy</span>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-2"></a>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-3"></a><span class="c1">#--- Eliminate OSL Script Duplicates</span>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-4"></a><span class="k">def</span> <span class="nf">eliminate_osl</span><span class="p">():</span>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-5"></a>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-6"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Eliminate OSL Scripts:"</span><span class="p">)</span>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-7"></a>    <span class="n">texts</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">texts</span>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-8"></a>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-9"></a>    <span class="k">for</span> <span class="n">mat</span> <span class="ow">in</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">materials</span><span class="p">:</span>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-10"></a>        <span class="k">if</span> <span class="n">mat</span><span class="o">.</span><span class="n">use_nodes</span><span class="p">:</span>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-11"></a>            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">mat</span><span class="o">.</span><span class="n">node_tree</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-12"></a>                <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">'SCRIPT'</span><span class="p">:</span>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-13"></a>                    <span class="n">name</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">script</span><span class="o">.</span><span class="n">name</span>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-14"></a>                    <span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">sep</span><span class="p">,</span> <span class="n">ext</span><span class="p">)</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">rpartition</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)</span>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-15"></a>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-16"></a>                    <span class="c1"># Replace the numbered duplicate with the original if found</span>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-17"></a>                    <span class="k">if</span> <span class="n">ext</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-18"></a>                        <span class="k">if</span> <span class="n">base</span> <span class="ow">in</span> <span class="n">texts</span><span class="p">:</span>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-19"></a>                            <span class="k">print</span><span class="p">(</span><span class="s2">"  Replace '</span><span class="si">%s</span><span class="s2">' with '</span><span class="si">%s</span><span class="s2">'"</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">base</span><span class="p">))</span>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-20"></a>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-21"></a>                            <span class="c1"># Replace the script duplicate for this node</span>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-22"></a>                            <span class="n">node</span><span class="o">.</span><span class="n">script</span> <span class="o">=</span> <span class="n">texts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-23"></a>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-24"></a>                            <span class="c1"># Remove the script duplicate from bpy.data.texts ?</span>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-25"></a>                            <span class="n">texts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">user_clear</span><span class="p">()</span>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-26"></a>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-27"></a><span class="c1">#--- Execute</span>
+<a name="rest_code_3d24844e65674d00a890e411a673a7df-28"></a><span class="n">eliminate_osl</span><span class="p">()</span>
+</pre>
+</div>
+<div class="section" id="addon-to-eliminate-the-duplicates">
+<h2>Addon to Eliminate the Duplicates</h2>
+<p>I added this functionality as a button to eliminate material and node group duplicates to my addon <a class="reference external" href="../../addons/extra-material-list">Extra Material List</a>.</p>
+<div class="line-block">
+<div class="line"><br></div>
+</div>
+</div>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../../../categories/blender-scripting/" rel="tag">blender-scripting</a></li>
+<li><a class="tag p-category" href="../../../../categories/blender/" rel="tag">blender</a></li>
+            <li><a class="tag p-category" href="../../../../categories/python/" rel="tag">python</a></li>
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
                 <a href="../../materials/nodes-custom-color-ramp/" rel="prev" title="Custom Color Ramp Nodes"><i class="fa fa-arrow-left"></i>  Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../addons/extra-image-list/" rel="next" title="Extra Image List - Blender Addon">Next post  <i class="fa fa-arrow-right"></i></a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="meshlogic",
             disqus_url="https://meshlogic.github.io/posts/blender/scripting/eliminate-material-duplicates/",
-        disqus_title="Eliminate Material and Node Group Duplicates in Blender",
+        disqus_title="Eliminate Material and Node Group Duplicates",
         disqus_identifier="cache/posts/blender/scripting/eliminate-material-duplicates.html",
         disqus_config = function () {
             this.language = "en";
@@ -272,21 +271,22 @@ article: http://ogp.me/ns/article#
 
         </section></article><script>var disqus_shortname="meshlogic";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
-</div>
+
+        <div id="page_sidebar" class="hidden-print" role="complementary"></div>
+    </div>
 
 
-<!-- BODY FOOTER -->
-<div class="container">
-    <footer id="body_footer">
-
+    <!-- BODY FOOTER !! -->
+    <footer id="body_footer" class="bodypart"><!-- Footer content from conf.py -->
         
-    Contents © 2018 by <a href="mailto:meshlogic@gmail.com">Miki</a>
+    Contents © 2018 by <a href="mailto:none">Miki</a>
     — Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
     
+    
 
+
+        <!-- Social buttons from conf.py -->
         
-
-            
     <div class="counter">
         <script src="https://www.w3counter.com/tracker.js?id=103452"></script><script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -308,14 +308,17 @@ article: http://ogp.me/ns/article#
     </div>
 
 
+        
+
+        
     </footer>
 </div>
 
 
-<!-- SCRIPTS -->
-            <script src="../../../../assets/js/all-nocdn.js"></script><script>
+<!-- SCRIPTS !! -->
+<script>
     moment.locale("en");
     fancydates(0, "YYYY-MM-DD HH:mm");
-</script>
+</script><script src="../../../../assets/js/all-nocdn.js"></script>
 </body>
 </html>

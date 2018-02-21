@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blender Inspired Theme for XnViewMP Photo Manager | MeshLogic</title>
+<link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="https://meshlogic.github.io/posts/software/xnview/blender-inspired-theme-xnview/">
+<!--[if lt IE 9]><script src="../../../../assets/js/html5.js"></script><![endif]--><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<meta name="author" content="Miki">
+<link rel="prev" href="../../../blender/addons/extra-material-list/" title="Extra Material List - Blender Addon" type="text/html">
+<link rel="next" href="../../../blender/addons/outliner-tweaks/" title="Outliner Tweaks - Blender Addon" type="text/html">
+<meta property="og:site_name" content="MeshLogic">
+<meta property="og:title" content="Blender Inspired Theme for XnViewMP Photo Manager">
+<meta property="og:url" content="https://meshlogic.github.io/posts/software/xnview/blender-inspired-theme-xnview/">
+<meta property="og:description" content="Recently, I have tried this very interesting photo manager XnViewMP and discovered its possibility to create UI themes using QSS style sheets. Of course, as a customization freak, I couldn't resist to">
+<meta property="og:image" content="https://meshlogic.github.io/posts/software/xnview/blender-inspired-theme-xnview/teaser.png">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-11-07T16:00:00+02:00">
+<meta property="article:tag" content="xnview">
+</head>
+<body>
+
+
+<!-- BODY CONTAINER !! -->
+<div id="body_container" class="container">
+
+    <!-- HEADER -->
+    <header id="body_header" class="bodypart hidden-print"><a href="../../../../" title="Home"><i>A personal blog on computer graphics, scientific computing, Blender, Jupyter and Second Life</i></a>
+
+        
+    </header><!-- NAVBAR --><nav class="navbar navbar-default navbar-static-top hidden-print bodypart"><div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+                <a class="navbar-brand visible-xs" href="../../../../">
+                    <span id="blog-title">MeshLogic</span>
+                </a>
+        </div>
+
+        <div id="bs-navbar" class="collapse navbar-collapse" aria-expanded="false" role="navigation">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../../../"><span id="homelink">Home</span></a>
+                </li>
+<li>
+<a href="../../../../archive.html">Archive</a>
+                </li>
+<li>
+<a href="../../../../gallery/">Gallery</a>
+                </li>
+<li>
+<a href="../../../../pages/blender-addons/">Blender Addons</a>
+                </li>
+<li>
+<a href="../../../../pages/articles/">Jupyter Articles</a>
+                </li>
+<li>
+<a href="../../../../pages/about/">About</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="index.rst" id="sourcelink">Source</a>
+    </li>
+                
+            </ul>
+</div>
+    </nav><!-- PAGE CONTAINER --><div id="page_container" class="clearfix">
+
+        <div id="page_main" class="bodypart" role="main">
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name">Blender Inspired Theme for XnViewMP Photo Manager</h1>
+
+
+        <!-- Metadata -->
+        <div class="metadata">
+
+            <p class="byline author vcard">
+                <span class="byline-name fn" itemprop="author">
+                    Miki
+                </span>
+            </p>
+
+            <p class="dateline">
+                <time class="published dt-published" datetime="2017-11-07T16:00:00+02:00" title="2017-11-07">2017-11-07</time></p>
+
+                <p class="commentline">            <a href="#disqus_thread" data-disqus-identifier="cache/posts/software/xnview/blender-inspired-theme-xnview.html">Comments</a>
+
+
+
+            </p>
+<p class="tagline">
+<span><a href="../../../../categories/xnview/">xnview</a></span>            </p>
+
+                    <p class="sourceline">
+            <a href="index.rst" class="sourcelink">Source</a>
+        </p>
+
+            
+        </div>  
+
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>Recently, I have tried this very interesting photo manager <a class="reference external" href="https://www.xnview.com/en/xnviewmp/">XnViewMP</a> and discovered its possibility to create UI themes using QSS style sheets. Of course, as a customization freak, I couldn't resist to create my own UI theme!</p>
+<div class="section" id="creating-a-custom-theme-for-xnviewmp">
+<h2>Creating a custom theme for XnViewMP</h2>
+<p>XnviewMP really tempts you to create your own UI theme. It's based on the <strong>Qt framework</strong>, which uses <strong>QSS style sheets</strong> to customize the UI look. The syntax of QSS is very similar to CSS and you can customize almost any control element. Of course, sometimes it's a bit of puzzle to get what you want, but that's part of the fun :)</p>
+</div>
+<div class="section" id="the-idea-behind-the-theme">
+<h2>The idea behind the theme</h2>
+<p>I'm a big fan of <strong>Blender</strong> (open-source 3D package), which I think has one of the best and most customizable user interfaces. So, I've got inspired by the default grey theme from Blender and tried to bring it to XnViewMP.</p>
+<p>This theme is neither too dark, nor too light, which I believe is the best choice in general. I think, when a theme is too light/colorful, it glows to the eyes and distracts user from the actual content. On the other side, when a theme is too dark, I find it worse readable and I tend to adjust my creations too dark as well. Thus, I have tried to create a low contrast, mid-grey theme that wouldn't distract users from the actual content.</p>
+<div class="figure align-center" style="width: 70%">
+<a class="reference external image-reference" href="screen-browser.png"><img alt="screen-browser.png" class="figure" src="screen-browser.png"></a>
+<p class="caption">Browser.</p>
+</div>
+<div class="figure align-center" style="width: 70%">
+<a class="reference external image-reference" href="screen-viewer.png"><img alt="screen-viewer.png" class="figure" src="screen-viewer.png"></a>
+<p class="caption">Viewer.</p>
+</div>
+<div class="figure align-center" style="width: 70%">
+<a class="reference external image-reference" href="screen-settings.png"><img alt="screen-settings.png" class="figure" src="screen-settings.png"></a>
+<p class="caption">Settings dialog.</p>
+</div>
+<div class="figure align-center" style="width: 70%">
+<a class="reference external image-reference" href="screen-convert.png"><img alt="screen-convert.png" class="figure" src="screen-convert.png"></a>
+<p class="caption">Batch convert dialog.</p>
+</div>
+</div>
+<div class="section" id="custom-icons">
+<h2>Custom Icons</h2>
+<p>I have created my custom set of icons as well. Originally, I started to make the icons using Inkscape for my own photo editor, which I never finished, because it was too much work :) Later, I finished the icons in Affinity Designer, which I find much more user friendly than Inkscape. The icons are monochrome and I tried to make them simple and easy to recognize.</p>
+<div class="figure align-center" style="width: 70%">
+<a class="reference external image-reference" href="icons-toolbars_catalog.png"><img alt="icons-toolbars_catalog.png" class="figure" src="icons-toolbars_catalog.png"></a>
+<p class="caption">Custom icons created using Affinity Designer.</p>
+</div>
+</div>
+<div class="section" id="download-the-theme">
+<h2>Download the Theme</h2>
+<ul class="simple">
+<li>Download the theme from <a class="reference external" href="https://www.dropbox.com/sh/ea5g4qii8amap7q/AAA4jjl1MkCTLsw0eAEUID8Ta?dl=0">Dropbox</a>
+</li>
+<li>Visit my post on <a class="reference external" href="https://newsgroup.xnview.com/viewtopic.php?f=61&amp;t=36596">XnView forum</a>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br></div>
+</div>
+</div>
+<div class="section" id="xnviewmp-as-alternative-to-zoner-photo-studio">
+<h2>XnViewMP as Alternative to Zoner Photo Studio</h2>
+<div class="figure align-right" style="width: 30%">
+<a class="reference external image-reference" href="zoner-photo-studio-15.png"><img alt="zoner-photo-studio-15.tn.png" class="figure" src="zoner-photo-studio-15.tn.png"></a>
+<p class="caption">Zoner Photo Studio 15</p>
+</div>
+<p>For a very long time, I have been using <strong>Zoner Photo Studio</strong> as a photo manager and file explorer. It's a very convenient program enabling you to do all the essential photo editing tasks like curves, levels, color temperature, etc. The very strong side of Zoner are batch editing tools. You can use batch filters not only to resize/rename images, but also you can use all the photo editing tools or edit EXIF metadata.</p>
+<p>However, the last version of Zoner, I have purchased and still use, is the version 15. Since that version, Zoner has decided to go in the way of simplifying the user interface for tablets, rather than to introduce more desktop friendly features and more powerful keyboard shortcuts. I have been testing demos of their new versions, but there isn't anything worth of upgrading for me. I would even say, the UI got worse for desktop users.</p>
+<p>Finally, introducing the new controversial subscription license, their intrusive marketing strategy and pushing Facebook to the main folder tree navigator (without any option to hide it), made me give up this program completely.</p>
+<p>Therefore, I started to look for an alternative to Zoner. I have tried <strong>Adobe Bridge</strong>, but that program is very slow to start and heavy, like all products from Adobe.</p>
+<p>Then, I found <strong>XnViewMP</strong>, which surprised me in a nice way. I was very excited to find out this program is based on <strong>Qt framework</strong>, which proves this framework is a perfect choice for multi-platform user programs. Indeed, XnViewMP starts and responds really fast without any lagging, and the possibilities of UI customization using the QSS style sheets are just brilliant! Feature-wise, XnViewMP is very similar to Zoner. It can do all the basic photo editing tasks and perform batch editing/renaming. The only downside of XnViewMP is amount of small bugs, but keep in mind, this program didn't achieve the version 1.0 yet, and the author releases new versions and bug fixes very frequently. Yet the program itself is already very stable and no crash ever occurred to me.</p>
+<div class="line-block">
+<div class="line"><br></div>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../../categories/xnview/" rel="tag">xnview</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../../blender/addons/extra-material-list/" rel="prev" title="Extra Material List - Blender Addon"><i class="fa fa-arrow-left"></i>  Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../../blender/addons/outliner-tweaks/" rel="next" title="Outliner Tweaks - Blender Addon">Next post  <i class="fa fa-arrow-right"></i></a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="meshlogic",
+            disqus_url="https://meshlogic.github.io/posts/software/xnview/blender-inspired-theme-xnview/",
+        disqus_title="Blender Inspired Theme for XnViewMP Photo Manager",
+        disqus_identifier="cache/posts/software/xnview/blender-inspired-theme-xnview.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="meshlogic";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+
+        <div id="page_sidebar" class="hidden-print" role="complementary"></div>
+    </div>
+
+
+    <!-- BODY FOOTER !! -->
+    <footer id="body_footer" class="bodypart"><!-- Footer content from conf.py -->
+        
+    Contents © 2018 by <a href="mailto:none">Miki</a>
+    — Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
+    
+    
+
+
+        <!-- Social buttons from conf.py -->
+        
+    <div class="counter">
+        <script src="https://www.w3counter.com/tracker.js?id=103452"></script><script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-82334406-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+</div>
+
+    <div id="social_icons">
+        <a href="https://github.com/meshlogic/" title="My GitHub"><i class="fa fa-3x fa-github"></i></a>
+
+        <a href="https://www.flickr.com/people/meshlogic/" title="See my photos on Flickr!"><i class="fa fa-3x fa-flickr"></i></a>
+
+        <a href="https://www.youtube.com/channel/UCJn5IgykaGERrwvzLhayJiw" title="See my videos on YouTube!"><i class="fa fa-3x fa-youtube-square"></i></a>
+    </div>
+
+
+        
+
+        
+    </footer>
+</div>
+
+
+<!-- SCRIPTS !! -->
+<script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+</script><script src="../../../../assets/js/all-nocdn.js"></script>
+</body>
+</html>

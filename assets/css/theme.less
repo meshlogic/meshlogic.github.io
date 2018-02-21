@@ -1,0 +1,54 @@
+// Custom 3.3.5
+// Bootswatch
+// -----------------------------------------------------
+
+@web-font-path: "https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i|Oswald:400,500,600,700|Open+Sans:400,400i,700,700i";
+
+.web-font(@path) {
+  @import url("@{path}");
+}
+.web-font(@web-font-path);
+
+
+// Navbar =====================================================================
+
+.navbar {
+  text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.4);
+}
+
+
+// Buttons ====================================================================
+
+.btn {
+  text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.4);
+}
+
+
+// Typography =================================================================
+
+// Tables =====================================================================
+
+// Forms ======================================================================
+
+// Navs =======================================================================
+
+.pager > li > a:link {
+  background-color: @pager-bg;
+}
+
+.pager > li > a:hover {
+  background-color: @pager-hover-bg;
+  border-color: @pager-hover-bg;
+  color: @pagination-hover-color;
+}
+
+.pager > li.disabled > a:link {
+  border-color: @pager-border;
+}
+
+
+// Indicators =================================================================
+
+// Progress bars ==============================================================
+
+// Containers =================================================================
