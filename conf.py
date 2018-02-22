@@ -275,7 +275,7 @@ LICENSE = ""
 #
 # CONTENT_FOOTER = ""
 CONTENT_FOOTER = """
-    Contents &copy; {date} by <a href="mailto:{email}">{author}</a>
+    Contents & Theme &copy; {date} by <a href="mailto:{email}">{author}</a>
     — Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
     {license}
     
