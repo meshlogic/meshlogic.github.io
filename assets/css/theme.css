@@ -42,6 +42,7 @@ body {
 
 #page_main {
     background-color: #dcd7c6;
+    /* background-image: url(../img/bcg/noisy/noisy-texture-256x256-o6-e0e0e0.png); */
     background-image: url(../img/bcg/paper02/paper_beige_01.jpg);
 
     flex: 1;
@@ -65,9 +66,10 @@ body {
 *******************************************************************************/
 .widget {
     background-color: #dcd7c6;
+    /* background-image: url(../img/bcg/noisy/noisy-texture-256x256-o6-e0e0e0.png); */
     background-image: url(../img/bcg/paper02/paper_beige_01.jpg);
-    line-height: 1.2;
 
+    line-height: 1.2;
     margin: 25px 0 0px 0;
     padding: 0 12px 10px 12px;
 }
