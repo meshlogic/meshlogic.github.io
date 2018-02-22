@@ -1,0 +1,1 @@
+nikola github_deploy

@@ -196,21 +196,20 @@
 	"buffers":
 	[
 		{
-			"file": "themes/meshlogic/assets/css/theme.css",
+			"file": "conf.py",
 			"settings":
 			{
-				"buffer_size": 13773,
+				"buffer_size": 47614,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "themes/meshlogic/assets/css/custom.css",
+			"file": "/D/PROJECTS/WEBSITES/Meshlogic/Nikola Source/Nikola 7.8.11/themes/bootstrap3-jinja/templates/base_helper.tmpl",
 			"settings":
 			{
-				"buffer_size": 12737,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"buffer_size": 7161,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -361,19 +360,29 @@
 	},
 	"expanded_folders":
 	[
+		"/D/PROJECTS/WEBSITES/Meshlogic/Nikola Source/Nikola 7.8.11",
+		"/D/PROJECTS/WEBSITES/Meshlogic/Nikola Source/Nikola 7.8.11/themes",
+		"/D/PROJECTS/WEBSITES/Meshlogic/Nikola Source/Nikola 7.8.11/themes/bootstrap3-jinja",
+		"/D/PROJECTS/WEBSITES/Meshlogic/Nikola Source/Nikola 7.8.11/themes/bootstrap3-jinja/templates",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates"
 	],
 	"file_history":
 	[
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/custom.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/theme.css",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/base_myhelper.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/Nikola Source/Nikola 7.8.11/themes/bootstrap3-jinja/templates/base_helper.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/base.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/js/custom.js",
+		"/D/PROJECTS/WEBSITES/Meshlogic/Nikola Source/Nikola 7.8.11/themes/bootstrap3-jinja/templates/base.tmpl",
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/index.tmpl",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/sidebar.tmpl",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/sidebar-helper.tmpl",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/conf.py",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/bundles",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/js/custom.js",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/base.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/base_myhelper.tmpl",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/nikola-commands.txt",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/post_header.tmpl",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/templates/post_list_directive.tmpl",
@@ -399,7 +408,6 @@
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/rendering/nodes-correct-hdri.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-pbr-basic-shader.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/materials/nodes-custom-color-ramp.rst",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/custom.css",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/bake-helper.rst",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic/assets/css/nikola_ipython.css",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/posts/blender/addons/matlist.rst",
@@ -454,7 +462,6 @@
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/pages/about/transhuman_01.jpg",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/output/sidebar-en.inc",
 		"/D/PROJECTS/WEBSITES/Meshlogic/Nikola Source/Nikola 7.8.11/themes/base-jinja/templates/base_header.tmpl",
-		"/D/PROJECTS/WEBSITES/Meshlogic/Nikola Source/Nikola 7.8.11/themes/bootstrap3-jinja/templates/base_helper.tmpl",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/templates/base_my_helper.tmpl",
 		"/D/PROJECTS/WEBSITES/Meshlogic/web/themes/meshlogic2/templates/my_extra_head.tmpl",
 		"/D/PROJECTS/WEBSITES/Meshlogic/Nikola Source/Nikola 7.8.11/themes/base-jinja/templates/base_helper.tmpl",
@@ -491,10 +498,7 @@
 		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/User/Terminal.sublime-settings",
 		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/Terminal/Terminal.sublime-settings",
 		"/C/Users/mickd/AppData/Roaming/Sublime Text 3/Packages/User/Terminal (Windows).sublime-settings",
-		"/D/PROJECTS/WEBSITES/Meshlogic/web/meshlogic.sublime-project",
-		"/D/PROJECTS/WEBSITES/Meshlogic/Dev/Tests/Include/include-test.html",
-		"/D/PROJECTS/WEBSITES/Meshlogic/Dev/Tests/Include/sidebar-en.inc",
-		"/D/PROJECTS/WEBSITES/Meshlogic/Dev/Tests/Syntax/Markdown-sample.md"
+		"/D/PROJECTS/WEBSITES/Meshlogic/web/meshlogic.sublime-project"
 	],
 	"find":
 	{
@@ -512,6 +516,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"doubleclick",
+			"bootstrapcdn",
+			"font",
 			"align-right",
 			"ipyn",
 			"copy",
@@ -636,10 +643,7 @@
 			"container",
 			".row",
 			"container-960",
-			"container",
-			"reference",
-			"listtitle",
-			"post-list"
+			"container"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -671,19 +675,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "themes/meshlogic/assets/css/theme.css",
+					"file": "conf.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13773,
+						"buffer_size": 47614,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6974,
-								6974
+								7351,
+								7351
 							]
 						],
 						"settings":
@@ -692,67 +696,23 @@
 							"color_helper.color_scheme": "Packages/Theme - Miki/Miki (Light Grey).tmTheme",
 							"color_helper.file_palette":
 							[
-								"#0000001A@1",
-								"#00000026@2",
-								"#00000040@2",
-								"#0000004D@1",
-								"#00000066@1",
-								"#00000080@1",
-								"#000000ff",
-								"#222222ff",
-								"#333333ff",
-								"#404040ff",
-								"#446e9bff",
-								"#505050ff",
-								"#508bf0ff",
-								"#777777ff",
-								"#a9a9a9ff",
-								"#add8e6ff",
-								"#c0c0c0ff",
-								"#dcd7c6ff",
-								"#ddddddff",
-								"#e0e0e0ff",
-								"#faf9f5ff",
-								"#ffffffff"
 							],
-							"color_helper.popup_active": false,
-							"color_helper.popup_auto": true,
+							"color_helper.preview_meta":
+							{
+							},
 							"color_helper.scan":
 							{
-								"allowed_colors":
-								[
-									"hsl",
-									"rgba",
-									"hex_compressed",
-									"webcolors",
-									"hex",
-									"hsla",
-									"rgb"
-								],
-								"compress_hex_output": true,
-								"current_ext": ".css",
-								"current_syntax": "CSS3/CSS3",
-								"enabled": true,
-								"last_updated": 1519159593.82,
-								"scan_completion_scopes":
-								[
-								],
-								"scan_scopes":
-								[
-									"meta.declaration-list.css -support.type.property-name.css -comment -string",
-									"meta.property-value.css -comment -string",
-									"meta.value.css -comment -string",
-									"meta.tag.inline.any.html string.quoted -constant.character.entity.html",
-									"meta.tag.any.html meta.attribute-with-value.style.html"
-								],
-								"use_hex_argb": false
+								"current_ext": ".py",
+								"current_syntax": "Python/Python",
+								"enabled": false,
+								"last_updated": 1519230497.17
 							},
-							"syntax": "Packages/CSS3/CSS3.sublime-syntax",
+							"syntax": "Packages/Python/Python.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 4370.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -760,19 +720,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "themes/meshlogic/assets/css/custom.css",
+					"file": "/D/PROJECTS/WEBSITES/Meshlogic/Nikola Source/Nikola 7.8.11/themes/bootstrap3-jinja/templates/base_helper.tmpl",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12737,
+						"buffer_size": 7161,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								555,
-								555
+								1051,
+								1051
 							]
 						],
 						"settings":
@@ -781,162 +741,27 @@
 							"color_helper.color_scheme": "Packages/Theme - Miki/Miki (Light Grey).tmTheme",
 							"color_helper.file_palette":
 							[
-								"#00000014@2",
-								"#00000026@2",
-								"#00000033@1",
-								"#00000040@2",
-								"#0000004D@1",
-								"#00000066@1",
-								"#00000080@1",
-								"#000000CC@1",
-								"#000000ff",
-								"#0071aaff",
-								"#00c843ff",
-								"#303030ff",
-								"#343434ff",
-								"#3a87adff",
-								"#404040ff",
-								"#446e9bff",
-								"#555555ff",
-								"#666666ff",
-								"#8080801A@1",
-								"#80808026@2",
-								"#a09a90ff",
-								"#d01919ff",
-								"#eeeeeeff",
-								"#faf9f5ff",
-								"#ffffff1A@1"
 							],
-							"color_helper.popup_active": false,
-							"color_helper.popup_auto": true,
 							"color_helper.preview_meta":
 							{
-								"1085":
-								[
-									-4408856718882767375,
-									7,
-									"hex",
-									4278733586192014526,
-									1,
-									"1519206475.192275"
-								],
-								"1203":
-								[
-									-5710923580308381049,
-									19,
-									"rgba",
-									-1902182723553364700,
-									2,
-									"1519206475.195278"
-								],
-								"1673":
-								[
-									-7263828601647906315,
-									7,
-									"hex",
-									-4964155873296040656,
-									3,
-									"1519206475.19728"
-								],
-								"2096":
-								[
-									-699556242879163556,
-									24,
-									"rgba",
-									-830414021955984060,
-									8,
-									"1519208771.858735"
-								],
-								"2144":
-								[
-									-5710924580019251844,
-									19,
-									"rgba",
-									8240700720619534396,
-									9,
-									"1519208771.861738"
-								],
-								"215":
-								[
-									-2188096479140595651,
-									4,
-									"hex_compressed",
-									4278733586192014526,
-									5,
-									"1519206479.188815"
-								],
-								"2241":
-								[
-									3489303299152588196,
-									15,
-									"rgba",
-									-3932411970188779600,
-									10,
-									"1519208771.864741"
-								],
-								"2384":
-								[
-									-5710923580308381049,
-									19,
-									"rgba",
-									-830414021955984060,
-									11,
-									"1519208771.866743"
-								],
-								"2427":
-								[
-									-201145151392601577,
-									7,
-									"hex",
-									4278733586192014526,
-									12,
-									"1519208771.867744"
-								],
-								"767":
-								[
-									6898393411417391806,
-									7,
-									"hex",
-									4278733586192014526,
-									4,
-									"1519206478.197441"
-								],
-								"9096":
-								[
-									-4912030062780057323,
-									24,
-									"rgba",
-									-1902182723553364700,
-									6,
-									"1519208771.375897"
-								],
-								"9209":
-								[
-									-2188096172032762596,
-									4,
-									"hex_compressed",
-									4278733586192014526,
-									7,
-									"1519208771.380901"
-								]
 							},
 							"color_helper.scan":
 							{
 								"allowed_colors":
 								[
-									"hex_compressed",
 									"hex",
-									"webcolors",
-									"hsla",
-									"rgba",
 									"hsl",
-									"rgb"
+									"hsla",
+									"hex_compressed",
+									"rgb",
+									"webcolors",
+									"rgba"
 								],
 								"compress_hex_output": true,
-								"current_ext": ".css",
-								"current_syntax": "CSS3/CSS3",
+								"current_ext": ".tmpl",
+								"current_syntax": "Jinja2/Syntaxes/HTML (Jinja2)",
 								"enabled": true,
-								"last_updated": 1519206210.36,
+								"last_updated": 1519230497.17,
 								"scan_completion_scopes":
 								[
 								],
@@ -950,12 +775,12 @@
 								],
 								"use_hex_argb": false
 							},
-							"syntax": "Packages/CSS3/CSS3.sublime-syntax",
+							"syntax": "Packages/Jinja2/Syntaxes/HTML (Jinja2).tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1332.0,
+						"translation.y": 540.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
